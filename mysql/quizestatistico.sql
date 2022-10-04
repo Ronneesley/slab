@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `quizestatistico`.`questoes` (
   `resposta_errada2` TEXT NOT NULL,
   `resposta_errada3` TEXT NOT NULL,
   `explicacao` TEXT NOT NULL,
+  `imagem` VARCHAR(255) NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_pergunta_nivel1_idx` (`nivel` ASC) VISIBLE,
   INDEX `fk_pergunta_curso1_idx` (`curso` ASC) VISIBLE,
