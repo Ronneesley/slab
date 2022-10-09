@@ -2,31 +2,37 @@
 <html>
 	<head>
 	<title>Information Statistic</title>
-        <style>
+    <style>
         .paineldiv {
             margin: 0px 0px 0px 0px ; 
             padding: 0px; 
-            height: 655px;
-            width: 550px; 
+            height: 767px;
+            width: 640px; 
             background-color: #f55151;
 
             
         }
 
-        .tabela-cadastro{
-            margin: 125px 50px 0px 170px;
+        .tabela-login{
+            margin: 200px 50px 0px 275px;
         }
 
         .painel{
             margin: -10px;
             padding: -10px;
+            height: 764px;
+            width: auto;
+
+            position: fixed;
+            top: 0%;
+            left: 0%;
 
         }
 
         .logo{
-            height: 300px;
-            width: 300px;
-            margin: 100px 0px 0px 130px;
+            height: 450px;
+            width: 450px;
+            margin: 70px 0px 0px 0px;
             padding: 0px;
             
         }
@@ -44,8 +50,8 @@
         .cadastro{
             margin: 0px 0px 0px -5px;
             background-color: #fff5f5;
-            width: 830px;
-            height: 655px;
+            width: 1000px;
+            height: 767px;
             
         }
         
@@ -66,15 +72,6 @@
             border-radius: 4px;
         }
 
-        select {
-            width: 100px;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid rgb(255, 255, 255);
-            box-sizing: border-box;
-        }
-
         .input-longo{
             width: 350px;
         }
@@ -83,21 +80,13 @@
             margin: 0px;
             padding: 0px;
             font-family:Klavika Bold;
-            font-size: 30px;
+            font-size: 45px;
         }
 
         h5{
             margin: 0px;
             padding: 0px;
             color: rgb(90, 90, 90);
-            font-weight: 100;
-            font-family:Arial;
-        }
-
-        h6{
-            margin: 0px;
-            padding: 0px;
-            color: rgb(117, 117, 117);
             font-weight: 100;
             font-family:Arial;
         }
@@ -109,7 +98,7 @@
 
         button[type=submit]:hover {
             background-color: #ec0b0bc4;
-            transition: 3s;
+            transition: 2s;
             color: rgb(230, 230, 230);
             font-size: 15px;
         }
@@ -119,26 +108,25 @@
             margin: 8px 0;
             padding: 14px 20px;
             border-radius: 4px;
-            transition: 3s;
+            transition: 2s;
             background-color: rgb(82, 173, 87);
             color: rgb(255, 255, 255);
             font-size: 15px;
             cursor: pointer;
-            border: none;
-            
-           
-            
+            border: none;   
         }
 
-        #divmensagem{
+        #divtitulo{
             width: 400px;
-            margin: 0px 0px 0px 200px;
             font-size: 15px;
             color: black;
             font-family:Arial, Helvetica, sans-serif;
+            border-style: solid;
         }
 
-        </style>
+
+
+    </style>
 
         <meta charset="utf-8">
         <link rel="shortcut icon" href="Logo.png">
@@ -150,15 +138,14 @@
                 <tr>
                     <td>
 
-                    
+                        
                         <div class="paineldiv">
-                            <img src="../imagens/Logo.png" class="logo"> 
-                            <div id="divmensagem">
-<pre><h2>"Nome do sistema"</h2></pre>                           
-                             </div>
-                            
-
-
+                             <center>
+                                <img src="../imagens/Logo.png" class="logo"> 
+                                <div id="divtitulo">                               
+                                <h2>"Nome do sistema"</h2>       
+                                </div>
+                            </center>   
                         </div>
                     </td>
                 
@@ -166,7 +153,7 @@
                 
                     <td>
                         <div class="cadastro">
-                            <table class="tabela-cadastro" border="0">
+                            <table class="tabela-login" border="0">
                                 <tr>
                                     <th><h1>Login</h1></th>
                                 </tr>
