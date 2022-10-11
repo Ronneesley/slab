@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                margin: auto;
+                padding: auto;
+            }
+            nav{
+                background-color: rgb(253, 253, 0);
+                height: 75px;
+
+            }
+
+            #logo{
+
+                height: 70px;
+                width: 70px;
+            }
+
+            .menu{
+                background-color: white;
+                border-radius: 8px;
+                border: none;
+                padding: 8px  8px  8px  8px;
+                height: 30px;
+                width: 120px;
+                cursor: pointer;
+               
+            }
+
+            .menu:active{
+                background-color: rgb(240, 240, 240);
+                border: none;
+                border-radius: 8px;
+                padding: 8px  8px  8px  8px;
+                height: 30px;
+                width: 120px;
+                cursor: pointer;
+               
+            }
+
+            #divmenu{
+                margin: -55px 0px 20px 150px;
+            }
+
+            #divmenu div {
+                display: inline;
+                padding: 0px 30px 0px 100px;
+                margin: 0px 0px 0px 0px;
+            }
+            
+            #painel{
+                border-style: solid;
+                background-color: brown;
+                height: 678px;
+            }
+
+
+            a{
+                cursor: pointer; 
+                        
+            }
+
+            #imgcomeca{
+                margin: -60px 10px 10px 10px;
+
+            }
+
+            #imgquiz{
+                padding-top: 125px;
+                padding-bottom: 110px;
+            }
+
+            #imghomem{
+                margin: 0px;
+                padding: 40px 120px 0px 0px;
+            }
+
+            #imglaptop{
+                padding: 0px 0px 0px 120px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <nav>
+            <img src="../imagens/Logocortada.png" id="logo">
+            <div id="divmenu">
+                <div>
+                    <button class="menu">Inicio</button>
+                </div>
+
+                <div>
+                    <button class="menu">Perguntas</button>
+                </div>
+
+                <div>
+                    <button class="menu">Pontuacao</button>
+                </div>
+
+                <div>
+                    <button class="menu">Conteudos</button>
+                </div>
+                
+                <div>
+                    <button class="menu">Rank</button>
+                </div>
+            </div>
+        </nav>
+        
+        <div id="painel">
+
+            <center>
+                <table>
+                    <tr>
+                        <td colspan="3">
+                        <center> <img src="../imagens/quiz.png" id="imgquiz"> </center>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td><img src="../imagens/homempensando.png" id="imghomem"></td>
+                        
+                        <td>
+                            <a href="perguntas.html"> 
+                                <img src="../imagens/comeca.png" id="imgcomeca"> 
+                            </a> 
+                        </td>
+                        
+                        <td><img src="../imagens/laptop.png" id="imglaptop"></td>
+                    </tr>
+                </table>
+            </center>
+            
+        </div>
+        
+    </body>
+</html>
