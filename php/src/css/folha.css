@@ -1,0 +1,40 @@
+body{
+    padding: 0;
+    margin: 0;
+
+}
+
+.conceitos1{
+    background-color: white;
+    text-align: justify;
+    margin-top: 0em;
+    margin-left: 15em;
+    margin-right: 15em;
+    border: 0.3em solid red;
+    padding: 1em;
+    border-bottom: 0em;
+    
+
+}
+
+
+
+#titulo{
+    background-color: red;
+    text-align: center;
+    margin-top: 0em;
+    margin-left: 15em;
+    margin-right: 15em;
+    padding: 1em;
+    color: white;
+}
+
+footer{
+    padding: 5mm;
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin-top: 0em;
+    margin-left: 15em;
+    margin-right: 15em;
+}
