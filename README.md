@@ -3,14 +3,23 @@
 # Contexto
 
 A estatística é um ramo de grande importância da matemática, desenvolvendo técnicas como a coleta de dados e sua organização, interpretação, análise e representação. O uso da matemática para a tomada de decisões vem acompanhando nossa história desde o início das grandes civilizações. Com o passar do tempo, foram criados métodos para facilitar-se esse processo.
+
 A estatística é dividida entre o estudo da coleta de dados, em que conhecemos os princípios da área, como os conceitos de amostra, população, variável e tipo de variável; o estudo da análise desses dados, no qual lidamos com a frequência absoluta e relativa, as medidas centrais e as medidas de dispersão; e a representação e interpretação desses resultados, em que estudamos os tipos de gráficos, a melhor representação para cada caso, e, com base nessa interpretação, gerando-se também as medidas centrais, como a média, a moda e a mediana.
+
 # Motivação
+
 A motivação de desenvolver esse projeto é a VI Gincana de Estatística do IF Goiano Campus Ceres que será realizada no dia 02/12/2022. Considerando que a participação do curso de Bacharelado em Sistemas de Informação é que esse e o primeiro ano em que este curso participa de forma efetiva e pontual. Espera-se que esse trabalho auxilie no aprendizado dos graduandos e possibilite a pontuação máxima na modalidade concorrida na gincana em questão.
+
 # Objetivos
+
 O objetivo desse projeto é desenvolver um site educacional de estatística dividido em três módulos, sendo eles, o quiz, a resolução de perguntas e o conteúdo. Esses módulos serão divididos por abas que permitiram que o usuário selecione a de seu interesse.
+
 # O módulo de quiz.
+
 Será composto de questões referentes ao conteúdo de estatística descritiva. Nele será possível visualizar se a resposta está correta ou não e a justificativa dessa resposta; será composto por um numero X de questões de múltipla escolha sorteadas aleatoriamente; ele permitira que o usuário veja sua pontuação de acordo com suas respostas e junto com a pontuação a porcentagem de acertos; o sistema irá retornar um ranking informando o nome de usuário, sua pontuação e a posição ocupada.
+
 # O módulo de conteúdo.
+
 A aba de conteúdo deverá apresentar os conceitos fundamentais (O que é estatística descritiva?, População, Amostra, Elemento, Pesquisa estatística, Amostragem (tipos de amostragem), Conjuntos e subconjuntos (finito e infinito), Dado x Variável, Variável Resposta, Variável Qualitativa (nominal, ordinal, intervalar), Variável Quantitativa (discreta e contínua)). 
 
 As tabelas (Conceito, Elementos da tabela, Tabela Simples). A distribuição de frequências (Pontual, sem perda de informação (frequência relativa, relativa em percentual, absoluta acumulada, acumulada relativa) e Em classes, com perda de informações).
