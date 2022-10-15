@@ -1,0 +1,48 @@
+body {
+    padding: 0px;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 22px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    width: 600px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    width: 600px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    background-color: rgb(110, 110, 253);
+    color: white;
+    margin: 0px;
+    width: 300px;
+    border-bottom-right-radius: 10px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
