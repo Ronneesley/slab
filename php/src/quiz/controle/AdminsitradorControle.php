@@ -4,7 +4,7 @@ include(dirname(__FILE__) . "/../modelo/dto/Administrador.php");
 include(dirname(__FILE__) . "/../modelo/dao/AdministradorDAO.php");
 
 /**
- * Description of CursoControle
+ * Description of AdministradorControle
  *
  * @author Wagner e Mayko
  */

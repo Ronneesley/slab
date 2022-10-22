@@ -6,7 +6,7 @@ include(dirname(__FILE__) . "/../modelo/dao/NivelDAO.php");
 /**
  * Description of NivelControle
  *
- * @author aluno
+ * @author Wagner e Mayko
  */
 class NivelControle {    
     public function processar($acao){

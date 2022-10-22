@@ -3,27 +3,27 @@
 include("DAO.php");
 
 /**
- * Classe para acesso aos dados do Pergunta
+ * Classe para acesso aos dados da imagem
  * Data Access Object (DAO) *
- * @author Wagner e Mayko
+ * @author Mayko
  */
-class PerguntaDAO extends DAO {    
+class ImagemDAO extends DAO {    
     
-    public function inserir($pergunta){
+    public function inserir($imagem){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO perguntas_quiz(questao,quiz) VALUES (??)");
-        $stmt->bind_param("ii", $pergunta->getQuestao(),$pergunta->getQuiz());
+        $stmt = $con->prepare("INSERT INTO imagens(imagem, identificador) VALUES (?, ?)");
+        $stmt->bind_param("ss", $imagem->getImagem(), $imagem->getIdentificador());
         $stmt->execute();
         
         $con->close();
     }
     
-    public function alterar($pergunta){
+    public function alterar($imagem){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update pergunta_quiz set questao = ?, quiz = ? where id = ?");
-        $stmt->bind_param("iii", $pergunta->getQuestao(),$pergunta->getQuiz(),$pergunta->getId(),);
+        $stmt = $con->prepare("update imagens set imagem = ?, identificador = ? where id = ?");
+        $stmt->bind_param("ssi", $imagem->getImagem(), $imagem->getIdentificador(), $imagem->getId());
         $stmt->execute();        
         
         $con->close();
@@ -32,17 +32,17 @@ class PerguntaDAO extends DAO {
     public function listar(){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select * from pergunta_quiz");
+        $stmt = $con->prepare("select * from imagens");
         $stmt->execute();
         $res = $stmt->get_result();
         
         $lista = array();
         
         while ($dados = $res->fetch_assoc()){        
-            $c = new Pergunta();
+            $c = new Imagem();
             $c->setId($dados["id"]);
-            $c->setQuestao($dados["questao"]);
-            $c->setQuiz($dados["quiz"]);
+            $c->setImagem($dados["imagem"]);
+            $c->setIdentificador($dados["identificador"]);
             
             array_push($lista, $c);
         }
@@ -55,18 +55,17 @@ class PerguntaDAO extends DAO {
     public function selecionar($id){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select * from perguntas_quiz where id = ?");
+        $stmt = $con->prepare("select * from imagens where id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $res = $stmt->get_result();
         
         $dados = $res->fetch_assoc();
         
-        $c = new Pergunta();
+        $c = new Imagem();
         $c->setId($dados["id"]);
-        $c->setQuestao($dados["questao"]);
-        $c->setQuiz($dados["quiz"]);
-        
+        $c->setImagem($dados["imagem"]);
+        $c->setIdentificador($dados["identificador"]);
         
         $con->close();
         
@@ -76,7 +75,7 @@ class PerguntaDAO extends DAO {
     public function excluir($id){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("delete from pergunta_quiz where id = ?");
+        $stmt = $con->prepare("delete from imagens where id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();        
         

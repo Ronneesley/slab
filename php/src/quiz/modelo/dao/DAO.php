@@ -3,7 +3,7 @@
 /**
  * Description of DAO
  *
- * @author aluno
+ * @author Ronne
  */
 abstract class DAO {
     public function conectar(){

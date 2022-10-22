@@ -4,7 +4,7 @@ include(dirname(__FILE__) . "/../modelo/dto/Tema.php");
 include(dirname(__FILE__) . "/../modelo/dao/TemaDAO.php");
 
 /**
- * Description of CursoControle
+ * Description of TemaControle
  *
  * @author Wagner e Mayko
  */

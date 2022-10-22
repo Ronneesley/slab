@@ -1,14 +1,14 @@
 <?php
 
-include(dirname(__FILE__) . "/../modelo/dto/Quiz.php");
-include(dirname(__FILE__) . "/../modelo/dao/QuizDAO.php");
+include(dirname(__FILE__) . "/../modelo/dto/Imagem.php");
+include(dirname(__FILE__) . "/../modelo/dao/ImagemDAO.php");
 
 /**
- * Description of QuizControle
+ * Description of ImagemControle
  *
- * @author Wagner e Mayko
+ * @author Mayko
  */
-class QuizControle {
+class ImagemControle {    
     public function processar($acao){
         switch ($acao){
             case "inserir":
@@ -30,29 +30,31 @@ class QuizControle {
     }
     
     public function inserir(){
-        $c = new Quiz();
-        $c->setNome_quiz($_REQUEST["nome_quiz"]);
+        $c = new Imagem();
+        $c->setImagem($_REQUEST["imagem"]);
+        $c->setIdentificador($_REQUEST["identificador"]);
 
-        $dao = new QuizDAO();
+        $dao = new ImagemDAO();
         $dao->inserir($c);
     }
     
     public function alterar(){
-        $c = new Quiz();
+        $c = new Imagem();
         $c->setId($_REQUEST["id"]);
-        $c->setNome_quiz($_REQUEST["nome_quiz"]);
+        $c->setImagem($_REQUEST["imagem"]);
+        $c->setIdentificador($_REQUEST["identificador"]);
 
-        $dao = new QuizDAO();
+        $dao = new ImagemDAO();
         $dao->alterar($c);
     }
     
     public function excluir(){
-        $dao = new QuizDAO();
+        $dao = new ImagemDAO();
         $dao->excluir($_REQUEST["id"]);
     }
     
     public function listar(){
-        $dao = new QuizDAO();
+        $dao = new ImagemDAO();
         $lista = $dao->listar();
         
         print("<pre>");
@@ -61,13 +63,13 @@ class QuizControle {
     }
     
     public function selecionar(){
-        $dao = new QuizDAO();
+        $dao = new ImagemDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
         print_r($c);
     }
 }
 
-$controle = new QuizControle();
+$controle = new ImagemControle();
 $controle->processar($_REQUEST["acao"]);
 ?>

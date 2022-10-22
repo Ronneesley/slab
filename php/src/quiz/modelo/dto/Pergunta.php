@@ -3,7 +3,7 @@
 /**
  * Esta classe mapeia um Pergunta
  * Data Transfer Object (DTO)
- * @author Diosef e Wagner
+ * @author Mayko e Wagner
  */
 class Pergunta {
     private $id;
