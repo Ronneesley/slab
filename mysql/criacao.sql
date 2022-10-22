@@ -151,6 +151,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `quizestatistico`.`imagens` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `imagem` BLOB NOT NULL,
+  `identificador` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
