@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conte&uacute;do da Gincana de Estatística</title>
+    <link rel="stylesheet" type="text/css" href="conceitosestatisticos" />
+</head>
+<body>
+    <div id="titulo">
+        <h1>"Conte&uacute;do Gincana 2022 / Desgin"</h1>
+        <h2>Medidas de Dispersão</h2>
+    </div>
+    <div class="conceitos1">
+        <h3>Conceito</h3>
+        <p>As medidas de posição (média, mediana, moda...) descrevem apenas uma das características dos valores numéricos de um conjunto de observações, o da tendência central. Porém, nenhuma delas informa sobre o grau de variação ou dispersão dos valores observados. Em qualquer grupo de dados os valores numéricos não são semelhantes e apresentam desvios variáveis em relação a tendência geral de média. As medidas de dispersão servem para avaliar o quanto os dados são semelhantes, descreve então o quanto os dados distam do valor central. Desse jeito, as medidas de dispersão servem também para avaliar qual o grau de representação da média.
+        <p>È fácil demonstrar que apenas a média é insuficiente para descrever um grupo de dados. Dois grupos podem ter a mesma média, mas serem muito diferentes na amplitude de variação de seus dados. Por exemplo:
+        <br>
+        <li>Grupo A (dados observados): 5; 5; 5.</li>
+        <li>Grupo B (dados observado): 4; 5; 6.</li>
+        <li>Grupo C (dados observados): 0; 5; 10.</li></p>
+
+        <p>A média dos três grupos é a mesma (5), mas no grupo “A” não há variação entre os dados, enquanto no grupo “B” a variação é menor que no grupo “C”. Dessa forma, uma maneira mais completa de apresentar os dados (além de aplicar uma medida de tendência central como a média) é aplicar uma medida de dispersão. As principais medidas de dispersão são:</p>
+
+        <li>Amplitude total: é a diferença entre o valor maior e o valor menor de um grupo de dados;</li>
+        <li>Soma dos quadrados: é baseada na diferença entre cada valor e a média da distribuição;</li>
+        <li>Variância: é a soma dos quadrados dividida pelo número de observações do grupo menos 1;</li>
+
+        <h3>O que é Amplitude Total?</h3>
+        <p>A amplitude total de um conjunto de dados é a diferença entre o maior e o menor valor
+            observado. A medida de dispersão não levar em consideração os valores intermediários perdendo a
+            informação de como os dados estão distribuídos e/ou concentrados. </p>
+        
+            <img src="total1.png">
+        <dl>
+            <strong><dt>Calculamos a amplitude total como:</dt></strong>
+
+            <br>
+            <dd><img src="formula.png" > .</dd>
+            <br>
+            <dd>Podemos perceber que a amplitude total considera apenas o valor máximo e o valor mínimo, não importando todos os demais valores do conjunto de dados. Esta condição tem o inconveniente de expor a medida de amplitude total à presença de valores extremos ou atípicos, chamados outliers, o que quase sempre invalida a idoneidade do resultado (CRESPO, 2009). Assim, devemos aperfeiçoar a descrição da variabilidade dos dados através de outras medidas de dispersão, como a variância ou o desvio padrão.</dd>
+        </dl>
+            
+        <dl>
+            <h3>Amplitude Interquartílica </h3>
+
+        <p>A amplitude interquartílica é a diferença entre o terceiro e o primeiro quartil. Esta medida é mais estável que a amplitude total por não considerar os valores mais extremos. Esta medida abrange 50% dos dados e é útil para detectar valores discrepantes.</p>
+        <img src="formula5.png" alt="">
+        <p>Por outro lado, a amplitude semi-interquartílica é definida como a média aritmética da diferença entre a mediana e os quartis: </p>
+        <img src="formula6.png" alt="">
+        <p>Exemplo: A amplitude interquartílica da idade dos alunos que cursam a disciplina Inferência </p>
+        <p>Estatística do curso de Estatística da UEM considerando-se a Tabela 10 é: </p>
+        <img src="formula8.png" alt="">
+        <p>A amplitude entre o terceiro e primeiro quartil, que envolve 50% (centrais) dos alunos, é de 5,67 anos. </p>
+        <p>Exemplo: Do exemplo 17, obtém-se a amplitude semi-interquartílica da idade dos alunos que cursam a disciplina Inferência Estatística do curso de Estatística da UEM: </p>
+        <img src="formula7.png" alt="">
+        <p>Observa-se que a distância entre a mediana e o quartil 1 (22-20) é 2. Como 2 < 2,84, isto indica que há uma concentração de dados à esquerda da mediana., e que os dados localizados a direita da mediana são mais dispersos. </p>
+           
+        </dl>   
+            <h3>A Desvio Medio</h3>
+                <p>O desvio médio de um conjunto de dados é a média do total de todos os desvios do ponto de destaque de um conjunto. É um instrumento estatístico para avaliar o intervalo a partir de uma média ou mediana. A média é o valor médio de todas as figuras em um conjunto de dados.
+                    A mediana é o número que fica no meio ao organizar conjuntos de dados do menor para o maior número.
+                    O desvio também pode ser um desvio médio absoluto ou desvio médio.
+                    Sempre que estiver operando com conjuntos de dados mínimos, você poderá encontrar o desvio manualmente. Para encontrá-lo para conjuntos de dados substanciais, você pode usar um software exclusivo que executa o cálculo depois de inserir os dados.</p> 
+                    
+                    <img src="dmedio.png" > 
+                    
+                <p>   para dados populacionais ou amostrais, respectivamente. Caso os dados estejam apresentados
+                    segundo uma distribuição de freqüência, tem-se: </p>
+                
+                    <img src="dmedio2.png">
+
+                <strong><dt>Como Calcular:</dt></strong>
+                    <br>
+                    <dd>
+                        1. O primeiro passo é encontrar sua média. Você pode fazer isso somando todos os valores em um conjunto de dados e dividindo o valor obtido pelo número total do valor. Se você optar por usar a mediana em vez da média, organize todos os números do menor para o maior e encontre o número total.
+
+                        Depois, se o valor agregado for ímpar, divida por dois e arredonde para encontrar a mediana.
+                        
+                        Se o valor agregado for par, divida-o por dois e faça uma média entre esse valor e o próximo.
+                      
+                        <br><br>
+
+                        2.Depois de encontrar a média, você pode encontrar o desvio da média de cada valor em um conjunto de dados. Encontre o contraste entre a média calculada anteriormente e os valores em cada conjunto de dados e anote o valor absoluto dos números ocorridos.
+
+                        O valor absoluto é o seu módulo ou valor não negativo. A direção de cada desvio é insignificante ao encontrar o desvio médio, então todos os números são positivos.
+                        
+                        <br><br>
+
+                        3.Depois de encontrar o desvio da média para cada conjunto de valores, você deve resumi-los. Todos os valores são positivos porque esta é uma operação de valor numérico.
+
+                        Confirme se os números neste conjunto são positivos antes de passar para a próxima etapa.
+                       
+                        <br></dd>br>    </div>
+                    </div>>
+
+                        4.Para encontrá-lo, divida o agregado calculado anteriormente de todos os desvios pelo número total de desvios que você adicionou.
+
+                        Certifique-se de ter o número correto para cada desvio para que esta etapa seja calculada corretamente.              
+                    </dd>
+                    <br>
+                    <strong><dt>Exemplo:</dt></strong><br>
+                    <dd>Um tenista participou de cinco jogos nesta temporada, e as pontuações para cada um desses cinco jogos são:<br>
+                        <br> <br>
+                        23+30+31+15+46=145 *
+                        <br>    
+                        * 145/5 = 29 *
+                        <br> <br>
+                        Como você conseguiu deduzir que o jogador alcançou uma média de 29 pontos para cada jogo, o próximo passo é encontrar o desvio da média de cada jogo.
+                        <br> <br>
+                        23-29=6 *
+                        <br> 
+                        * 30-29=1 *
+                        <br> 
+                        * 31-29=2 *
+                        <br> 
+                        * 15-29 = 14 *
+                        <br> 
+                        46-29=17
+                        <br> <br>
+                        Depois, encontre o agregado de todas as variações.
+                        <br> <br>
+                        6+1+2+14+17=40 *
+                        <br> <br>
+                        O desvio médio é o agregado de todos os desvios dividido pelo número absoluto de entradas.
+                        <br> <br>
+                        Desvio médio=40/5=8 *
+                        <br> <br>
+                        O desvio médio da média referente aos pontos conquistados nos cinco primeiros torneios da temporada é de oito</dd>
+
+        <dl>
+        </dl>
+
+        <div>
+            <h3>Variância e Desvio Padrão</h3>
+            <br>
+            <p> Variância e desvio padrão são medidas de dispersão, ou seja,</p> 
+            <p>parâmetros utilizados na Estatística para calcular o quanto</p>  
+            <p>os dados de um conjunto de valores podem variar.</p>
+            <br>
+            <p><b>  A variância (V)</b> é útil para determinar o afastamento da média que</p>
+            <p>os dados de um conjunto analisado apresentam. Para isso, determina-se</p> 
+            <p>o valor médio das diferenças quadradas da média.</p>
+            <br>
+            <p><b>  O desvio padrão (DP)</b> é calculado a partir da variância,</p>
+            <p>pois é a raiz quadrada desse parâmetro.</p>
+            <br>
+            <h2><b>Fórmulas de <b>variância</b> e desvio padrão</b></h2>
+            <p>Para calcular a variância de todos os valores de um conjunto de dados</p>
+            <p>utiliza-se a fórmula:</p>
+            <img src="foto1.png" width="300" hidth="300">
+            <p>Onde,</p>
+            <img src="foto2.png" width="300" hidth="300">
+            <br>
+            <p>Essa fórmula representa a variância populacional e para encontrá-la:</p>
+
+            <p> Primeiramente, devemos calcular a média aritmética do conjunto;</p>
+            <p>Em seguida, subtraímos de cada valor do conjunto a média calculada e elevamos</p> 
+            <p>o resultado ao quadrado;</p>
+            <p>Por fim, somamos todos os valores e dividimos pelo número de dados.</p>
+            <p>Quando o conjunto de dados é muito grande e queremos utilizar uma amostra</p>
+            <p>aleatória devemos empregar a fórmula de <b>variância amostral</b>:</p>
+            <img src="foto3.png" width="300" hidth="300">
+            <br>
+            <p>Como o <b>desvio padrão</b> é expresso pela raiz quadrada da variância, basta que seja extraída</p>
+            <p>a raiz do resultado calculado pela fórmula anterior.</p>
+            <img src="foto4.png" width="300" hidth="300">
+            <p>Portanto, o desvio padrão é um dado que apresenta a mesma unidade do conjunto de números na amostra,</p>
+            <p>o que é útil para a análise e comparação.</p>
+
+
+        </div>
+
+        <h3>Coeficiente de Variação</h3>
+        <p>
+            O coeficiente de variação é uma medida de dispersão relativa definida como a razão entre o
+            desvio padrão e a média: 
+        
+            <br>
+            <dd><img src="formulaVar.png" > .</dd>
+            <br>
+            se os dados são populacionais ou amostrais. 
+            <br>
+            A partir do coeficiente de variação pode-se avaliar a homogeneidade do conjunto de dados e,
+            conseqüentemente, se a média é uma boa medida para representar estes dados. É utilizado, também,
+            para comparar conjuntos com unidades de medidas distintas.
+            Uma desvantagem do coeficiente de variação é que ele deixa de ser útil quando a média está
+            próxima de zero. Uma média muito próxima de zero pode inflacionar o CV.
+            Um coeficiente de variação superior a 50% sugere alta dispersão o que indica
+            heterogeneidade dos dados. Quanto maior for este valor, menos representativa será a média. Neste
+            caso, opta-se pela mediana ou moda, não existindo uma regra prática para a escolha de uma destas
+            medidas. O pesquisador, com sua experiência, é que deverá decidir por uma ou outra. Por outro
+            lado, quanto mais próximo de zero, mais homogêneo é o conjunto de dados e mais representativa
+            será sua média. 
+            <br>
+            Para idades apresentadas na Tabela 10, temos:
+            <dd><img src="formulaVar2.png" > .</dd>
+            <br>
+            Como CV<50%, pode-se afirmar que a média é uma medida descritiva representativa para a
+            variável idade dos alunos da disciplina Inferência Estatística do curso de Estatística da Universidade
+            Estadual de Maringá do ano de 2002. 
+
+        </p>
+        
+
+        <div id="Medidaassimetria">
+            <h3>Medidas de assimetria</h3>
+    
+            <p>Medida de assimetria é um indicador da forma da distribuição dos dados. Ao construir ma distribuição de freqüências e/ou um histograma, está-se buscando, também, identificarvisualmente, a forma da distribuição dos dados que é ou não confirmada pelo coeficiente de assimetria de Pearson (As) definido como:</p>
+            <img src="formula2.png" alt="">
+            <p>Para dados populacionais e amostrais, respectivamente.</p>
+            <p>Uma distribuição é classificada como:</p>
+            <li>simétrica se média = mediana = moda ou As = 0; </li>
+            <li>assimétrica negativa se média ≤ mediana ≤ moda ou As < 0. O lado mais longo do polígono de freqüência (cauda da distribuição) está à esquerda do centro. </li>
+            <li>assimétrica positiva se moda ≤ mediana ≤ média ou As > 0. O lado mais longo do polígono de freqüência está à direita do centro.</li>
+            <img src="formula3.png" alt="">
+            <p>Exemplo A distribuição das idades apresentadas na Tabela 10 é classificada como assimétrica positiva, pois: </p>
+            <img src="formula4.png " alt="" height="100" width="200">
+        </div> 
+
+	<h3> Medidas de Curtose </h3>
+	<div>
+	<p> A curtose ou achatamento mede a concentração ou dispersão 
+	    dos valores de um conjunto de valores em relação às medidas 
+	    de tendência central em uma distribuição de frequências conhecida 
+	    (a distribuição Normal). A distribuição apresenta uma curva de 
+	    frequências mais fechada que a da distribuição Normal. </p>	
+
+	<p> A curtose pode ser de três tipos:</p>
+	<li> <b> Leptocúrtica: </b></li>
+	<p> A distribuição apresenta uma curva de frequências mais fechada que a da distribuição Normal.</p>
+	<img src="leptocurtica.png">
+	<br>
+	<li><b> Mesocúrtica: </b></li>
+	<p> A distribuição apresenta uma curva de frequências idêntica à da distribuição Normal. </p>
+	<img src="Mesocúrtica.png">
+	<br>
+	<li><b> Platicúrtica: </b></li>
+	<p> A distribuição apresenta uma curva de frequências mais aberta que a da distribuição Normal.</p>
+	<img src="Platicúrtica.png">
+	<br>
+	As medidas de curtose podem ser calculadas através da expressão:
+	<br>
+	<img src="formula9.png"> 
+	<p> Relativamente `a curva da distribuição Normal, temos:
+	<p>Se C = 0,263 a distribuição é Mesocúrtica; </p> 
+	<p>Se C < 0,263 a distribuição é Leptocúrtica; </p> 
+	<p>Se C > 0,263 a distribuição é Platicúrtica; </p>
+
+	<div>
+
+    <footer>
+        <p>Copyright &copy; 2022 Turma de Sistemas de Informação</p>
+    </footer>
+</body>
+</html>
