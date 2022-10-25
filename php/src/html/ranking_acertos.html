@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gincana de Estatística - Ranking de acertos</title>
+	<style type="text/css">		
+		body{
+            margin: auto;
+            padding: auto;
+            background-color: red;
+            }
+
+        nav {
+            background-color: rgb(253, 253, 0);
+            height: 75px;
+            }
+
+        #logo{
+              height: 70px;
+              width: 70px;
+            }
+
+        .menu {
+            	background-color: white;
+                border-radius: 8px;
+                border: none;
+                padding: 8px  8px  8px  8px;
+                height: 30px;
+                width: 120px;
+                cursor: pointer;
+            }
+
+        .menu:active {
+                background-color: rgb(240, 240, 240);
+                border: none;
+                border-radius: 8px;
+                padding: 8px  8px  8px  8px;
+                height: 30px;
+                width: 120px;
+                cursor: pointer; 
+            }
+
+        #divmenu{
+                margin: -70px 0px 20px 150px;
+            }
+
+        #divmenu div {
+                display: inline;
+                padding: 0px 30px 0px 100px;
+                margin: 0px 0px 0px 0px;
+            }
+
+        #ranking {
+            	border-style: solid;
+            	border-width: 0;
+            	width: 400px;
+            	height: auto;
+            	margin: 100px 30px 50px 300px;
+
+            }
+        
+       .titulo {
+       			color: yellow;
+       			background-color: red;
+       		}
+
+       	.titulo-1 {
+       		color: yellow;
+       		width: 300px;
+       		background-color: red;
+       	}
+
+       	.nulo {
+       		background-color: red;
+       		width: 80px;
+       		border-color: red;
+       	}
+
+       	.titulo-2 {
+       		width: 20px;
+       		background-color: red;
+       		color: yellow;
+       	}
+
+       	.primeiro {
+       		background-color: white;
+
+       	}
+
+	</style>
+</head>
+
+<body >
+	 <nav>
+	 		<img src="../imagens/Logocortada.png" id="logo">
+            <div id="divmenu">
+                <div>
+                    <button class="menu">Inicio</button>
+                </div>
+
+                <div>
+                    <button class="menu">Perguntas</button>
+                </div>
+
+                <div>
+                    <button class="menu">Pontuacao</button>
+                </div>
+
+                <div>
+                    <button class="menu">Conteudos</button>
+                </div>
+                
+                <div>
+                    <button class="menu">Rank</button>
+                </div>
+            </div>
+   	 </nav>
+	
+	<div class="tabela">
+		<table id="ranking">
+			<thead>
+			<tr>
+				<td class="titulo, titulo-1">Nome:</td>
+				<td class="nulo"></td>
+				<td class="titulo, titulo-2">Pontuação:</td>
+			</tr>
+			</thead>
+			
+			<tbody>
+	      	 	<td class="primeiro">Aluno1</td>
+	      	 	<td class="nulo">     </td>
+	       	 	<td class="primeiro">50</td>
+	       	</tr>
+	       	<tr>
+	      	 	<td class="primeiro">Aluno2</td>
+	      	 	<td class="nulo">     </td>
+	       	 	<td class="primeiro">40</td>
+	       	</tr>
+	       	<tr>
+	      	 	<td class="primeiro">Aluno Aluno</td>
+	      	 	<td class="nulo">     </td>
+	       	 	<td class="primeiro">30</td>
+	       	</tr>
+	       	<tr>
+	      	 	<td class="primeiro">Aluno Aluno2</td>
+	      	 	<td class="nulo">     </td>
+	       	 	<td class="primeiro">20</td>
+	       	</tr>
+	       	<tr>
+	      	 	<td class="primeiro">Aluno Aluno Aluno</td>
+	      	 	<td class="nulo">     </td>
+	       	 	<td class="primeiro">10</td>
+	       	</tr>
+	       	<tr>
+	      	 	<td class="primeiro">Aluno Aluno Aluno</td>
+	      	 	<td class="nulo">     </td>
+	       	 	<td class="primeiro">00</td>
+	       	</tr>
+	   		</tbody>
+
+		</table>
+	</div>
+
+</body>
+</html>
