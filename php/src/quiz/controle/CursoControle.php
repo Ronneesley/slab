@@ -1,16 +1,23 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Curso.php");
-include(dirname(__FILE__) . "/../modelo/dao/CursoDAO.php");
+use QuizEstatistico\modelo\dto\Curso;
+use QuizEstatistico\modelo\dao\CursoDAO;
 
 /**
  * Description of CursoControle
  *
  * @author aluno
  */
-class CursoControle {    
+class CursoControle extends ControleBase {    
     public function processar($acao){
         switch ($acao){
+            case "novo":
+                $this->mostrarFormularioCadastro();
+                break;
+            case "salvar":
+                $this->salvar();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -29,12 +36,29 @@ class CursoControle {
         }
     }
     
+    public function salvar(){
+        if (isset($_REQUEST["id"]) && $_REQUEST["id"] != ""){
+            $this->alterar();            
+        } else {
+            $this->inserir();
+        }
+    }
+    
+    public function mostrarFormularioCadastro(){
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html");
+    }
+    
     public function inserir(){
         $c = new Curso();
         $c->setNome($_REQUEST["nome"]);
 
         $dao = new CursoDAO();
         $dao->inserir($c);
+        
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html",
+                [ "mensagem" => "Inserido com sucesso" ]);
     }
     
     public function alterar(){
@@ -44,11 +68,19 @@ class CursoControle {
 
         $dao = new CursoDAO();
         $dao->alterar($c);
+        
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html",
+                [ "mensagem" => "Alterado com sucesso" ]);
     }
     
     public function excluir(){
         $dao = new CursoDAO();
         $dao->excluir($_REQUEST["id"]);
+        
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
+                [ "mensagem" => "Excluído com sucesso" ]);
     }
     
     public function listar(){
@@ -64,10 +96,9 @@ class CursoControle {
         $dao = new CursoDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        print_r($c);
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
+                ["curso" => $c, "mensagem" => "Selecionado com sucesso" ]);
     }
 }
-
-$controle = new CursoControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

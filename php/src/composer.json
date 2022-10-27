@@ -1,5 +1,8 @@
 {
     "require": {
         "smarty/smarty": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {"QuizEstatistico\\": "quiz/"}
     }
 }

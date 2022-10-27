@@ -1,6 +1,7 @@
 <?php
+namespace QuizEstatistico\modelo\dao;
 
-include("DAO.php");
+use QuizEstatistico\modelo\dao\DAO;
 
 /**
  * Classe para acesso aos dados do rank

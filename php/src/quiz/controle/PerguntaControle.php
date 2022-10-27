@@ -1,7 +1,8 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Pergunta.php");
-include(dirname(__FILE__) . "/../modelo/dao/PerguntaDAO.php");
+use QuizEstatistico\modelo\dto\Pergunta;
+use QuizEstatistico\modelo\dao\PerguntaDAO;
 
 /**
  * Description of PerguntaControle
@@ -68,7 +69,4 @@ class PerguntaControle {
         print_r($c);
     }
 }
-
-$controle = new PerguntaControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

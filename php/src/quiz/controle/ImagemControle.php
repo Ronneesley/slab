@@ -1,7 +1,8 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Imagem.php");
-include(dirname(__FILE__) . "/../modelo/dao/ImagemDAO.php");
+use QuizEstatistico\modelo\dto\Imagem;
+use QuizEstatistico\modelo\dao\ImagemDAO;
 
 /**
  * Description of ImagemControle
@@ -69,7 +70,4 @@ class ImagemControle {
         print_r($c);
     }
 }
-
-$controle = new ImagemControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

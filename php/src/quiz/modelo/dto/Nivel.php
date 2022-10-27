@@ -1,4 +1,5 @@
 <?php
+namespace QuizEstatistico\modelo\dto;
 
 /**
  * Esta classe mapeia um nivel

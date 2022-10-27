@@ -1,7 +1,8 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Tema.php");
-include(dirname(__FILE__) . "/../modelo/dao/TemaDAO.php");
+use QuizEstatistico\modelo\dto\Tema;
+use QuizEstatistico\modelo\dao\TemaDAO;
 
 /**
  * Description of TemaControle
@@ -67,7 +68,4 @@ class TemaControle {
         print_r($c);
     }
 }
-
-$controle = new TemaControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

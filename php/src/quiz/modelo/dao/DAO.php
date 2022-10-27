@@ -1,4 +1,5 @@
 <?php
+namespace QuizEstatistico\modelo\dao;
 
 /**
  * Description of DAO

@@ -1,0 +1,115 @@
+.paineldiv {
+    margin: 0px 0px 0px 0px ; 
+    padding: 0px; 
+    height: 767px;
+    width: 640px; 
+    background-color: #f55151;
+}
+
+.tabela-login{
+    margin: 200px 50px 0px 275px;
+}
+
+.painel{
+    margin: -10px;
+    padding: -10px;
+    height: 764px;
+    width: auto;
+
+    position: fixed;
+    top: 0%;
+    left: 0%;
+}
+
+.logo{
+    height: 450px;
+    width: 450px;
+    margin: 70px 0px 0px 0px;
+    padding: 0px;
+}
+
+div {
+    display: inline-block;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.cadastro{
+    margin: 0px 0px 0px -5px;
+    background-color: #fff5f5;
+    width: 1000px;
+    height: 767px;
+
+}
+
+input{ 
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button{
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-longo{
+    width: 350px;
+}
+
+h1{
+    margin: 0px;
+    padding: 0px;
+    font-family:Klavika Bold;
+    font-size: 45px;
+}
+
+h5{
+    margin: 0px;
+    padding: 0px;
+    color: rgb(90, 90, 90);
+    font-weight: 100;
+    font-family:Arial;
+}
+
+#tdsubtitulo{
+    border-bottom: groove 0.5px rgb(216, 216, 216);
+    padding: 10px;
+} 
+
+button[type=submit]:hover {
+    background-color: #ec0b0bc4;
+    transition: 2s;
+    color: rgb(230, 230, 230);
+    font-size: 15px;
+}
+
+button[type=submit] {
+    width: 200px;
+    margin: 8px 0;
+    padding: 14px 20px;
+    border-radius: 4px;
+    transition: 2s;
+    background-color: rgb(82, 173, 87);
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    cursor: pointer;
+    border: none;   
+}
+
+#divtitulo{
+    width: 400px;
+    font-size: 15px;
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+    border-style: solid;
+}

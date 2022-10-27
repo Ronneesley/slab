@@ -1,7 +1,8 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Rank.php");
-include(dirname(__FILE__) . "/../modelo/dao/RankDAO.php");
+use QuizEstatistico\modelo\dto\Rank;
+use QuizEstatistico\modelo\dao\RankDAO;
 
 /**
  * Description of RankControle
@@ -75,7 +76,4 @@ class RankControle {
         print_r($c);
     }
 }
-
-$controle = new RankControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

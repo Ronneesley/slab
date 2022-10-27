@@ -1,16 +1,24 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Quiz.php");
-include(dirname(__FILE__) . "/../modelo/dao/QuizDAO.php");
+use QuizEstatistico\modelo\dto\Quiz;
+use QuizEstatistico\modelo\dao\QuizDAO;
+use QuizEstatistico\controle\ControleBase;
 
 /**
  * Description of QuizControle
  *
  * @author Wagner e Mayko
  */
-class QuizControle {
+class QuizControle extends ControleBase {
     public function processar($acao){
         switch ($acao){
+            case "comecar":
+                $this->comecar();
+                break;
+            case "responder":
+                $this->responder();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -27,6 +35,16 @@ class QuizControle {
                 $this->selecionar();
                 break;
         }
+    }
+    
+    public function comecar(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "perguntas.html");
+    }
+    
+    public function responder(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "perguntas.html");
     }
     
     public function inserir(){
@@ -67,7 +85,4 @@ class QuizControle {
         print_r($c);
     }
 }
-
-$controle = new QuizControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

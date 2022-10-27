@@ -1,7 +1,8 @@
 <?php
+namespace QuizEstatistico\controle;
 
-include(dirname(__FILE__) . "/../modelo/dto/Nivel.php");
-include(dirname(__FILE__) . "/../modelo/dao/NivelDAO.php");
+use QuizEstatistico\modelo\dto\Nivel;
+use QuizEstatistico\modelo\dao\NivelDAO;
 
 /**
  * Description of NivelControle
@@ -67,7 +68,4 @@ class NivelControle {
         print_r($c);
     }
 }
-
-$controle = new NivelControle();
-$controle->processar($_REQUEST["acao"]);
 ?>

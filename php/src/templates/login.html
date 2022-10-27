@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+            <meta charset="utf-8">
+            <link rel="shortcut icon" href="logo.png">
+            
+            <title>Quiz Estatístico</title>
+
+            <link rel="stylesheet" href="./css/login.css">
+	</head>
+	<body>        
+            <nav class="painel">
+                <form method="post" action="index.php?controle=principal&acao=logar">
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="paineldiv">
+                                     <center>
+                                        <img src="./imagens/logo.png" class="logo"> 
+                                        <div id="divtitulo">                               
+                                            <h2>Quiz Estatístico</h2>       
+                                        </div>
+                                    </center>   
+                                </div>
+                            </td>
+
+                            <td>
+                                <div class="cadastro">
+                                    <table class="tabela-login" border="0">
+                                        <tr>
+                                            <th><h1>Login</h1></th>
+                                        </tr>
+
+                                        <tr>
+                                            <td id="tdsubtitulo"><center><h5>Acesse sua conta</h5></center></td>
+                                        </tr>
+
+                                        {% if mensagem != "" %}
+                                        <tr>
+                                            <td style="color: white; background-color: red;">{{ mensagem }}</td>
+                                        </tr>
+                                        {% endif %}
+
+                                        <tr>
+                                            <td colspan="2">
+                                                <input type="email" placeholder="Email" class="input-longo" name="email"
+                                                        value="roni.teles@ifgoiano.edu.br" />
+                                            </td>                    
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="2" >
+                                                <input type="password" placeholder="Senha" class="input-longo" name="senha"
+                                                        value="123456" />
+                                            </td>                                        
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <center>
+                                                    <button type="submit">Entrar</button>
+                                                </center>
+                                            </td>
+                                        </tr>                
+                                    </table>
+                                </div> 
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </nav>
+	</body>
+</html> 
