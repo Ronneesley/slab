@@ -1,0 +1,34 @@
+<a href="./index.php?controle=curso&acao=novo">Criar novo curso</a>
+<br />
+
+{{ mensagem }}
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Opções</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in lista %}
+        <tr>
+            <td>
+                {{ item.id }}
+            </td>
+
+            <td>
+                {{ item.nome }}
+            </td>
+
+            <td>
+                <a href="./index.php?controle=curso&acao=selecionar&id={{ item.id }}">Editar</a>
+                <a href="./index.php?controle=curso&acao=excluir&id={{ item.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

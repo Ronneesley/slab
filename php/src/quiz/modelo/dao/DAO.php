@@ -1,6 +1,8 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use mysqli;
+
 /**
  * Description of DAO
  *
@@ -8,7 +10,7 @@ namespace QuizEstatistico\modelo\dao;
  */
 abstract class DAO {
     public function conectar(){
-        $con = new mysqli("localhost", "root", "!@0147#$", "quizestatistico");
+        $con = new mysqli("localhost", "root", "if2022", "quizestatistico");
         if ($con->connect_errno) {
             echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $mysqli->connect_error;
         }

@@ -44,9 +44,10 @@ class CursoControle extends ControleBase {
         }
     }
     
-    public function mostrarFormularioCadastro(){
+    public function mostrarFormularioCadastro($curso = null, $mensagem = "" ){
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html",
+                [ "curso" => $curso, "mensagem" => $mensagem ]);
     }
     
     public function inserir(){
@@ -56,9 +57,7 @@ class CursoControle extends ControleBase {
         $dao = new CursoDAO();
         $dao->inserir($c);
         
-        $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html",
-                [ "mensagem" => "Inserido com sucesso" ]);
+        $this->mostrarFormularioCadastro($c, "Inserido com sucesso");
     }
     
     public function alterar(){
@@ -69,36 +68,30 @@ class CursoControle extends ControleBase {
         $dao = new CursoDAO();
         $dao->alterar($c);
         
-        $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html",
-                [ "mensagem" => "Alterado com sucesso" ]);
+        $this->mostrarFormularioCadastro($c, "Alterado com sucesso");
     }
     
     public function excluir(){
         $dao = new CursoDAO();
         $dao->excluir($_REQUEST["id"]);
         
-        $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
-                [ "mensagem" => "Excluído com sucesso" ]);
+        $this->listar("Excluído com sucesso");
     }
     
-    public function listar(){
+    public function listar($mensagem = ""){
         $dao = new CursoDAO();
         $lista = $dao->listar();
-        
-        print("<pre>");
-        print_r($lista);
-        print("</pre>");
+
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/cursos/listagem.html", 
+                ["mensagem" => $mensagem, "lista" => $lista ]);
     }
     
     public function selecionar(){
         $dao = new CursoDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
-                ["curso" => $c, "mensagem" => "Selecionado com sucesso" ]);
+        $this->mostrarFormularioCadastro($c, "Selecionado com sucesso");
     }
 }
 ?>
