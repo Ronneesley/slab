@@ -21,3 +21,12 @@ if [ $? -eq 0 ]; then
 else
 	echo "ERRO"
 fi
+
+echo -n "Dando permissão na pasta WWW..."
+sudo chmod -R 777 /var/www/html
+
+if [ $? -eq 0 ]; then 
+	echo "OK"
+else
+	echo "ERRO"
+fi
