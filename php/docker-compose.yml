@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  apache:
+    image: 'php:7.2-apache'
+    container_name: php
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./html:/var/www/html
+    depends_on:
+      - mysqldb
+    links:
+      - mysqldb
+
+  mysqldb:
+    container_name: mysqlASW
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '3307:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=biblioteca
