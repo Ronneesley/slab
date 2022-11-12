@@ -1,31 +1,33 @@
 .paineldiv {
     margin: 0px 0px 0px 0px ; 
     padding: 0px; 
-    height: 767px;
-    width: 640px; 
-    background-color: #f55151;
+    height: 0px;
+    width: 0x; 
 }
 
 .tabela-login{
-    margin: 200px 50px 0px 275px;
+    margin: 300px 40px 0px 200px;
 }
 
 .painel{
-    margin: -10px;
-    padding: -10px;
-    height: 764px;
-    width: auto;
-
-    position: fixed;
-    top: 0%;
-    left: 0%;
+    position: relative;
+    background: #ffffff;
+    width: 1600px;
+    height: 850px;
+    box-shadow: 0px 5px 50px 20px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 6%;
+    top: 3%;
 }
 
 .logo{
-    height: 450px;
-    width: 450px;
-    margin: 70px 0px 0px 0px;
+    height: 200px;
+    width: 200px;
+    margin: 0px 0px 0px 0px;
     padding: 0px;
+    top: 15%;
+    left: 19%;
+    position: absolute;
 }
 
 div {
@@ -38,24 +40,27 @@ body{
 }
 
 .cadastro{
-    margin: 0px 0px 0px -5px;
-    background-color: #fff5f5;
-    width: 1000px;
-    height: 767px;
+    height: 850px;
+    width: 800px;
+    margin: -3px 0px 0px -7px;
+    background-color: #eccc11;
+    font-family: Arial;
+
+  
 
 }
 
 input{ 
-    padding: 12px 20px;
-    margin: 8px 0;
+    padding: 20px 20px;
+    margin: 5px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 30px;
     box-sizing: border-box;
 }
 
 button{
-    padding: 12px 20px;
+    padding: 12px 200"20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -63,13 +68,13 @@ button{
 }
 
 .input-longo{
-    width: 350px;
+    width: 400px;
 }
 
 h1{
     margin: 0px;
     padding: 0px;
-    font-family:Klavika Bold;
+    font-family:Arial Bold;
     font-size: 45px;
 }
 
@@ -84,6 +89,7 @@ h5{
 #tdsubtitulo{
     border-bottom: groove 0.5px rgb(216, 216, 216);
     padding: 10px;
+    font-family: Arial;
 } 
 
 button[type=submit]:hover {
@@ -95,9 +101,9 @@ button[type=submit]:hover {
 
 button[type=submit] {
     width: 200px;
-    margin: 8px 0;
+    margin: 40px 0;
     padding: 14px 20px;
-    border-radius: 4px;
+    border-radius: 30px;
     transition: 2s;
     background-color: rgb(82, 173, 87);
     color: rgb(255, 255, 255);
@@ -105,11 +111,18 @@ button[type=submit] {
     cursor: pointer;
     border: none;   
 }
-
-#divtitulo{
-    width: 400px;
-    font-size: 15px;
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-    border-style: solid;
+.Lembrar{
+    position: absolute;
+    top: 60%;
+    left: 14%;
+}
+#esqsenha{
+    position: absolute;
+    left: 27%;
+    top: 60%;
+}
+#imagemlogin{
+    position: absolute;
+    top: 8%;
+    left: 44%;
 }

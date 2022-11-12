@@ -17,8 +17,8 @@
                                 <div class="paineldiv">
                                      <center>
                                         <img src="./imagens/logo.png" class="logo"> 
-                                        <div id="divtitulo">                               
-                                            <h2>Quiz Estatístico</h2>       
+                                        <div>   
+                                                                              
                                         </div>
                                     </center>   
                                 </div>
@@ -28,18 +28,18 @@
                                 <div class="cadastro">
                                     <table class="tabela-login" border="0">
                                         <tr>
-                                            <th><h1>Login</h1></th>
+                                            <th><h1>Bem Vindo</h1></th>
                                         </tr>
 
                                         <tr>
-                                            <td id="tdsubtitulo"><center><h5>Acesse sua conta</h5></center></td>
+                                         
                                         </tr>
 
-                                        {% if mensagem != "" %}
-                                        <tr>
-                                            <td style="color: white; background-color: red;">{{ mensagem }}</td>
+                                        <tr >
+                                            <td id="esqsenha">
+                                                <a href="https://www.google.com.br">Esqueceu a Senha</a>
+                                            </td>
                                         </tr>
-                                        {% endif %}
 
                                         <tr>
                                             <td colspan="2">
@@ -51,10 +51,13 @@
                                         <tr>
                                             <td colspan="2" >
                                                 <input type="password" placeholder="Senha" class="input-longo" name="senha"
-                                                        value="123456" />
+                                                        value="123456"/>
                                             </td>                                        
                                         </tr>
-
+                                            <label class="Lembrar">
+                                                <input type="checkbox"> Lembrar
+                                                <span class="checkmark"></span>
+                                            </label>
                                         <tr>
                                             <td>
                                                 <center>
@@ -67,6 +70,9 @@
                             </td>
                         </tr>
                     </table>
+                        <div id="imagemlogin">
+                            <img src="./imagens/Loginimagem.png" alt="fotologin" height="700" width="1000">
+                        </div>
                 </form>
             </nav>
 	</body>
