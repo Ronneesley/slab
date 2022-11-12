@@ -9,9 +9,15 @@ use QuizEstatistico\modelo\dao\TemaDAO;
  *
  * @author Wagner e Mayko
  */
-class TemaControle {    
+class TemaControle extends ControleBase {    
     public function processar($acao){
         switch ($acao){
+            case "novo":
+                $this->mostrarFormularioCadastro();
+                break;
+            case "salvar":
+                $this->salvar();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -30,12 +36,28 @@ class TemaControle {
         }
     }
     
+    public function salvar(){
+        if (isset($_REQUEST["id"]) && $_REQUEST["id"] != ""){
+            $this->alterar();            
+        } else {
+            $this->inserir();
+        }
+    }
+    
+    public function mostrarFormularioCadastro($tema = null, $mensagem = "" ){
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/temas/cadastro.html",
+                [ "tema" => $tema, "mensagem" => $mensagem ]);
+    }
+    
     public function inserir(){
         $c = new Tema();
         $c->setTema($_REQUEST["tema"]);
 
         $dao = new TemaDAO();
         $dao->inserir($c);
+        
+        $this->mostrarFormularioCadastro($c, "Inserido com sucesso");
     }
     
     public function alterar(){
@@ -45,27 +67,31 @@ class TemaControle {
 
         $dao = new TemaDAO();
         $dao->alterar($c);
+        
+        $this->mostrarFormularioCadastro($c, "Alterado com sucesso");
     }
     
     public function excluir(){
         $dao = new TemaDAO();
         $dao->excluir($_REQUEST["id"]);
+        
+        $this->listar("Excluído com sucesso");
     }
     
-    public function listar(){
+    public function listar($mensagem = ""){
         $dao = new TemaDAO();
         $lista = $dao->listar();
         
-        print("<pre>");
-        print_r($lista);
-        print("</pre>");
+                $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/temas/listagem.html", 
+                ["mensagem" => $mensagem, "lista" => $lista ]);
     }
     
     public function selecionar(){
         $dao = new TemaDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        print_r($c);
+        $this->mostrarFormularioCadastro($c, "Selecionado com sucesso");
     }
 }
 ?>
