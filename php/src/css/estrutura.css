@@ -9,8 +9,8 @@ body {
     width: 800px;
     margin: 0px;
     padding: 10px;
-    height: 0 auto;
-    margin: 0 auto;
+    height: auto;
+    margin: auto;
     border-style: solid;
     background-color: white;
 }
@@ -30,7 +30,7 @@ footer {
     margin: auto;
 }
 
-/* #painel {
+#painel {
     width: 800px;
     background-color: white;
     margin: 0 auto;
