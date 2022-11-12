@@ -2,6 +2,7 @@
 namespace QuizEstatistico\modelo\dao;
 
 use QuizEstatistico\modelo\dao\DAO;
+use QuizEstatistico\modelo\dto\Tema;
 
 /**
  * Classe para acesso aos dados do tema
