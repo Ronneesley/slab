@@ -8,7 +8,7 @@
         
         <link rel="stylesheet" href="./css/menu.css" />
         <link rel="stylesheet" href="./css/layout.css" />
-        <link rel="stylesheet" href="./css/layout_max.css" />
+        <!-- <link rel="stylesheet" href="./css/layout_max.css" /> -->
         
         <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
         <script  src="./js/layout.js"></script>
@@ -17,10 +17,8 @@
     <body>
         {{ include("menu.html") }}
         
-        <!-- {{ include(pagina) }} -->
-        
-        <h1>Titulo</h1>
+        {{ include(pagina) }}
           
-        <!-- {{ include("rodape.html") }} -->
+        {{ include("rodape.html") }}
     </body>
 </html>
