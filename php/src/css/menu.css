@@ -1,0 +1,49 @@
+.menu {
+    overflow: hidden;
+    background-color: #000;
+    color: #9aa6af;
+/*  Prevents Flickering  */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+}
+
+.menu header {
+    height: 60px;
+    position: relative;
+    background-image: linear-gradient(#FFD700, #FFA500);
+    border-bottom: solid;
+    border-color: white;
+    border-width: 0.5px;
+}
+
+.menu ol, 
+.menu ul {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    outline:none;
+}
+
+.menu nav {
+    position: absolute;
+    top: 0;
+    right: 5px;
+}
+.menu nav li {
+    float: left;
+    display: inline-block;
+}
+.menu nav li a {
+	font-size: 14px;
+	color: #fff;
+	padding: 22px 15px;
+	font-weight:600;
+	
+	display: block;
+}
+.menu nav li a:hover {
+    color: #2d2321;
+}

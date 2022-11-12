@@ -1,0 +1,118 @@
+body{
+    margin: auto;
+    padding: auto;
+}
+nav{
+    background-color: rgb(253, 253, 0);
+    height: 75px;
+
+}
+
+#logo{
+
+    height: 70px;
+    width: 70px;
+}
+
+.menu{
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    padding: 8px  8px  8px  8px;
+    height: 30px;
+    width: 120px;
+    cursor: pointer;
+
+}
+
+.menu:active{
+    background-color: rgb(240, 240, 240);
+    border: none;
+    border-radius: 8px;
+    padding: 8px  8px  8px  8px;
+    height: 30px;
+    width: 120px;
+    cursor: pointer;
+
+}
+
+#divmenu{
+    margin: -55px 0px 20px 150px;
+}
+
+#divmenu div {
+    display: inline;
+    padding: 0px 30px 0px 100px;
+    margin: 0px 0px 0px 0px;
+}
+
+#painelperguntas{
+    border-style: solid;
+    background-color: brown;
+    height: 678px;
+}
+
+.questao{
+    background-color: white;
+    height: 80px;
+    width: 745px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+.questao:hover{
+    background-color: rgb(99, 207, 57);
+    height: 80px;
+    width: 745px;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+#pergunta{
+    width: 700px;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+#textopontuacao{
+    color: yellow;
+}
+
+#pontuacao{
+    background-color: white;
+    width: 160px;
+    height: 180px;
+    border-radius: 20px;
+    padding: 30px 0px 0px 0px;
+    font-size: 30px;
+}
+
+#proximo{
+    background-color: rgb(255, 255, 255) ;
+    height: 70px;
+    width: 250px;
+    border-radius: 50px;
+    border-color: black;
+    border-width: 10px;  
+    border-style: double;             
+    border-top: none;
+    border-left: none;
+}
+
+#proximo:hover{
+    height: 70px;
+    width: 248px;
+    border-radius: 50px;
+    background-color: rgb(82, 235, 22);
+    border-color: black;
+    border-width: 7px;  
+    border-style: double;             
+    border-top: none;
+    border-left: none;
+}
+
+#tabelapontuacao{
+    padding: 0px 0px 0px 250px;
+}

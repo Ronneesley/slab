@@ -1,24 +1,21 @@
-<nav>
-    <img src="./imagens/miniatura_logo.png" id="logo">
-    <div id="divmenu">
-        <div>
-            <a class="menu" href="./index.php?controle=principal&acao=inicio">Inicio</a>
-        </div>
-
-        <div>
-            <button class="menu">Perguntas</button>
-        </div>
-
-        <div>
-            <button class="menu">Pontuacao</button>
-        </div>
-
-        <div>
-            <a class="menu" href="./index.php?controle=principal&acao=conteudos">Conteudos</a>
-        </div>
-
-        <div>
-            <button class="menu">Rank</button>
-        </div>
-    </div>
-</nav>
+<div class="menu">
+    <header class="slideRight">
+        <!-- Add "slideRight" class to items that move right when viewing Nav Drawer -->
+        <ul id="navToggle" class="burger slideRight">
+            <!-- Add "slideRight" class to items that move right when viewing Nav Drawer -->
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <h1><a href="#">VI Gincana de Estatística</a></h1>
+    </header>
+    <nav class="slideLeft">
+        <ul>
+            <li><a href="./index.php?controle=principal&acao=inicio"><i class="dgicon-home"></i> Início</a></li>
+            <li><a href="./index.php?controle=principal&acao=conteudos"><i class="dgicon-tools"></i> Conceitos</a></li>
+            <li><a href="./index.php?controle=principal&acao=inicio"><i class="dgicon-vcard"></i> Quiz Estatístico</a></li>
+            <li><a href="./index.php?controle=principal&acao=calculadora"><i class="dgicon-vcard"></i> Calcule</a></li>
+            <li><a href="./index.php?controle=principal&acao=deslogar"><i class="dgicon-window"></i>Deslogar</a></li>
+        </ul>
+    </nav>
+</div>
