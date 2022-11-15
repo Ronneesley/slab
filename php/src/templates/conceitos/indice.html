@@ -4,20 +4,31 @@
     <head>
         <title>Estatística Descritiva</title>
 
-        <meta charset="utf-8" />
-
-        <script src="https://kit.fontawesome.com/f0b645b16a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-        <link rel="stylesheet" href="../../css/indice_principal.css"  />
-         <link rel="stylesheet" href="../../css/titulos_conceitos.css"  />
-
-
-    
+        <link rel="stylesheet" href="../../css/menu.css" />
+        <link rel="stylesheet" href="../../css/layout.css" />
+        <!-- <link rel="stylesheet" href="./css/layout_max.css" /> -->
+        
+        <script src="./node_modules//jquery/dist/jquery.js"></script>
+        <script  src="./js/layout.js"></script>
     </head>
+    
     <body>
+        <div class="menu">
+    <nav class="slideLeft">
+        <ul>
+            <li><a href="./index.php?controle=principal&acao=inicio"><i class="dgicon-home"></i> Início</a></li>
+            <li><a href="./index.php?controle=principal&acao=conteudos"><i class="dgicon-tools"></i> Conceitos</a></li>
+            <li><a href="./index.php?controle=principal&acao=inicio"><i class="dgicon-vcard"></i> Quiz Estatístico</a></li>
+            <li><a href="./index.php?controle=principal&acao=calculadora"><i class="dgicon-vcard"></i> Calcule</a></li>
+            <li><a href="./index.php?controle=principal&acao=deslogar"><i class="dgicon-window"></i>Deslogar</a></li>
+        </ul>
+    </nav>
+</div>
+        
+        <link rel="stylesheet" href="../../css/layout_conceitos.css" />
+<link rel="stylesheet" href="../../css/titulos_conceitos.css" />
         <header>
-             <div id="painel">
+          <div id="painel_conceitos">
                 <h1>Índice de Conteúdos</h1>
                 <ol>
                     <li>
@@ -39,8 +50,6 @@
             </div>
         </header>
 
-        <footer>
-                <p> &copy; 2022, VI Turma de Sistemas de Informação</p>
-        </footer>
+       
     </body>
 </html>
