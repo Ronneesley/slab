@@ -2,7 +2,7 @@ body {
     background-image: url("../imagens/BGlfundo.png");
 }
 
-#painel {
+#painel_conceitos {
     line-height: 1.3;
     width: 800px;
     margin: 0px;
@@ -13,7 +13,7 @@ body {
     background-color: white;
 }
 
-#acessorapido {
+#painel_conceitos #acessorapido {
     margin: 0px;
     padding: 0px;
 }

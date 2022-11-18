@@ -1,18 +1,9 @@
 /* @group Reset */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html, body, .menu div,
+h1, h2, h3, blockquote,
+ol, ul, li,
+menu, nav {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -20,35 +11,31 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
+
 body {
 	line-height: 1;
 }
-ol, ul {
+.menu ol, .menu ul {
 	list-style: none;
 }
-blockquote, q {
+.menu blockquote, .menu q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+.menu blockquote:before, .menu blockquote:after,
+.menu q:before, .menu q:after {
 	content: '';
 	content: none;
 }
-table {
+.menu table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-a{cursor: pointer;}
+.menu a{cursor: pointer;}
 
 /* @end */
 
-body {
-	background-color: #fab200;
+.menu {
+	/*background-color: #fab200;*/
 	
 	
 	font: 12px "Open Sans", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
@@ -67,10 +54,10 @@ body {
 	-ms-text-size-adjust: none;
 	-ms-font-smoothing: antialiased;
 }
-a {text-decoration: none;
+.menu a {text-decoration: none;
 	outline:none;}
 
-.container {
+.menu .container {
 	overflow: hidden;
 	background-color: #000;
 
@@ -83,7 +70,7 @@ a {text-decoration: none;
 
 
 
-header {
+.menu #header_menu {
 	height: 60px;
 	position: relative;
 	background-image: linear-gradient(#FFD700, #FFA500);
@@ -91,7 +78,7 @@ header {
 	border-color: white;
 	border-width: 0.5px;
 }
-header h1 a {
+.menu #header_menu h1 a {
 	color: #fff;
 	text-align: left;
 	font-size: 27px;
@@ -99,9 +86,9 @@ header h1 a {
 	font-weight: bold;
 	padding-left: 20px;
 }
-header h1 a:hover {color: #2d2321;}
+.menu #header_menu h1 a:hover {color: #2d2321;}
 
-.burger {
+.menu .burger {
 	position: absolute;
 	float: left;
 	padding: 10px;
@@ -111,7 +98,7 @@ header h1 a:hover {color: #2d2321;}
 	
 	display: none;
 }
-.burger li {
+.menu .burger li {
 	width: 30px;
 	height: 4px;
 	background-color: #fff;
@@ -119,20 +106,20 @@ header h1 a:hover {color: #2d2321;}
 	margin: 5px 0;
 	
 }
-.burger.open li {background-color: #d9dde1;}
+.menu .burger.open li {background-color: #d9dde1;}
 
-nav {
+.menu nav {
 	position: absolute;
 	top: 0;
 	right: 5px;
 
 }
-nav li {
+.menu nav li {
 	float: left;
 	
 	display: inline-block;
 }
-nav li a {
+.menu nav li a {
 	font-size: 14px;
 	color: #fff;
 	padding: 22px 15px;
@@ -140,83 +127,25 @@ nav li a {
 	
 	display: block;
 }
-nav li a:hover {color: #2d2321;}
+.menu nav li a:hover {color: #2d2321;}
 
 
 
 
 /*  Removable CSS  */
 
-.page{padding: 20px;}
-
-.page {	background-color: #fab200;}
-.placefiller {
-	text-align: center;
-	font-size: 2em;
-	color:#fbf59c;
-}
-.page{min-height: 480px !important; color: #FFFFFF;
-    font-size: 3em;}
+.menu .page{padding: 20px;}
 
 
-.page{
-	background-image: url(img/inicio1.png);
-	background-size: 100%;
-	background-repeat: no-repeat;
-	width: 100% !important;
 
-}
 
-#sobre{
-	margin: 0;
-	font-size: 15px;
-	float: inline-end;
-	background-color: #fab200;
-	margin-top: 0;
-	color: white;
-	text-align: center;
-}
-#sobre:hover{
-	text-decoration: underline;
-}
-
-@media only screen and (min-width: 780px) {
-	  .page{
-	  background-size: 50% !important;
-	}
-
-}
-
-@media only screen and (min-width: 1051px) {
-	  .page{
-	  background-size: 100% !important;
-	}
-}
 
 @media only screen and (max-width: 1050px) {
 
-#sobre{
-	font-size: 10px;
-	margin: 0;
-	float: inline-end;
-	background-color: #fab200;
-	margin-top: 0;
-	margin-left: -20px;
-	color: white;
-	text-align: center !important;
-	
-}
 
-.page{
-  min-height: calc(100vh - 100px) !important;
-  width: 100vw !important;
-  background-image: url(img/inicio.png);
-  background-size: 70%;
-  background-position: center top;
 
-  }
 
-header {
+.menu #header_menu {
 	height: 60px;
 	z-index: 2;
 	background-color: #f04949;
@@ -231,35 +160,35 @@ header {
 	-moz-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
-header h1 a {
+.menu #header_menu h1 a {
 	color: #ffffff;
 	text-align: center;
 	padding-left: 70px;
 	display: block;
 }
-.burger {display: block;}
+.menu .burger {display: block;}
 
 
 /*  Nav Drawer Layout  */
-nav {position: relative;
+.menu nav {position: relative;
 	
 }
 
 
-nav ul {
+.menu nav ul {
 	height: 100%;
 	overflow-y: auto;
 	background-image: linear-gradient(#FFD700, #FFA500);
 
 	
 }
-nav li {
+.menu nav li {
 	display: block;
 	float: none;
 	
 	
 }
-nav li a {
+.menu nav li a {
 	padding: 21px 25px;
 	letter-spacing: 3px;
 	font-size: 14px;
@@ -268,26 +197,26 @@ nav li a {
 	text-decoration: bold;
 
 }
-nav li a.logo {
+.menu nav li a.logo {
 	display: none;
 }
-nav li a.active {
+.menu nav li a.active {
 	color: blaxl;
 	background-color: #141e23;
 }
-nav li a:hover {
+.menu nav li a:hover {
 	color: #fff;
 	background-color: #19252c;
 }
-nav li:first-child a.active,
-nav li:first-child a:hover 
+.menu nav li:first-child a.active,
+.menu nav li:first-child a:hover 
 {border-radius: 10px 0 0 0;}
 
-.page {margin-top: 60px;}
+.menu.page {margin-top: 60px;}
 
 
 /* NAVIGATION ANNIMATION */
-nav {
+.menu nav {
 	width: 93%;
 	height: 100%;
 	position: fixed;
@@ -305,7 +234,7 @@ nav {
 }
 
 /*Nav Expanding Open Effect*/
-nav.open {
+.menu nav.open {
 	opacity: 1;
 
 	-webkit-transform: translate3d(0,0,0)scale(1);
@@ -337,7 +266,7 @@ nav.open {
 }
 
 /*Nav Shrinking Closed Effect*/
-nav.close {
+.menu nav.close {
 	opacity: .3;
 	
 	-webkit-transform: translate3d(5%,0,0)scale(.97);
@@ -371,7 +300,7 @@ nav.close {
 
 
 /* CONTENT ANNIMATION */
-.content {
+.menu .content {
 	/* starting point */
 	-webkit-transform: translate3d(0,0,0);
 	-moz-transform: translate3d(0,0,0);
@@ -380,8 +309,8 @@ nav.close {
 }
 
 /*Content Sliding Open Effect*/
-header.open,
-.content.open 
+.menu #header_menu.open,
+.menu .content.open 
 {   
 	-webkit-transform: translate3d(240px,0,0);
 	-webkit-animation: open .5s ease-in-out;
@@ -409,8 +338,8 @@ header.open,
 }
 
 /*Content Sliding Closed Effect*/
-header.close,
-.content.close 
+.menu #header_menu.close,
+.menu .content.close 
 {
 	-webkit-transform: translate3d(0,0,0);
 	-webkit-animation: close .3s ease-in-out;
