@@ -1,17 +1,34 @@
 <!doctype html>
 <html lang="pt-BR">
 
-	<head>
-		<title>Estatística Descritiva</title>
+<head>
+	<title>Estatística Descritiva</title>
 
-		<meta charset="utf-8" />
-
-		<link rel="stylesheet" href="../css/conteudo.css"  />
-		<link rel="stylesheet" href="../css/layout.css"  />
-	</head>
-	<body>
-		<div id="painel">
-			<header>	
+	<link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+        <!-- <link rel="stylesheet" href="./css/layout_max.css" /> -->
+        
+    <script src="./node_modules//jquery/dist/jquery.js"></script>
+    <script  src="./js/layout.js"></script>
+</head>
+    
+    <body>
+        <div class="menu">
+            <nav class="slideLeft">
+                <ul>
+                    <li><a href="./index.php?controle=principal&acao=inicio"><i class="dgicon-home"></i> Início</a></li>
+                    <li><a href="./index.php?controle=principal&acao=conteudos"><i class="dgicon-tools"></i> Conceitos</a></li>
+                    <li><a href="./index.php?controle=principal&acao=inicio"><i class="dgicon-vcard"></i> Quiz Estatístico</a></li>
+                    <li><a href="./index.php?controle=principal&acao=calculadora"><i class="dgicon-vcard"></i> Calcule</a></li>
+                    <li><a href="./index.php?controle=principal&acao=deslogar"><i class="dgicon-window"></i>Deslogar</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <link rel="stylesheet" href="./css/layout_conceitos.css" />
+        <link rel="stylesheet" href="./css/titulos_conceitos.css" />
+        <header>
+            <div id="painel_conceitos">  
 				<h1>O que é estatística descritiva?</h1>
 				<p>A Estatística é uma ciência cujo campo de aplicação estende-se a muitas áreas do conhecimento
 					humano. Entretanto, um equívoco comum que deparamos nos dias atuais é que, em função da
@@ -38,54 +55,53 @@
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
-			</header>
-			<nav id="cdf">
-				<h2>Conceitos Fundamentais e Definições</h2>
-				<ul>
-					<li>
-						<a href="#amostra" class="conteudo">
-							Amostra
-						</a>
-					</li>
 
-					<li>
-						<a href="#populacao" class="conteudo">
-							População
-						</a>
-					</li>
-					<li>
-						<a href="referencias.html" class="conteudo">
-							Refêrencias
-						</a>
-					</li>
-				</ul>
-			</nav>
+				<nav id="cdf">
+					<h2>Conceitos Fundamentais e Definições</h2>
+					<ul>
+						<li>
+							<a href="#amostra" class="conteudo">
+								Amostra
+							</a>
+						</li>
 
-			<div class="Amostra" id="amostra"></div>
-				<h3>Amostra</h3>
-				<b>Amostra:</b> subconjunto de elementos de uma população. Este subconjunto deve terdimensão menor
-				que o da população e seus elementos devem ser representativos da população. A seleção dos elementos
-				que irão compor a amostra pode ser feita de várias maneiras e irá depender do conhecimento que se
-				tem da população e da quantidade de recursos disponíveis. A estatística inferencial é a área que
-				trata e apresenta a metodologia de amostragem.
-				<br>
-				<iframe width="800" height="400" src="https://www.youtube.com/embed/sniMF9fJ7Wo" title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-					allowfullscreen>
-				</iframe>	
-				<br><br>
-			<div class="População" id="populacao"></div>
-				<h3>População</h3>
-				<b>População:</b> conjunto de elementos que tem pelo menos uma característica em comum. Esta
-				característica deve delimitar corretamente quais são os elementos da população que podem ser
-				animados ou inanimados.
-				<br>
-				<iframe width="800" height="400" src="https://www.youtube.com/embed/LVta8opBCWU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>					
-				</iframe>
-				<br><br>
-			<footer>
-				<p>Copyright &copy; 2022 Turma de Sistemas de Informação</p>
-			</footer>	
-		</div>
+						<li>
+							<a href="#populacao" class="conteudo">
+								População
+							</a>
+						</li>
+						<li>
+							<a href="referencias.html" class="conteudo">
+								Refêrencias
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+				<div class="Amostra" id="amostra"></div>
+					<h3>Amostra</h3>
+					<b>Amostra:</b> subconjunto de elementos de uma população. Este subconjunto deve terdimensão menor
+					que o da população e seus elementos devem ser representativos da população. A seleção dos elementos
+					que irão compor a amostra pode ser feita de várias maneiras e irá depender do conhecimento que se
+					tem da população e da quantidade de recursos disponíveis. A estatística inferencial é a área que
+					trata e apresenta a metodologia de amostragem.
+					<br>
+					<iframe width="800" height="400" src="https://www.youtube.com/embed/sniMF9fJ7Wo" title="YouTube video player"
+						frameborder="0"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen>
+					</iframe>	
+					<br><br>
+				<div class="População" id="populacao"></div>
+					<h3>População</h3>
+					<b>População:</b> conjunto de elementos que tem pelo menos uma característica em comum. Esta
+					característica deve delimitar corretamente quais são os elementos da população que podem ser
+					animados ou inanimados.
+					<br>
+					<iframe width="800" height="400" src="https://www.youtube.com/embed/LVta8opBCWU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>					
+					</iframe>
+					<br><br>
+			</div>
+		</header>
 	</body>
+</html>
