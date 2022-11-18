@@ -7,3 +7,4 @@
 
 cd ../php/src
 composer install
+npm install
