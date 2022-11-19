@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: yellow;
+	height: 100%;
+	width: 100%;
+}
+
+img{
+	margin-top: 60px;
+	margin-bottom: 10px;
+	max-width: 25%;
+	max-height: 25%;
+}
+.formulario{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Poppins', sans-serif;
+	background: white;
+	border-radius: 10px;
+	width: 30%;
+	height: 70%;
+	text-align: center;
+
+}
+
+.Inputbox{
+	text-align: center;
+	border-radius: 10px;
+	position: relative;
+}
+#admin{
+	padding: 3px;
+	border-radius: 6px;
+	width: 50%;
+}
+#senha{
+	padding: 3px;
+	width: 50%;
+	border-radius: 6px;
+}
+.botao-entrar{
+	background: yellow;
+	width: 25%;
+	border: none;
+	padding: 10px;
+	font-size: 15px;
+	cursor: pointer; /** cursos pointer  **/
+	border-radius: 10px;
+	font-weight: bold;
+	text-align: center;
+}
+
