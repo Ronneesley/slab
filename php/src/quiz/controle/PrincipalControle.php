@@ -2,6 +2,7 @@
 namespace QuizEstatistico\controle;
 
 use QuizEstatistico\controle\QuizControle;
+use QuizEstatistico\controle\AdministradorControle;
 
 class PrincipalControle extends ControleBase {
     public function processar($controle, $acao){

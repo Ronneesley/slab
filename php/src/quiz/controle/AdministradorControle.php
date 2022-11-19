@@ -1,6 +1,7 @@
 <?php
 namespace QuizEstatistico\controle;
 
+use QuizEstatistico\controle\ControleBase;
 use QuizEstatistico\modelo\dto\Administrador;
 use QuizEstatistico\modelo\dao\AdministradorDAO;
 
@@ -9,9 +10,12 @@ use QuizEstatistico\modelo\dao\AdministradorDAO;
  *
  * @author Wagner e Mayko
  */
-class AdministradorControle {    
+class AdministradorControle extends ControleBase {    
     public function processar($acao){
         switch ($acao){
+            case "login":
+                $this->mostrarPaginaLogin();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -28,6 +32,11 @@ class AdministradorControle {
                 $this->selecionar();
                 break;
         }
+    }
+    
+    public function mostrarPaginaLogin($mensagem = ""){
+        $pagina = $this->configurarTemplate("admin/login.html");
+        $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);
     }
     
     public function inserir(){
