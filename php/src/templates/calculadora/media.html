@@ -10,10 +10,14 @@
         <p>descricao da média</p>
     </center>
 
-    <form action="./index.php?controle=calculadora" method="post">
-        <label for="frequencia">Colocar os valores desejados entre ponto-e-vírgula: </label></br>
-        <input type="text" id="valor" name="valor" value="10,5; 5,8; 9,8; 3"></br>
+    <form action="./index.php?controle=calculadora&acao=calcular_media" method="post">
+        <label for="valores">Colocar os valores desejados entre ponto-e-vírgula: </label></br>
+        <input type="text" id="valores" name="valores" value="{{ valores }}"></br>
         <input type="submit" value="Enviar"></br></br>
+        
+        {% if resultado != "" %}
+            Resultado: {{ resultado }}        
+        {% endif %}
     </form>
 </article>
     

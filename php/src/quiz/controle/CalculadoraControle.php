@@ -15,15 +15,39 @@ class CalculadoraControle extends ControleBase {
             case "mostrar_calculo_media":
                 $this->mostrarCalculadoraMedia();
                 break;
+            case "calcular_media":
+                $this->calcularMedia();
+                break;
             case "opcoes":
                 $this->mostrarOpcoes();
                 break;
         }        
     }
     
-    public function mostrarCalculadoraMedia(){
+    public function calcularMedia(){
+        $valores = $_POST["valores"];
+        
+        $valores_tratados = str_replace(",", ".", $valores);
+        $valores_tratados = str_replace(";", ",", $valores_tratados);
+        
+        $tmp = "/var/www/html/quizestatistico/php/src/tmp/";
+        $arquivo = fopen("$tmp/media.R", "w+");
+        fwrite($arquivo, "conjunto <- c($valores_tratados)\n");
+        fwrite($arquivo, "mean(conjunto)");
+        
+        exec("Rscript $tmp/media.R", $retorno);
+        
+        $resultado = ltrim($retorno[0], '[1]');
+        
+        fclose($arquivo);
+        
+        $this->mostrarCalculadoraMedia($valores, $resultado);
+    }
+    
+    public function mostrarCalculadoraMedia($valores = "", $resultado = ""){
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "calculadora/media.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/media.html", 
+                ["valores" => $valores, "resultado" => $resultado]);
     }
     
     public function mostrarFrequenciaRelativa(){
