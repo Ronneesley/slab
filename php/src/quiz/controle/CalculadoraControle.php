@@ -12,10 +12,18 @@ class CalculadoraControle extends ControleBase {
             case "mostrar_frequencia_relativa":
                 $this->mostrarFrequenciaRelativa();
                 break;
+            case "mostrar_calculo_media":
+                $this->mostrarCalculadoraMedia();
+                break;
             case "opcoes":
                 $this->mostrarOpcoes();
                 break;
         }        
+    }
+    
+    public function mostrarCalculadoraMedia(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/media.html");
     }
     
     public function mostrarFrequenciaRelativa(){
