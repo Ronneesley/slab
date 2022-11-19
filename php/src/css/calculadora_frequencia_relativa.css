@@ -1,52 +1,42 @@
-article{
+.conteudo article {
     margin: 0%;
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: darkred;
+    background-color: white;
     font-family: sans-serif;
     padding:40px;
 }
-p{
+.conteudo p {
     font-size: medium;
     font-family: sans-serif;
     text-align: justify;
     width: 70%;
-    color: white;
+    color: black;
+    margin-block-end: 40px;
 }
-input[type=submit]{
-    background-color: #04AA6D;
+.conteudo input[type=submit]{
+    background-color: yellow;
     border: none;
-    color: white;
+    color: black;
     padding: 16px 32px;
     margin: 4px 2px;
 }
-label {
-    color: white;
+.conteudo label {
+    color: black;
+    text-align: left;
 }
-body {
-	background-color: yellow;
-	}
-header {
-	padding: 30px;
-	font-family: sans-serif;
-    	text-align: center;
-    	background-color: yellow;
-    	width: 100%;
-    	margin: 0%;
-    	height:100%;
-}
-footer {
+.conteudo header {
+    padding: 30px;
+    font-family: sans-serif;
     text-align: center;
     background-color: yellow;
-    font-family: sans-serif;
-    padding: 30px;
     width: 100%;
     margin: 0%;
     height:100%;
 }
 
-input[type="text"]{
+.conteudo input[type="text"]{
     width: 70%;
     padding: 12px 20px;
     margin: 8px 0;

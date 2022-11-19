@@ -11,44 +11,15 @@
         <!-- <link rel="stylesheet" href="./css/layout_max.css" />  -->
         
        <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
-        <script  src="./js/layout.js"></script> 
+       <script  src="./js/layout.js"></script> 
+       <script  src="./js/menu.js"></script> 
     </head>
     
     <body>
-		{{ include("menu.html") }}
-		<div class="conteudo content slideRight page" id="tela">
-			
+        {{ include("menu.html") }}
         
-			{{ include(pagina) }} 
-          
-			
-		</div>
-		</div>
+        <div class="conteudo content slideRight page" id="tela">
+            {{ include(pagina) }}
+        </div>
     </body>
-    <script>
-
-
-$(function() {
-
-	var items = $('.slideRight, .slideLeft');
-	var content = $('.content');
-	
-	var open = function() {
-							$(items).removeClass('close').addClass('open');
-						}
-	var close = function() { 
-							$(items).removeClass('open').addClass('close');
-						}
-
-	$('#navToggle').click(function(){
-		if (content.hasClass('open')) {$(close)}
-		else {$(open)}
-	});
-	content.click(function(){
-		if (content.hasClass('open')) {$(close)}
-	});
-
-});
-
-    </script>
 </html>
