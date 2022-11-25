@@ -46,7 +46,7 @@ class CursoControle extends ControleBase {
     
     public function mostrarFormularioCadastro($curso = null, $mensagem = "" ){
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html",
+        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
                 [ "curso" => $curso, "mensagem" => $mensagem ]);
     }
     
@@ -83,8 +83,7 @@ class CursoControle extends ControleBase {
         $lista = $dao->listar();
 
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/listagem.html", 
-                ["mensagem" => $mensagem, "lista" => $lista ]);
+        $this->mostrarPaginaLayout($layout, "admin/cursos/listagem.html", ["mensagem" => $mensagem, "lista" => $lista ]);
     }
     
     public function selecionar(){
