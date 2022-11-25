@@ -3,17 +3,17 @@ body {
 }
 
 #painel_conceitos {
-    line-height: 1.3;
     width: 800px;
     margin: 0px;
     padding: 10px;
     height: 0 auto;
     margin: 0 auto;
-    border-style: solid;
+    border: 5px solid;
+    border-color: black;
     background-color: white;
 }
 
-#painel_conceitos #acessorapido {
+ #acessorapido {
     margin: 0px;
     padding: 0px;
 }
