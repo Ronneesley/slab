@@ -1,0 +1,33 @@
+<a href="./index.php?controle=nivel&acao=novo">Criar novo nível</a>
+<br />
+
+{{ mensagem }}
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nível</th>
+            <th>Opçãoes</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        {% for item in lista %}
+        <tr>
+            <td>
+                {{ item.id }}
+            </td>
+            
+            <td>
+                {{ item.nivel }}
+            </td>
+            
+            <td>
+                <a href="./index.php?controle=nivel&acao=selecionar&id={{ item.id }}">Editar</a>
+                <a href="./index.php?controle=nivel&acao=excluir&id={{ item.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

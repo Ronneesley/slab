@@ -9,9 +9,15 @@ use QuizEstatistico\modelo\dao\NivelDAO;
  *
  * @author Wagner e Mayko
  */
-class NivelControle {    
+class NivelControle extends ControleBase {    
     public function processar($acao){
         switch ($acao){
+            case "novo":
+                $this->mostrarFormularioCadastro();
+                break;
+            case "salvar":
+                $this->salvar();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -30,12 +36,27 @@ class NivelControle {
         }
     }
     
-    public function inserir(){
+    public function salvar() {
+        if (isset($_REQUEST["id"]) && $_REQUEST["id"] != "") {
+            $this->alterar();
+        } else {
+            $this->inserir();
+        }
+    }
+    
+    public function mostrarFormularioCadastro($nivel = null, $mensagem = "" ){
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/niveis/cadastro.html", [ "nivel" => $nivel, "mensagem" => $mensagem]);
+    }
+
+        public function inserir(){
         $c = new Nivel();
         $c->setNivel($_REQUEST["nivel"]);
 
         $dao = new NivelDAO();
         $dao->inserir($c);
+        
+        $this->mostrarFormularioCadastro($c, "Inserido com sucesso");
     }
     
     public function alterar(){
@@ -45,27 +66,30 @@ class NivelControle {
 
         $dao = new NivelDAO();
         $dao->alterar($c);
+        
+        $this->mostrarFormularioCadastro($c, "Alterado com sucesso");
     }
     
     public function excluir(){
         $dao = new NivelDAO();
         $dao->excluir($_REQUEST["id"]);
+        
+        $this->listar("Excluído com sucesso");
     }
     
-    public function listar(){
+    public function listar($mensagem = ""){
         $dao = new NivelDAO();
         $lista = $dao->listar();
         
-        print("<pre>");
-        print_r($lista);
-        print("</pre>");
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/niveis/listagem.html", ["mensagem" => $mensagem, "lista" => $lista]);
     }
     
     public function selecionar(){
         $dao = new NivelDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        print_r($c);
+        $this->mostrarFormularioCadastro($c, "Selecionado com sucesso");
     }
 }
 ?>

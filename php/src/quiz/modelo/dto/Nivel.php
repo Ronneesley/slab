@@ -28,7 +28,7 @@ class Nivel {
     }
 
     public function setNivel($nivel): void {
-        $this->nome = $nivel;
+        $this->nivel = $nivel;
     }
 
 }

@@ -10,10 +10,11 @@
         
         <form method="post" action="./index.php?controle=curso&acao=salvar">
             {{ mensagem }}
+            <br /><br />
             
             <div>
                 <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ curso.id }}" />
+                <input type="text" name="id" id="id" value="{{ curso.id }}" disabled/>
                 <br /><br />
                 
                 <label for="nome">Nome</label>

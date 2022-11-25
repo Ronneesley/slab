@@ -60,7 +60,7 @@ input{
 }
 
 button{
-    padding: 12px 200"20px;
+    padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -93,7 +93,7 @@ h5{
 } 
 
 button[type=submit]:hover {
-    background-color: #ec0b0bc4;
+    background-color: #ec0b0b;
     transition: 2s;
     color: rgb(230, 230, 230);
     font-size: 15px;

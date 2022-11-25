@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastro de Temas</title>
+        <title>Cadastro de Niveis</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Cadastro de Temas</h1>
+        <h1>Cadastro de Niveis</h1>
         
-        <form method="post" action="./index.php?controle=tema&acao=salvar">
-            {{ mensagem }}
+        <form method="post" action="./index.php?controle=nivel&acao=salvar">
+            {{ mensagem}}
             <br /><br />
             
             <div>
                 <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ tema.id }}" disabled/>
+                <input type="text" name="id" id="id" value="{{ nivel.id }}" disabled/>
                 <br /><br />
-                
-                <label for="tema">Nome</label>
-                <input type="text" name="tema" id="tema" value="{{ tema.tema }}" />
+                   
+                <label for="nivel">Nível</label>
+                <input type="text" name="nivel" id="nivel" value="{{ nivel.nivel }}" />
                 <br /><br />
                 
                 <input type="submit" value="Salvar" />
             </div>
+            
         </form>
     </body>
 </html>
