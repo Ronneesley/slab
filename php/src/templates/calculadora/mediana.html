@@ -5,30 +5,27 @@
     <link rel="stylesheet" href="./css/stylemediana.css">
 
     <div class="planodefundo">
-    <h1>Cálculo da mediana</h1> <br> <br>
-
-    <form >
-        <div class="campo">
-        <label  for="name">Insira os valores:</label> 
-        <input type="text" size="40" id="name" name="name" required> </div> <br>
-
+        <header>
+            <h1>Cálculo da mediana</h1>
+        </header>
         
-        <div class="campo">
-        <label  for="name">Quantidades de elementos:</label> 
-        <input type="text" size="15" id="name" name="name" required> </div> <br>
-
-        <button class="botao" type="submit" onsubmit="">Calcular</button> <br>
-		<br>
-
-        <p>Resultado:</p> <br> <br>
+        <article>
+            <img src="logo.png" width="360" height="350"></br>
+            <center>
+                <p> Observação: <br>
+                    Se houver uma quantidade ímpar de valores numéricos, a mediana será o valor central do conjunto numérico. <br>
+                    Se a quantidade de valores for um número par, devemos fazer uma média aritmética dos dois números centrais, 
+                    e esse resultado será o valor da mediana.</p> <br><br>
+            </center>
         
-    </form>
-        <p>
-            Observação: <br>
-            Se houver uma quantidade ímpar de valores numéricos, a mediana será o valor central do conjunto numérico. <br>
-            Se a quantidade de valores for um número par, devemos fazer uma média aritmética dos dois números centrais, 
-            e esse resultado será o valor da mediana.
-            
-        </p>
-    </div>
-</form>
+            <form action="./index.php?controle=calculadora&acao=calcular_mediana" method="post">
+                <label for="valores">Colocar os valores desejados entre ponto-e-vírgula: </label></br>
+                <input type="text" id="valores" name="valores" value="{{ valores }}"></br>
+                <input type="submit" value="Enviar"></br></br>
+                
+                {% if resultado != "" %}
+                    Resultado: {{ resultado }}        
+                {% endif %}
+            </form>
+        </article> 
+            </div>
