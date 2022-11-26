@@ -2,6 +2,7 @@
 namespace QuizEstatistico\modelo\dao;
 
 use QuizEstatistico\modelo\dao\DAO;
+use QuizEstatistico\modelo\dto\Questao;
 
 /**
  * Classe para acesso aos dados da Questão
@@ -13,7 +14,7 @@ class QuestaoDAO extends DAO {
     public function inserir($questao){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO questoes(nivel,curso, tema,pergunta,respota_certa,resposta_errada1,resposta_errada2,resposta_errada3,explicacao) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt = $con->prepare("INSERT INTO questoes(nivel,curso, tema,pergunta,resposta_certa,resposta_errada1,resposta_errada2,resposta_errada3,explicacao) VALUES (?,?,?,?,?,?,?,?,?)");
         $stmt->bind_param("iiissssss", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errrada1(),$questao->getResposta_errrada2(),$questao->getResposta_errrada3(),$questao->getEplicacao());
         $stmt->execute();
         
@@ -23,7 +24,7 @@ class QuestaoDAO extends DAO {
     public function alterar($questao){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update questao set nivel = ?,curso = ?, tema = ?,pergunta = ?,respota_certa = ?,resposta_errada1 = ?,resposta_errada2 = ?,resposta_errada3 = ?,explicacao = ? where id = ?");
+        $stmt = $con->prepare("update questao set nivel = ?,curso = ?, tema = ?,pergunta = ?,resposta_certa = ?,resposta_errada1 = ?,resposta_errada2 = ?,resposta_errada3 = ?,explicacao = ? where id = ?");
         $stmt->bind_param("iiissssssi", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errrada1(),$questao->getResposta_errrada2(),$questao->getResposta_errrada3(),$questao->getEplicacao(),$questao->getId());
         $stmt->execute();        
         

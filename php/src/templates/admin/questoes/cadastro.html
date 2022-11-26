@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cadastro de Questõs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Cadastro de Questões</h1>
+        
+        <form method="post" action="./index.php?controle=nivel&acao=salvar">
+            {{ mensagem}}
+            <br /><br />
+            
+            <div>
+                <label for="id">ID</label>
+                <input type="text" name="id" id="id" value="{{ nivel.id }}" disabled/>
+                <br /><br />
+                   
+                <div>
+                <label for="nivel">Nível</label>
+                <br /><br />
+                {% for item in niveis %}
+                <INPUT TYPE="RADIO" NAME="nivel" VALUE="{{ niveis.id }}"> {{ niveis.nivel }}
+                {% endfor %}
+                </div>
+                
+                <div>
+                <label for="curso">Curso</label>
+                <br /><br />
+                {% for item in cursos %}
+                <INPUT TYPE="RADIO" NAME="cursos" VALUE="{{ cursos.id }}"> {{ cursos.nome }}              
+                {% endfor %}
+                </div> 
+                
+                <div>
+                <label for="tema">Tema</label>
+                <br /><br />
+                {% for item in temas %}
+                <INPUT TYPE="RADIO" NAME="temas" VALUE="{{ temas.id }}"> {{ temas.nome }}   
+                {% endfor %}
+                </div>  
+                
+                <label for="pergunta">Pergunta</label>
+                <input type="text" name="pergunta" id="pergunta" value="{{ questao.pergunta }}" />
+                <br /><br />
+  
+                <label for="resposta_certa">Resposta certa</label>
+                <input type="text" name="resposta_certa" id="resposta_certa" value="{{ questao.resposta_certa }}" />
+                <br /><br />
+                
+                <label for="resposta_errada1">Resposta Errada 1</label>
+                <input type="text" name="resposta_errada1" id="resposta_errada1" value="{{ questao.resposta_errada1 }}" />
+                <br /><br />
+                
+                <label for="resposta_errada1">Resposta Errada 1</label>
+                <input type="text" name="resposta_errada1" id="resposta_errada1" value="{{ questao.resposta_errada1 }}" />
+                <br /><br />
+                
+                <label for="resposta_errada2">Resposta Errada 2</label>
+                <input type="text" name="resposta_errada2" id="resposta_errada2" value="{{ questao.resposta_errada2 }}" />
+                <br /><br />
+
+                <label for="resposta_errada3">Resposta Errada 3</label>
+                <input type="text" name="resposta_errada3" id="resposta_errada3" value="{{ questao.resposta_errada3 }}" />
+                <br /><br />
+                
+                <label for="explicacao">Explicação</label>
+                <input type="text" name="explicacao" id="explicacao" value="{{ questao.explicacao }}" />
+                <br /><br />                                   
+                               
+                    
+                  <input type="submit" value="Salvar" />
+            </div>
+            
+        </form>
+    </body>
+</html>
