@@ -1,0 +1,136 @@
+.texto{
+   color: black;
+   top: 20px;
+    
+}
+
+.conteudo #A{
+    position: absolute;
+    top: 250px;
+    left: 350px;
+}
+
+.conteudo #B{
+    position: absolute;
+    top: 325px;
+    left: 350px;
+}
+
+.conteudo #C{
+    position: absolute;
+    top: 250px;
+    left: 850px;
+}
+
+.conteudo #D{
+    position: absolute;
+    top: 325px;
+    left: 850px;
+}
+
+.button {
+    
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 20px 200px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    
+}
+.buttonprox{
+    background-color: #534caf;
+    border: none;
+    color: white;
+    padding: 20px 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    position: absolute;
+    top: -20px;
+    left: 600px;
+}
+.conteudo p{
+    font-family: arial;
+    font-size: 16px;
+}
+.conteudo #prox{
+    position: absolute;
+    top: 550px;
+    left: 700px;
+}
+.conteudo .planodefundo{
+    width: 1920px;
+    height: 1000px;
+    background: rgb(165, 42, 42);
+    position: fixed;
+    margin: -21px 0px 0px -21px;
+} 
+.conteudo #tabelapergunta{
+    top: 30%;
+    left: 100px;
+    position: absolute;
+    
+}
+.conteudo #logopergunta{
+    position: absolute;
+    top:8%;
+    left:750px;
+}
+.conteudo #fundopergunta{
+    width: 1300px;
+    height: 150px;
+    border-radius: 60px;
+    top: 30%;
+    position: absolute;
+    left: 130%;
+}
+
+.texto1{
+    background-color: white;
+    color: black;
+    width: 1350px;
+    height: 150px;
+    position: absolute;
+    left: 150px;
+    top: 5%;
+    border-radius: 25px;
+    
+}
+#tx{
+    padding: 15px 8px 15px 15px;
+}
+
+#txtpontuacao{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 1400px;
+    top: -250px;
+}
+#vlpontuacao{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    left: 1570px;
+    top: -250px;
+}
+
+#opcao{
+    width: 200px;
+    height: 200px;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    left: 710px;
+    top: 170px;
+}
