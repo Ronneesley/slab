@@ -9,7 +9,56 @@ use QuizEstatistico\modelo\dto\Questao;
  * Data Access Object (DAO) *
  * @author Mayko e Wagner
  */
-class QuestaoDAO extends DAO {    
+class QuestaoDAO extends DAO {
+    
+    public function sortearQuestao($ids_questoes_respondidas = array()){
+        $con = $this->conectar();
+        
+        $filtro = "";
+        
+        if (!empty($ids_questoes_respondidas)){
+            $ids = "";
+            $i = 0;
+            foreach ($ids_questoes_respondidas as $id){
+                if ($i > 0){
+                    $ids .= ", ";
+                }
+
+                $ids .= $id;
+                $i++;
+            }
+            
+            $filtro = " where id not in (" . $ids . ") ";
+        }
+        
+        $sql = "select q.*, rand() as sorteio "
+                . "from questoes as q " . $filtro
+                . " order by sorteio limit 1";
+        
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        
+        if ($dados = $res->fetch_assoc()){
+            $c = new Questao();
+            $this->preencherQuestao($c, $dados);
+        }
+        
+        return $c;
+    }
+    
+    private function preencherQuestao($c, $dados){
+        $c->setId($dados["id"]);
+        $c->setNivel($dados["nivel"]);
+        $c->setCurso($dados["curso"]);
+        $c->setTema($dados["tema"]);
+        $c->setPergunta($dados["pergunta"]);
+        $c->setResposta_certa($dados["resposta_certa"]);
+        $c->setResposta_errada1($dados["resposta_errada1"]); 
+        $c->setResposta_errada2($dados["resposta_errada2"]);            
+        $c->setResposta_errada3($dados["resposta_errada3"]);
+        $c->setExplicacao($dados["explicacao"]);
+    }
     
     public function inserir($questao){
         $con = $this->conectar();
@@ -40,19 +89,9 @@ class QuestaoDAO extends DAO {
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        while ($dados = $res->fetch_assoc()){
             $c = new Questao();
-            $c->setId($dados["id"]);
-            $c->setNivel($dados["nivel"]);
-            $c->setCurso($dados["curso"]);
-            $c->setTema($dados["tema"]);
-            $c->setPergunta($dados["pergunta"]);
-            $c->setResposta_certa($dados["resposta_certa"]);
-            $c->setResposta_errada1($dados["resposta_errada1"]); 
-            $c->setResposta_errada2($dados["resposta_errada2"]);            
-            $c->setResposta_errada3($dados["resposta_errada3"]);
-            $c->setExplicacao($dados["explicacao"]);
-
+            $this->preencherQuestao($c, $dados);
             
             array_push($lista, $c);
         }

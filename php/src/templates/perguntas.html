@@ -6,52 +6,38 @@
                     <table>
                         <tr>
                             <td>
-                                <p id="pergunta">Perguntas: Texto texto texto texto texto texto texto texto texto texto 
-                                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                                texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-                                </p>
+                                <p id="pergunta">{{ questao.pergunta }}</p>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
                                 <center>
-                                    <button class="questao">A</button>
+                                    <button class="questao">a) {{ letrasOpcoes[0] }}</button>
                                 </center>    
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <center>
-                                    <button class="questao">B</button>
+                                    <button class="questao">b) {{ letrasOpcoes[1] }}</button>
                                 </center>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <center>
-                                    <button class="questao" >C</button>
+                                    <button class="questao" >c) {{ letrasOpcoes[2] }}</button>
                                 </center>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <center>
-                                    <button class="questao">D</button>
+                                    <button class="questao">d) {{ letrasOpcoes[3] }}</button>
                                 </center>
                             </td>
                         </tr>  
-                        <tr>
-                            <td>
-                                <center>
-                                    <button class="questao">E</button>
-                                </center>
-                            </td>
-                        </tr>                                     
-
                     </table>
                 </td>
                 <td>
@@ -74,16 +60,8 @@
                             <td>
                                 <center>
                                     <div id="pontuacao">
-                                        <h1>20</h1>
+                                        <h1>{{ pontuacao }}</h1>
                                     </div>
-                                </center>
-                            </td>
-                        </tr>                            
-
-                        <tr>
-                            <td style="padding: 25px;">
-                                <center>
-                                    <button typ="submit" id="proximo">Proximo</button>
                                 </center>
                             </td>
                         </tr>                            
