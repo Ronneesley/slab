@@ -1,0 +1,36 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<form method="post" action="./index.php?controle=quiz&acao=responder">
+    <link rel="stylesheet" href="./css/stylecoeficiente.css">
+
+    <div class="planodefundo">
+        <h1>Cálculo de coeficiente de variação</h1> <br> <br>
+
+        <form >
+            <div class="campo">
+            <label  for="name">Insira o coeficiente de variação:</label> 
+            <input type="text" size="40" value="(CV)" id="name" name="name" required> </div> <br>
+
+        
+            <div class="campo">
+            <label  for="name">Insira o desvio padrão:</label> 
+            <input type="text" size="40" value="(s)" id="name" name="name" required> </div> <br>
+            
+            
+            <div class="campo">
+            <label  for="name">Insira a média dos dados analisados:</label> 
+            <input type="text" size="40" value="(X)" id="name" name="name" required> </div> <br> <br>
+        </form>
+        <button class="botao" type="submit" onsubmit="">Calcular</button> <br> <br>
+
+        <p>
+            Resultado:
+        </p> <br>
+        <p>
+            Observações: <br>
+            Resultado menor ou igual a 15% → baixa dispersão: dados homogêneos. <br>
+            Resultado entre 15 e 30% → média dispersão. <br>
+            Resultado maior que 30% → alta dispersão: dados heterogêneos. <br>
+        </p>
+    </div>

@@ -5,11 +5,16 @@ h1, h2, h3, blockquote,
 ol, ul, li,
 menu, nav {
 	margin: 0;
-	padding: 0;
+	padding: 1px;
 	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+       
+}
+h1{
+    font-family: arial;
+    font-size: 30px;
 }
 
 body {
@@ -131,15 +136,6 @@ body {
 
 
 
-
-/*  Removable CSS  */
-
-.menu .page{padding: 20px;}
-
-
-
-
-
 @media only screen and (max-width: 1050px) {
 
 
@@ -212,7 +208,7 @@ body {
 .menu nav li:first-child a:hover 
 {border-radius: 10px 0 0 0;}
 
-.menu.page {margin-top: 60px;}
+
 
 
 /* NAVIGATION ANNIMATION */

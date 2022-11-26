@@ -15,6 +15,12 @@ class CalculadoraControle extends ControleBase {
             case "mostrar_calculo_media":
                 $this->mostrarCalculadoraMedia();
                 break;
+            case "mostrar_calculo_mediana":
+                $this->mostrarCalculadoraMediana();
+                break;
+            case "mostrar_calculo_coeficiente_variacao":
+                $this->mostrarCalculadoraCoeficienteVariacao();
+                break;
             case "calcular_media":
                 $this->calcularMedia();
                 break;
@@ -30,12 +36,12 @@ class CalculadoraControle extends ControleBase {
         $valores_tratados = str_replace(",", ".", $valores);
         $valores_tratados = str_replace(";", ",", $valores_tratados);
         
-        $tmp = "/var/www/html/quizestatistico/php/src/tmp/";
-        $arquivo = fopen("$tmp/media.R", "w+");
+        //$tmp = "/var/www/html/quizestatistico/php/src/tmp/";
+        $arquivo = fopen("media.R", "w+");
         fwrite($arquivo, "conjunto <- c($valores_tratados)\n");
         fwrite($arquivo, "mean(conjunto)");
         
-        exec("Rscript $tmp/media.R", $retorno);
+        exec("media.R", $retorno);
         
         $resultado = ltrim($retorno[0], '[1]');
         
@@ -47,6 +53,17 @@ class CalculadoraControle extends ControleBase {
     public function mostrarCalculadoraMedia($valores = "", $resultado = ""){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/media.html", 
+                ["valores" => $valores, "resultado" => $resultado]);
+    }
+    
+    public function mostrarCalculadoraMediana($valores = "", $resultado = ""){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/mediana.html", 
+                ["valores" => $valores, "resultado" => $resultado]);
+    }
+    public function mostrarCalculadoraCoeficienteVariacao($valores = "", $resultado = ""){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/coeficiente de variação.html", 
                 ["valores" => $valores, "resultado" => $resultado]);
     }
     

@@ -1,0 +1,34 @@
+.conteudo .planodefundo{
+  background-color: #f6f2ef;
+  width: 1729px;
+  height: 780.2px;
+  padding: 0px;
+}
+
+.conteudo h1{
+    text-align: center;
+    color: black;
+    font-family: arial;
+  }
+  
+.conteudo .campo{
+    border-radius: 50px;
+    color: black;
+    font-family: arial;
+    margin-left: 3px;
+    font-size: 20px;
+  }
+
+.conteudo  p{
+    font-size: 20px;
+    color: black;
+    font-family: arial;
+    margin-left: 3px;
+  }
+
+.conteudo  .botao{
+    margin-left: 500px;
+    border-radius: 0.5cm;
+    width: 100px;
+    height: 30px;
+  }
