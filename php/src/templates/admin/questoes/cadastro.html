@@ -21,7 +21,8 @@
                 <label for="nivel">Nível</label>
                 <br /><br />
                 {% for item in niveis %}
-                <INPUT TYPE="RADIO" NAME="nivel" VALUE="{{ niveis.id }}"> {{ niveis.nivel }}              
+                <INPUT TYPE="RADIO" NAME="nivel" VALUE="{{ niveis.id }}"> {{ niveis.nivel }}
+                {% endfor %}
                 </div>
                 
                 <div>
@@ -29,13 +30,15 @@
                 <br /><br />
                 {% for item in cursos %}
                 <INPUT TYPE="RADIO" NAME="cursos" VALUE="{{ cursos.id }}"> {{ cursos.nome }}              
+                {% endfor %}
                 </div> 
                 
                 <div>
                 <label for="tema">Tema</label>
                 <br /><br />
                 {% for item in temas %}
-                <INPUT TYPE="RADIO" NAME="temas" VALUE="{{ temas.id }}"> {{ temas.nome }}              
+                <INPUT TYPE="RADIO" NAME="temas" VALUE="{{ temas.id }}"> {{ temas.nome }}   
+                {% endfor %}
                 </div>  
                 
                 <label for="pergunta">Pergunta</label>
