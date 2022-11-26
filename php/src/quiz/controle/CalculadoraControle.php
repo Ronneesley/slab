@@ -36,12 +36,12 @@ class CalculadoraControle extends ControleBase {
         $valores_tratados = str_replace(",", ".", $valores);
         $valores_tratados = str_replace(";", ",", $valores_tratados);
         
-        //$tmp = "/var/www/html/quizestatistico/php/src/tmp/";
-        $arquivo = fopen("media.R", "w+");
+        $tmp = "/var/www/html/quizestatistico/php/src/tmp/";
+        $arquivo = fopen("".$tmp."media.R", "w+");
         fwrite($arquivo, "conjunto <- c($valores_tratados)\n");
         fwrite($arquivo, "mean(conjunto)");
         
-        exec("media.R", $retorno);
+        exec("Rscript ".$tmp."media.R", $retorno);
         
         $resultado = ltrim($retorno[0], '[1]');
         
