@@ -1,0 +1,64 @@
+<a href="./index.php?controle=nivel&acao=novo">Criar novo nível</a>
+<br />
+
+{{ mensagem }}
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nível</th>
+            <th>Curso</th>
+            <th>Tema</th>
+            <th>Pergunta</th>
+            <th>Resposta Certa</th>            
+            <th>Resposta Errada 1</th>            
+            <th>Resposta Errada 2</th>            
+            <th>Resposta Errada 3</th>
+            <th>Explicação</th>            
+            <th>Opçãoes</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        {% for item in lista %}
+        <tr>
+            <td>
+                {{ item.id }}
+            </td>
+            
+            <td>
+                {{ item.nivel }}
+            </td>
+            <td>
+                {{ item.curso }}
+            </td>
+            <td>
+                {{ item.tema }}
+            </td>
+            <td>
+                {{ item.pergunta }}
+            </td>
+            <td>
+                {{ item.resposta_certa }}
+            </td>
+            <td>
+                {{ item.reposta_errada1 }}
+            </td>
+            <td>
+                {{ item.reposta_errada2 }}
+            </td>
+            <td>
+                {{ item.reposta_errada3 }}
+            </td>            
+            <td>
+                {{ item.explicacao }}
+            </td>
+            <td>
+                <a href="./index.php?controle=questao&acao=selecionar&id={{ item.id }}">Editar</a>
+                <a href="./index.php?controle=questao&acao=excluir&id={{ item.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
