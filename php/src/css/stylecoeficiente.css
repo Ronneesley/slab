@@ -1,34 +1,50 @@
-.conteudo .planodefundo{
-  background-color: #f6f2ef;
-  width: 1729px;
-  height: 780.2px;
-  padding: 0px;
+.conteudo article {
+  margin: 0%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+  font-family: sans-serif;
+  padding:40px;
+}
+.conteudo p {
+  font-size: medium;
+  font-family: sans-serif;
+  text-align: justify;
+  width: 70%;
+  color: black;
+  margin-block-end: 40px;
+}
+.conteudo input[type=submit]{
+  background-color: yellow;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  margin: 4px 2px;
+}
+.conteudo label {
+  color: black;
+  text-align: left;
+}
+.conteudo header {
+  padding: 30px;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: yellow;
+  width: 100%;
+  margin: 0%;
+  height:100%;
 }
 
-.conteudo h1{
-    text-align: center;
-    color: black;
-    font-family: arial;
-  }
-  
-.conteudo .campo{
-    border-radius: 50px;
-    color: black;
-    font-family: arial;
-    margin-left: 3px;
-    font-size: 20px;
-  }
+.conteudo input[type="text"]{
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
 
-.conteudo  p{
-    font-size: 20px;
-    color: black;
-    font-family: arial;
-    margin-left: 3px;
-  }
-
-.conteudo  .botao{
-    margin-left: 500px;
-    border-radius: 0.5cm;
-    width: 100px;
-    height: 30px;
-  }
+.conteudo .planodefundo{
+background-color: #f6f2ef;
+width: 1729px;
+height: 780.2px;
+padding: 0px;
+}

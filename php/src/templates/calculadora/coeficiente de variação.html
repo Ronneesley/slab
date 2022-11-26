@@ -5,32 +5,38 @@
     <link rel="stylesheet" href="./css/stylecoeficiente.css">
 
     <div class="planodefundo">
-        <h1>Cálculo de coeficiente de variação</h1> <br> <br>
-
-        <form >
-            <div class="campo">
-            <label  for="name">Insira o coeficiente de variação:</label> 
-            <input type="text" size="40" value="(CV)" id="name" name="name" required> </div> <br>
-
+        <header>
+            <h1>Cálculo coeficiente de variação</h1>
+        </header>
         
-            <div class="campo">
-            <label  for="name">Insira o desvio padrão:</label> 
-            <input type="text" size="40" value="(s)" id="name" name="name" required> </div> <br>
-            
-            
-            <div class="campo">
-            <label  for="name">Insira a média dos dados analisados:</label> 
-            <input type="text" size="40" value="(X)" id="name" name="name" required> </div> <br> <br>
-        </form>
-        <button class="botao" type="submit" onsubmit="">Calcular</button> <br> <br>
+        <article>
+            <img src="logo.png" width="360" height="350"></br>
+            <center>
+                <p>
+                    Observações: <br>
+                    Resultado menor ou igual a 15% → baixa dispersão: dados homogêneos. <br>
+                    Resultado entre 15 e 30% → média dispersão. <br>
+                    Resultado maior que 30% → alta dispersão: dados heterogêneos. <br>
+                </p>
+            </center>
+        
+            <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
+                <label for="valores">Insira o coeficiente de variação: </label></br>
+                <input type="text" id="valores" name="valores" value="{{ valores }}"><br> <br>
+                
+            <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
+                <label for="valores">Insira o desvio padrão: </label></br>
+                <input type="text" id="valores" name="valores" value="{{ valores }}"><br> <br>
 
-        <p>
-            Resultado:
-        </p> <br>
-        <p>
-            Observações: <br>
-            Resultado menor ou igual a 15% → baixa dispersão: dados homogêneos. <br>
-            Resultado entre 15 e 30% → média dispersão. <br>
-            Resultado maior que 30% → alta dispersão: dados heterogêneos. <br>
-        </p>
+            <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
+                <label for="valores">Insira a média dos dados analisados: </label></br>
+                <input type="text" id="valores" name="valores" value="{{ valores }}"></br>
+                <input type="submit" value="Enviar"> <br> <br>
+                
+                {% if resultado != "" %}
+                    Resultado: {{ resultado }}        
+                {% endif %}
+            </form>
+        </article> 
     </div>
+</form>
