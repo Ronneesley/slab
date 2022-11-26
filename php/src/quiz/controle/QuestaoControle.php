@@ -3,6 +3,7 @@ namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\dto\Questao;
 use QuizEstatistico\modelo\dao\QuestaoDAO;
+use QuizEstatistico\modelo\dao\NivelDAO;
 
 /**
  * Description of QuestãoControle
@@ -44,10 +45,12 @@ class QuestaoControle extends ControleBase {
         }
     }
     
-    public function mostrarFormularioCadastro($questao = null, $mensagem = ""){
+    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){
+        $nivelDao = new NivelDAO();      
+        $niveis = $nivelDao->listar();
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/questoes/cadastro.html",
-        [ "questao" => $questao, "mensagem" => $mensagem ]);
+        [ "questao" => $questao, "mensagem" => $mensagem,"niveis"=>$niveis ]);
     }
 
     public function inserir(){
