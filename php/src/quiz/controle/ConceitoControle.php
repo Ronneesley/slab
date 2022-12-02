@@ -17,7 +17,7 @@ class ConceitoControle extends ControleBase {
             'distribuicao.html', 'estatistica_descritiva.html', 'estrutura_conteudo_padrao.html', 
             'grafico.html', 'grafico_quantitativa_continua.html', 'grafico_quantitativa_discreta.html', 
             'graficos_variaveis_qualitativas.html', 'indice.html', 'medidas_descritivas.html', 
-            'medidas_dispersao.html', 'medidas_separatrizes.html', 'pesquisa_amostragem_conjuntos.html', 'tabelas.html', 
+            'medidas_dispersao.html', 'medidas_separatrizes.html', 'conceitos_estatisticos.html', 'tabelas.html', 
             'variaveis.html', 'variaveis_quantitatiivas_continuas.html');
         
         if (in_array($conceito . ".html", $paginas)) {
