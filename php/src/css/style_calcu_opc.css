@@ -15,4 +15,9 @@ h1{
     font-family: arial;
     font-size: 16px;
     margin-left: 768px;
+    text-align: center;
+}
+
+li{
+    font-size: 20px;
 }
