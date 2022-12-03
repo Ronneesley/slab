@@ -1,7 +1,6 @@
 .texto{
    color: black;
    top: 20px;
-    
 }
 
 .conteudo #A{
@@ -29,7 +28,6 @@
 }
 
 .button {
-    
     background-color: #ffffff;
     border: none;
     color: rgb(0, 0, 0);
@@ -73,7 +71,7 @@
     height: 1000px;
     background: rgb(165, 42, 42);
     position: fixed;
-    margin: -21px 0px 0px -21px;
+    margin: 0px;
 } 
 .conteudo #tabelapergunta{
     top: 30%;

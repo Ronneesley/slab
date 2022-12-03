@@ -1,134 +1,88 @@
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<link rel="stylesheet" href="./css/quiz.css">
+
+<script>
+    function responder(letra){
+        $("#resposta").val(letra);
+        
+        $("#acao").val("responder");
+        $("#formulario").submit();
+    }
+    
+    function mostrarProximaQuestao(){
+        $("#acao").val("proximo");
+        $("#formulario").submit();
+    }
+</script>
+
 <div class="planodefundo">
-<form method="post" action="./index.php?controle=quiz&acao=responder">
-<<<<<<< HEAD
-    <div id="painelperguntas">
-        <table>
-            <tr>
-                <td>
-                    <table>
-                        <tr>
-                            <td>
-                                <p id="pergunta">{{ questao.pergunta }}</p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <center>
-                                    <button class="questao">a) {{ letrasOpcoes[0] }}</button>
-                                </center>    
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <button class="questao">b) {{ letrasOpcoes[1] }}</button>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <button class="questao" >c) {{ letrasOpcoes[2] }}</button>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <center>
-                                    <button class="questao">d) {{ letrasOpcoes[3] }}</button>
-                                </center>
-                            </td>
-                        </tr>  
-                    </table>
-                </td>
-                <td>
-                    <table id="tabelapontuacao">
-                        <tr>
-                            <td>
-                                <img src="./imagens/quiz.png">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <center>
-                                    <h1 id="textopontuacao">Pontuacao:</h1>
-                                </center>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <center>
-                                    <div id="pontuacao">
-                                        <h1>{{ pontuacao }}</h1>
-                                    </div>
-                                </center>
-                            </td>
-                        </tr>                            
-                    </table>
-                </td>
-            </tr>
-        </table>
-=======
-    <link rel="stylesheet" href="./css/styleperg.css">
-    
-    <div id="logopergunta">
-        <img src="./imagens/quiz.png">
->>>>>>> 257e64a3ff2b03c1648aa1ff4b4d0e9de45d2a3b
-    </div>
-    
-    <div id="tabelapergunta">
-        
-        
-    <div id="fundopergunta"> 
-    <div class="texto1">
-        <p id="tx">Pergunta: Texto texto texto texto texto texto texto texto texto texto 
-        texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-        texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-        texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-        texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-        texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-        </p>
-    </div>
-    </div> 
-        <p id="opcao">
-            Escolha uma opção: 
-        </p>
-    <div id="A">
-        <input type="button" class="button" value="A">
-    </div>  
-
-    <div id="B">
-        <input type="button" class="button" value="B">
-    </div>
-
-    <div id="C">
-        <input type="button" class="button" value="C">
-    </div>
-
-    <div id="D">
-        <input type="button" class="button" value="D">
-    </div>
-
-    <div id="txtpontuacao">
-        <h1>Pontuação:</h1>
-    </div>
-
-    <div id="vlpontuacao">
-        <h1>20</h1> 
-   </div>
-
-    <div id="prox">
-        <input type="button" class="buttonprox" value="Proximo">
+    <form method="get" action="./index.php" id="formulario">
+        <div id="logopergunta">
+            <img src="./imagens/quiz.png">
         </div>
-    </div>
 
+        <div id="tabelapergunta">
+            <div id="fundopergunta">
+                <div class="texto1">
+                    <p id="tx">Pergunta: {{ questao.pergunta }}</p>
+                </div>
+            </div> 
+            
+            {% if acertou == true %}
+                <h2>Acertou!</h2> 
+            {% else %}
+                <h2>Errou!</h2> 
+            {% endif %}
+            
+            <p id="opcao">
+                Escolha uma opção: 
+            </p>
+            
+            <input type="hidden" id="resposta" name="resposta" value="" />
+            <input type="hidden" name="controle" value="quiz" />
+            <input type="hidden" name="acao" id="acao" value="" />
+            
+            <div id="A">
+                <input type="button" class="button" 
+                    style="background-color: {{ coloracoes[0] }}"
+                    onclick="responder('0')"
+                    value="A) {{ letrasOpcoes[0] }}">
+            </div>  
 
-</form>
-    
+            <div id="B">
+                <input type="button" class="button" 
+                    style="background-color: {{ coloracoes[1] }}"
+                    onclick="responder('1')"
+                    value="B) {{ letrasOpcoes[1] }}">
+            </div>
+
+            <div id="C">
+                <input type="button" class="button"
+                    style="background-color: {{ coloracoes[2] }}"
+                    onclick="responder('2')"
+                    value="C) {{ letrasOpcoes[2] }}">
+            </div>
+
+            <div id="D">
+                <input type="button" class="button"
+                    style="background-color: {{ coloracoes[3] }}"
+                    onclick="responder('3')"
+                    value="D) {{ letrasOpcoes[3] }}">
+            </div>
+
+            <div id="txtpontuacao">
+                <h1>Pontuação:</h1>
+            </div>
+
+            <div id="vlpontuacao">
+                <h1>{{ pontuacao }}</h1> 
+            </div>
+
+            <div id="prox">
+                <button type="button" class="buttonprox" 
+                    onclick="mostrarProximaQuestao()">
+                    Próximo
+                </button>
+            </div>
+        </div>
+    </form>    
 </div>

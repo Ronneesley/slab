@@ -1,0 +1,55 @@
+.quiz_css body{
+    margin: auto;
+    padding: auto;
+}
+.quiz_css nav{
+    background-color: rgb(253, 253, 0);
+    height: 75px;
+}
+
+#logo{
+    height: 70px;
+    width: 70px;
+}
+
+#divmenu{
+    margin: -55px 0px 20px 150px;
+}
+
+#divmenu div {
+    display: inline;
+    padding: 0px 30px 0px 100px;
+    margin: 0px 0px 0px 0px;
+}
+
+#painel {
+    margin: 0px;
+    border-style: solid;
+    background-color: brown;
+    height: 930px;
+    width: 1900px;
+    padding: 0px 0px 0px 0px;
+    position: fixed;
+}
+
+.quiz_css .a{
+    cursor: pointer; 
+}
+
+#imgcomeca{
+    margin: -60px 10px 10px 10px;
+}
+
+#imgquiz{
+    padding-top: 125px;
+    padding-bottom: 110px;
+}
+
+#imghomem{
+    margin: 0px;
+    padding: 40px 120px 0px 0px;
+}
+
+#imglaptop{
+    padding: 0px 0px 0px 120px;
+}

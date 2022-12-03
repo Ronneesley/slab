@@ -20,6 +20,9 @@ class QuizControle extends ControleBase {
             case "responder":
                 $this->responder();
                 break;
+            case "proximo":
+                $this->mostrarProximaQuestao();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -41,34 +44,112 @@ class QuizControle extends ControleBase {
     public function comecar(){
         session_start();
         
-        $dao = new QuestaoDAO();
-        $q = $dao->sortearQuestao();
-        
-        $opcoes = array($q->getResposta_certa(), $q->getResposta_errada1(),
-            $q->getResposta_errada2(), $q->getResposta_errada3());
-        $indices = [0, 1, 2, 3];
-        shuffle($indices);
-        $letrasOpcoes = array(
-            $indices[0] => $opcoes[0],
-            $indices[1] => $opcoes[1],
-            $indices[2] => $opcoes[2],
-            $indices[3] => $opcoes[3],
-        );
-        
-        $pontuacao = 0;
-        $_SESSION["indice_resposta_correta"] = $indices[0];
-        $_SESSION["pontuacao"] = $pontuacao;        
-       
-        $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "perguntas.html", 
-                ["questao" => $q, 
-                 "letrasOpcoes" => $letrasOpcoes,
-                 "pontuacao" => $pontuacao ]);
+        $_SESSION["pontuacao"] = 0;
+        $_SESSION["questoes_respondidas"] = array();
+        $this->mostrarProximaQuestao();        
     }
     
     public function responder(){
+        session_start();
+        
+        $resposta = $_REQUEST["resposta"];
+
+        $acertou = $_SESSION["indice_resposta_correta"] == $resposta;
+        
+        $letrasOpcoes = array(
+            0 => $_SESSION["opcao_a"],
+            1 => $_SESSION["opcao_b"],
+            2 => $_SESSION["opcao_c"],
+            3 => $_SESSION["opcao_d"]
+        );
+        
+        $q = $_SESSION["questao"];
+        $pontuacao = $_SESSION["pontuacao"];        
+        
+        $coloracoes = array("white", "white", "white", "white");
+        $coloracoes[$_SESSION["indice_resposta_correta"]] = "green";
+        
+        if ($acertou){
+            $pontuacao++;
+        } else {
+            $coloracoes[$resposta] = "red";
+        }
+        
+        $_SESSION["pontuacao"] = $pontuacao;
+        
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "perguntas.html");
+        $this->mostrarPaginaLayout($layout, "perguntas.html",
+                ["questao" => $q, 
+                 "letrasOpcoes" => $letrasOpcoes,
+                 "pontuacao" => $pontuacao,
+                 "acertou" => $acertou,
+                 "coloracoes" => $coloracoes ] );
+    }
+    
+    public function mostrarProximaQuestao(){
+        if (!$this->eMomentoPararQuiz()){
+            @session_start();
+
+            $ids_questoes_respondidas = $_SESSION["questoes_respondidas"];
+
+            $dao = new QuestaoDAO();
+            $q = $dao->sortearQuestao($ids_questoes_respondidas);
+
+            array_push($_SESSION["questoes_respondidas"], $q->getId());
+
+            $opcoes = array($q->getResposta_certa(), $q->getResposta_errada1(),
+                $q->getResposta_errada2(), $q->getResposta_errada3());
+            $indices = [0, 1, 2, 3];
+            shuffle($indices); //ex.: [2, 1, 0, 3]
+            $letrasOpcoes = array(
+                $indices[0] => $opcoes[0],
+                $indices[1] => $opcoes[1],
+                $indices[2] => $opcoes[2],
+                $indices[3] => $opcoes[3],
+            );
+
+            $_SESSION["indice_resposta_correta"] = $indices[0];
+            $pontuacao = $_SESSION["pontuacao"];
+
+            $_SESSION["opcao_a"] = $letrasOpcoes[0];
+            $_SESSION["opcao_b"] = $letrasOpcoes[1];
+            $_SESSION["opcao_c"] = $letrasOpcoes[2];
+            $_SESSION["opcao_d"] = $letrasOpcoes[3];
+            $_SESSION["questao"] = $q;
+
+            $layout = $this->configurarTemplate("layout.html");
+            $this->mostrarPaginaLayout($layout, "perguntas.html", 
+                    ["questao" => $q, 
+                     "letrasOpcoes" => $letrasOpcoes,
+                     "pontuacao" => $pontuacao ]);
+        } else {
+            $this->mostrarFimQuiz();
+        }
+    }
+    
+    public function eMomentoPararQuiz(){
+        @session_start();
+        
+        $ids_questoes_respondidas = $_SESSION["questoes_respondidas"];
+        
+        if (count($ids_questoes_respondidas) >= 5){
+            return true;
+        }
+        
+        return false;
+    }
+    
+    public function mostrarFimQuiz(){
+        $pontuacao = $_SESSION["pontuacao"];
+        
+        $ids_questoes_respondidas = $_SESSION["questoes_respondidas"];
+        
+        $qtde_questoes_respondidas = count($ids_questoes_respondidas);
+        
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "fim_quiz.html", 
+                ["pontuacao" => $pontuacao,
+                 "qtde_questoes_respondidas" => $qtde_questoes_respondidas]);
     }
     
     public function inserir(){
