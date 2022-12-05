@@ -63,8 +63,8 @@ class QuestaoDAO extends DAO {
     public function inserir($questao){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO questoes(nivel,curso, tema,pergunta,resposta_certa,resposta_errada1,resposta_errada2,resposta_errada3,explicacao) VALUES (?,?,?,?,?,?,?,?,?)");
-        $stmt->bind_param("iiissssss", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errrada1(),$questao->getResposta_errrada2(),$questao->getResposta_errrada3(),$questao->getEplicacao());
+        $stmt = $con->prepare("INSERT INTO questoes(nivel,curso,tema,pergunta,resposta_certa,resposta_errada1,resposta_errada2,resposta_errada3,explicacao) VALUES (?,?,?,?,?,?,?,?,?)");
+        $stmt->bind_param("iiissssss", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errada1(),$questao->getResposta_errada2(),$questao->getResposta_errada3(),$questao->getExplicacao());
         $stmt->execute();
         
         $con->close();
@@ -73,8 +73,8 @@ class QuestaoDAO extends DAO {
     public function alterar($questao){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update questao set nivel = ?,curso = ?, tema = ?,pergunta = ?,resposta_certa = ?,resposta_errada1 = ?,resposta_errada2 = ?,resposta_errada3 = ?,explicacao = ? where id = ?");
-        $stmt->bind_param("iiissssssi", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errrada1(),$questao->getResposta_errrada2(),$questao->getResposta_errrada3(),$questao->getEplicacao(),$questao->getId());
+        $stmt = $con->prepare("update questoes set nivel = ?,curso = ?, tema = ?,pergunta = ?,resposta_certa = ?,resposta_errada1 = ?,resposta_errada2 = ?,resposta_errada3 = ?,explicacao = ? where id = ?");
+        $stmt->bind_param("iiissssssi", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errada1(),$questao->getResposta_errada2(),$questao->getResposta_errada3(),$questao->getExplicacao(),$questao->getId());
         $stmt->execute();        
         
         $con->close();
