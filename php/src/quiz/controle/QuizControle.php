@@ -46,6 +46,7 @@ class QuizControle extends ControleBase {
         
         $_SESSION["pontuacao"] = 0;
         $_SESSION["questoes_respondidas"] = array();
+        $_SESSION["ultima_questao"] = "";
         $this->mostrarProximaQuestao();        
     }
     
@@ -64,18 +65,22 @@ class QuizControle extends ControleBase {
         );
         
         $q = $_SESSION["questao"];
+        $ultima_questao = $_SESSION["ultima_questao"];
         $pontuacao = $_SESSION["pontuacao"];        
         
         $coloracoes = array("white", "white", "white", "white");
         $coloracoes[$_SESSION["indice_resposta_correta"]] = "green";
         
         if ($acertou){
-            $pontuacao++;
+            if($ultima_questao != $q){
+                $pontuacao++;
+            }
         } else {
             $coloracoes[$resposta] = "red";
         }
         
         $_SESSION["pontuacao"] = $pontuacao;
+        $_SESSION["ultima_questao"] = $q;
         
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "perguntas.html",
