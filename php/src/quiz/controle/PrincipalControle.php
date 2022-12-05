@@ -1,4 +1,5 @@
 <?php
+
 namespace QuizEstatistico\controle;
 
 use QuizEstatistico\controle\QuizControle;
@@ -6,8 +7,9 @@ use QuizEstatistico\controle\AdministradorControle;
 use QuizEstatistico\controle\CalculadoraControle;
 
 class PrincipalControle extends ControleBase {
-    public function processar($controle, $acao){
-        switch ($controle){
+
+    public function processar($controle, $acao) {
+        switch ($controle) {
             case "principal":
                 $this->processarPrincipal($acao);
                 break;
@@ -57,9 +59,9 @@ class PrincipalControle extends ControleBase {
                 break;
         }
     }
-    
-    public function processarPrincipal($acao){
-        switch ($acao){
+
+    public function processarPrincipal($acao) {
+        switch ($acao) {
             case "inicio":
                 $this->mostrarPaginaInicial();
                 break;
@@ -72,36 +74,48 @@ class PrincipalControle extends ControleBase {
             case "conteudos":
                 $this->mostrarConteudos();
                 break;
+            // Apenas para direcionar para tela de menu do admin, futuramente pode remover case "menuAdmin" by Mayko
+            case "menuAdmin":
+                $this->mostrarPaginaMenu();
+                break;
             default:
                 $this->mostrarPaginaLogin();
                 break;
-        }        
+        }
     }
-    
-    public function logar(){
+
+    public function logar() {
         $email = $_REQUEST["email"];
         $senha = $_REQUEST["senha"];
-        
-        if ($email == "roni.teles@ifgoiano.edu.br" && $senha = "123456"){
+
+        if ($email == "roni.teles@ifgoiano.edu.br" && $senha = "123456") {
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");
         }
     }
-    
-    public function mostrarConteudos(){
+
+    // Apenas para direcionar para tela de menu do admin, futuramente pode remover mostrarPaginaMenu by Mayko
+    public function mostrarPaginaMenu($mensagem = "") { 
+        $pagina = $this->configurarTemplate("admin/menu.html");
+        $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);
+    }
+
+    public function mostrarConteudos() {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "conceitos/indice.html");
     }
-    
-    public function mostrarPaginaInicial(){
+
+    public function mostrarPaginaInicial() {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "pagina_inicial.html");
     }
-    
-    public function mostrarPaginaLogin($mensagem = ""){
+
+    public function mostrarPaginaLogin($mensagem = "") {
         $pagina = $this->configurarTemplate("login.html");
         $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);
     }
+
 }
+
 ?>

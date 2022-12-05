@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-            <meta charset="utf-8">
-            <link rel="shortcut icon" href="logo.png">
-            
-            <title>Quiz Estatístico</title>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="logo.png">
 
-            <link rel="stylesheet" href="./css/login.css">
-	</head>
-	<body>        
-            <nav class="painel">
-                <form method="post" action="index.php?controle=principal&acao=logar">
-                    <table>
-                        <tr>
-                            <td>
-                                <div class="paineldiv">
-                                     <center>
-                                        <img src="./imagens/logo.png" class="logo"> 
-                                        <div>   
-                                                                              
-                                        </div>
-                                    </center>   
-                                </div>
-                            </td>
+        <title>Quiz Estatístico</title>
 
-                            <td>
-                                <div class="cadastro">
-                                    <table class="tabela-login" border="0">
-                                        <tr>
-                                            <th><h1>Bem Vindo</h1></th>
-                                        </tr>
+        <link rel="stylesheet" href="./css/login.css">
+    </head>
+    <body>        
+        <nav class="painel">
+            <form method="post" action="index.php?controle=principal&acao=logar">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="paineldiv">
+                                <center>
+                                    <!-- Apenas para direcionar para tela de menu do admin, futuramente pode remover <a></a> by Mayko -->
+                                    <a href="index.php?controle=principal&acao=menuAdmin">
+                                        <img src="./imagens/logo.png" class="logo">
+                                    </a>
+                                    <div>   
 
-                                        <tr>
-                                         
-                                        </tr>
+                                    </div>
+                                </center>   
+                            </div>
+                        </td>
 
-                                        <tr >
-                                            <td id="esqsenha">
-                                                <a href="https://www.google.com.br">Esqueceu a Senha</a>
-                                            </td>
-                                        </tr>
+                        <td>
+                            <div class="cadastro">
+                                <table class="tabela-login" border="0">
+                                    <tr>
+                                        <th><h1>Bem Vindo</h1></th>
+                                    </tr>
 
-                                        <tr>
-                                            <td colspan="2">
-                                                <input type="email" placeholder="Email" class="input-longo" name="email"
-                                                        value="roni.teles@ifgoiano.edu.br" />
-                                            </td>                    
-                                        </tr>
+                                    <tr>
 
-                                        <tr>
-                                            <td colspan="2" >
-                                                <input type="password" placeholder="Senha" class="input-longo" name="senha"
-                                                        value="123456"/>
-                                            </td>                                        
-                                        </tr>
-                                            <label class="Lembrar">
-                                                <input type="checkbox"> Lembrar
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        <tr>
-                                            <td>
-                                                <center>
-                                                    <button type="submit">Entrar</button>
-                                                </center>
-                                            </td>
-                                        </tr>                
-                                    </table>
-                                </div> 
-                            </td>
-                        </tr>
-                    </table>
-                        <div id="imagemlogin">
-                            <img src="./imagens/Loginimagem.png" alt="fotologin" height="700" width="1000">
-                        </div>
-                </form>
-            </nav>
-	</body>
+                                    </tr>
+
+                                    <tr >
+                                        <td id="esqsenha">
+                                            <a href="https://www.google.com.br">Esqueceu a Senha</a>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2">
+                                            <input type="email" placeholder="Email" class="input-longo" name="email"
+                                                   value="roni.teles@ifgoiano.edu.br" />
+                                        </td>                    
+                                    </tr>
+
+                                    <tr>
+                                        <td colspan="2" >
+                                            <input type="password" placeholder="Senha" class="input-longo" name="senha"
+                                                   value="123456"/>
+                                        </td>                                        
+                                    </tr>
+                                    <label class="Lembrar">
+                                        <input type="checkbox"> Lembrar
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <tr>
+                                        <td>
+                                    <center>
+                                        <button type="submit">Entrar</button>
+                                    </center>
+                                    </td>
+                                    </tr>                
+                                </table>
+                            </div> 
+                        </td>
+                    </tr>
+                </table>
+                <div id="imagemlogin">
+                    <img src="./imagens/Loginimagem.png" alt="fotologin" height="700" width="1000">
+                </div>
+            </form>
+        </nav>
+    </body>
 </html> 
