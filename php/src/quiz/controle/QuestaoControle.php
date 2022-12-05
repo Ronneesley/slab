@@ -4,6 +4,8 @@ namespace QuizEstatistico\controle;
 use QuizEstatistico\modelo\dto\Questao;
 use QuizEstatistico\modelo\dao\QuestaoDAO;
 use QuizEstatistico\modelo\dao\NivelDAO;
+use QuizEstatistico\modelo\dao\CursoDAO;
+use QuizEstatistico\modelo\dao\TemaDAO;
 
 /**
  * Description of QuestãoControle
@@ -46,11 +48,17 @@ class QuestaoControle extends ControleBase {
     }
     
     public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){
-        $nivelDao = new NivelDAO();      
+        $nivelDao = new NivelDAO();
+        $cursoDao = new CursoDAO();
+        $temaDao = new TemaDAO();
+        
         $niveis = $nivelDao->listar();
+        $cursos = $cursoDao->listar();
+        $temas = $temaDao->listar();
+        
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/questoes/cadastro.html",
-        [ "questao" => $questao, "mensagem" => $mensagem,"niveis"=>$niveis ]);
+        [ "questao" => $questao, "mensagem" => $mensagem,"niveis"=>$niveis, "cursos"=>$cursos, "temas"=>$temas ]);
     }
 
     public function inserir(){
@@ -58,6 +66,7 @@ class QuestaoControle extends ControleBase {
         $c->setNivel($_REQUEST["nivel"]);
         $c->setCurso($_REQUEST["curso"]);
         $c->setTema($_REQUEST["tema"]);
+        $c->setPergunta($_REQUEST["pergunta"]);
         $c->setResposta_certa($_REQUEST["resposta_certa"]);
         $c->setResposta_errada1($_REQUEST["resposta_errada1"]);
         $c->setResposta_errada2($_REQUEST["resposta_errada2"]);
@@ -77,6 +86,7 @@ class QuestaoControle extends ControleBase {
         $c->setNivel($_REQUEST["nivel"]);
         $c->setCurso($_REQUEST["curso"]);
         $c->setTema($_REQUEST["tema"]);
+        $c->setPergunta($_REQUEST["pergunta"]);
         $c->setResposta_certa($_REQUEST["resposta_certa"]);
         $c->setResposta_errada1($_REQUEST["resposta_errada1"]);
         $c->setResposta_errada2($_REQUEST["resposta_errada2"]);
