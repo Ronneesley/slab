@@ -5,6 +5,10 @@
     <link rel="stylesheet" href="./css/style_calcu_geral.css">
 
     <div id="plano_fundo_calcu_geral">
+        <br>
+        <br>
+        <br>
+        <br>    
         <header>
             <h1>Cálculo coeficiente de variação</h1>
         </header>
@@ -18,11 +22,10 @@
                     O coeficiente de variação é considerado baixo, quando for menor ou igual a 25%.<br> <br>
                 </p>
 
-        
             <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
                 <div id="botao">
-                    <label  for="valores">Colocar os valores desejados entre ponto e vírgula (;): </label></br> <br>
-                    <input type="text" size="70" id="valores" name="valores" value="{{ valores }}"><br> <br>
+                    <label  for="valores">Inserir os valores desejados entre ponto e vírgula (;): </label></br> <br>
+                    <input  type="text" size="70" id="valores" name="valores" value="{{ valores }}"><br> <br>
                     <input type="submit" value="Enviar"></br></br>       
                     {% if resultado != "" %}
                     Resultado: {{ resultado }}        
@@ -30,5 +33,7 @@
                 </div>
             </form>
         </article> 
+
+
     </div>
 </form>
