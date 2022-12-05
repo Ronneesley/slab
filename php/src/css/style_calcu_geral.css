@@ -5,7 +5,7 @@ h1{
 
 #plano_fundo_calcu_geral{
     background-color: rgb(240, 240, 240);
-    height: 662px;
+    min-height: 100vh;
 }
 
 img {
@@ -29,3 +29,21 @@ label{
     text-align: center;
 }
 
+.valores{
+	height: 30px;
+	border-radius: 10px;
+	border-style: solid;
+	text-align: center;
+	font-size: 18px;
+	}
+
+.enviar{
+	border-style: solid;
+	border-color: #fab200;
+	padding: 8px;
+	color: white;
+	background-color: #fab200;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+}
