@@ -7,19 +7,24 @@
     </head>
     <body>
         <h1>Cadastro de Questões</h1>
-        
-        <form method="post" action="./index.php?controle=nivel&acao=salvar">
+
+        <form method="post" action="./index.php?controle=questao&acao=salvar">
             {{ mensagem}}
             <br /><br />
-            
+
             <div>
+
+                <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko -->
                 <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ nivel.id }}" disabled/>
+                <input type="text" name="id" id="id" value="{{ questao.id }}"/>
                 <br /><br />
-                   
+
+
+                <!-- lista por radio by Mayko
+                
                 <div>
                 <label for="nivel">Nível</label>
-                <br /><br />
+                <br />
                 {% for item in niveis %}
                 <INPUT TYPE="RADIO" NAME="nivel" VALUE="{{ item.id }}"  {{ item.id == questao.nivel ? "checked":""  }}> {{ item.nivel }}
                 {% endfor %}
@@ -27,52 +32,104 @@
                 
                 <div>
                 <label for="curso">Curso</label>
-                <br /><br />
+                <br />
                 {% for item in cursos %}
-                <INPUT TYPE="RADIO" NAME="cursos" VALUE="{{ cursos.id }}" > {{ cursos.nome }}              
+                <INPUT TYPE="RADIO" NAME="curso" VALUE="{{ item.id }}"  {{ item.id == questao.curso ? "checked":""  }}> {{ item.nome }}
                 {% endfor %}
-                </div> 
+                </div>
+                <br />
                 
                 <div>
                 <label for="tema">Tema</label>
-                <br /><br />
+                <br />
                 {% for item in temas %}
-                <INPUT TYPE="RADIO" NAME="temas" VALUE="{{ temas.id }}"> {{ temas.nome }}   
+                <INPUT TYPE="RADIO" NAME="tema" VALUE="{{ item.id }}"  {{ item.id == questao.tema ? "checked":""  }}> {{ item.tema }}
                 {% endfor %}
-                </div>  
+                </div>
+                <br />
                 
+                -->
+
+                <!-- lista por select by Mayko -->
+
+                <div>
+                    <label for="nivel">Nível</label>
+                    <select id="nivel" name="nivel">
+                        <option value="">Selecione o nível</option>
+                        {% for item in niveis %}
+                        <option value="{{ item.id }}" {{ item.id == questao.nivel ? "selected":""  }}>{{ item.nivel }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br />
+
+                <div>
+                    <label for="curso">Curso</label>
+                    <select id="curso" name="curso">
+                        <option value="">Selecione o curso</option>
+                        {% for item in cursos %}
+                        <option value="{{ item.id }}" {{ item.id == questao.curso ? "selected":""  }}>{{ item.nome }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br />
+
+                <div>
+                    <label for="tema">Tema</label>
+                    <select id="tema" name="tema">
+                        <option value="">Selecione o tema</option>
+                        {% for item in temas %}
+                        <option value="{{ item.id }}" {{ item.id == questao.tema ? "selected":""  }}>{{ item.tema }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <br />
+
                 <label for="pergunta">Pergunta</label>
-                <input type="text" name="pergunta" id="pergunta" value="{{ questao.pergunta }}" />
+                <br />
+                <textarea id="resposta_certa" name="pergunta" style="width:400px; height:75px;">
+{{ questao.pergunta }}
+                </textarea>
                 <br /><br />
-  
+
                 <label for="resposta_certa">Resposta certa</label>
-                <input type="text" name="resposta_certa" id="resposta_certa" value="{{ questao.resposta_certa }}" />
+                <br />
+                <textarea id="resposta_certa" name="resposta_certa" style="width:400px; height:75px;">
+{{ questao.resposta_certa }}
+                </textarea>
                 <br /><br />
-                
+
                 <label for="resposta_errada1">Resposta Errada 1</label>
-                <input type="text" name="resposta_errada1" id="resposta_errada1" value="{{ questao.resposta_errada1 }}" />
+                <br />
+                <textarea id="resposta_errada1" name="resposta_errada1" style="width:400px; height:75px;">
+{{ questao.resposta_errada1 }}
+                </textarea>
                 <br /><br />
-                
-                <label for="resposta_errada1">Resposta Errada 1</label>
-                <input type="text" name="resposta_errada1" id="resposta_errada1" value="{{ questao.resposta_errada1 }}" />
-                <br /><br />
-                
+
                 <label for="resposta_errada2">Resposta Errada 2</label>
-                <input type="text" name="resposta_errada2" id="resposta_errada2" value="{{ questao.resposta_errada2 }}" />
+                <br />
+                <textarea id="resposta_errada2" name="resposta_errada2" style="width:400px; height:75px;">
+{{ questao.resposta_errada2 }}
+                </textarea>
                 <br /><br />
 
                 <label for="resposta_errada3">Resposta Errada 3</label>
-                <input type="text" name="resposta_errada3" id="resposta_errada3" value="{{ questao.resposta_errada3 }}" />
+                <br />
+                <textarea id="resposta_errada3" name="resposta_errada3" style="width:400px; height:75px;">
+{{ questao.resposta_errada3 }}
+                </textarea>
                 <br /><br />
-                
+
                 <label for="explicacao">Explicação</label>
-                <input type="text" name="explicacao" id="explicacao" value="{{ questao.explicacao }}" />
-                <br /><br />                                   
-                               
-                    
-                  <input type="submit" value="Salvar" />
+                <br />
+                <textarea id="explicacao" name="explicacao" style="width:400px; height:75px;">
+{{ questao.explicacao }}
+                </textarea>
+                <br /><br />
+
+                <input type="submit" value="Salvar" />
             </div>
-            
+
         </form>
     </body>
 </html>
