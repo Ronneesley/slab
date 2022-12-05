@@ -2,41 +2,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <form method="post" action="./index.php?controle=quiz&acao=responder">
-    <link rel="stylesheet" href="./css/stylecoeficiente.css">
+    <link rel="stylesheet" href="./css/style_calcu_geral.css">
 
-    <div class="planodefundo">
+    <div id="plano_fundo_calcu_geral">
+        <br>
+        <br>
+        
         <header>
             <h1>Cálculo coeficiente de variação</h1>
         </header>
-        
         <article>
             <img src="./imagens/logo.png" width="360" height="350"></br>
-            <center>
                 <p>
-                    Observações: <br>
-                    Resultado menor ou igual a 15% → baixa dispersão: dados homogêneos. <br>
-                    Resultado entre 15 e 30% → média dispersão. <br>
-                    Resultado maior que 30% → alta dispersão: dados heterogêneos. <br>
+                    O coeficiente de variação fornece a variação dos dados obtidos em relação à média. 
+                    Quanto menor for o seu valor, mais homogêneos serão os dados. <br>
+                    O coeficiente de variação é considerado baixo, quando for menor ou igual a 25%.<br> <br>
                 </p>
-            </center>
-        
             <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
-                <label for="valores">Insira o coeficiente de variação: </label></br>
-                <input type="text" id="valores" name="valores" value="{{ valores }}"><br> <br>
-                
-            <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
-                <label for="valores">Insira o desvio padrão: </label></br>
-                <input type="text" id="valores" name="valores" value="{{ valores }}"><br> <br>
-
-            <form action="./index.php?controle=calculadora&acao=calcular_coeficiente_variacao" method="post">
-                <label for="valores">Insira a média dos dados analisados: </label></br>
-                <input type="text" id="valores" name="valores" value="{{ valores }}"></br>
-                <input type="submit" value="Enviar"> <br> <br>
-                
-                {% if resultado != "" %}
+                <div id="botao">
+                    <label  for="valores">Inserir os valores desejados entre ponto e vírgula (;): </label></br> <br>
+                    <input  type="text" size="70" id="valores" name="valores" value="{{ valores }}"><br> <br>
+                    <input type="submit" value="Enviar"></br></br>       
+                    {% if resultado != "" %}
                     Resultado: {{ resultado }}        
-                {% endif %}
+                    {% endif %}
+                </div>
             </form>
         </article> 
+
+
     </div>
 </form>
