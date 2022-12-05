@@ -100,15 +100,15 @@ class CalculadoraControle extends ControleBase {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/frequencia_relativa.html");
     }
-
-    public function mostrarVariancia(){
-        $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "calculadora/variancia.html");
-    }
     
     public function mostrarOpcoes(){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/opcoes.html");
+    }
+
+    public function mostrarCalculadoraVariancia(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/variancia.html");
     }
 }
 
