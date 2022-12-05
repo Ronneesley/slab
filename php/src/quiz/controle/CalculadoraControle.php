@@ -21,6 +21,9 @@ class CalculadoraControle extends ControleBase {
             case "mostrar_calculo_coeficiente_variacao":
                 $this->mostrarCalculadoraCoeficienteVariacao();
                 break;
+            case "mostrar_calculo_variancia":
+                $this->mostrarCalculadoraVariancia();
+                break;
             case "calcular_media":
                 $this->calcularMedia();
                 break;
@@ -96,6 +99,11 @@ class CalculadoraControle extends ControleBase {
     public function mostrarFrequenciaRelativa(){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/frequencia_relativa.html");
+    }
+
+    public function mostrarVariancia(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/variancia.html");
     }
     
     public function mostrarOpcoes(){
