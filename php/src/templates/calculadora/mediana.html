@@ -2,30 +2,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <form method="post" action="./index.php?controle=quiz&acao=responder">
-    <link rel="stylesheet" href="./css/stylemediana.css">
+    <link rel="stylesheet" href="./css/style_calcu_geral.css">
 
-   <div class="planodefundo">
+   <div id="plano_fundo_calcu_geral">
         <header>
             <h1>Cálculo da mediana</h1>
         </header>
         
         <article>
             <img src="./imagens/logo.png" width="360" height="350"></br>
-            <center>
-                <p> Observação: <br>
+            
+                <p>
                     Se houver uma quantidade ímpar de valores numéricos, a mediana será o valor central do conjunto numérico. <br>
                     Se a quantidade de valores for um número par, devemos fazer uma média aritmética dos dois números centrais, 
-                    e esse resultado será o valor da mediana.</p> <br><br>
-            </center>
+                    e esse resultado será o valor da mediana. <br> <br>
+                </p>
+            
         
             <form action="./index.php?controle=calculadora&acao=calcular_mediana" method="post">
-                <label for="valores">Colocar os valores desejados entre ponto-e-vírgula: </label></br>
-                <input type="text" id="valores" name="valores" value="{{ valores }}"></br>
-                <input type="submit" value="Enviar"></br></br>
-                
-                {% if resultado != "" %}
+                <div id="botao">
+                    <label for="valores">Colocar os valores desejados entre ponto e vírgula (;): </label></br> <br>
+                    <input type="text" size="70" id="valores" name="valores" value="{{ valores }}"></br> <br>
+                    <input type="submit" value="Enviar"></br></br>
+                </div>
+            <p>    {% if resultado != "" %}
                     Resultado: {{ resultado }}        
                 {% endif %}
+            </p>
             </form>
         </article> 
     </div>
