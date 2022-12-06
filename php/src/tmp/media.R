@@ -1,2 +1,2 @@
-conjunto <- c(3,6,6,6)
+conjunto <- c(1:1)
 mean(conjunto)

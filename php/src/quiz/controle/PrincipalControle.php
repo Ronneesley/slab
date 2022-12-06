@@ -71,6 +71,9 @@ class PrincipalControle extends ControleBase {
             case "logar":
                 $this->logar();
                 break;
+            case "quiz":
+                $this->mostrarPaginaInicialQuiz();
+                break;
             case "conteudos":
                 $this->mostrarConteudos();
                 break;
@@ -109,6 +112,11 @@ class PrincipalControle extends ControleBase {
     public function mostrarPaginaInicial() {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "pagina_inicial.html");
+    }
+    
+    public function mostrarPaginaInicialQuiz() {
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "inicio_quiz.html");
     }
 
     public function mostrarPaginaLogin($mensagem = "") {
