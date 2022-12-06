@@ -1,4 +1,4 @@
-h1{
+#plano_fundo_calcu_geral h1{
     text-align: center;
     color: black;
 }
@@ -14,7 +14,7 @@ img {
     margin-right: auto;
 }
 
-p{
+#plano_fundo_calcu_geral p{
     text-align: center;
     color: black;
     font-size: 18px;
