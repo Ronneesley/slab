@@ -18,6 +18,15 @@ class CalculadoraControle extends ControleBase {
             case "mostrar_calculo_mediana":
                 $this->mostrarCalculadoraMediana();
                 break;
+            case "mostrar_calculo_amplitude":
+                $this->mostrarCalculadoraAmplitude();
+                break;
+            case "mostrar_calculo_moda":
+                $this->mostrarCalculadoraModa();
+                break;
+            case "mostrar_calculo_desvio":
+                $this->mostrarCalculadoraDesvio();
+                break;
             case "mostrar_calculo_coeficiente_variacao":
                 $this->mostrarCalculadoraCoeficienteVariacao();
                 break;
@@ -95,6 +104,25 @@ class CalculadoraControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "calculadora/coeficiente de variação.html", 
                 ["valores" => $valores, "resultado" => $resultado]);
     }
+
+    public function mostrarCalculadoraModa($valores = "", $resultado = ""){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/moda.html", 
+                ["valores" => $valores, "resultado" => $resultado]);
+    }
+
+    public function mostrarCalculadoraAmplitude($valores = "", $resultado = ""){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/amplitude.html", 
+                ["valores" => $valores, "resultado" => $resultado]);
+    }
+
+    public function mostrarCalculadoraDesvio($valores = "", $resultado = ""){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "calculadora/desvio.html", 
+                ["valores" => $valores, "resultado" => $resultado]);
+    }
+    
     
     public function mostrarFrequenciaRelativa(){
         $layout = $this->configurarTemplate("layout.html");
