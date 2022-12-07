@@ -1,0 +1,34 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" type="text/css" href="./css/style_calcu_geral.css">
+
+<div id="plano_fundo_calcu_geral">
+
+<header>
+   <br> <h1>Variância</h1><br>
+</header>
+
+<article>
+    <img src="./imagens/miniatura_logo.png" width="200" height="190"></br>
+
+    <p>
+        a variância é uma medida de dispersão que mostra o quão distante cada valor desse conjunto está do valor central (médio). <br>
+        Quanto menor é a variância, mais próximos os valores estão da média. <br> 
+        Mas quanto maior ela é, mais os valores estão distantes da média. <br> <br>
+    </p>
+
+    <form action="./index.php?controle=calculadora&acao=calcular_media" method="post">
+        <div id="botao">
+            <label for="valores">Colocar os valores desejados entre ponto e vírgula (;): </label> <br> </br>
+            <input type="text" size="60" class="valores" name="valores" value="{{ valores }}" required></br> <br>
+            <input class="enviar" type="submit" value="Enviar"></br></br>
+        </div>
+        <p>
+            {% if resultado != "" %}
+            Resultado: {{ resultado }}        
+            {% endif %}
+        </p>
+    </form>
+</article>
+</div>

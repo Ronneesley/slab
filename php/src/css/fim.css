@@ -1,7 +1,8 @@
 .final{
-    width: 1513px;
+    width: 1600px;
     height: 800px;
     background: rgb(240, 240, 240);
+    position: fixed;
 }
 center{
     color: black;
@@ -13,7 +14,7 @@ center{
 .imagem{
     position: relative;
     top: -40px;
-    left: 560px;
+    left: 600px;
 }
 
 .reslth1{

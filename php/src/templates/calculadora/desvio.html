@@ -1,0 +1,33 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" type="text/css" href="./css/style_calcu_geral.css">
+
+<div id="plano_fundo_calcu_geral">
+
+<header>
+   <br> <h1>Desvio Padrão</h1><br>
+</header>
+
+<article>
+    <img src="./imagens/miniatura_logo.png" width="190" height="190"></br>
+
+        <p>
+            O desvio padrão é uma medida que expressa o grau de dispersão de um conjunto de dados. <br> Ou seja, o desvio padrão indica o quanto um conjunto de dados é uniforme. <br>
+            Quanto mais próximo de 0 for o desvio padrão, mais homogêneo são os dados. <br> <br>
+        </p>
+
+    <form action="./index.php?controle=calculadora&acao=calcular_desvio" method="post">
+        <div id="botao">
+            <label for="valores">Colocar os valores desejados entre ponto e vírgula (;): </label> <br> </br>
+            <input type="text" size="60" class="valores" name="valores" value="{{ valores }}" required></br> <br>
+            <input class="enviar" type="submit" value="Enviar"></br></br>
+        </div>
+        <p>
+            {% if resultado != "" %}
+            Resultado: {{ resultado }}        
+            {% endif %}
+        </p>
+    </form>
+</article>
+</div>
