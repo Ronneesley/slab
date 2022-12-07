@@ -1,0 +1,56 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("https://wallpaperaccess.com/full/6767091.jpg");
+}
+
+#painel {
+    line-height: 1.3;
+    width: 800px;
+    margin: 0px;
+    padding: 10px;
+    height: auto;
+    margin: auto;
+    border-style: solid;
+    background-color: white;
+}
+
+#cdf {
+    margin: 0px;
+    padding: 0px;
+}
+
+footer {
+    height: 60px;    
+    width: 800px;
+    line-height: 60px;
+    text-align: center;
+    background-color: rgb(9, 48, 243);
+    color: white;
+    margin: auto;
+}
+
+#painel {
+    width: 800px;
+    background-color: white;
+    margin: 0 auto;
+    border: 1px solid #a0a0a0;
+}
+
+header {
+    background-color: #c2c2c2;
+    height: 100px;
+}
+
+header h1 {
+    margin: 0;
+    margin-left: 20px;
+}
+
+footer {
+    text-align: right;
+    background-color: #c2c2c2;
+    padding-bottom: 40px;
+    padding-top: 1px;
+    padding-right: 10px;
+}

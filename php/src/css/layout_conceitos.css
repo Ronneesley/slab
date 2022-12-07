@@ -1,0 +1,19 @@
+body {
+    background-image: url("../imagens/BGlfundo.png");
+}
+
+#painel_conceitos {
+    width: 800px;
+    margin: 0px;
+    padding: 10px;
+    height: 0 auto;
+    margin: 0 auto;
+    border: 5px solid;
+    border-color: black;
+    background-color: white;
+}
+
+ #acessorapido {
+    margin: 0px;
+    padding: 0px;
+}

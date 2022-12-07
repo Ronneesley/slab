@@ -25,7 +25,7 @@
 #painel {
     margin: 0px;
     border-style: solid;
-    background-color: brown;
+    background-color: #F0F0F0;
     height: 930px;
     width: 1900px;
     padding: 0px 0px 0px 0px;
@@ -37,19 +37,25 @@
 }
 
 #imgcomeca{
-    margin: -60px 10px 10px 10px;
+    position: absolute;
+    left: 650px;
+    top: 580px;
 }
 
 #imgquiz{
-    padding-top: 125px;
-    padding-bottom: 110px;
+    position: absolute;
+    left: 580px;
+    top: 50px;
 }
 
 #imghomem{
-    margin: 0px;
-    padding: 40px 120px 0px 0px;
+    position: absolute;
+    left: 200px;
+    top: 300px;
 }
 
 #imglaptop{
-    padding: 0px 0px 0px 120px;
+    position: absolute;
+    left: 1100px;
+    top: 280px;
 }

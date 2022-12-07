@@ -1,0 +1,44 @@
+#conceitos_body{
+	background-color: #fab200;
+}
+
+.a_conceitos{
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.a_conceitos:hover{
+	color: #fab200;
+}
+
+
+#ul_conceitos{
+	margin-top: 70px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.li_conceitos{
+	list-style: none;
+	border-style: solid;
+	border-color: white;
+	float: left;
+	height: 60px;
+	width: 200px;
+	margin: auto;
+	font-size: 20px;
+	margin-right: 50px;
+	margin-bottom: 100px;
+	position: relative;
+	background-color: white;
+	border-radius: 15px;
+}

@@ -1,0 +1,15 @@
+{
+    "liveServer.settings.proxy": {
+        "proxyUri": "http://localhost"
+    },
+    "liveServer.settings.host": "localhost",
+    "liveServer.settings.useLocalIp": false,
+    "liveServer.settings.port": 82,
+    "liveServer.settings.ignoreFiles": [
+
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts"
+    ]
+}

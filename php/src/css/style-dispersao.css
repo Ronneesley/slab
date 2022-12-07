@@ -1,0 +1,40 @@
+body{
+    background-color: #dddddd;
+    border: 2px solid black;
+    padding: 0em;
+    border-bottom: 0em;
+    margin: 8vh;
+
+}
+
+.conceitos1{
+    background-color: white;
+    text-align: justify;
+    border: 0.3em solid #6484b3;
+    padding: 1em;
+    border-bottom: 0em;
+    
+
+}
+
+#titulo{
+    background-color: #6484b3;
+    text-align: center;
+    margin-top: 0em;
+   
+    padding: 1em;
+    color: white;
+}
+
+footer{
+    padding: 4mm;
+    text-align: center;
+    background-color: #6484b3;
+    color: white;
+    
+}
+
+nav .formula {
+     height: 230px;
+     width: 250px;
+}

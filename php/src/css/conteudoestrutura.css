@@ -1,0 +1,77 @@
+body {
+    padding: 0px;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 25px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    width: 600px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h2 {
+    font-size: 22px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    margin: auto;
+    width: 600px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h3 {
+    font-size: 18px;
+    text-align: center;
+    background-color: rgb(110, 110, 253);
+    color: white;
+    margin: 0px;
+    width: 300px;
+    border-bottom-right-radius: 10px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h4 {
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h5 {
+    font-size: 14px;
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+h6 {
+    font-size: 12px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+p, b ,i {
+    font-size: 16px;
+    font-family: 'Open Sans', Arial, sans-serif;
+    letter-spacing: -0.5px;
+    text-align: justify;
+}
+
+i {
+    color: rgb(56, 56, 56);
+}
+
+img {
+    height: auto;
+    width: auto;
+}
+
+iframe {
+    width: 800px; 
+    height: 400px;
+}
