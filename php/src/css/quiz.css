@@ -1,26 +1,30 @@
 .texto{
    color: black;
-   top: 20px;
+   top: 10px;
 }
 
 .conteudo #A{
     position: absolute;
-    top: 250px;
+    top: 60px;
+    left: -180px;
 }
 
 .conteudo #B{
     position: absolute;
-    top: 325px;
+    top: 120px;
+    left:-180px;
 }
 
 .conteudo #C{
     position: absolute;
-    top: 400px;
+    top: 180px;
+    left: -180px;
 }
 
 .conteudo #D{
     position: absolute;
-    top: 475px;
+    top: 240px;
+    left: -180px;
 }
 
 .button {
@@ -30,7 +34,7 @@
     padding: 0px 30px;
     word-wrap: normal;
     font-size: 16px;
-    margin: 4px 200px;
+    margin: 9px 200px;
     cursor: pointer;
     border-radius: 25px;
     width: 1300px;
@@ -47,8 +51,8 @@
     cursor: pointer;
     border-radius: 25px;
     position: absolute;
-    top: 20px;
-    left: 640px;
+    top: -220px;
+    left: 330px;
 }
 .conteudo p{
     font-family: arial;
@@ -74,13 +78,13 @@
 }
 .conteudo #logopergunta{
     position: absolute;
-    top:8%;
-    left:750px;
+    top:4%;
+    left: 700px;
 }
 .conteudo #fundopergunta{
     width: 1300px;
     height: 150px;
-    top: 30%;
+    top: -120px;
     position: absolute;
     left: 130%;
 }
@@ -91,8 +95,8 @@
     width: 1350px;
     height: 150px;
     position: absolute;
-    left: 200px;
-    top: 5%;
+    left: 30px;
+    top: 1%;
     border-radius: 25px;
 }
 #tx{
@@ -100,18 +104,30 @@
 }
 
 #txtpontuacao{
-    font-size: 30px;
-    color: white;
+    background-color: #faee46;
+    padding-top: 15px ;
+    width: 200px;
+    height: 50px;
     position: absolute;
-    left: 1400px;
+    font-size: 30px;
+    color: #000000;
+    position: absolute;
+    left: 1050px;
     top: -250px;
+    text-align: center;
 }
 #vlpontuacao{
-    font-size: 30px;
-    color: white;
+    background-color:#faee46 ;
+    padding-top: 15px ;
+    width: 50px;
+    height: 50px;
     position: absolute;
-    left: 1570px;
+    font-size: 30px;
+    color: #000000;
+    position: absolute;
+    left: 1230px;
     top: -250px;
+    text-align: center;
 }
 
 #opcao{
@@ -122,4 +138,16 @@
     position: absolute;
     left: 710px;
     top: 170px;
+}
+#Acertou{
+    background-color: #faee46;
+    padding-top: 15px ;
+    color: #000000;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: 220px;
+    top: 50px;
+    font-size: 25px;
+    text-align: center;
 }
