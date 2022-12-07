@@ -2,22 +2,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <link rel="stylesheet" type="text/css" href="./css/style_calcu_geral.css">
-<link rel="stylesheet" type="text/css" href="./css/menu.css">
 
 <div id="plano_fundo_calcu_geral">
 
 <header>
-   <br> <h1>Amplitude</h1><br>
+   <br> <h1>Variância Populacional</h1><br>
 </header>
 
 <article>
-    <img src="./imagens/miniatura_logo.png" width="190" height="190"></br>
+    <img src="./imagens/miniatura_logo.png" width="200" height="190"></br>
 
-        <p>
-            A amplitude de um conjunto, é a diferença entre o maior elemento desse conjunto e o menor. <br> Em outras palavras, para encontrar a amplitude de uma lista de números, basta subtrair o menor elemento do maior. <br> <br>
-        </p>
+    <p>
+		Quando trabalhamos com população, o cálculo de variância é dado pelo somatório dos desvios ao quadrado sobre a frequência.<br>
+        A variância é uma medida de dispersão que mostra o quão distante cada valor desse conjunto está do valor central (médio). <br>
+        Quanto menor é a variância, mais próximos os valores estão da média. <br> 
+        Mas quanto maior ela é, mais os valores estão distantes da média. <br> <br>
+    </p>
 
-    <form action="./index.php?controle=calculadora&acao=calcular_amplitude" method="post">
+    <form action="./index.php?controle=calculadora&acao=calcular_variancia_populacional" method="post">
         <div id="botao">
             <label for="valores">Colocar os valores desejados entre ponto e vírgula (;): </label> <br> </br>
             <input type="text" size="60" class="valores" name="valores" value="{{ valores }}" required></br> <br>
