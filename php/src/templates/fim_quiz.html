@@ -1,13 +1,28 @@
-<h1>Final do Quiz</h1>
+<link rel="stylesheet" href="./css/fim.css">
 
-Pontuação: {{ pontuacao }}/{{ qtde_questoes_respondidas }}
-<br />
 
-<a href="./index.php?controle=principal&acao=inicio">
-    Voltar para a página inicial do Quiz
-</a>
-<br />
+<div class="final">
+    <table class="imagem">
+        <tr>
+            <td colspan="3">
+            <center> <img src="./imagens/quiz.png" id="imgquiz"> </center>
+            </td>
+        </tr>
+    </table>
+    <center>
+        <strong><h1 class="reslth1">Resultado</h1></strong>
 
-<a href="./index.php?controle=quiz&acao=comecar">
-    Tentar novamente
-</a>
+        <p class="reslt">{{ pontuacao }} acertos de {{ qtde_questoes_respondidas }} questões</p>
+        <br />
+
+        <a href="./index.php?controle=principal&acao=inicio" class="link">
+            Voltar para a página inicial do Quiz
+        </a>
+        <br />
+        <br />
+
+        <a href="./index.php?controle=quiz&acao=comecar" class="link">
+            Tentar novamente
+        </a>
+    </center>
+</div>

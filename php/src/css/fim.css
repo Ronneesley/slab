@@ -1,0 +1,31 @@
+.final{
+    width: 1513px;
+    height: 800px;
+    background: rgb(240, 240, 240);
+}
+center{
+    color: black;
+    position: relative;
+    top: 120px;
+    
+}
+
+.imagem{
+    position: relative;
+    top: -40px;
+    left: 560px;
+}
+
+.reslth1{
+    font-size: 40px;
+    padding: 0;
+}
+
+.reslt{
+    font-size: 25px;
+    padding: 0;
+}
+
+.link{
+    font-size: 17px;
+}
