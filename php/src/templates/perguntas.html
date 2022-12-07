@@ -20,6 +20,14 @@
             <img src="./imagens/quiz.png"alt="fotologin" height="100" width="200">
         </div>
 
+        <div id="Acertou">
+        {% if acertou == true %}
+                <h2>Acertou!</h2> 
+            {% else %}
+                <h2>Errou!</h2> 
+            {% endif %}
+        </div>
+
         <div id="tabelapergunta">
             <div id="fundopergunta">
                 <div class="texto1">
