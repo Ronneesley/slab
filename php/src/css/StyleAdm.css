@@ -1,0 +1,144 @@
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav .logo {
+    width: auto;
+    height: auto;
+    max-width: 100px;
+    max-height:150px;
+    margin-left: -180px;
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+}
+
+#menu {
+    background: yellow;
+    width: 100%;
+
+}
+
+#menu ul {
+    max-width: 800px;
+    list-style: none;
+    padding: 0;
+}
+
+#menu ul li {
+    display: inline;
+}
+
+#menu ul li a {
+    font-weight: bold;
+    padding: 25px;
+    display: inline-block;
+    text-decoration: none; 
+    transition: background .4s;
+}
+
+#menu ul li a:hover {
+    background-color: rgb(24, 139, 233);
+}
+
+
+h1{
+    background-color:red;
+    border: 1px solid red;
+    width: 350px;
+    left: 780px;
+    top: 150px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    
+}
+
+.botoes{
+    border: 1px solid white;
+    margin-top: 5px;
+    margin-left: 95%;
+    cursor: pointer;
+}
+
+.organizar span{
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    cursor: pointer;
+}
+
+.organizar img{
+    margin-bottom: -8px;
+    margin-left: -25px;
+}
+
+.caixaA{
+    border: 1px solid red;
+    width: 275px;
+    border-radius: 15px;
+    top: 250px;
+    display: inline-block;
+    padding: 20px;
+}
+
+
+.caixaB{
+    border: 1px solid red;
+    width: 275px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+}
+
+.caixaC{
+    border: 1px solid red;
+    width: 275px;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.caixaD{
+    border: 1px solid red;
+    width: 275px;
+    border: 1px solid red;
+    border-radius: 15px;
+    position: absolute;
+    display:block;
+    margin-left: 25%;
+    margin-top: 5%;
+    padding: 20px;
+
+}
+
+.caixaE{
+    border: 1px solid red;
+    width: 275px;
+    border-radius: 15px;
+    position: absolute;
+    display:block;
+    margin-left: 50%;
+    margin-top: 5%;
+    padding: 20px;
+}
+
+.organizar{
+    background: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    font: normal 16px Arial;
+    text-align: center;
+
+}
