@@ -1,0 +1,16 @@
+.expediente h2 {
+    margin-bottom: 20px;
+}
+
+.expediente img {
+    border-radius: 50%;    
+    width: 150px;
+    height: 150px;
+    filter: grayscale(1);
+    border: 3px solid black;
+}
+
+.expediente img:hover {
+     filter: grayscale(0);
+     cursor: pointer;
+}

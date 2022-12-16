@@ -14,6 +14,9 @@ use QuizEstatistico\modelo\dao\QuestaoDAO;
 class QuizControle extends ControleBase {
     public function processar($acao){
         switch ($acao){
+            case "novo":
+                $this->mostrarFormularioCadastro();
+                break;
             case "comecar":
                 $this->comecar();
                 break;
@@ -126,7 +129,8 @@ class QuizControle extends ControleBase {
             $this->mostrarPaginaLayout($layout, "perguntas.html", 
                     ["questao" => $q, 
                      "letrasOpcoes" => $letrasOpcoes,
-                     "pontuacao" => $pontuacao ]);
+                     "pontuacao" => $pontuacao,
+                     "acertou" => null]);
         } else {
             $this->mostrarFimQuiz();
         }
@@ -155,6 +159,11 @@ class QuizControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "fim_quiz.html", 
                 ["pontuacao" => $pontuacao,
                  "qtde_questoes_respondidas" => $qtde_questoes_respondidas]);
+    }
+    
+    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){        
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/quiz/cadastro.html");
     }
     
     public function inserir(){

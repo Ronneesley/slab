@@ -77,10 +77,18 @@ class PrincipalControle extends ControleBase {
             case "conteudos":
                 $this->mostrarConteudos();
                 break;
+            case "expediente":
+                $this->mostrarPaginaExpediente();
+                break;
             default:
                 $this->mostrarPaginaLogin();
                 break;
         }
+    }
+    
+    public function mostrarPaginaExpediente(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "expediente.html");
     }
 
     public function logar() {
