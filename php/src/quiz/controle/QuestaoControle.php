@@ -58,7 +58,8 @@ class QuestaoControle extends ControleBase {
         
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/questoes/cadastro.html",
-        [ "questao" => $questao, "mensagem" => $mensagem,"niveis"=>$niveis, "cursos"=>$cursos, "temas"=>$temas ]);
+            [   "questao" => $questao, "mensagem" => $mensagem,
+                "niveis"=>$niveis, "cursos"=>$cursos, "temas"=>$temas ]);
     }
 
     public function inserir(){
