@@ -4,6 +4,7 @@ namespace QuizEstatistico\controle;
 use QuizEstatistico\controle\ControleBase;
 use QuizEstatistico\modelo\dto\Administrador;
 use QuizEstatistico\modelo\dao\AdministradorDAO;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Description of AdministradorControle
@@ -13,8 +14,17 @@ use QuizEstatistico\modelo\dao\AdministradorDAO;
 class AdministradorControle extends ControleBase {    
     public function processar($acao){
         switch ($acao){
+            case "painel":
+                $this->mostrarPainelAdministrativo();
+                break;
             case "login":
                 $this->mostrarPaginaLogin();
+                break;
+            case "deslogar":
+                $this->deslogar();
+                break;
+            case "logar":
+                $this->logar();
                 break;
             case "inserir":
                 $this->inserir();
@@ -34,6 +44,29 @@ class AdministradorControle extends ControleBase {
         }
     }
     
+    public function deslogar(){
+        @session_destroy();
+        
+        $controle = new PrincipalControle();
+        $controle->mostrarPaginaLogin();
+    }
+    
+    public function logar() {
+        $email = $_REQUEST["email"];
+        $senha = $_REQUEST["senha"];
+
+        if ($email == "admin@gmail.com" && $senha = "123456") {
+            $this->mostrarPainelAdministrativo();
+        } else {
+            $this->mostrarPaginaLogin("Usuário ou senha incorretos");
+        }
+    }
+
+    public function mostrarPainelAdministrativo(){
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/painel.html");
+    }
+
     public function mostrarPaginaLogin($mensagem = ""){
         $pagina = $this->configurarTemplate("admin/login.html");
         $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);

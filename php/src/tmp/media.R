@@ -1,2 +1,2 @@
-conjunto <- c(5,5,2)
+conjunto <- c(1,2,3)
 mean(conjunto)

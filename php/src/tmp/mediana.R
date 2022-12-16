@@ -1,2 +1,2 @@
-conjunto <- c(1,2,3,4,5)
+conjunto <- c(1,2,3)
 median(conjunto)

@@ -1,4 +1,4 @@
-conjunto <- c(9,8,7,6,5,4,5,3,2,1)
+conjunto <- c(1,2,3)
 desvio_populacional <- function(x){ 
 n <- length(x) 
 a <- var(x)*(n-1)/n  

@@ -77,10 +77,6 @@ class PrincipalControle extends ControleBase {
             case "conteudos":
                 $this->mostrarConteudos();
                 break;
-            // Apenas para direcionar para tela de menu do admin, futuramente pode remover case "menuAdmin" by Mayko
-            case "menuAdmin":
-                $this->mostrarPaginaMenu();
-                break;
             default:
                 $this->mostrarPaginaLogin();
                 break;
@@ -91,17 +87,11 @@ class PrincipalControle extends ControleBase {
         $email = $_REQUEST["email"];
         $senha = $_REQUEST["senha"];
 
-        if ($email == "roni.teles@ifgoiano.edu.br" && $senha = "123456") {
+        if ($email == "usuario@gmail.com" && $senha = "123456") {
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");
         }
-    }
-
-    // Apenas para direcionar para tela de menu do admin, futuramente pode remover mostrarPaginaMenu by Mayko
-    public function mostrarPaginaMenu($mensagem = "") { 
-        $pagina = $this->configurarTemplate("admin/menu.html");
-        $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);
     }
 
     public function mostrarConteudos() {
@@ -123,7 +113,5 @@ class PrincipalControle extends ControleBase {
         $pagina = $this->configurarTemplate("login.html");
         $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);
     }
-
 }
-
 ?>

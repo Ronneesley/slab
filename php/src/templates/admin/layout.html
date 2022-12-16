@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
-        <title>Quiz Estatístico - Painel Administrativo</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Painel Administrativo</title>
+        <link rel="stylesheet" href="css/StyleAdm.css">
     </head>
     <body>
-        <h1>Quiz Estatístico - Painel Administrativo</h1>
-
         {{ include("admin/menu.html") }}
         
-        {{ include(pagina) }}
+        <div class="box">
+            <div class="botoes">
+                <img src="./imagens/perfil.png" width="25" height="25">
+                
+                <a href="./index.php?controle=administrador&amp;acao=deslogar">
+                    <img src="./imagens/sair.png" width="25" height="25" />
+                </a>
+            </div>
+
+            {{ include(pagina) }}
+        </div>
     </body>
 </html>
