@@ -1,0 +1,45 @@
+article {
+    display: flex;  
+    flex-wrap: wrap;
+    text-align: center;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    font-family: sans-serif;
+    align-items: center;
+}
+p {
+    font-size: medium;
+    font-family: sans-serif;
+    text-align: justify;
+    width: 70%;
+    color: black;
+}
+input[type=submit]{
+    background-color: yellow;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    margin: 4px 2px;
+}
+
+label {
+    color: black;
+    text-align: left;
+}
+header {
+    display: flex;
+    font-family: sans-serif;
+    background-color: yellow;
+    width:100%;
+    justify-content: center;
+    margin-top: 0%;
+    margin-right: 0%;
+    text-align: center;
+}
+
+input[type="text"]{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
