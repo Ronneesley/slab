@@ -5,6 +5,7 @@ namespace QuizEstatistico\controle;
 use QuizEstatistico\controle\QuizControle;
 use QuizEstatistico\controle\AdministradorControle;
 use QuizEstatistico\controle\CalculadoraControle;
+use QuizEstatistico\controle\UsuarioControle;
 
 class PrincipalControle extends ControleBase {
 
@@ -51,6 +52,10 @@ class PrincipalControle extends ControleBase {
                 break;
             case "tema":
                 $controle = new TemaControle();
+                $controle->processar($acao);
+                break;
+            case "usuario":
+                $controle = new UsuarioControle();
                 $controle->processar($acao);
                 break;
             case "calculadora":
