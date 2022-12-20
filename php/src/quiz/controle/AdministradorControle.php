@@ -41,7 +41,15 @@ class AdministradorControle extends ControleBase {
             case "selecionar":
                 $this->selecionar();
                 break;
+            case "novo":
+                $this->mostrarFormularioCadastro();
+                break;
         }
+    }
+
+    public function mostrarFormularioCadastro(){
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/administradores/cadastro.html");
     }
     
     public function deslogar(){

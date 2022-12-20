@@ -17,6 +17,9 @@ class UsuarioControle extends ControleBase {
             case "esqueci_senha":
                 $this->mostrarFormularioEsqueciSenha();
                 break;
+            case "cadastre_se":
+                $this->mostrarFormularioCadastreSe();
+                break;
             case "salvar":
                 $this->salvar();
                 break;
@@ -44,6 +47,11 @@ class UsuarioControle extends ControleBase {
         } else {
             $this->inserir();
         }
+    }
+
+    public function mostrarFormularioCadastreSe(){
+        $pagina = $this->configurarTemplate("cadastre_se.html");
+        $this->mostrarPagina($pagina);
     }
     
     public function mostrarFormularioCadastro(){
