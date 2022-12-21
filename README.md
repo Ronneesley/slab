@@ -1,5 +1,9 @@
 # Quiz estatístico.
 
+![image](https://user-images.githubusercontent.com/29005089/208920650-b6e693f0-42b5-4136-a7e9-6a8e41020a9a.png)
+
+![image](https://user-images.githubusercontent.com/29005089/208920830-64f99236-70e0-4aed-a9e1-3b6910344dc2.png)
+
 # Contexto
 
 A estatística é um ramo de grande importância da matemática, desenvolvendo técnicas como a coleta de dados e sua organização, interpretação, análise e representação. O uso da matemática para a tomada de decisões vem acompanhando nossa história desde o início das grandes civilizações. Com o passar do tempo, foram criados métodos para facilitar-se esse processo.
