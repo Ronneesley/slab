@@ -86,8 +86,11 @@ class CalculadoraControle extends ControleBase {
     }
     
     public function executarArquivoR($nome){
-        //exec("Rscript " . $path_arquivo, $retorno);
-        exec(".\\tmp\\" . $nome, $retorno);
+        $path_arquivo = "/var/www/html/quizestatistico/php/src/tmp/$nome";
+        exec("Rscript " . $path_arquivo, $retorno);
+        
+        //Windows
+        //exec(".\\tmp\\" . $nome, $retorno);
         
         return $retorno;
     }
