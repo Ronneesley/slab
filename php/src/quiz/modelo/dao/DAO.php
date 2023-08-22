@@ -10,7 +10,7 @@ use mysqli;
  */
 abstract class DAO {
     public function conectar(){
-        $con = new mysqli("localhost", "quiz", "quiz123", "quizestatistico");
+        $con = new mysqli("localhost", "quiz", "quiz123", "quizestatistico", 13306);
         if ($con->connect_errno) {
             echo "Failed to connect to MySQL: (" . $con->connect_errno . ") " . $mysqli->connect_error;
         }

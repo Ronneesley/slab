@@ -9,7 +9,7 @@ use QuizEstatistico\modelo\dto\Curso;
  * Data Access Object (DAO) *
  * @author aluno
  */
-class CursoDAO extends DAO {    
+class CursoDAO extends DAO {
     
     public function inserir($curso){
         $con = $this->conectar();

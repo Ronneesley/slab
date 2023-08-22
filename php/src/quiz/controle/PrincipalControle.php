@@ -100,7 +100,7 @@ class PrincipalControle extends ControleBase {
         $email = $_REQUEST["email"];
         $senha = $_REQUEST["senha"];
 
-        if ($email == "usuario@gmail.com" && $senha = "123456") {
+        if ($email == "usuario@gmail.com" && $senha == "123456") {
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");
