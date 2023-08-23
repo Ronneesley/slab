@@ -2,3 +2,12 @@ https://www.fcav.unesp.br/Home/departamentos/cienciasexatas/AMANDALIZPACIFICOMAN
 
 Tabela de níveis de significância
 https://www.fcav.unesp.br/Home/departamentos/cienciasexatas/AMANDALIZPACIFICOMANFRIM/aula-4.pdf
+
+
+1. Integração do código ao sistema estatístico (OK)
+2. Transformar os cálculos em um arquitetura O.O. com MVC (OK)
+3. Melhoria da interface gráfica (Bootstrap) -
+4. Casos teste usando PHP Unit -
+5. Construção do banner para apresentação -
+6. Salvar os dados do experimento em um arquivo
+7. Carregar os dados salvos em um arquivo para a tela

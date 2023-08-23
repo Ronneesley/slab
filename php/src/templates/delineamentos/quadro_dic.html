@@ -1,0 +1,35 @@
+<form method="post" action="./index.php?controle=delineamentos&acao=calcular_dic">
+    <input type="hidden" name="n_repeticoes" value="{{ J }}" />
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th rowspan="2">Tratamentos</th>
+                <th colspan="{{ J }}">Repetições</th>
+            </tr>
+
+            <tr>
+                {% for j in 0..J - 1 %}
+                    <th>{{ j + 1 }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for i in 0..I - 1 %}
+                <tr>
+                    <td><input type="text" name="tratamentos[]" /></td>
+
+                    {% for j in 0..J - 1 %}
+                        <td>
+                            <input type="text" name="leituras[{{ i }}][{{ j }}]" style="width: 70px;" />
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br />
+    <input type="submit" value="Calcular ANOVA" />
+</form>

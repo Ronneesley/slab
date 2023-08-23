@@ -68,7 +68,7 @@ class CalculadoraControle extends ControleBase {
                 break;      
             case "calcular_coeficiente_variacao_populacional":
                 $this->calcularCoeficientePopulacional();
-                break;                                        
+                break;                                                    
             case "opcoes":
                 $this->mostrarOpcoes();
                 break;

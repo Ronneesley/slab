@@ -6,6 +6,7 @@ use QuizEstatistico\controle\QuizControle;
 use QuizEstatistico\controle\AdministradorControle;
 use QuizEstatistico\controle\CalculadoraControle;
 use QuizEstatistico\controle\UsuarioControle;
+use QuizEstatistico\controle\DelineamentosControle;
 
 class PrincipalControle extends ControleBase {
 
@@ -60,6 +61,10 @@ class PrincipalControle extends ControleBase {
                 break;
             case "calculadora":
                 $controle = new CalculadoraControle();
+                $controle->processar($acao);
+                break;
+            case "delineamentos":
+                $controle = new DelineamentosControle();
                 $controle->processar($acao);
                 break;
         }

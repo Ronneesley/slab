@@ -1,10 +1,13 @@
 <?php
 namespace QuizEstatistico\controle;
 
+use Twig\Extra\Intl\IntlExtension;
+
 abstract class ControleBase {    
     protected function configurarTemplate($arquivo){
         $loader = new \Twig\Loader\FilesystemLoader("./templates");
         $tp = new \Twig\Environment($loader);
+        $tp->addExtension(new IntlExtension());
         $pagina = $tp->load($arquivo);
         
         return $pagina;
