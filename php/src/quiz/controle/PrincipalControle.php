@@ -10,10 +10,10 @@ use QuizEstatistico\controle\DelineamentosControle;
 
 class PrincipalControle extends ControleBase {
 
-    public function processar($controle, $acao) {
+    public function processarControles($controle, $acao) {
         switch ($controle) {
             case "principal":
-                $this->processarPrincipal($acao);
+                $this->processar($acao);
                 break;
             case "quiz":
                 $controle = new QuizControle();
@@ -70,7 +70,7 @@ class PrincipalControle extends ControleBase {
         }
     }
 
-    public function processarPrincipal($acao) {
+    public function processar($acao) {
         switch ($acao) {
             case "inicio":
                 $this->mostrarPaginaInicial();

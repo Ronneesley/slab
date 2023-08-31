@@ -279,7 +279,7 @@ class CalculadoraControle extends ControleBase {
     } 
  
  
-       public function calcularDesvioAmostral(){
+    public function calcularDesvioAmostral(){
         $valores = $_POST["valores"];
         
         $valores_tratados = str_replace(",", ".", $valores);
@@ -309,7 +309,7 @@ class CalculadoraControle extends ControleBase {
     } 
     
 
-       public function calcularDesvioPopulacional(){
+    public function calcularDesvioPopulacional(){
         $valores = $_POST["valores"];
         
         $valores_tratados = str_replace(",", ".", $valores);
@@ -344,7 +344,7 @@ class CalculadoraControle extends ControleBase {
     } 
 
 
-       public function calcularCoeficienteAmostral(){
+    public function calcularCoeficienteAmostral(){
         $valores = $_POST["valores"];
         
         $valores_tratados = str_replace(",", ".", $valores);
@@ -380,7 +380,7 @@ class CalculadoraControle extends ControleBase {
                  "mensagem" => $mensagem]);
     }
   
-       public function calcularCoeficientePopulacional(){
+    public function calcularCoeficientePopulacional(){
         $valores = $_POST["valores"];
         
         $valores_tratados = str_replace(",", ".", $valores);
@@ -463,7 +463,7 @@ class CalculadoraControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "calculadora/desvio_populacional.html", 
 				["valores" => $valores, "resultado" => $resultado,
                 "mensagem" => $mensagem]);    
-                }
+    }
         
     
     
@@ -472,17 +472,15 @@ class CalculadoraControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "calculadora/coeficiente_variacao_amostral.html", 
 				["valores" => $valores, "resultado" => $resultado,
                 "mensagem" => $mensagem]); 
-                    }
+    }
 
     public function mostrarCalculadoraCoeficienteVariacaoPopulacional($valores = "", $resultado = "", $mensagem = ""){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/coeficiente_variacao_populacional.html", 
 				["valores" => $valores, "resultado" => $resultado,
                 "mensagem" => $mensagem]); 
-                    }  
+    }
   
-  
-    
     public function mostrarOpcoes(){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/opcoes.html");

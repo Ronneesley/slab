@@ -8,5 +8,3 @@ ENV MYSQL_PASSWORD = quiz123
 
 COPY criacao.sql /docker-entrypoint-initdb.d
 COPY quizestatistico_preenchimento.sql /docker-entrypoint-initdb.d
-
-CMD ["/bin/bash"]

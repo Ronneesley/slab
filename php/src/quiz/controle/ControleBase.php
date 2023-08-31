@@ -3,7 +3,9 @@ namespace QuizEstatistico\controle;
 
 use Twig\Extra\Intl\IntlExtension;
 
-abstract class ControleBase {    
+abstract class ControleBase {
+    public abstract function processar($acao);
+    
     protected function configurarTemplate($arquivo){
         $loader = new \Twig\Loader\FilesystemLoader("./templates");
         $tp = new \Twig\Environment($loader);
