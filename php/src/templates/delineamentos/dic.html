@@ -1,81 +1,93 @@
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th rowspan="2">Tratamentos</th>
-            <th colspan="{{ dic.J }}">Repetições</th>
-            <th rowspan="2">Total</th>
-        </tr>
+<html>
+    <title>Resultado DIC</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <div class="p-3 text-dark" style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; text-align: center;">
+        Resultado
+    </div>
+        <table style="width:50%; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-left: 25%;" class="table table-bordered table-hover">
+            <thead class="text-center table-secondary">
+                <tr>
+                    <th rowspan="2">Tratamentos</th>
+                    <th colspan="{{ dic.J }}">Repetições</th>
+                    <th rowspan="2">Total</th>
+                </tr>
 
-        <tr>
-            {% for j in 0..dic.J - 1 %}
-                <th>{{ j + 1 }}</th>
-            {% endfor %}
-        </tr>
-    </thead>
+                <tr>
+                    {% for j in 0..dic.J - 1 %}
+                        <th>{{ j + 1 }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
 
-    <tbody>
-        {% for i in 0..dic.I - 1 %}
-            <tr>
-                <td>{{ dic.tratamentos[i] }}</td>
+            <tbody>
+                {% for i in 0..dic.I - 1 %}
+                    <tr>
+                        <td class="text-center">{{ dic.tratamentos[i] }}</td>
 
-                {% for j in 0..dic.J - 1 %}
-                    <td style="text-align: right;">
-                        {{ dic.leituras[i][j] | number_format(2, ',', '.') }}
-                    </td>
+                        {% for j in 0..dic.J - 1 %}
+                            <td class="text-center">
+                                {{ dic.leituras[i][j] | number_format(2, ',', '.') }}
+                            </td>
+                        {% endfor %}
+
+                        <td style="text-align: center;">
+                            {{ dic.L[i] | number_format(2, ',', '.') }}
+                        </td>
+                    </tr>            
                 {% endfor %}
+            </tbody>
 
-                <td style="text-align: right;">
-                    {{ dic.L[i] | number_format(2, ',', '.') }}
-                </td>
-            </tr>            
-        {% endfor %}
-    </tbody>
+            <tfoot>
+                <tr>
+                    <th style="text-align: center;" colspan="{{ dic.J + 1 }}">TOTAL</th>
+                    <th style="text-align: center;">{{ dic.G | number_format(2, ',', '.') }}</th>
+                </tr>
+            </tfoot>
+        </table>
+    
+    <div class="p-2 text-dark" style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 24px;">
+        ANOVA
+        <table style="width:50%; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-left: 25%;" class="table table-bordered table-hover">
+            <thead class="table table-secondary">
+                <tr class="text-center">
+                    <th>Causa de Variação</th>
+                    <th title="Grau de Liberdade">GL</th>
+                    <th>SQ</th>
+                    <th>QM</th>
+                    <th>F</th>
+                </tr>
+            </thead>
 
-    <tfoot>
-        <tr>
-            <th colspan="{{ dic.J + 1 }}">TOTAL</th>
-            <th>{{ dic.G | number_format(2, ',', '.') }}</th>
-        </tr>
-    </tfoot>
-</table>
+            <tbody>
+                <tr>
+                    <td>Tratamento</td>
+                    <td style="text-align: center;">{{ dic.GLTrat }}</td>
+                    <td style="text-align: center;">{{ dic.SQTrat | number_format(3, ',', '.') }}</td>
+                    <td style="text-align: center;">{{ dic.QMTrat | number_format(3, ',', '.') }}</td>
+                    <td style="text-align: center;">{{ dic.FCalc | number_format(3, ',', '.') }}</td>
+                </tr>
 
-<h2>ANOVA</h2>
+                <tr>
+                    <td>Resíduo</td>
+                    <td style="text-align: center;">{{ dic.GLRes }}</td>
+                    <td style="text-align: center;">{{ dic.SQRes | number_format(3, ',', '.') }}</td>
+                    <td style="text-align: center;">{{ dic.QMRes | number_format(3, ',', '.') }}</td>
+                </tr>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Causa de Variação</th>
-            <th title="Grau de Liberdade">GL</th>
-            <th>SQ</th>
-            <th>QM</th>
-            <th>F</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            <td>Tratamento</td>
-            <td style="text-align: right;">{{ dic.GLTrat }}</td>
-            <td style="text-align: right;">{{ dic.SQTrat | number_format(3, ',', '.') }}</td>
-            <td style="text-align: right;">{{ dic.QMTrat | number_format(3, ',', '.') }}</td>
-            <td style="text-align: right;">{{ dic.FCalc | number_format(3, ',', '.') }}</td>
-        </tr>
-
-        <tr>
-            <td>Resíduo</td>
-            <td style="text-align: right;">{{ dic.GLRes }}</td>
-            <td style="text-align: right;">{{ dic.SQRes | number_format(3, ',', '.') }}</td>
-            <td style="text-align: right;">{{ dic.QMRes | number_format(3, ',', '.') }}</td>
-        </tr>
-
-        <tr>
-            <td>Total</td>
-            <td style="text-align: right;">{{ dic.GLTotal }}</td>
-            <td style="text-align: right;">{{ dic.SQTotal | number_format(3, ',', '.') }}</td>
-        </tr>
-    </tbody>
-</table>
-
-<h2>Conclusão</h2>
-
-{{ dic.conclusao }}
+                <tr>
+                    <td>Total</td>
+                    <td style="text-align: center;">{{ dic.GLTotal }}</td>
+                    <td style="text-align: center;">{{ dic.SQTotal | number_format(3, ',', '.') }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        <div class="text-dark text-center fw-bold" style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;">
+            Conclusão:
+            {{ dic.conclusao }}
+        </div>
+        
+</html>
