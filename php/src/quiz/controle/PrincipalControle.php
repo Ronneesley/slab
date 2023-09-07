@@ -67,6 +67,10 @@ class PrincipalControle extends ControleBase {
                 $controle = new DelineamentosControle();
                 $controle->processar($acao);
                 break;
+            case "terminalinterativo":
+                $controle = new TerminalInterativoControle();
+                $controle->processar($acao);
+                break;
         }
     }
 

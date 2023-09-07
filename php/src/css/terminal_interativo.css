@@ -1,0 +1,10 @@
+.comando {
+    background-color: blue; 
+    min-height: 50px; 
+    margin-top: 10px;
+}
+
+.comando input {
+    width: 100%;
+    height: 100%;
+}
