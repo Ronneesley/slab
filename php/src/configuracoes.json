@@ -1,0 +1,8 @@
+{
+    "servidor": "localhost",
+    "usuario": "quiz",
+    "senha": "quiz123",
+    "banco_dados": "quizestatistico",
+    "porta": 13306
+}
+

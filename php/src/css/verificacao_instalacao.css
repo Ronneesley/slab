@@ -1,0 +1,13 @@
+body {
+    background-color: #f0f0f0;
+}
+
+.janela {
+    width: 300px;
+    min-height: 500px;    
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+}

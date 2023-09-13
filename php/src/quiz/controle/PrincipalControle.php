@@ -7,6 +7,7 @@ use QuizEstatistico\controle\AdministradorControle;
 use QuizEstatistico\controle\CalculadoraControle;
 use QuizEstatistico\controle\UsuarioControle;
 use QuizEstatistico\controle\DelineamentosControle;
+use QuizEstatistico\modelo\dao\QuizDAO;
 
 class PrincipalControle extends ControleBase {
 
@@ -94,11 +95,60 @@ class PrincipalControle extends ControleBase {
             case "expediente":
                 $this->mostrarPaginaExpediente();
                 break;
-            default:
-                $this->mostrarPaginaLogin();
+            case "testar_conexao":
+                $this->testarConexao();
+                break;
+            default:                
+                $this->mostrarPaginaVerificacaoInstalacao();
                 break;
         }
     }
+    
+    public function testarConexao(){
+        $servidor = $_POST["servidor"];
+        $usuario = $_POST["usuario"];
+        $senha = $_POST["senha"];
+        $bancoDados = $_POST["banco_dados"];
+        $porta = $_POST["porta"];
+            
+        $dao = new QuizDAO();
+        
+        $pagina = $this->configurarTemplate("erros/verificacao_instalacao.html");
+        
+        try {            
+            $dao->realizar_conexao($servidor, $usuario, $senha, $bancoDados, $porta);
+            
+            $this->mostrarPagina($pagina, 
+                    ["mensagem" => "Conexão realizada com sucesso",
+                     "tipo_mensagem" => "success"]);
+        } catch (\Exception $ex){
+            /*$config = $dao->getConfiguracoes();
+            
+            $this->mostrarPagina($pagina, 
+                    ["mensagem" => $ex->getMessage(), 
+                     "config" => $config]);*/
+        }
+    }
+    
+    public function mostrarPaginaVerificacaoInstalacao(){
+        $dao = new QuizDAO();
+        
+        try {            
+            $dao->conectar();
+            
+            $this->mostrarPaginaLogin();
+        } catch (\Exception $ex){
+            $pagina = $this->configurarTemplate("erros/verificacao_instalacao.html");
+            
+            $config = $dao->getConfiguracoes();
+            
+            $this->mostrarPagina($pagina, 
+                    ["mensagem" => $ex->getMessage(), 
+                     "tipo_mensagem" => "danger",
+                     "config" => $config]);
+        }
+    }
+ 
     
     public function mostrarPaginaExpediente(){
         $layout = $this->configurarTemplate("layout.html");
