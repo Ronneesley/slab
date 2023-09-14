@@ -20,7 +20,7 @@ Em seguida execute o comando:
 sudo ./slab.sh dev
 ```
 
-Pronto! Agora você já pode fazer edições nos códigos do SLab.
+Pronto! Agora você já pode fazer edições nos códigos do SLab e acessá-lo em [localhost:3000](http://localhost:3000).
 
 ## Como iniciar o ambiente em produção?
 
@@ -30,4 +30,4 @@ Entre dentro da pasta `bin` e emita o comando:
 sudo ./slab.sh prod
 ```
 
-Pronto! O sistema subirá os containers que são necessários para a execução.
+Pronto! O sistema subirá os containers que são necessários para a execução e você poderá acessá-lo em [localhost:3000](http://localhost:3000).
