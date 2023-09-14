@@ -1,0 +1,46 @@
+#Compilação dos arquivos de dependência do PHP
+FROM composer:latest as bcomposer
+
+COPY src/ /var/www/html/
+WORKDIR /var/www/html/
+RUN composer install
+
+#Compilação das dependências JavaScript
+FROM node:latest as bnode
+
+COPY src/ /var/www/html/
+WORKDIR /var/www/html/
+RUN npm install
+
+######################################################################3
+# Container PHP
+######################################################################3
+FROM php:8.1-apache
+
+#Copia os arquivos do projeto para a pasta pública
+COPY src/ /var/www/html/
+
+#Configura a pasta de dependências em PHP
+RUN mkdir /var/www/html/vendor
+COPY --from=bcomposer /var/www/html/vendor/ /var/www/html/vendor/
+
+#Configura a pasta de dependências em JavaScript
+RUN mkdir /var/www/html/node_modules
+COPY --from=bnode /var/www/html/node_modules/ /var/www/html/node_modules/
+
+#Cria a pasta de arquivos temporários para os scripts em R, modificando sua permissão
+RUN mkdir /var/www/html/tmp && \ 
+    chmod -R 777 /var/www/html/tmp
+
+#Dá permissão de alteração do arquivo de configuração da conexão
+RUN chmod -R 777 /var/www/html/configuracoes.json
+
+#Instalação do R
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install r-base -y
+
+#Instalação da extensão do MySQLi
+RUN docker-php-ext-install gd mysqli intl && \
+    docker-php-ext-enable gd mysqli intl
+

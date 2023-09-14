@@ -1,0 +1,10 @@
+FROM php:8.1-apache
+
+#Instalação do R
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install r-base -y
+
+#Instalação da extensão do MySQLi
+RUN docker-php-ext-install gd mysqli intl && \
+    docker-php-ext-enable gd mysqli intl

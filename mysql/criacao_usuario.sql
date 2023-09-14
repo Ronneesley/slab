@@ -1,2 +1,2 @@
-CREATE USER 'quiz'@'localhost' IDENTIFIED BY 'quiz123';
-GRANT ALL ON quizestatistico.* TO 'quiz'@'localhost';
+CREATE USER 'slab'@'localhost' IDENTIFIED BY 'slab123';
+GRANT ALL ON slab.* TO 'slab'@'localhost';

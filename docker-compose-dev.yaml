@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  php:
+    image: slab_php
+    build: 
+      context: php
+      dockerfile: ./Dockerfile-dev
+    ports:
+      - 3000:80
+    volumes:
+      - ./php/src/:/var/www/html/
+    depends_on:
+      - mysql
+
+  mysql:
+    image: slab_mysql
+    build: 
+      context: mysql
+      dockerfile: ./Dockerfile

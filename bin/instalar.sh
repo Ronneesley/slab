@@ -1,11 +1,6 @@
 #!/bin/bash
 
-./instalacao_php.sh
-./instalacao_netbeans.sh
-./instalacao_mysql_workbench.sh
-./instalacao_composer.sh
-./instalacao_node.sh
-
-cd ../php/src
-composer install
-npm install
+./instalar_ferramenta.sh php
+./instalar_ferramenta.sh composer
+./instalar_ferramenta.sh node
+./instalar_ferramenta.sh docker

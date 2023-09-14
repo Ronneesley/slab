@@ -1,8 +1,8 @@
 {
-    "servidor": "127.0.0.1",
-    "usuario": "quiz",
-    "senha": "quiz123",
-    "banco_dados": "quizestatistico",
-    "porta": 13306
+    "servidor": "mysql",
+    "usuario": "slab",
+    "senha": "slab123",
+    "banco_dados": "slab",
+    "porta": 3306
 }
 
