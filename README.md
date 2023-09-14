@@ -1,15 +1,17 @@
 # Statistical Lab (SLab)
 
-![Sistema de perguntas e respostas](screenshots/quiz.png)
+![Sistema de perguntas e respostas](documentacao/screenshots/quiz.png)
 
-![Painel administrativo](screenshots/admin.png)
+![Painel administrativo](documentacao/screenshots/admin.png)
 
 ## Como rodar o ambiente para desenvolvimento?
 
-Entre dentro da pasta `bin` e emita o comando:
+Entre dentro da pasta `bin` e emita o comando.
+
+**ATENÇÃO**: este comando acima deve ser executado com o seu usuário normal (**não root**).
 
 ```console
-sudo ./configurar_ambiente_dev.sh
+./configurar_ambiente_dev.sh
 ```
 
 Em seguida execute o comando:

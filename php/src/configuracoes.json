@@ -3,6 +3,6 @@
     "usuario": "slab",
     "senha": "slab123",
     "banco_dados": "slab",
-    "porta": 3306
+    "porta": 3306,
+    "modo_instalacao": true
 }
-

@@ -20,6 +20,9 @@ FROM php:8.1-apache
 #Copia os arquivos do projeto para a pasta pública
 COPY src/ /var/www/html/
 
+#Remove a pasta vendor e node_modules se elas existirem
+RUN rm -rf /var/www/html/vendor && rm -rf /var/www/html/node_modules/ && rm -rf /var/www/html/tmp
+
 #Configura a pasta de dependências em PHP
 RUN mkdir /var/www/html/vendor
 COPY --from=bcomposer /var/www/html/vendor/ /var/www/html/vendor/

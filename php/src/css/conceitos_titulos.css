@@ -14,6 +14,7 @@
     width: 600px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    margin-bottom: 50px;
 }
 
 #painel_conceitos h2 {
@@ -35,5 +36,8 @@
     margin: 0px;
     width: 300px;
     border-bottom-right-radius: 10px;
+}
 
+#painel_conceitos h4 {
+    margin-bottom: 20px;
 }

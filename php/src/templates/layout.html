@@ -1,29 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>Estatística</title>
+        <title>SLab</title>
         
-        <link rel="stylesheet" href="./css/menu.css" />
-
+        <link rel="stylesheet" href="{{CSS_DIR}}/layout.css" />
         <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
-        <!-- <link rel="stylesheet" href="./css/layout.css" /> -->
-        <!-- <link rel="stylesheet" href="./css/layout_max.css" />  -->
 
-        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        
-       <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
-       <script  src="./js/layout.js"></script> 
-       <script  src="./js/menu.js"></script> 
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
     </head>
     
     <body>
-         {{ include("menu.html") }} 
-        
-        <div class="conteudo content slideRight page" id="tela">
-            {{ include(pagina) }}
+        <div class="layout">
+            <div class="menu">
+                {{ include("menu.html") }} 
+            </div>
+
+            <div class="conteudo">
+                {{ include(pagina) }}
+            </div>
+
+            <div class="rodape">
+                {{ include("rodape.html") }}
+            </div>
         </div>
     </body>
 </html>

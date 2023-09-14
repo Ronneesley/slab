@@ -10,7 +10,7 @@
         <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="card" style="width: 300px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;">
+        <div class="card" style="width: 400px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;">
             <div class="card-header">
               Verificação instalação
             </div>
@@ -22,39 +22,39 @@
                 <form method="post" action="./index.php?controle=principal">
                     <div class="mb-3">
                         <label for="servidor" class="form-label">Servidor</label>
-                        <input type="text" class="form-control" id="servidor" name="servidor" value="{{ config.servidor }}">
+                        <input type="text" class="form-control" id="servidor" name="servidor" value="{{ servidor }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="usuario" class="form-label">Usuário</label>
-                        <input type="text" class="form-control" id="usuario" name="usuario" value="{{ config.usuario }}">
+                        <input type="text" class="form-control" id="usuario" name="usuario" value="{{ usuario }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="senha" class="form-label">Senha</label>
-                        <input type="text" class="form-control" id="senha" name="senha" value="{{ config.senha }}">
+                        <input type="text" class="form-control" id="senha" name="senha" value="{{ senha }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="porta" class="form-label">Porta</label>
-                        <input type="text" class="form-control" id="porta" name="porta" value="{{ config.porta }}">
+                        <input type="text" class="form-control" id="porta" name="porta" value="{{ porta }}">
                     </div>
 
                     <div class="mb-3">
                         <label for="banco_dados" class="form-label">Banco de dados</label>
-                        <input type="text" class="form-control" id="banco_dados" name="banco_dados" value="{{ config.banco_dados }}">
+                        <input type="text" class="form-control" id="banco_dados" name="banco_dados" value="{{ banco_dados }}">
                     </div>
 
                     <div class="row">
                         <div class="col">
                             <button type="submit" name="acao" value="testar_conexao" class="btn btn-secondary">Testar</button>
                         </div>
+
                         <div class="col" style="text-align: right;">
-                          <button type="button" class="btn btn-primary">Salvar</button>
+                            <button type="submit" name="acao" value="salvar_configuracao" class="btn btn-primary">Salvar</button>
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </body>

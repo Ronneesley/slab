@@ -2,6 +2,16 @@
 
 namespace QuizEstatistico\modelo\bo;
 
+/**
+ * Delineamento Inteiramente Casualizado (DIC)
+ * Autor: Ronneesley Moura Teles
+ * 
+ * Referências:
+ * https://www.fcav.unesp.br/Home/departamentos/cienciasexatas/AMANDALIZPACIFICOMANFRIM/aula-8.pdf
+ * 
+ * Tabela de níveis de significância:
+ * https://www.fcav.unesp.br/Home/departamentos/cienciasexatas/AMANDALIZPACIFICOMANFRIM/aula-4.pdf
+ */
 class DIC {
     private $tratamentos;
     

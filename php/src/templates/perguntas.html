@@ -14,18 +14,27 @@
     }
 </script>
 
-<div class="planodefundo">
+<div>
     <form method="get" action="./index.php" id="formulario">
-        <div id="logopergunta">
-            <img src="./imagens/quiz.png" alt="fotologin" height="100" width="200">
-        </div>
+        <div class="row">
+            <div class="col">
+                <img src="./imagens/quiz.png" alt="fotologin" height="100" width="200">
+            </div>
 
-        <div id="tabelapergunta">
-            <div id="fundopergunta">
-                <div class="texto1">
-                    <p id="tx">{{ questao.pergunta }}</p>
-                </div>
+            <div class="col-md-2 txtpontuacao">
+                Pontuação:
+            </div>
+
+            <div class="col-md-1 vlpontuacao">
+                {{ pontuacao }}
+            </div>
+        </div>        
+
+        <div>
+            <div class="pergunta">
+                {{ questao.pergunta }}
             </div> 
+
             <p id="opcao">
                 Escolha uma opção: 
             </p>
@@ -35,43 +44,35 @@
             <input type="hidden" name="acao" id="acao" value="" />
             
             <div id="A">
-                <input type="button" class="button"
+                <input type="button" class="opcao"
                     style="background-color: {{ coloracoes[0] }}"
                     onclick="responder('0')"
                     value="A) {{ letrasOpcoes[0] }}">
             </div>  
 
             <div id="B">
-                <input type="button" class="button" 
+                <input type="button" class="opcao" 
                     style="background-color: {{ coloracoes[1] }}"
                     onclick="responder('1')"
                     value="B) {{ letrasOpcoes[1] }}">
             </div>
 
             <div id="C">
-                <input type="button" class="button"
+                <input type="button" class="opcao"
                     style="background-color: {{ coloracoes[2] }}"
                     onclick="responder('2')"
                     value="C) {{ letrasOpcoes[2] }}">
             </div>
 
             <div id="D">
-                <input type="button" class="button"
+                <input type="button" class="opcao"
                     style="background-color: {{ coloracoes[3] }}"
                     onclick="responder('3')"
                     value="D) {{ letrasOpcoes[3] }}">
             </div>
 
-            <div id="txtpontuacao">
-                <h1>Pontuação:</h1>
-            </div>
-
-            <div id="vlpontuacao">
-                <h1>{{ pontuacao }}</h1> 
-            </div>
-
-            <div id="prox">
-                <button type="button" class="buttonprox" 
+            <div style="text-align: right; margin-top: 40px;">
+                <button type="button" class="btnproximo" 
                     onclick="mostrarProximaQuestao()">
                     Próximo
                 </button>

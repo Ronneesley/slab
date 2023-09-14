@@ -1,59 +1,34 @@
-
 <link rel="stylesheet" href="./css/conceitos_layout.css" />
 <link rel="stylesheet" href="./css/conceitos_titulos.css" />
 
-	<div id="painel_conceitos">
-		<h1>Opções de Cálculos</h1> 
-		<br>
-		<br>
-		<ul>
-			<h4> Medidas de Tendência Central</h4>
-			<dd>
-	      		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_media">M&eacute;dia</a></li> <br>
-		    	<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_mediana"{ echo active; } ?>M&eacute;diana</a></li> <br>
-		    	<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_moda"{ echo active; } ?>Moda</a></li> <br>
+<div id="painel_conceitos">
+	<h1>Opções de Cálculos</h1> 
 
+	<h4> Medidas de Tendência Central</h4>
+	<ul>
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_media">M&eacute;dia</a></li>
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_mediana">M&eacute;diana</a></li>
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_moda">Moda</a></li>
+	</ul>
 
-		    </dd>
-			<h4> Medidas de Dispersão</h4>
-			<dd>
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_amplitude">Amplitude</a></li> <br>
+	<h4> Medidas de Dispersão</h4>	
+	<ul>
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_amplitude">Amplitude</a></li>
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_variancia_amostral">Variância Amostral</a></li>		
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_variancia_populacional">Variância Populacional</a></li>		
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_desvio_amostral">Desvio Padrão Amostral</a></li>		
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_desvio_populacional">Desvio Padrão Populacional</a></li>
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_coeficiente_variacao_amostral">Coeficiente de Variação Amostral</a></li>		
+		<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_coeficiente_variacao_populacional">Coeficiente de Variação Populacional</a></li>
+	</ul>
 
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_variancia_amostral"{ echo active; } ?>Variância Amostral</a></li> <br> 
-				
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_variancia_populacional"{ echo active; } ?>Variância Populacional</a></li> <br> 
-				
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_desvio_amostral">Desvio Padrão Amostral</a></li> <br>
-				
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_desvio_populacional">Desvio Padrão Populacional</a></li> <br>
+	<h4>Delineamentos</h4>
 
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_coeficiente_variacao_amostral">Coeficiente de Variação Amostral</a></li> <br>
-				
-				<li><a href="./index.php?controle=calculadora&acao=mostrar_calculo_coeficiente_variacao_populacional">Coeficiente de Variação Populacional</a></li> <br>
-
-
-			<li><h4>Delineamentos</h4>
-
-				<ul>
-					<li>
-						<a href="./index.php?controle=delineamentos&acao=novo_dic">
-							Delineamento Inteiramente Casualizado (DIC)
-						</a>
-					</li>
-				</ul>
-
-			</li>			
-		</ul>
-
-
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		
-		
-	</div>
+	<ul>
+		<li>
+			<a href="./index.php?controle=delineamentos&acao=novo_dic">
+				Delineamento Inteiramente Casualizado (DIC)
+			</a>
+		</li>
+	</ul>		
+</div>

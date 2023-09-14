@@ -86,12 +86,8 @@ class CalculadoraControle extends ControleBase {
     }
     
     public function executarArquivoR($nome){
-        $path_arquivo = "/var/www/html/quizestatistico/php/src/tmp/$nome";
-        exec("Rscript " . $path_arquivo, $retorno);
-        
-        //Windows
-        //exec(".\\tmp\\" . $nome, $retorno);
-        
+        $path_arquivo = "./tmp/$nome";
+        exec("Rscript " . $path_arquivo, $retorno);        
         return $retorno;
     }
     
@@ -412,8 +408,7 @@ class CalculadoraControle extends ControleBase {
         }
 
         $this->mostrarCalculadoraCoeficienteVariacaoPopulacional($valores, $resultado, $mensagem);        
-    }   
-    
+    }
     
     public function mostrarCalculadoraMediana($valores = "", $resultado = "", $mensagem = ""){
         $layout = $this->configurarTemplate("layout.html");
@@ -456,7 +451,7 @@ class CalculadoraControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "calculadora/desvio_amostral.html", 
 				["valores" => $valores, "resultado" => $resultado,
                 "mensagem" => $mensagem]);   
-                 }
+    }
     
     public function mostrarCalculadoraDesvioPopulacional($valores = "", $resultado = "", $mensagem = ""){
         $layout = $this->configurarTemplate("layout.html");
@@ -464,8 +459,6 @@ class CalculadoraControle extends ControleBase {
 				["valores" => $valores, "resultado" => $resultado,
                 "mensagem" => $mensagem]);    
     }
-        
-    
     
     public function mostrarCalculadoraCoeficienteVariacaoAmostral($valores = "", $resultado = "", $mensagem = ""){
         $layout = $this->configurarTemplate("layout.html");

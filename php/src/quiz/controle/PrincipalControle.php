@@ -98,9 +98,59 @@ class PrincipalControle extends ControleBase {
             case "testar_conexao":
                 $this->testarConexao();
                 break;
+            case "mostrar_pagina_configuracao":
+                $this->mostrarPaginaVerificacaoInstalacao();
+                break;
+            case "salvar_configuracao":
+                $this->salvarConfiguracao();
+                break;
             default:                
                 $this->mostrarPaginaVerificacaoInstalacao();
                 break;
+        }
+    }
+
+    public function salvarConfiguracao(){
+        $dao = new QuizDAO();
+        $config = $dao->getConfiguracoes();
+
+        if ($config->modo_instalacao){
+            try {            
+                $servidor = $_POST["servidor"];
+                $usuario = $_POST["usuario"];
+                $senha = $_POST["senha"];
+                $bancoDados = $_POST["banco_dados"];
+                $porta = $_POST["porta"];
+
+                $dao->realizar_conexao($servidor, $usuario, $senha, $bancoDados, $porta);
+
+                $json = array("servidor" => $servidor,
+                    "usuario" => $usuario,
+                    "senha" => $senha,
+                    "banco_dados" => $bancoDados,
+                    "porta" => intval($porta),
+                    "modo_instalacao" => false);
+
+                $f = fopen("configuracoes.json", "w");
+                fwrite($f, json_encode($json, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
+                fclose($f);
+                
+                $this->mostrarPaginaLogin();
+            } catch (\Exception $ex) {
+                $pagina = $this->configurarTemplate("instalacao/verificacao_instalacao.html");
+
+                $this->mostrarPagina($pagina,
+                        ["mensagem" => "Não é possível salvar configurações defeituosas. Erro: " . $ex->getMessage(),
+                        "tipo_mensagem" => "danger",
+                        "usuario" => $usuario,
+                        "senha" => $senha,
+                        "servidor" => $servidor,
+                        "porta" => $porta,
+                        "banco_dados" => $bancoDados,
+                        ]);
+            }
+        } else {
+            $pagina = $this->configurarTemplate("erros/configuracoes_nao_podem_ser_alteradas.html");
         }
     }
     
@@ -113,42 +163,57 @@ class PrincipalControle extends ControleBase {
             
         $dao = new QuizDAO();
         
-        $pagina = $this->configurarTemplate("erros/verificacao_instalacao.html");
+        $pagina = $this->configurarTemplate("instalacao/verificacao_instalacao.html");
         
         try {            
             $dao->realizar_conexao($servidor, $usuario, $senha, $bancoDados, $porta);
-            
-            $this->mostrarPagina($pagina, 
-                    ["mensagem" => "Conexão realizada com sucesso",
-                     "tipo_mensagem" => "success"]);
-        } catch (\Exception $ex){
-            /*$config = $dao->getConfiguracoes();
-            
-            $this->mostrarPagina($pagina, 
-                    ["mensagem" => $ex->getMessage(), 
-                     "config" => $config]);*/
+
+            $mensagem = "Conexão realizada com sucesso";
+            $tipo = "success";
+        } catch (\Exception $ex){            
+            $mensagem = $ex->getMessage();
+            $tipo = "danger";
         }
+
+        $this->mostrarPagina($pagina,
+                    ["mensagem" => $mensagem,
+                     "tipo_mensagem" => $tipo,
+                     "usuario" => $usuario,
+                     "senha" => $senha,
+                     "servidor" => $servidor,
+                     "porta" => $porta,
+                     "banco_dados" => $bancoDados,
+                    ]);
     }
     
     public function mostrarPaginaVerificacaoInstalacao(){
         $dao = new QuizDAO();
         
         try {            
-            $dao->conectar();
+            $dao->conectar();            
             
             $this->mostrarPaginaLogin();
         } catch (\Exception $ex){
-            $pagina = $this->configurarTemplate("erros/verificacao_instalacao.html");
+            $pagina = $this->configurarTemplate("instalacao/verificacao_instalacao.html");
             
             $config = $dao->getConfiguracoes();
-            
-            $this->mostrarPagina($pagina, 
-                    ["mensagem" => $ex->getMessage(), 
-                     "tipo_mensagem" => "danger",
-                     "config" => $config]);
+
+            if ($config->modo_instalacao){            
+                $this->mostrarPagina($pagina, 
+                        ["mensagem" => $ex->getMessage(), 
+                        "tipo_mensagem" => "danger",
+                        "usuario" => $config->usuario,
+                        "senha" => $config->senha,
+                        "servidor" => $config->servidor,
+                        "porta" => $config->porta,
+                        "banco_dados" => $config->banco_dados,
+                        ]);
+            } else {
+                $pagina = $this->configurarTemplate("erros/problema_geral.html");
+                $this->mostrarPagina($pagina, ["mensagem" => "Não foi possível conectar com o banco de dados, contate o administrador"]);
+            }
         }
-    }
- 
+    } 
     
     public function mostrarPaginaExpediente(){
         $layout = $this->configurarTemplate("layout.html");

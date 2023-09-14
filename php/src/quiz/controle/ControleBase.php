@@ -22,6 +22,7 @@ abstract class ControleBase {
     protected function mostrarPaginaLayout($layout, $arquivoPagina, $parametros = array()){
         $parametros["pagina"] = $arquivoPagina;
         $parametros["JS_DIR"] = "./node_modules/";
+        $parametros["CSS_DIR"] = "./css/";
         
         echo $layout->render($parametros);
     }

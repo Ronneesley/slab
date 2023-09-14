@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estatístico</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        
+        <script src="{{ JS_DIR }}/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="card" style="width: 400px; margin: 0 auto; margin-top: 20px; margin-bottom: 20px;">
+            <div class="card-header">
+            Erro
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger" role="alert">
+                    {{ mensagem }}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

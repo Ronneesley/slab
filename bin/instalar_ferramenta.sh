@@ -22,7 +22,7 @@ case $1 in
         instalar_via_apt apache2
         ;;
     configurar_php)
-        if [ -d ~/www ]; then
+        if [ ! -d ~/www ]; then
             mkdir ~/www
         fi
 

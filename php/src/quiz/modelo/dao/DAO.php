@@ -34,7 +34,7 @@ abstract class DAO {
 
         //Realiza a tentativa de conexão
         $con = new mysqli();
-        @$con->connect($servidor, $usuario, $senha, $banco_dados, $porta);
+        @$con->connect($servidor, $usuario, $senha, $bancoDados, $porta);
 
         //Verifica se a conexão funcionou
         if ($con->connect_errno) {
