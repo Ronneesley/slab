@@ -43,9 +43,22 @@ class DelineamentosControle extends ControleBase {
 
     public function calcularDIC(){    
         $tratamentos = $_REQUEST["tratamentos"];
-        $leituras = $_REQUEST["leituras"];    
+        $leiturasString = $_REQUEST["leituras"];
         
-        $J = $_REQUEST["n_repeticoes"];
+        $leituras = array();
+        for ($i = 0; $i < count($leiturasString); $i++){
+            $ts = array();
+            
+            for ($j = 0; $j < count($leiturasString[$i]); $j++){                
+                $valorConvertido = str_replace(",", ".", $leiturasString[$i][$j]);
+                
+                array_push($ts, $valorConvertido);
+            }
+            
+            array_push($leituras, $ts);
+        }
+        
+        $J = $_REQUEST["n_repeticoes"];        
     
         $dic = new DIC();
         $dic->calcular($tratamentos, $leituras, $J);

@@ -1,5 +1,5 @@
 {
-    "servidor": "localhost",
+    "servidor": "127.0.0.1",
     "usuario": "quiz",
     "senha": "quiz123",
     "banco_dados": "quizestatistico",
