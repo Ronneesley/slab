@@ -1,3 +1,6 @@
 node_modules
 vendor
-#tmp
+tmp
+
+#Ignora configurações locais de cada usuário
+configuracoes.json
