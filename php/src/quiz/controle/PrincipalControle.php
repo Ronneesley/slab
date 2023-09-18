@@ -7,6 +7,7 @@ use QuizEstatistico\controle\AdministradorControle;
 use QuizEstatistico\controle\CalculadoraControle;
 use QuizEstatistico\controle\UsuarioControle;
 use QuizEstatistico\controle\DelineamentosControle;
+use QuizEstatistico\controle\TesteFControle;
 use QuizEstatistico\modelo\dao\QuizDAO;
 
 class PrincipalControle extends ControleBase {
@@ -70,6 +71,10 @@ class PrincipalControle extends ControleBase {
                 break;
             case "terminalinterativo":
                 $controle = new TerminalInterativoControle();
+                $controle->processar($acao);
+                break;
+            case "teste_f":
+                $controle = new TesteFControle();
                 $controle->processar($acao);
                 break;
         }
