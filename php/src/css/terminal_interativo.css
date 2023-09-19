@@ -4,7 +4,11 @@
     margin-top: 10px;
 }
 
-.comando input {
+.comando textarea {
     width: 100%;
     height: 100%;
+}
+
+.resultado {
+    background-color: lightgreen;
 }

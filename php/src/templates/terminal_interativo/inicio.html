@@ -2,14 +2,19 @@
 
 <link rel="stylesheet" href="./css/terminal_interativo.css">
 
-<div style="background-color: red; padding: 50px;">
-    <div class="comando">
-        <input type="text" />
+<form method="post" action="./index.php?controle=terminalinterativo&acao=processar">
+    <div style="padding: 20px;">
+        {% for c in comandos %}
+            <div class="comando">
+                <textarea name="comandos[]">{{ c }}</textarea>
+            </div>
+
+            <div class="resultado">
+                {{ resultados[loop.index] }}
+            </div>
+            <br />
+        {% endfor %}
+        
+        <input type="submit" value="Calcular" />
     </div>
-    
-    <div class="comando"></div>
-    
-    <div class="comando"></div>
-    
-    <div class="comando"></div>
-</div>
+</form>
