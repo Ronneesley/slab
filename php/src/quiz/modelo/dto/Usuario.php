@@ -14,6 +14,10 @@ class Usuario {
     private $email;
     
     private $senha;
+
+    private $curso;
+
+    private $login;
     
     public function getId() {
         return $this->id;
@@ -45,6 +49,22 @@ class Usuario {
 
     public function setSenha($senha): void {
         $this->senha = $senha;
+    }
+
+    public function getCurso() {
+        return $this->curso;
+    }
+
+    public function setCurso($curso): void {
+        $this->curso = $curso;
+    }
+
+    public function getLogin() {
+        return $this->login;
+    }
+
+    public function setLogin($login): void {
+        $this->login = $login;
     }
 }
 ?>

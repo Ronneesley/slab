@@ -17,3 +17,5 @@ services:
     build: 
       context: mysql
       dockerfile: ./Dockerfile
+    ports:
+      - 13306:3306

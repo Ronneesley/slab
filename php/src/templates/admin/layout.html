@@ -3,21 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <title>Painel Administrativo</title>
-        <link rel="stylesheet" href="css/StyleAdm.css">
+
+        <link rel="stylesheet" href="{{CSS_DIR}}/admin/layout.css">
+
+        <link rel="stylesheet" href="{{JS_DIR}}/bootstrap/dist/css/bootstrap.min.css" />
+
+        <script src="{{JS_DIR}}/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
     </head>
     <body>
-        {{ include("admin/menu.html") }}
-        
-        <div class="box">
-            <div class="botoes">
-                <img src="./imagens/perfil.png" width="25" height="25">
-                
-                <a href="./index.php?controle=administrador&amp;acao=deslogar">
-                    <img src="./imagens/sair.png" width="25" height="25" />
-                </a>
+        <div class="layout">
+            <div class="menu">
+                {{ include("admin/menu.html") }}
             </div>
-
-            {{ include(pagina) }}
+            
+            <div class="conteudo">
+                {{ include(pagina) }}
+            </div>
         </div>
     </body>
 </html>

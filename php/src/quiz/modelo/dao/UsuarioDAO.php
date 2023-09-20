@@ -2,6 +2,7 @@
 namespace QuizEstatistico\modelo\dao;
 
 use QuizEstatistico\modelo\dao\DAO;
+use QuizEstatistico\modelo\dao\CursoDAO;
 use QuizEstatistico\modelo\dto\Usuario;
 
 /**
@@ -14,9 +15,18 @@ class UsuarioDAO extends DAO {
     public function inserir($usuario){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO usuarios(nome) VALUES (?)");
-        $stmt->bind_param("s", $usuario->getNome());
+        $stmt = $con->prepare("insert into usuarios(nome, email, senha, login, curso) 
+                values(?, ?, ?, ?, ?)");
+        @$stmt->bind_param("ssssi", 
+            $usuario->getNome(), 
+            $usuario->getEmail(), 
+            md5($usuario->getSenha()),
+            $usuario->getLogin(),
+            $usuario->getCurso()->getId());
+
         $stmt->execute();
+
+        $usuario->setId( $con->insert_id );
         
         $con->close();
     }
@@ -24,8 +34,14 @@ class UsuarioDAO extends DAO {
     public function alterar($usuario){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update usuarios set nome = ? where id = ?");
-        $stmt->bind_param("si", $usuario->getNome(), $usuario->getId());
+        $stmt = $con->prepare("update usuarios set 
+            nome = ?, email = ?, login = ?, curso = ? where id = ?");
+        @$stmt->bind_param("sssii", 
+            $usuario->getNome(), 
+            $usuario->getEmail(), 
+            $usuario->getLogin(),
+            $usuario->getCurso()->getId(),
+            $usuario->getId());
         $stmt->execute();        
         
         $con->close();
@@ -41,9 +57,8 @@ class UsuarioDAO extends DAO {
         $lista = array();
         
         while ($dados = $res->fetch_assoc()){        
-            $c = new Curso();
-            $c->setId($dados["id"]);
-            $c->setNome($dados["nome"]);
+            $c = new Usuario();
+            $this->preencher($c, $dados);
             
             array_push($lista, $c);
         }
@@ -51,6 +66,17 @@ class UsuarioDAO extends DAO {
         $con->close();
         
         return $lista;
+    }
+
+    public function preencher($c, $dados){
+        $cursoDAO = new CursoDAO();
+
+        $c->setId($dados["id"]);
+        $c->setNome($dados["nome"]);
+        $c->setEmail($dados["email"]);
+        $c->setLogin($dados["login"]);
+
+        $c->setCurso($cursoDAO->selecionar($dados["curso"]));
     }
     
     public function selecionar($id){
@@ -63,13 +89,38 @@ class UsuarioDAO extends DAO {
         
         $dados = $res->fetch_assoc();
         
-        $c = new Curso();
-        $c->setId($dados["id"]);
-        $c->setNome($dados["nome"]);
+        $c = new Usuario();
+        $this->preencher($c, $dados);
         
         $con->close();
         
         return $c;
+    }
+
+    public function logar($email, $senha){
+        $con = $this->conectar();
+        
+        $stmt = $con->prepare("select * from usuarios where email = ? and senha = ?");
+        @$stmt->bind_param("ss", $email, md5($senha));
+        $stmt->execute();
+
+        $res = $stmt->get_result();
+
+        if ($res->num_rows == 1){
+            
+            $dados = $res->fetch_assoc();
+            
+            $c = new Usuario();
+            $this->preencher($c, $dados);
+            
+            $con->close();
+            
+            return $c;
+        } else {
+            $con->close();
+
+            return null;
+        }
     }
     
     public function excluir($id){

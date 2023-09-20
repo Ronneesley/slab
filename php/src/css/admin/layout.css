@@ -1,0 +1,20 @@
+.botoes{
+    border: 1px solid white;
+    margin-top: 5px;
+    margin-left: 95%;
+    cursor: pointer;
+}
+
+.menu {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.conteudo {
+    padding: 30px;
+}
+
+.conteudo h2 {
+    font-size: 20px;
+    border-bottom: 3px solid #e2e2e2;
+    margin-bottom: 30px !important;
+}

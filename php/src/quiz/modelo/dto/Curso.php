@@ -11,8 +11,8 @@ class Curso {
     
     private $nome;
     
-    public function __construct() {
-        
+    public function __construct($id = null) {
+        $this->id = $id;
     }
     
     public function getId() {

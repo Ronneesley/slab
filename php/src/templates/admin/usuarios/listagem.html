@@ -1,21 +1,30 @@
-<a href="./index.php?controle=usuario&acao=novo">Criar novo usuário</a>
+<h2>Listagem de Usu&aacute;rios</h2>
+
+<a class="btn btn-primary" href="./index.php?controle=usuario&acao=novo">Criar novo usuário</a>
+<br />
 <br />
 
-{{ mensagem }}
+{% if mensagem != "" %}
+    <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+        {{ mensagem }}
+    </div>
+{% endif %}
 
-<table border="1">
+<table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
-            <th>ID</th>
+            <th style="width: 50px;">ID</th>
             <th>Nome</th>
-            <th>Opções</th>
+            <th>E-mail</th>
+            <th>Curso</th>
+            <th style="width: 170px;">Opções</th>
         </tr>
     </thead>
 
     <tbody>
         {% for item in lista %}
         <tr>
-            <td>
+            <td style="text-align: right;">
                 {{ item.id }}
             </td>
 
@@ -24,8 +33,18 @@
             </td>
 
             <td>
-                <a href="./index.php?controle=usuario&acao=selecionar&id={{ item.id }}">Editar</a>
-                <a href="./index.php?controle=usuario&acao=excluir&id={{ item.id }}">Excluir</a>
+                {{ item.email }}
+            </td>
+
+            <td>
+                {{ item.curso.nome }}
+            </td>
+
+            <td style="text-align: center;">
+                <a class="btn btn-primary" 
+                    href="./index.php?controle=usuario&acao=selecionar&id={{ item.id }}">Editar</a>
+                <a class="btn btn-danger" 
+                    href="./index.php?controle=usuario&acao=excluir&id={{ item.id }}">Excluir</a>
             </td>
         </tr>
         {% endfor %}

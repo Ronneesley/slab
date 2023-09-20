@@ -1,29 +1,65 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cadastro de Usuários</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <h1>Cadastro de Usuários</h1>
-        
-        <form method="post" action="./index.php?controle=usuario&acao=salvar">
-            {{ mensagem }}
-            <br /><br />
+<form method="post" action="./index.php?controle=usuario&acao=salvar">
+    <div class="card" style="width: 400px; margin: 0 auto;">
+        <div class="card-header">
+            Cadastro de Usuários
+        </div>
+        <div class="card-body">
+            {% if mensagem != "" %}
+                <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+                    {{ mensagem }}
+                </div>
+            {% endif %}
+
+            {% if usuario.id != null %}
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" name="id" id="id" class="form-control" value="{{ usuario.id }}" 
+                        style="text-align: right; width: 80px;" />
+                </div>
+            {% endif %}
             
-            <div>
-                <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko -->
-                <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ curso.id }}"/>
-                <br /><br />
-                
-                <label for="nome">Curso</label>
-                <input type="text" name="nome" id="nome" value="{{ curso.nome }}" />
-                <br /><br />
-                
-                <input type="submit" value="Salvar" />
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" name="nome" id="nome" value="{{ usuario.nome }}" class="form-control" />
             </div>
-        </form>
-    </body>
-</html>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" name="email" id="email" value="{{ usuario.email }}" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label for="curso" class="form-label">Curso</label>
+                <select class="form-select" name="curso">
+                    <option>Selecione um curso</option>
+
+                    {% for curso in cursos %}
+                        <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="login" class="form-label">Login</label>
+                <input type="text" name="login" id="login" value="{{ usuario.login }}" class="form-control" />
+            </div>
+
+            {% if usuario.id == null %}
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" name="senha" id="senha" value="" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmar_senha" class="form-label">Confirmar Senha</label>
+                    <input type="password" name="confirmar_senha" id="confirmar_senha" value="" class="form-control" />
+                </div>
+            {% endif %}
+            
+            <div style="float: right;">
+                <input type="submit" class="btn btn-primary" value="Salvar" />
+            </div>
+        </div>
+    </div>    
+    
+</form>

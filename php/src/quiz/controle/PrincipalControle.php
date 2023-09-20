@@ -10,6 +10,7 @@ use QuizEstatistico\controle\DelineamentosControle;
 use QuizEstatistico\controle\TesteFControle;
 use QuizEstatistico\controle\TesteTukeyControle;
 use QuizEstatistico\modelo\dao\QuizDAO;
+use QuizEstatistico\modelo\dao\UsuarioDAO;
 
 class PrincipalControle extends ControleBase {
 
@@ -234,7 +235,10 @@ class PrincipalControle extends ControleBase {
         $email = $_REQUEST["email"];
         $senha = $_REQUEST["senha"];
 
-        if ($email == "usuario@gmail.com" && $senha == "123456") {
+        $usuarioDAO = new UsuarioDAO();
+        $usuario = $usuarioDAO->logar($email, $senha);
+
+        if ($usuario != null){
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");

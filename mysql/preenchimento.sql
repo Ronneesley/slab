@@ -1,18 +1,29 @@
 USE `slab`;
 
 INSERT INTO `temas` VALUES 
-(1,'Distribuição de frequências'),
-(2,'Medidas de dispersão'),
-(3,'Gráficos'),
-(4,'Tabelas'),
-(5,'Medidas descritivas');
+(1, 'Distribuição de frequências'),
+(2, 'Medidas de dispersão'),
+(3, 'Gráficos'),
+(4, 'Tabelas'),
+(5, 'Medidas descritivas');
 
 INSERT INTO `niveis` VALUES 
 (1, 'Fácil'),
-(2,'Médio'),
-(3,'Difícil');
+(2, 'Médio'),
+(3, 'Difícil');
 
-INSERT INTO `cursos` VALUES (1, 'Todos os cursos');
+INSERT INTO `cursos` VALUES 
+(1, 'Sistemas de Informação'),
+(2, 'Agronomia'),
+(3, 'Ciências Biológicas'),
+(4, 'Zootecnia'),
+(5, 'Licenciatura em Química');
+
+INSERT INTO `usuarios` VALUES 
+(1, 'Ronneesley Moura Teles', 'roni.teles@ifgoiano.edu.br', md5('123456'), 'roni', 1);
+
+INSERT INTO `administradores` VALUES 
+(1, 'admin', 'admin@gmail.com', md5('123456'), 'admin');
 
 INSERT INTO `questoes` VALUES 
 (48,2,1,1,'Uma pesquisa foi realizada com os vendedores de uma empresa de consórcio para saber qual seria o melhor dia para as vendas. Durante essa pesquisa, 4 vendedores falaram o total de vendas feitas durante a semana, em cada dia da semana.\r\nAna\r\nSegunda-feira: 8 clientes\r\nTerça-feira: 6 clientes\r\nQuarta-feira: 4 clientes\r\nQuinta-feira: 10 clientes\r\nSexta-feira: 5 clientes\r\nBernardo\r\nSegunda-feira: 10 clientes\r\nTerça-feira: 5 clientes\r\nQuarta-feira: 6 clientes\r\nQuinta-feira: 2 clientes\r\nSexta-feira: 8 clientes\r\nCarlos\r\nSegunda-feira: 3 clientes\r\nTerça-feira: 10 clientes\r\nQuarta-feira: 7 clientes\r\nQuinta-feira: 4 clientes\r\nSexta-feira: 6 clientes\r\nDaniela\r\nSegunda-feira: 4 clientes\r\nTerça-feira: 6 clientes\r\nQuarta-feira: 3 clientes\r\nQuinta-feira: 4 clientes\r\nSexta-feira: 8 clientes\r\nAnalisando esses dados coletados, podemos afirmar que:\r\nI → A frequência absoluta de clientes atendidos na segunda-feira é de 25 clientes.\r\nII → A frequência absoluta de clientes atendidos pela Daniela é de 22 clientes.\r\nIII → A frequência absoluta de clientes atendidos na sexta-feira é de 27 clientes.\r\nMarque alternativa correta:\r\n','Somente a II é falsa.','Somente a III é verdadeira.','Somente a II é verdadeira.','Somente a III é verdadeira.','I → Verdadeira\r\nRealizando a soma dos clientes atendidos na segunda-feira, temos:\r\n8 + 10 + 3 + 4 = 25\r\nII → Falsa\r\nSomando-se o total de clientes atendidos pela Daniela:\r\n4 + 6 + 3 + 4 + 8 = 25\r\nIII →  Verdadeira\r\nSomando-se o total de clientes atendidos na sexta-feira:\r\n5 + 8 + 6 + 8 = 27'),

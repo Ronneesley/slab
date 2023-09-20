@@ -3,6 +3,8 @@ namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\dto\Usuario;
 use QuizEstatistico\modelo\dao\UsuarioDAO;
+use QuizEstatistico\modelo\dto\Curso;
+use QuizEstatistico\modelo\dao\CursoDAO;
 
 /**
  * Controle de ações relacionadas com usuários
@@ -54,10 +56,18 @@ class UsuarioControle extends ControleBase {
         $this->mostrarPagina($pagina);
     }
     
-    public function mostrarFormularioCadastro(){
+    public function mostrarFormularioCadastro(
+        $usuario = new Usuario(), 
+        $mensagem = "", $tipo_mensagem = "success"){
+
+        $cursoDAO = new CursoDAO();
+        $cursos = $cursoDAO->listar();
+
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
-                [ "curso" => $curso, "mensagem" => $mensagem ]);
+        $this->mostrarPaginaLayout($layout, "admin/usuarios/cadastro.html", 
+                [ "usuario" => $usuario, "mensagem" => $mensagem, 
+                  "tipo_mensagem" => $tipo_mensagem,
+                  "cursos" => $cursos ]);
     }
     
     public function mostrarFormularioEsqueciSenha($mensagem = ""){
@@ -66,46 +76,55 @@ class UsuarioControle extends ControleBase {
     }
     
     public function inserir(){
-        $c = new Curso();
-        $c->setNome($_REQUEST["nome"]);
+        $u = new Usuario();
+        $u->setNome($_REQUEST["nome"]);
+        $u->setEmail($_REQUEST["email"]);
+        $u->setLogin($_REQUEST["login"]);
+        $u->setSenha($_REQUEST["senha"]);
+        $u->setCurso(new Curso($_REQUEST["curso"]));
 
-        $dao = new CursoDAO();
-        $dao->inserir($c);
+        $dao = new UsuarioDAO();
+        $dao->inserir($u);
         
-        $this->mostrarFormularioCadastro($c, "Inserido com sucesso");
+        $this->mostrarFormularioCadastro($u, "Inserido com sucesso");
     }
     
     public function alterar(){
-        $c = new Curso();
-        $c->setId($_REQUEST["id"]);
-        $c->setNome($_REQUEST["nome"]);
+        $u = new Usuario();
+        $u->setId($_REQUEST["id"]);
+        $u->setNome($_REQUEST["nome"]);
+        $u->setEmail($_REQUEST["email"]);
+        $u->setLogin($_REQUEST["login"]);
+        $u->setCurso(new Curso($_REQUEST["curso"]));
 
-        $dao = new CursoDAO();
-        $dao->alterar($c);
+        $dao = new UsuarioDAO();
+        $dao->alterar($u);
         
-        $this->mostrarFormularioCadastro($c, "Alterado com sucesso");
+        $this->mostrarFormularioCadastro($u, "Alterado com sucesso");
     }
     
     public function excluir(){
-        $dao = new CursoDAO();
+        $dao = new UsuarioDAO();
         $dao->excluir($_REQUEST["id"]);
         
         $this->listar("Excluído com sucesso");
     }
     
-    public function listar($mensagem = ""){
-        $dao = new CursoDAO();
+    public function listar($mensagem = "", $tipo_mensagem = "success"){
+        $dao = new UsuarioDAO();
         $lista = $dao->listar();
 
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/listagem.html", ["mensagem" => $mensagem, "lista" => $lista ]);
+        $this->mostrarPaginaLayout($layout, "admin/usuarios/listagem.html", 
+            ["mensagem" => $mensagem, "lista" => $lista,
+            "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     public function selecionar(){
-        $dao = new CursoDAO();
-        $c = $dao->selecionar($_REQUEST["id"]);
+        $dao = new UsuarioDAO();
+        $u = $dao->selecionar($_REQUEST["id"]);
         
-        $this->mostrarFormularioCadastro($c, "Selecionado com sucesso");
+        $this->mostrarFormularioCadastro($u, "Selecionado com sucesso");
     }
 }
 ?>
