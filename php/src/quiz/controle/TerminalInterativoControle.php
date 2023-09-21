@@ -25,7 +25,8 @@ class TerminalInterativoControle extends ControleBase {
     public function mostrarTerminal(){
         $comandos = array(
             "A = 1",
-            "B = A + 2\nprint(B)"
+            "B = A + 2\nprint(B)",
+            "C = B + 1\nprint(C)"
         );
 
         $layout = $this->configurarTemplate("layout.html");

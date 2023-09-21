@@ -37,6 +37,13 @@ class R {
 
         $resultado = $this->executarArquivoR($nomeArquivo);
 
+        /*print("<pre>");
+        print_r($resultado);
+        print("</pre>");
+        exit;*/
+
+        //$resultado = array("", "3", "4");
+
         return $resultado;
     }
 }

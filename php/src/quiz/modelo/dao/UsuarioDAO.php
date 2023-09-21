@@ -99,7 +99,7 @@ class UsuarioDAO extends DAO {
 
     public function logar($email, $senha){
         $con = $this->conectar();
-        
+
         $stmt = $con->prepare("select * from usuarios where email = ? and senha = ?");
         @$stmt->bind_param("ss", $email, md5($senha));
         $stmt->execute();
