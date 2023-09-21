@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-center mt-4">
-    <form method="post" action="./index.php?controle=delineamentos&acao=calcular_dic">
-        <input type="hidden" name="n_repeticoes" value="{{ J }}" />
+    <form method="post" action="./index.php?controle=dbc&acao=calcular">
+        <input type="hidden" name="n_blocos" value="{{ J }}" />
         
         <table style="font-family: Arial, Helvetica, sans-serif; font-size: 16px;" class="table table-bordered border-dark table-sm table-striped table-hover">
             <thead class="text-center table-info border-dark">
                 <tr>
                     <th rowspan="2">Tratamentos</th>
-                    <th colspan="{{ J }}">Repetições</th>
+                    <th colspan="{{ J }}">Blocos</th>
                 </tr>
 
                 <tr>

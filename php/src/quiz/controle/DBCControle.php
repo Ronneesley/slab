@@ -2,38 +2,38 @@
 
 namespace QuizEstatistico\controle;
 
-use QuizEstatistico\modelo\bo\DIC;
+use QuizEstatistico\modelo\bo\DBC;
 
 /**
- * Controle para as funções integradas ao R
+ * Controle para o DBC
  * @author Ronneesley
  */
-class DelineamentosControle extends ControleBase {
+class DBCControle extends ControleBase {
     public function processar($acao){
         switch ($acao){
-            case "novo_dic":
-                $this->mostrarConfiguracaoInicialDIC();
+            case "novo":
+                $this->mostrarConfiguracaoInicial();
                 break;
-            case "montar_quadro_dic":
-                $this->montarQuadroDIC();
+            case "montar_quadro":
+                $this->montarQuadro();
                 break;
-            case "calcular_dic":
-                $this->calcularDIC();
+            case "calcular":
+                $this->calcular();
                 break;
         }
     }
 
-    public function mostrarConfiguracaoInicialDIC(){
+    public function mostrarConfiguracaoInicial(){
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "delineamentos/novo_dic.html");
+        $this->mostrarPaginaLayout($layout, "dbc/novo.html");
     }
 
-    public function montarQuadroDIC(){
+    public function montarQuadro(){
         $I = $_POST["n_tratamentos"];
-        $J = $_POST["n_repeticoes"];
+        $J = $_POST["n_blocos"];
 
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "delineamentos/quadro_dic.html", 
+        $this->mostrarPaginaLayout($layout, "dbc/quadro.html", 
             [ "I" => $I, "J" => $J ]);
     }
 
@@ -41,7 +41,7 @@ class DelineamentosControle extends ControleBase {
         return strtr( number_format($numero, $digitos) , ".", ",");
     }
 
-    public function calcularDIC(){    
+    public function calcular(){    
         $tratamentos = $_REQUEST["tratamentos"];
         $leiturasString = $_REQUEST["leituras"];
         
@@ -58,14 +58,14 @@ class DelineamentosControle extends ControleBase {
             array_push($leituras, $ts);
         }
         
-        $J = $_REQUEST["n_repeticoes"];        
+        $J = $_REQUEST["n_blocos"];        
     
-        $dic = new DIC();
-        $dic->calcular($tratamentos, $leituras, $J);
+        $dbc = new DBC();
+        $dbc->calcular($tratamentos, $leituras, $J);
 
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "delineamentos/dic.html", 
-            [ "dic" => $dic ]);
+        $this->mostrarPaginaLayout($layout, "dbc/dbc.html", 
+            [ "dbc" => $dbc ]);
     }
 }
 

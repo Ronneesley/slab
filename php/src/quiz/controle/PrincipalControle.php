@@ -6,7 +6,8 @@ use QuizEstatistico\controle\QuizControle;
 use QuizEstatistico\controle\AdministradorControle;
 use QuizEstatistico\controle\CalculadoraControle;
 use QuizEstatistico\controle\UsuarioControle;
-use QuizEstatistico\controle\DelineamentosControle;
+use QuizEstatistico\controle\DICControle;
+use QuizEstatistico\controle\DBCControle;
 use QuizEstatistico\controle\TesteFControle;
 use QuizEstatistico\controle\TesteTukeyControle;
 use QuizEstatistico\modelo\dao\QuizDAO;
@@ -67,8 +68,12 @@ class PrincipalControle extends ControleBase {
                 $controle = new CalculadoraControle();
                 $controle->processar($acao);
                 break;
-            case "delineamentos":
-                $controle = new DelineamentosControle();
+            case "dic":
+                $controle = new DICControle();
+                $controle->processar($acao);
+                break;
+            case "dbc":
+                $controle = new DBCControle();
                 $controle->processar($acao);
                 break;
             case "terminalinterativo":

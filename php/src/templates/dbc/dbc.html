@@ -1,0 +1,87 @@
+<div class="p-3 text-dark" style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; text-align: center;">
+    Resultado
+</div>
+
+<table style="width:50%; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-left: 25%;" class="table table-bordered table-hover">
+    <thead class="text-center table-secondary">
+        <tr>
+            <th rowspan="2">Tratamentos</th>
+            <th colspan="{{ dbc.J }}">Repetições</th>
+            <th rowspan="2">Total</th>
+        </tr>
+
+        <tr>
+            {% for j in 0..dbc.J - 1 %}
+                <th>{{ j + 1 }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in 0..dbc.I - 1 %}
+            <tr>
+                <td class="text-center">{{ dbc.tratamentos[i] }}</td>
+
+                {% for j in 0..dbc.J - 1 %}
+                    <td class="text-center">
+                        {{ dbc.leituras[i][j] | number_format(2, ',', '.') }}
+                    </td>
+                {% endfor %}
+
+                <td style="text-align: center;">
+                    {{ dbc.L[i] | number_format(2, ',', '.') }}
+                </td>
+            </tr>            
+        {% endfor %}
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <th style="text-align: center;" colspan="{{ dbc.J + 1 }}">TOTAL</th>
+            <th style="text-align: center;">{{ dbc.G | number_format(2, ',', '.') }}</th>
+        </tr>
+    </tfoot>
+</table>
+    
+<div class="p-2 text-dark" style="text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 24px;">
+    ANOVA
+    <table style="width:50%; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-left: 25%;" class="table table-bordered table-hover">
+        <thead class="table table-secondary">
+            <tr class="text-center">
+                <th>Causa de Variação</th>
+                <th title="Grau de Liberdade">GL</th>
+                <th>SQ</th>
+                <th>QM</th>
+                <th>F</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Tratamento</td>
+                <td style="text-align: center;">{{ dbc.GLTrat }}</td>
+                <td style="text-align: center;">{{ dbc.SQTrat | number_format(3, ',', '.') }}</td>
+                <td style="text-align: center;">{{ dbc.QMTrat | number_format(3, ',', '.') }}</td>
+                <td style="text-align: center;">{{ dbc.FCalc | number_format(3, ',', '.') }}</td>
+            </tr>
+
+            <tr>
+                <td>Resíduo</td>
+                <td style="text-align: center;">{{ dbc.GLRes }}</td>
+                <td style="text-align: center;">{{ dbc.SQRes | number_format(3, ',', '.') }}</td>
+                <td style="text-align: center;">{{ dbc.QMRes | number_format(3, ',', '.') }}</td>
+            </tr>
+
+            <tr>
+                <td>Total</td>
+                <td style="text-align: center;">{{ dbc.GLTotal }}</td>
+                <td style="text-align: center;">{{ dbc.SQTotal | number_format(3, ',', '.') }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+        
+<div class="text-dark text-center fw-bold" style="font-size: 16px; font-family: Arial, Helvetica, sans-serif;">
+    Conclusão:
+    {{ dbc.conclusao }}
+</div>
