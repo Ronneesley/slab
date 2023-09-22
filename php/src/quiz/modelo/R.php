@@ -37,14 +37,15 @@ class R {
 
         $resultado = $this->executarArquivoR($nomeArquivo);
 
-        /*print("<pre>");
-        print_r($resultado);
-        print("</pre>");
-        exit;*/
-
-        //$resultado = array("", "3", "4");
-
-        return $resultado;
+        $string = '[1] "----------------"';
+        $arrayFiltrado = array_diff($resultado, [$string]);
+ 
+         //echo "<pre>";
+         //print_r($arrayFiltrado);
+         //echo "</pre>";
+     
+     return $arrayFiltrado;
+ 
     }
 }
 ?>
