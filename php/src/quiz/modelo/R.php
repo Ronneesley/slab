@@ -45,7 +45,7 @@ class R {
         }
     }
 
-    //print_r($resultado);
+    print_r($arrayFiltrado);
 
     return $arrayFiltrado;
  
