@@ -26,7 +26,10 @@ class TerminalInterativoControle extends ControleBase {
         $comandos = array(
             "A = 1",
             "B = A + 2\nprint(B)",
-            "C = B + 1\nprint(C)"
+            "C = B + 1\nprint(C)",
+            "E = 6 \nprint(E+50)",
+            "F = 6 + E \nprint(F)",
+
         );
 
         $layout = $this->configurarTemplate("layout.html");

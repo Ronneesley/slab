@@ -37,14 +37,17 @@ class R {
 
         $resultado = $this->executarArquivoR($nomeArquivo);
 
-        $string = '[1] "----------------"';
-        $arrayFiltrado = array_diff($resultado, [$string]);
+        $string = '[1] "---------------"';
  
-         //echo "<pre>";
-         //print_r($arrayFiltrado);
-         //echo "</pre>";
-     
-     return $arrayFiltrado;
+    foreach ($resultado as $item) {
+        if ($item !== $string) {
+            $arrayFiltrado[] = $item;
+        }
+    }
+
+    //print_r($resultado);
+
+    return $arrayFiltrado;
  
     }
 }
