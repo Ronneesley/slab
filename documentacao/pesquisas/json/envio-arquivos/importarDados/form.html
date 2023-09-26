@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="teste.php" method="post" enctype="multipart/form-data">
+        <label for="file">Selecione um arquivo JSON:</label>
+        <input type="file" name="file" id="file">
+        <br>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <br>
+        <input type="submit" value="Importar Dados">
+    </form>
+
+    <script>
+        // Função para lidar com a seleção de arquivo JSON
+        document.getElementById('file').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const content = e.target.result;
+                    try {
+                        const data = JSON.parse(content);
+                        document.getElementById('nome').value = data.nome;
+                        document.getElementById('email').value = data.email;
+                    } catch (error) {
+                        alert('O arquivo selecionado não é um JSON válido.');
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload de JSON</title>
+</head>
+<body>
+    <form action="teste2.php" method="post" enctype="multipart/form-data">
+        <label for="jsonFile">Selecione um arquivo JSON:</label>
+        <input type="file" id="jsonFile" name="jsonFile" accept=".json">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
