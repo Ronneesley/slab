@@ -85,3 +85,22 @@
     Conclusão:
     {{ dic.conclusao }}
 </div>
+
+<form method="post" action="./index.php?controle=dic&acao=salvar_dados">    
+    <input type="hidden" name="I" value="{{ dic.I }}" />
+    <input type="hidden" name="J" value="{{ dic.J }}" />
+
+    {% for i in 0..dic.I - 1 %}
+        <input type="hidden" name="tratamentos[]" value="{{ dic.tratamentos[i] }}" />
+    {% endfor %}
+
+    {% for i in 0..dic.I - 1 %}
+        {% for j in 0..dic.J - 1 %}
+            <input type="hidden" name="leituras[{{ i }}][{{ j }}]" value="{{ dic.leituras[i][j] }}" />
+        {% endfor %}
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">
+        Salvar dados
+    </button>
+</form>

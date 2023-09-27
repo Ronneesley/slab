@@ -12,23 +12,29 @@ class DICControle extends ControleBase {
     public function processar($acao){
         switch ($acao){
             case "novo":
-                $this->mostrarConfiguracaoInicialDIC();
+                $this->mostrarConfiguracaoInicial();
                 break;
             case "montar_quadro":
-                $this->montarQuadroDIC();
+                $this->montarQuadro();
                 break;
             case "calcular":
-                $this->calcularDIC();
+                $this->calcular();
+                break;
+            case "salvar_dados":
+                $this->salvarDados();
+                break;
+            case "importar":
+                $this->importar();
                 break;
         }
     }
 
-    public function mostrarConfiguracaoInicialDIC(){
+    public function mostrarConfiguracaoInicial(){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "dic/novo.html");
     }
 
-    public function montarQuadroDIC(){
+    public function montarQuadro(){
         $I = $_POST["n_tratamentos"];
         $J = $_POST["n_repeticoes"];
 
@@ -41,25 +47,34 @@ class DICControle extends ControleBase {
         return strtr( number_format($numero, $digitos) , ".", ",");
     }
 
-    public function calcularDIC(){    
-        $tratamentos = $_REQUEST["tratamentos"];
-        $leiturasString = $_REQUEST["leituras"];
-        
+    function formatarLeituras($leiturasString){
         $leituras = array();
         for ($i = 0; $i < count($leiturasString); $i++){
             $ts = array();
             
             for ($j = 0; $j < count($leiturasString[$i]); $j++){                
-                $valorConvertido = str_replace(",", ".", $leiturasString[$i][$j]);
+                $valorConvertido = floatval(str_replace(",", ".", $leiturasString[$i][$j]));
                 
                 array_push($ts, $valorConvertido);
             }
             
             array_push($leituras, $ts);
         }
+
+        return $leituras;
+    }
+
+    public function calcular(){    
+        $tratamentos = $_REQUEST["tratamentos"];
+        $leiturasString = $_REQUEST["leituras"];
+        $J = $_REQUEST["n_repeticoes"];
         
-        $J = $_REQUEST["n_repeticoes"];        
+        $leituras = $this->formatarLeituras($leiturasString);
     
+        $this->calcularDIC($tratamentos, $leituras, $J);
+    }
+
+    public function calcularDIC($tratamentos, $leituras, $J){
         $dic = new DIC();
         $dic->calcular($tratamentos, $leituras, $J);
 
@@ -67,6 +82,33 @@ class DICControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "dic/dic.html", 
             [ "dic" => $dic ]);
     }
-}
 
+    public function salvarDados(){
+        $I = intval($_REQUEST["I"]);
+        $J = intval($_REQUEST["J"]);
+        $tratamentos = $_REQUEST["tratamentos"];
+        $leiturasString = $_REQUEST["leituras"];
+        $leituras = $this->formatarLeituras($leiturasString);
+
+        $json = array(
+            "I" => $I,
+            "J" => $J,
+            "tratamentos" => $tratamentos,
+            "leituras" => $leituras
+        );
+
+        header('Content-Description: File Transfer');
+        header('Content-Type: application/json');
+        header('Content-Disposition: attachment; filename="dados.json"');
+        echo json_encode($json, JSON_PRETTY_PRINT);
+    }
+
+    public function importar(){
+        $path = $_FILES["arquivo"]["tmp_name"];
+
+        $json = json_decode(file_get_contents($path));
+        
+        $this->calcularDIC($json->tratamentos, $json->leituras, $json->J);
+    }
+}
 ?>

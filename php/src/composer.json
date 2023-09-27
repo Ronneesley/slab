@@ -5,5 +5,8 @@
     },
     "autoload": {
         "psr-4": {"QuizEstatistico\\": "quiz/"}
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10"
     }
 }

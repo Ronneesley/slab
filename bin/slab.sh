@@ -20,6 +20,10 @@ case $1 in
         verificar_root
         docker rmi slab_php slab_mysql -f
         ;;
+    testes)
+        cd ../php/src/
+        ./vendor/bin/phpunit tests
+        ;;
     *)
         echo "Uso: ./slab.sh [ACAO]"
         echo
@@ -28,6 +32,7 @@ case $1 in
         echo "dev                           Sobe os containers para desenvolvimento do SLab"
         echo "prod                          Sobe os containers para ambiente de produção do SLab"
         echo "remover_imagens               Remove as imagens do ambiente atual"
+        echo "testes                        Executa os testes unitários do PHP"
         echo
         echo "Exemplo: sudo ./slab.sh dev"
         ;;
