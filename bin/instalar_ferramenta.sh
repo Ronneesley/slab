@@ -16,7 +16,7 @@ case $1 in
         instalar_via_apt docker.io docker-compose
         ;;
     php)
-        instalar_via_apt php apache2 libapache2-mod-php php-mysql php-gd
+        instalar_via_apt php apache2 libapache2-mod-php php-mysql php-gd php-xml
         ;;
     apache)
         instalar_via_apt apache2

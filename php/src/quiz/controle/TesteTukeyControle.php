@@ -18,7 +18,9 @@ class TesteTukeyControle extends ControleBase {
 
     public function novoTeste(){
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "calculadora/teste_tukey/novo.html");
+        $this->mostrarPaginaLayout($layout, 
+            "calculadora/teste_tukey/novo.html",
+            [ "letra" => chr(ord('a') + 1) ]);
     }
 
 }
