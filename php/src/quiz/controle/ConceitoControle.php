@@ -1,6 +1,9 @@
 <?php
 namespace QuizEstatistico\controle;
 
+/**
+ * Classe de Controle de conceitos
+ */
 class ConceitoControle extends ControleBase {
     public function processar($acao){
         switch ($acao){
