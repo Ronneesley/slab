@@ -8,7 +8,6 @@ use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Description of AdministradorControle
- *
  * @author Wagner e Mayko
  */
 class AdministradorControle extends ControleBase {    
