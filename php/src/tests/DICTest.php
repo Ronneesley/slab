@@ -52,6 +52,34 @@ final class DICTest extends TestCase
         $this->assertEqualsWithDelta(247.2, $dic->getL()[4], 0.01);
 
         $this->assertEqualsWithDelta(856.2, $dic->getG(), 0.01);
+
+        //GLTRAT
+        $this->assertEqualsWithDelta(4, $dic->getGLTrat(), 0.01);
+
+        //GLRES
+        $this->assertEqualsWithDelta(20, $dic->getGLRes(), 0.01);
+
+        //GLTOTAL
+        $this->assertEqualsWithDelta(24, $dic->getGLTotal(), 0.01);
+
+        //SQTRAT    
+        $this->assertEqualsWithDelta(2.135, $dic->getSQTrat(), 0.01);
+
+        //SQRES
+        $this->assertEqualsWithDelta(373.52, $dic->getSQRes(), 0.01);
+
+        //SQTOTAL
+        $this->assertEqualsWithDelta(2.509, $dic->getSQTotal(), 0.01);
+
+        //QMTRAT
+        $this->assertEqualsWithDelta(533.99, $dic->getQMTrat(), 0.01);
+
+        //QMRES
+        $this->assertEqualsWithDelta(18.68, $dic->getQMRes(), 0.01);
+
+        
+
+    
     }
 }
 ?>
