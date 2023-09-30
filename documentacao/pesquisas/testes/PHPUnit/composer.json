@@ -1,0 +1,17 @@
+{
+    "name": "skyfall/phpunit",
+    "autoload": {
+        "psr-4": {
+            "Skyfall\\Phpunit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "guilherme alencar",
+            "email": "guilherme@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    }
+}

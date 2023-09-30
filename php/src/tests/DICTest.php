@@ -171,5 +171,83 @@ final class DICTest extends TestCase
         $this->assertEqualsWithDelta(81.790, $dic->getFTab(), 0.01);
     }
 
+    //https://www.fcav.unesp.br/Home/departamentos/cienciasexatas/EUCLIDESBRAGAMALHEIROS/materialdidatico/anoletivo-2014/ApostilaEEAR_Cap3atm.pdf
+    public function testExperimentoEfeitoRacaoPesoAnimal(): void{
+        $tratamentos = ["1", "2", "3", "4", "5"];
+        $leituras = [
+            [
+                3.31,
+                6.1,
+                8.53,
+                3.84
+            ],
+            [
+                23.62,
+                26.94,
+                20.16,
+                22.18
+            ],
+            [
+                14.75,
+                25.2,
+                17.56,
+                24.8
+            ],
+            [
+                30.58,
+                30.69,
+                18.54,
+                27.56
+            ],
+            [
+                50.25,
+                45.12,
+                37.25,
+                52.15
+            ]
+        ];
+
+        $J = 5;
+
+        $dic = new DIC();
+        $dic->calcular($tratamentos, $leituras, $J);
+
+        $this->assertEqualsWithDelta(21.78, $dic->getL()[0], 0.01);
+        $this->assertEqualsWithDelta(92.90, $dic->getL()[1], 0.01);
+        $this->assertEqualsWithDelta(82.31, $dic->getL()[2], 0.01);
+        $this->assertEqualsWithDelta(107.37, $dic->getL()[3], 0.01);
+        $this->assertEqualsWithDelta(184.77, $dic->getL()[4], 0.01);
+
+        //TOTAL
+        $this->assertEqualsWithDelta(489.13, $dic->getG(), 0.01);
+
+        //GLTRAT
+        $this->assertEqualsWithDelta(4, $dic->getGLTrat(), 0.01);
+
+        //GLRES
+        $this->assertEqualsWithDelta(15, $dic->getGLRes(), 0.01);
+
+        //GLTOTAL
+        $this->assertEqualsWithDelta(19, $dic->getGLTotal(), 0.01);
+
+        //SQTRAT    
+        $this->assertEqualsWithDelta(3.424588, $dic->getSQTrat(), 0.01);
+
+        //SQRES
+        $this->assertEqualsWithDelta(355.078, $dic->getSQRes(), 0.01);
+
+        //SQTOTAL
+        $this->assertEqualsWithDelta(3.779666, $dic->getSQTotal(), 0.01);
+
+        //QMTRAT
+        $this->assertEqualsWithDelta(856.147, $dic->getQMTrat(), 0.01);
+
+        //QMRES
+        $this->assertEqualsWithDelta(23.672, $dic->getQMRes(), 0.01);
+
+        //FTAB
+        $this->assertEqualsWithDelta(36.167, $dic->getFTab(), 0.01);
+    }
+
 }
 ?>
