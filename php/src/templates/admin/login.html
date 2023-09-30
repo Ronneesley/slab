@@ -1,31 +1,59 @@
-<!doctype html>
-<html lang = "pt">
-<head>
-    <title>Login Administrativo </title> 
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./css/layoutLoginADM.css">
-</head>
-<body>
-    {{ mensagem }}
-
-    <div class = "formulario">
-            <form method="post" action="./index.php?controle=administrador&amp;acao=logar">
-                    <div class = "loginAdm">
-                        <img class= "logo" src="./imagens/logoADM.png" alt="logo">
-                        <br>
-                        <h3>Login Administrativo:</h3>
-                    </div>
-                    <br><br>
-                    <div class= "Inputbox">
-                        <input type="text" placeholder="Admin" name="email" id="email" value="admin@gmail.com" />
-                        <br><br>
-
-                        <input type="password" placeholder="Senha" name="senha" id="senha" value="123456" />
-                    </div>
-                    <br>
-                    <div >
-                            <input class="botao-entrar" type="submit" name="submit" >
-                    </div>
-            </form>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Administrativo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
+      <h2 class="text-2xl font-semibold mb-6">Login Administrativo</h2>
+      <form
+        method="post"
+        action="./index.php?controle=administrador&amp;acao=logar"
+      >
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-semibold"
+            >E-mail:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            required
+            value="admin@gmail.com"
+          />
+        </div>
+        <div class="mb-6">
+          <label for="senha" class="block text-gray-700 font-semibold"
+            >Senha:</label
+          >
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            required
+            value="123456"
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            name="Submit"
+            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full"
+          >
+            Entrar
+          </button>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
+</html>

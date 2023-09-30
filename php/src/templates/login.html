@@ -1,82 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="shortcut icon" href="logo.png">
-
-        <title>SLab</title>
-
-        <link rel="stylesheet" href="./css/login.css">
-    </head>
-    <body>        
-        <nav class="painel">
-            <form method="post" action="index.php?controle=principal&acao=logar">
-                <table>
-                    <tr>
-                        <td>
-                            <div class="paineldiv">
-                                <center>
-                                    <!-- Apenas para direcionar para tela de menu do admin, futuramente pode remover <a></a> by Mayko -->
-                                        <img src="./imagens/logo.png" class="logo">
-                                    </a>
-                                    <div>   
-
-                                    </div>
-                                </center>   
-                            </div>
-                        </td>
-
-                        <td>
-                            <div class="cadastro">
-                                <table class="tabela-login" border="0">
-                                    <tr>
-                                        <th><h2>Bem Vindo</h2></th>
-                                    </tr>
-
-                                    <tr>
-                                        <td>{{ mensagem }}</td>
-                                    </tr>
-
-                                    <tr >
-                                        <td id="esqsenha">
-                                            <a href="./index.php?controle=usuario&amp;acao=esqueci_senha">Esqueceu a Senha</a>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="2">
-                                            <input type="email" placeholder="Email" class="input-longo" name="email"
-                                                   value="roni.teles@ifgoiano.edu.br" />
-                                        </td>                    
-                                    </tr>
-
-                                    <tr>
-                                        <td colspan="2" >
-                                            <input type="password" placeholder="Senha" class="input-longo" name="senha"
-                                                   value="123456"/>
-                                        </td>                                        
-                                    </tr>
-                                    <label class="Lembrar">
-                                        <input type="checkbox"> Lembrar
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <tr>
-                                        <td>
-                                    <center>
-                                        <button type="submit">Entrar</button>
-                                    </center>
-                                    </td>
-                                    </tr>                
-                                </table>
-                            </div> 
-                        </td>
-                    </tr>
-                </table>
-            </form>
-	<div style = "position:relative; left:25%";><button onclick="window.location.href = 'index.php?controle=usuario&acao=cadastre_se'">CADASTRE-SE</button></div>
-        </nav>
-	<div id="imagemlogin">
-	 <img src="./imagens/Loginimagem.png" alt="fotologin" height="350" width="500">
-	</div>
-    </body>
-</html> 
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
+      <h2 class="text-2xl font-semibold mb-6">Faça Login</h2>
+      <form method="post" action="index.php?controle=principal&acao=logar">
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-semibold"
+            >E-mail:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            required
+            value="roni.teles@ifgoiano.edu.br"
+          />
+        </div>
+        <div class="mb-6">
+          <label for="senha" class="block text-gray-700 font-semibold"
+            >Senha:</label
+          >
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            placeholder="Senha"
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            required
+            value="123456"
+          />
+        </div>
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center">
+            <input type="checkbox" id="remember" name="remember" class="mr-2" />
+            <label for="remember" class="text-gray-700">Lembrar Senha</label>
+          </div>
+          <a
+            href="./index.php?controle=usuario&amp;acao=esqueci_senha"
+            class="text-red-500 hover:underline"
+            >Esqueceu a senha?</a
+          >
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full"
+          >
+            Entrar
+          </button>
+          <a
+            href="./index.php?controle=usuario&acao=cadastre_se"
+            class="text-red-500 hover:underline"
+            >Cadastre-se</a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

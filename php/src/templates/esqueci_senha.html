@@ -1,22 +1,60 @@
-<meta charset="utf-16">
-<style>
- .bot {
-	background-color:#ffff00;
-	display:inline-block;
-	cursor:pointer;
-	color:#000000;
-	font-family:Roboto Serif;
-	font-size:22px;
-	padding:16px 12px;
-	text-decoration:none;
-</style>
-<body style="background-color: FF0000;">
- <div style="font-size: 32;text-align: center; font-family: Roboto Serif">
-  <p style="color: #000000; background-color: #FFFF00">ESQUECEU A SENHA?</p>
- </div>
- <br>
- <center><img src="./imagens/logo.png" class="logo"></center><br>
- <center><input type="text"; id: "nome"; style="width: 750px; height: 31px;" placeholder="Nome de usuário"></center><br>
- <center><input type="text"; id: "nome"; style="width: 750px; height: 31px;" placeholder="E-mail"></center><br>
- <center><a href="#" class="bot">ENVIAR E-MAIL DE RECUPERAÇÃO</a></center>
-</body>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esqueci Minha Senha</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
+      <h2 class="text-2xl font-semibold mb-6">Esqueci Minha Senha</h2>
+      <p class="text-gray-700 mb-4">
+        Informe seu nome de usuário e endereço de e-mail registrados abaixo e
+        enviaremos um link para redefinir sua senha.
+      </p>
+      <form>
+        <div class="mb-4">
+          <label for="usuario" class="block text-gray-700 font-semibold"
+            >Nome de Usuário:</label
+          >
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-semibold"
+            >E-mail:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+            required
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full"
+          >
+            Enviar Link de Redefinição
+          </button>
+          <a
+            href="./index.php?controle=principal&acao=deslogar"
+            class="text-red-500 hover:underline"
+            >Voltar ao Login</a
+          >
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
