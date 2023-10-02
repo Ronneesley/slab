@@ -70,6 +70,7 @@ class UsuarioControle extends ControleBase {
                   "cursos" => $cursos ]);
     }
     
+    
     public function mostrarFormularioEsqueciSenha($mensagem = ""){
         $pagina = $this->configurarTemplate("esqueci_senha.html");
         $this->mostrarPagina($pagina, ["mensagem" => $mensagem]);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="h-full bg-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,78 +8,190 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function emailVal(email) {
+        var filtroEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        var charsIlegal = /[\(\)\<\>\,\;\:\\\/\"\[\]]/;
+        return filtroEmail.test(email);
+        return email.match(charsIlegal);
+      }
+
+      $("domcument").ready(function () {
+        $("#nome").keyup(function () {
+          if ($(this).val() === "") {
+            $("#nome").css("box-shadow", "0 0 0 1px red");
+          } else {
+            $("#nome").css("box-shadow", "0 0 0 1px green");
+          }
+        });
+        $("#email").keyup(function () {
+          if ($(this).val() === "") {
+            $("#email").css("box-shadow", "0 0 0 1px red");
+          } else if (emailVal($(this).val())) {
+            $("#email").css("box-shadow", "0 0 0 1px green");
+            $("#email").focus();
+            console.log("Digite um email valído!");
+          } else if (!emailVal($(this).val())) {
+            $("#email").css("box-shadow", "0 0 0 1px red");
+            $("#email").focus();
+          }
+        });
+        $("#senha").keyup(function () {
+          if ($(this).val() === "") {
+            $("#senha").css("box-shadow", "0 0 0 1px red");
+          } else if (
+            $(this).val() === $("#confirmar_senha").val() &&
+            $(this).val().length > 4
+          ) {
+            $("#senha").css("box-shadow", "0 0 0 1px green");
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px green");
+          } else {
+            $("#senha").css("box-shadow", "0 0 0 1px red");
+          }
+        });
+        $("#confirmar_senha").keyup(function () {
+          if ($(this).val() === "") {
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+          } else if (
+            $(this).val() === $("#senha").val() &&
+            $(this).val().length > 4
+          ) {
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px green");
+            $("#senha").css("box-shadow", "0 0 0 1px green");
+          } else {
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+          }
+        });
+        $("#cadastrar").submit(function (event) {
+          event.preventDefault();
+
+          var nome = $("#nome").val();
+          var email = $("#email").val();
+          var senha = $("#senha").val();
+          var senhaConfirm = $("#confirmar_senha").val();
+
+          if (
+            nome === "" ||
+            email === "" ||
+            senha === "" ||
+            senhaConfirm === ""
+          ) {
+            alert("Por favor, preencha todos os campos.");
+          } else {
+            this.submit();
+          }
+        });
+      });
+    </script>
   </head>
-  <body class="bg-gray-200 flex items-center justify-center h-screen">
-    <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
-      <h2 class="text-2xl font-semibold mb-6">Cadastro de Usuário</h2>
-      <form>
-        <div class="mb-4">
-          <label for="nome" class="block text-gray-700 font-semibold"
-            >Nome:</label
-          >
-          <input
-            type="text"
-            id="nome"
-            name="nome"
-            placeholder="Nome"
-            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
-            required
+  <body class="h-full">
+    <div
+      class="container flex flex-1 md:flex-col justify-center mx-auto h-full w-full bottom-0"
+    >
+      <div
+        class="bg-white md:py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-8"
+      >
+        <div class="mb-6 insert-y-12">
+          <img
+            src="../imagens/logo.png"
+            alt="logo_quiz"
+            class="mx-auto h-40 w-auto"
           />
+          <h2 class="text-2xl text-center text-gray-700 font-semibold">
+            Cadastro de Usuário
+          </h2>
         </div>
-        <div class="mb-4">
-          <label for="email" class="block text-gray-700 font-semibold"
-            >E-mail:</label
+        <div class="md:mx-auto md:w-full">
+          <form
+            method="post"
+            action="./index.php?controle=usuario&acao=salvar"
+            id="cadastrar"
           >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="E-mail"
-            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
-            required
-          />
+            <div class="mb-6">
+              <label for="nome" class="block text-gray-700 font-semibold"
+                >Nome</label
+              >
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-semibold"
+                >E-mail</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu email"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <label for="senha" class="block text-gray-700 font-semibold"
+                >Senha</label
+              >
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Digite sua senha"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <label
+                for="confirmar_senha"
+                class="block text-gray-700 font-semibold"
+                >Confirmar senha</label
+              >
+              <input
+                type="password"
+                id="confirmar_senha"
+                name="confirmar_senha"
+                placeholder="Digite a senha novamente"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900"
+                required
+              />
+            </div>
+            <div
+              class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between mb-2"
+            >
+              <div class="flex items-center space-x-1">
+                <span class="text-gray-400 text-xs font-light"
+                  >Já possuí uma conta?</span
+                >
+                <a
+                  href="./index.php?controle=principal&acao=deslogar"
+                  class="text-red-500 font-medium"
+                  >Faça login</a
+                >
+              </div>
+              <div class="flex">
+                <button
+                  type="submit"
+                  class="w-full bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full"
+                  id="btnCadastrar"
+                >
+                  Cadastrar
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="mb-6">
-          <label for="senha" class="block text-gray-700 font-semibold"
-            >Senha:</label
-          >
-          <input
-            type="password"
-            id="senha"
-            name="senha"
-            placeholder="Senha"
-            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
-            required
-          />
-        </div>
-        <div class="mb-6">
-          <label for="senha2" class="block text-gray-700 font-semibold"
-            >Confirme sua Senha:</label
-          >
-          <input
-            type="password"
-            id="senha2"
-            name="senha2"
-            placeholder="Confirme sua senha"
-            class="w-full mt-2 p-2 border border-gray-300 rounded-md focus:ring-rede-500 focus:border-red-500"
-            required
-          />
-        </div>
-        <div class="flex items-center justify-between">
-          <button
-            type="submit"
-            class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-full"
-            onclick="window.location.href = 'index.php?controle=usuario&acao=inserir'"
-          >
-            Cadastrar
-          </button>
-          <a
-            href="./index.php?controle=principal&acao=deslogar"
-            class="text-red-500 hover:underline"
-            >Já tem uma conta? Faça login</a
-          >
-        </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>
