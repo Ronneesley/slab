@@ -22,6 +22,9 @@ class UsuarioControle extends ControleBase {
             case "cadastre_se":
                 $this->mostrarFormularioCadastreSe();
                 break;
+            case "inserir_novo":
+                $this->inserir_novo();
+                break;
             case "salvar":
                 $this->salvar();
                 break;
@@ -51,9 +54,15 @@ class UsuarioControle extends ControleBase {
         }
     }
 
-    public function mostrarFormularioCadastreSe(){
+    public function mostrarFormularioCadastreSe($usuario = new Usuario(), 
+        $mensagem = "", $tipo_mensagem = "success"){
+        $cursoDAO = new CursoDAO();
+        $cursos = $cursoDAO->listar();
+        
         $pagina = $this->configurarTemplate("cadastre_se.html");
-        $this->mostrarPagina($pagina);
+        $this->mostrarPagina($pagina,["usuario" => $usuario, "mensagem" => $mensagem, 
+                  "tipo_mensagem" => $tipo_mensagem,
+                  "cursos" => $cursos ]);
     }
     
     public function mostrarFormularioCadastro(
@@ -88,6 +97,20 @@ class UsuarioControle extends ControleBase {
         $dao->inserir($u);
         
         $this->mostrarFormularioCadastro($u, "Inserido com sucesso");
+    }
+
+     public function inserir_novo(){
+        $u = new Usuario();
+        $u->setNome($_REQUEST["nome"]);
+        $u->setEmail($_REQUEST["email"]);
+        $u->setLogin($_REQUEST["login"]);
+        $u->setSenha($_REQUEST["senha"]);
+        $u->setCurso(new Curso($_REQUEST["curso"]));
+
+        $dao = new UsuarioDAO();
+        $dao->inserir($u);
+        
+        $this->mostrarFormularioCadastreSe($u, "Cadastrado com sucesso");
     }
     
     public function alterar(){

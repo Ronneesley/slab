@@ -17,6 +17,7 @@ class UsuarioDAO extends DAO {
         
         $stmt = $con->prepare("insert into usuarios(nome, email, senha, login, curso) 
                 values(?, ?, ?, ?, ?)");
+                print_r($stmt);
         @$stmt->bind_param("ssssi", 
             $usuario->getNome(), 
             $usuario->getEmail(), 
