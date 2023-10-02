@@ -1,215 +1,320 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="h-full bg-white">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cadastro de Usuário</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-    <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
-    <script>
-      function emailVal(email) {
-        var filtroEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-        var charsIlegal = /[\(\)\<\>\,\;\:\\\/\"\[\]]/;
-        return filtroEmail.test(email);
-        return email.match(charsIlegal);
+<html lang="pt-br" class="h-max-screen bg-white">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
+  <script>
+    // Função que valida os email
+    function emailVal(email) {
+      var filtroEmail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      var charsIlegal = /[\(\)\<\>\,\;\:\\\/\"\[\]]/;
+      return filtroEmail.test(email);
+      return email.match(charsIlegal);
+    }
+    // Função que altera o tipo da input de password para text, trocando a svg
+    function ExibirSenha(exibir) {
+      if (exibir === 'senha') {
+        $("#senha").attr("type", "text");
+        $("#exibirSenha").hide();
+        $("#ocultarSenha").show();
       }
-
-      $("domcument").ready(function () {
-        $("#nome").keyup(function () {
-          if ($(this).val() === "") {
-            $("#nome").css("box-shadow", "0 0 0 1px red");
-          } else {
-            $("#nome").css("box-shadow", "0 0 0 1px green");
-          }
-        });
-        $("#email").keyup(function () {
-          if ($(this).val() === "") {
-            $("#email").css("box-shadow", "0 0 0 1px red");
-          } else if (emailVal($(this).val())) {
-            $("#email").css("box-shadow", "0 0 0 1px green");
-            $("#email").focus();
-            console.log("Digite um email valído!");
-          } else if (!emailVal($(this).val())) {
-            $("#email").css("box-shadow", "0 0 0 1px red");
-            $("#email").focus();
-          }
-        });
-        $("#senha").keyup(function () {
-          if ($(this).val() === "") {
-            $("#senha").css("box-shadow", "0 0 0 1px red");
-          } else if (
-            $(this).val() === $("#confirmar_senha").val() &&
-            $(this).val().length > 4
-          ) {
-            $("#senha").css("box-shadow", "0 0 0 1px green");
-            $("#confirmar_senha").css("box-shadow", "0 0 0 1px green");
-          } else {
-            $("#senha").css("box-shadow", "0 0 0 1px red");
-          }
-        });
-        $("#confirmar_senha").keyup(function () {
-          if ($(this).val() === "") {
-            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
-          } else if (
-            $(this).val() === $("#senha").val() &&
-            $(this).val().length > 4
-          ) {
-            $("#confirmar_senha").css("box-shadow", "0 0 0 1px green");
-            $("#senha").css("box-shadow", "0 0 0 1px green");
-          } else {
-            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
-          }
-        });
-        $("#cadastrar").submit(function (event) {
-          event.preventDefault();
-
-          var nome = $("#nome").val();
-          var email = $("#email").val();
-          var senha = $("#senha").val();
-          var senhaConfirm = $("#confirmar_senha").val();
-
-          if (
-            nome === "" ||
-            email === "" ||
-            senha === "" ||
-            senhaConfirm === ""
-          ) {
-            alert("Por favor, preencha todos os campos.");
-          } else {
-            this.submit();
-          }
-        });
+      else {
+        $("#confirmar_senha").attr("type", "text");
+        $("#exibirConfirma").hide();
+        $("#ocultarConfirma").show();
+      }
+    };
+    // Função que altera o tipo da input de text para password, trocando a svg
+    function OcultarSenha(ocultar) {
+      if (ocultar === 'senha') {
+        $("#senha").attr("type", "password");
+        $("#ocultarSenha").hide();
+        $("#exibirSenha").show();
+      }
+      else {
+        $("#confirmar_senha").attr("type", "password");
+        $("#ocultarConfirma").hide();
+        $("#exibirConfirma").show();
+      }
+    };
+    // Funções que serão acionadas quando a página for carregada
+    $("domcument").ready(function () {
+      // Ao digitar em Nome completo aciona uma função
+      $("#nome").keyup(function () {
+        // Se nada estiver digitado, a sombra do input fica vermelha
+        if ($(this).val() === "") {
+          $("#nome").css("box-shadow", "0 0 0 1px red");
+          $("#nome").attr('placeholder', '*Campo obrigatório!');
+        } else {// Se algo for digitado, a sombra do input fica verde
+          $("#nome").css("box-shadow", "0 0 0 1px green");
+        }
       });
-    </script>
-  </head>
-  <body class="h-full">
+      // Ao digitar em Nome de usuário aciona uma função
+      $("#login").keyup(function () {
+        // Se nada estiver digitado, a sombra do input fica vermelha
+        if ($(this).val() === "") {
+          $("#login").css("box-shadow", "0 0 0 1px red");
+          $("#login").attr('placeholder', '*Campo obrigatório!');
+        } else {// Se algo for digitado, a sombra do input fica verde
+          $("#login").css("box-shadow", "0 0 0 1px green");
+        }
+      });
+      // Ao digitar em E-mail aciona uma função
+      $("#email").keyup(function () {
+        // Se nada estiver digitado, a sombrado input fica vermelha
+        if ($(this).val() === "") {
+          $("#email").css("box-shadow", "0 0 0 1px red");
+          $("#email").attr('placeholder', '*Campo obrigatório!');
+        } else if (emailVal($(this).val())) {// Ao chamar a função de validação de email, caso seja valído a sombra do input fica verde
+          $("#email").css("box-shadow", "0 0 0 1px green");
+          console.log("Digite um email valído!");
+        } else if (!emailVal($(this).val())) {// Ao chamar a função de validação de email, caso não seja valído a sombra do input fica vermelha
+          $("#email").css("box-shadow", "0 0 0 1px red");
+        }
+      });
+      // Ao digitar em senha aciona uma função
+      $("#senha").keyup(function () {
+        // Se nada for digitado, a sombra do input fica vermelha
+        if ($(this).val() === "") {
+          $("#senha").css("box-shadow", "0 0 0 1px red");
+          $("#senha").attr('placeholder', '*Campo obrigatório!');
+        } else if (// Se a senha digitada for igual a confirmar senha, a sombra do input de ambos fica verde
+          $(this).val() === $("#confirmar_senha").val() &&
+          $(this).val().length > 4
+        ) {
+          $("#senha").css("box-shadow", "0 0 0 1px green");
+          $("#confirmar_senha").css("box-shadow", "0 0 0 1px green");
+          $("#btnCadastrar").prop("disabled", false);
+        } else if (
+          $(this).val().length <= 4
+        ) {
+          $("#senha").css("box-shadow", "0 0 0 1px red");
+          $("#btnCadastrar").prop("disabled", true);
+        } else {// Se a senha digitada não for igual a confirmar senha, a sombra do input fica vermelha
+          $("#senha").css("box-shadow", "0 0 0 1px gray");
+          $("#btnCadastrar").prop("disabled", true);
+        }
+      });
+      // Ao digitar em confirmar senha aciona uma função
+      $("#confirmar_senha").keyup(function () {
+        // Se nada for digitado, a sombra do input fica vermelha
+        if ($(this).val() === "") {
+          $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+          $("#confirmar_senha").attr('placeholder', '*Campo obrigatório!');
+        } else if (// Se o confirmar senha digitadofor igual a senha, a sombra do input de ambos fica verde
+          $(this).val() === $("#senha").val() &&
+          $(this).val().length > 4
+        ) {
+          $("#confirmar_senha").css("box-shadow", "0 0 0 1px green");
+          $("#senha").css("box-shadow", "0 0 0 1px green");
+          $("#btnCadastrar").prop("disabled", false);
+        } else if (
+          $(this).val().length <= 4
+        ) {
+          if ($("#senha").val().length <= 4) {
+            $("#senha").css("box-shadow", "0 0 0 1px red");
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+            $("#btnCadastrar").prop("disabled", true);
+          } else {
+            $("#senha").css("box-shadow", "0 0 0 1px gray");
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+            $("#btnCadastrar").prop("disabled", true);
+          }
+        } else {// Se o confirmar senha digitado não for igual a senha
+          if ($("#senha").val().length <= 4) {
+            $("#senha").css("box-shadow", "0 0 0 1px red");
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+            $("#btnCadastrar").prop("disabled", true);
+          } else {
+            $("#senha").css("box-shadow", "0 0 0 1px gray");
+            $("#confirmar_senha").css("box-shadow", "0 0 0 1px red");
+            $("#btnCadastrar").prop("disabled", true);
+          }
+        }
+      });
+      // Ao digitar aciona uma função
+      $("#senha").keyup(function () {
+        // Verifica se a senha está vazia
+        if ($(this).val() === "") {
+          $("#forca").hide();
+        } else {// Se não está vazia, realiza a atribuição de força
+          var senha = $("#senha").val();
+          var forca = 0;
+
+          // Verificar o comprimento mínimo
+          if (senha.length > 4) {
+            forca += 1;
+          }
+          if (senha.length >= 8) {
+            forca += 1;
+          }
+          if (senha.length >= 12) {
+            forca += 1;
+          }
+          if (senha.length >= 16) {
+            forca += 1;
+          }
+
+          switch (forca) {
+            case 0:
+              $("#forca").removeClass("text-green-700");
+              $("#forca").removeClass("text-green-500");
+              $("#forca").removeClass("text-yellow-500");
+              $("#forca").removeClass("text-yellow-700");
+              $("#forca").addClass("text-red-500")
+              $("#forca").text("Senha muito fraca");
+              break;
+            case 1:
+              $("#forca").removeClass("text-green-700");
+              $("#forca").removeClass("text-green-500");
+              $("#forca").removeClass("text-yellow-500");
+              $("#forca").removeClass("text-red-500");
+              $("#forca").addClass("text-yellow-700");
+              $("#forca").text("Senha fraca");
+              break;
+            case 2:
+              $("#forca").removeClass("text-green-700");
+              $("#forca").removeClass("text-green-500");
+              $("#forca").removeClass("text-yellow-700");
+              $("#forca").removeClass("text-red-500");
+              $("#forca").addClass("text-yellow-500");
+              $("#forca").text("Senha mediana");
+              break;
+            case 3:
+              $("#forca").removeClass("text-green-700");
+              $("#forca").removeClass("text-yellow-500");
+              $("#forca").removeClass("text-yellow-700");
+              $("#forca").removeClass("text-red-500");
+              $("#forca").addClass("text-green-500");
+              $("#forca").text("Senha forte");
+              break;
+            case 4:
+              $("#forca").removeClass("text-green-500");
+              $("#forca").removeClass("text-yellow-500");
+              $("#forca").removeClass("text-yellow-700");
+              $("#forca").removeClass("text-red-500");
+              $("#forca").addClass("text-green-700");
+              $("#forca").text("Senha muito forte");
+              break;
+          }
+          // Faz a span #forca aparecer
+          $("#forca").show();
+        }
+      })
+      // Teste para caso algum campo vazio, não realizar o envio do formulário
+    });
+  </script>
+</head>
+
+<body class="h-full">
+  <div class="container flex flex-1 md:flex-col justify-center mx-auto h-full w-full bottom-0">
     <div
-      class="container flex flex-1 md:flex-col justify-center mx-auto h-full w-full bottom-0"
-    >
-      <div
-        class="bg-white md:py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-8"
-      >
-        <div class="mb-6 insert-y-12">
-          <img
-            src="../imagens/logo.png"
-            alt="logo_quiz"
-            class="mx-auto h-40 w-auto"
-          />
-          <h2 class="text-2xl text-center text-gray-700 font-semibold">
-            Cadastro de Usuário
-          </h2>
-        </div>
-        <div class="md:mx-auto md:w-full">
-          <form
-            method="post"
-            action="./index.php?controle=usuario&acao=inserir_novo"
-            id="cadastrar"
-          >
-            <div class="mb-6">
-              <label for="nome" class="block text-gray-700 font-semibold"
-                >Nome completo</label
-              >
-              <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome completo"
+      class="bg-white md:py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-4">
+      <div class="mb-10 insert-y-12">
+        <img src="../imagens/logo.png" alt="logo_quiz" class="mx-auto h-40 w-auto" />
+        <h2 class="text-2xl text-center text-gray-700 font-semibold">
+          Cadastro de Usuário
+        </h2>
+      </div>
+      <div class="md:mx-auto md:w-full">
+        <form method="post" action="./index.php?controle=usuario&acao=salvar" id="cadastrar">
+          <div class="mb-6">
+            <label for="nome" class="block text-gray-700 font-semibold select-none">Nome completo</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo"
+              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+              required />
+          </div>
+          <div class="mb-6">
+            <label for="login" class="block text-gray-700 font-semibold select-none">Nome de usuário</label>
+            <input type="text" id="login" name="login" placeholder="Digite seu nome de usuário"
+              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+              required />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block text-gray-700 font-semibold select-none">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email"
+              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+              required />
+          </div>
+          <div class="mb-6">
+            <label for="curso" class="block text-gray-700 font-semibold select-none">Cursos</label>
+            <select
+              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
+              id="curso" name="curso">
+              <option>Selecione um curso</option>
+              {% for curso in cursos %}
+              <option value="{{ curso.id }}" {{ curso.id==usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="mb-6">
+            <label for="senha" class="block text-gray-700 font-semibold select-none">Senha</label>
+            <div class="flex flex-1 items-center space-x-2">
+              <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
                 class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="nome" class="block text-gray-700 font-semibold"
-                >Nome de usuário</label
-              >
-              <input
-                type="text"
-                id="login"
-                name="login"
-                placeholder="Digite seu nome de usuário"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="email" class="block text-gray-700 font-semibold"
-                >E-mail</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Digite seu email"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="curso" class="block text-gray-700 font-semibold">Cursos</label>
-              <select class="form-select w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900" name="curso">
-                <option>Selecione um curso</option>
-                {% for curso in cursos %}
-                <option value="{{ curso.id }}" {{ curso.id==usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="mb-6">
-              <label for="senha" class="block text-gray-700 font-semibold"
-                >Senha</label
-              >
-              <input
-                type="password"
-                id="senha"
-                name="senha"
-                placeholder="Digite sua senha"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label
-                for="confirmar_senha"
-                class="block text-gray-700 font-semibold"
-                >Confirmar senha</label
-              >
-              <input
-                type="password"
-                id="confirmar_senha"
-                name="confirmar_senha"
-                placeholder="Digite a senha novamente"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-                required
-              />
-            </div>
-            <div
-              class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between mb-2"
-            >
-              <div class="flex items-center space-x-1">
-                <span class="text-gray-400 text-xs font-light"
-                  >Já possuí uma conta?</span
-                >
-                <a
-                  href="./index.php?controle=principal&acao=deslogar"
-                  class="text-red-500 font-medium"
-                  >Faça login</a
-                >
-              </div>
-              <div class="flex">
-                <button
-                  type="submit"
-                  class="w-full bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full"
-                  id="btnCadastrar"
-                >
-                  Cadastrar
-                </button>
+                required />
+              <div>
+                <svg class="exibir h-5 w-auto fill-current text-gray-700 hover:text-gray-900" viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg" id="exibirSenha" onclick="ExibirSenha('senha')">
+                  <path
+                    d="M8,2 C14,2 16,8 16,8 C16,8 14,14 8,14 C2,14 0,8 0,8 C0,8 2,2 8,2 Z M8,4 C5.76219,4 4.27954,5.08865 3.28644,6.28037 C2.78373,6.88363 2.42604,7.49505 2.1951,7.95693 L2.17372,8 L2.1951,8.04307 C2.42604,8.50495 2.78373,9.11637 3.28644,9.71963 C4.27954,10.9113 5.76219,12 8,12 C10.2378,12 11.7205,10.9113 12.7136,9.71963 C13.2163,9.11637 13.574,8.50495 13.8049,8.04307 L13.8263,8 L13.8049,7.95693 C13.574,7.49505 13.2163,6.88363 12.7136,6.28037 C11.7205,5.08865 10.2378,4 8,4 Z M8,5 C8.30747,5 8.60413,5.04625 8.88341,5.13218 C8.36251,5.36736 8,5.89135 8,6.5 C8,7.32843 8.67157,8 9.5,8 C10.1087,8 10.6326,7.63749 10.8678,7.11659 C10.9537,7.39587 11,7.69253 11,8 C11,9.65685 9.65685,11 8,11 C6.34315,11 5,9.65685 5,8 C5,6.34315 6.34315,5 8,5 Z" />
+                </svg>
+                <svg class="ocultar hidden h-5 w-auto fill-current text-gray-700 hover:text-gray-900"
+                  viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" id="ocultarSenha"
+                  onclick="OcultarSenha('senha')">
+                  <path fill-rule="evenodd"
+                    d="M14.7071,1.29289075 C15.0976,1.68342075 15.0976,2.31658075 14.7071,2.70711075 L2.70711,14.7071007 C2.31658,15.0976008 1.68342,15.0976008 1.29289,14.7071007 C0.902369,14.3166007 0.902369,13.6834007 1.29289,13.2929007 L2.64723,11.9386007 C0.734146,10.2024007 5.68434189e-14,8 5.68434189e-14,8 L0.0083320632,7.97591831 C0.153635117,7.56378601 2.22222222,2 8,2 C9.45831,2 10.6803,2.35444075 11.6948,2.89103075 L13.2929,1.29289075 C13.6834,0.90236975 14.3166,0.90236975 14.7071,1.29289075 Z M14.6852,5.56108075 C15.6175,6.85245075 16,8.00000075 16,8.00000075 C16,8.00000075 14,14.0000008 8,14.0000008 C7.43058,14.0000008 6.89718,13.9460007 6.39811,13.8481007 L8.25087,11.9954008 C10.3493,11.9174008 11.758,10.8662007 12.7136,9.71963075 C13.2163,9.11637075 13.574,8.50495075 13.8049,8.04307075 L13.8263,8.00000075 L13.8049,7.95693075 C13.6663,7.67977075 13.4821,7.34875075 13.2483,6.99797075 L14.6852,5.56108075 Z M8,4.00000075 C5.76219,4.00000075 4.27954,5.08865075 3.28644,6.28037075 C2.78373,6.88363075 2.42604,7.49505075 2.1951,7.95693075 L2.17372,8.00000075 L2.1951,8.04307075 C2.42604,8.50495075 2.78373,9.11637075 3.28644,9.71963075 C3.51765,9.99708075 3.77539,10.2689008 4.06301,10.5228007 L5.29237,9.29342075 C5.10495,8.90178075 5,8.46315075 5,8.00000075 C5,6.34315075 6.34315,5.00000075 8,5.00000075 C8.46315,5.00000075 8.90178,5.10495075 9.29342,5.29237075 L10.1882,4.39756075 C9.55332,4.14919075 8.8284,4.00000075 8,4.00000075 Z" />
+                </svg>
               </div>
             </div>
-          </form>
-        </div>
+            <div>
+              <span id="forca" class="hidden block font-semibold select-none"></span>
+            </div>
+          </div>
+          <div class="mb-8">
+            <label for="confirmar_senha" class="block text-gray-700 font-semibold select-none">Confirmar senha</label>
+            <div class="flex flex-1 items-center space-x-2">
+              <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Digite a senha novamente"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+                required />
+              <div>
+                <svg class="exibir h-5 w-auto fill-current text-gray-700 hover:text-gray-900" viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg" id="exibirConfirma" onclick="ExibirSenha('confirma')">
+                  <path
+                    d="M8,2 C14,2 16,8 16,8 C16,8 14,14 8,14 C2,14 0,8 0,8 C0,8 2,2 8,2 Z M8,4 C5.76219,4 4.27954,5.08865 3.28644,6.28037 C2.78373,6.88363 2.42604,7.49505 2.1951,7.95693 L2.17372,8 L2.1951,8.04307 C2.42604,8.50495 2.78373,9.11637 3.28644,9.71963 C4.27954,10.9113 5.76219,12 8,12 C10.2378,12 11.7205,10.9113 12.7136,9.71963 C13.2163,9.11637 13.574,8.50495 13.8049,8.04307 L13.8263,8 L13.8049,7.95693 C13.574,7.49505 13.2163,6.88363 12.7136,6.28037 C11.7205,5.08865 10.2378,4 8,4 Z M8,5 C8.30747,5 8.60413,5.04625 8.88341,5.13218 C8.36251,5.36736 8,5.89135 8,6.5 C8,7.32843 8.67157,8 9.5,8 C10.1087,8 10.6326,7.63749 10.8678,7.11659 C10.9537,7.39587 11,7.69253 11,8 C11,9.65685 9.65685,11 8,11 C6.34315,11 5,9.65685 5,8 C5,6.34315 6.34315,5 8,5 Z" />
+                </svg>
+                <svg class="ocultar hidden h-5 w-auto fill-current text-gray-700 hover:text-gray-900"
+                  viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" id="ocultarConfirma"
+                  onclick="OcultarSenha('confirma')">
+                  <path fill-rule="evenodd"
+                    d="M14.7071,1.29289075 C15.0976,1.68342075 15.0976,2.31658075 14.7071,2.70711075 L2.70711,14.7071007 C2.31658,15.0976008 1.68342,15.0976008 1.29289,14.7071007 C0.902369,14.3166007 0.902369,13.6834007 1.29289,13.2929007 L2.64723,11.9386007 C0.734146,10.2024007 5.68434189e-14,8 5.68434189e-14,8 L0.0083320632,7.97591831 C0.153635117,7.56378601 2.22222222,2 8,2 C9.45831,2 10.6803,2.35444075 11.6948,2.89103075 L13.2929,1.29289075 C13.6834,0.90236975 14.3166,0.90236975 14.7071,1.29289075 Z M14.6852,5.56108075 C15.6175,6.85245075 16,8.00000075 16,8.00000075 C16,8.00000075 14,14.0000008 8,14.0000008 C7.43058,14.0000008 6.89718,13.9460007 6.39811,13.8481007 L8.25087,11.9954008 C10.3493,11.9174008 11.758,10.8662007 12.7136,9.71963075 C13.2163,9.11637075 13.574,8.50495075 13.8049,8.04307075 L13.8263,8.00000075 L13.8049,7.95693075 C13.6663,7.67977075 13.4821,7.34875075 13.2483,6.99797075 L14.6852,5.56108075 Z M8,4.00000075 C5.76219,4.00000075 4.27954,5.08865075 3.28644,6.28037075 C2.78373,6.88363075 2.42604,7.49505075 2.1951,7.95693075 L2.17372,8.00000075 L2.1951,8.04307075 C2.42604,8.50495075 2.78373,9.11637075 3.28644,9.71963075 C3.51765,9.99708075 3.77539,10.2689008 4.06301,10.5228007 L5.29237,9.29342075 C5.10495,8.90178075 5,8.46315075 5,8.00000075 C5,6.34315075 6.34315,5.00000075 8,5.00000075 C8.46315,5.00000075 8.90178,5.10495075 9.29342,5.29237075 L10.1882,4.39756075 C9.55332,4.14919075 8.8284,4.00000075 8,4.00000075 Z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between mb-2">
+            <div class="flex items-center space-x-1">
+              <span class="text-gray-400 text-xs font-light select-none">Já possuí uma conta?</span>
+              <a href="./index.php?controle=principal&acao=deslogar" class="text-red-500 font-medium select-none">Faça
+                login</a>
+            </div>
+            <div class="flex">
+              <button type="submit"
+                class="w-full bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full select-none"
+                id="btnCadastrar">
+                Cadastrar
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
