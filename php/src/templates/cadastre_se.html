@@ -114,13 +114,26 @@
           >
             <div class="mb-6">
               <label for="nome" class="block text-gray-700 font-semibold"
-                >Nome</label
+                >Nome completo</label
               >
               <input
                 type="text"
                 id="nome"
                 name="nome"
-                placeholder="Digite seu nome"
+                placeholder="Digite seu nome completo"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <label for="nome" class="block text-gray-700 font-semibold"
+                >Nome de usuário</label
+              >
+              <input
+                type="text"
+                id="login"
+                name="login"
+                placeholder="Digite seu nome de usuário"
                 class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
                 required
               />
@@ -134,9 +147,18 @@
                 id="email"
                 name="email"
                 placeholder="Digite seu email"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
                 required
               />
+            </div>
+            <div class="mb-6">
+              <label for="curso" class="block text-gray-700 font-semibold">Cursos</label>
+              <select class="form-select w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900" id="curso" name="curso">
+                <option>Selecione um curso</option>
+                {% for curso in cursos %}
+                <option value="{{ curso.id }}" {{ curso.id==usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}</option>
+                {% endfor %}
+              </select>
             </div>
             <div class="mb-6">
               <label for="senha" class="block text-gray-700 font-semibold"
@@ -147,7 +169,7 @@
                 id="senha"
                 name="senha"
                 placeholder="Digite sua senha"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
                 required
               />
             </div>
@@ -162,7 +184,7 @@
                 id="confirmar_senha"
                 name="confirmar_senha"
                 placeholder="Digite a senha novamente"
-                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900"
+                class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
                 required
               />
             </div>
