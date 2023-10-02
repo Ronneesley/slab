@@ -1,0 +1,17 @@
+FROM ubuntu:22.04
+
+RUN sudo apt update \
+  && sudo apt install snapd
+
+RUN sudo apt install composer
+RUN sudo snap install node --classic
+
+# Fazer um requirements file para instalar estes softwares:
+#   Apache, PHP, Node, Composer, R, Twig
+#   NetBeans, MySQL Workbench
+
+# Verificar e definir os WORKDIR deste Dockerfile
+# Inserir os RUN nos WORKDIR corretos
+
+RUN composer install
+RUN npm install
