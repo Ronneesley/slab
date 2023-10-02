@@ -1,5 +1,7 @@
 <h2>Terminal Interativo</h2>
 
+<!-- https://www.tutorialspoint.com/how-to-add-a-new-element-to-html-dom-in-javascript -->
+
 <link rel="stylesheet" href="./css/terminal_interativo.css">
 
 <form method="post" action="./index.php?controle=terminalinterativo&acao=processar">
@@ -10,7 +12,7 @@
             </div>
 
             <div class="resultado">
-                {{ resultados[loop.index - 1] }}
+                {{ resultados[loop.index - 1] | nl2br }}
             </div>
             <br />
         {% endfor %}

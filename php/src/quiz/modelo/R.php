@@ -39,15 +39,18 @@ class R {
 
         $string = '[1] "---------------"';
  
-    foreach ($resultado as $item) {
-        if ($item !== $string) {
-            $arrayFiltrado[] = $item;
+        $arrayFiltrado = array();
+        $conteudo = "";
+        foreach ($resultado as $item) {
+            if ($item == $string) {
+                array_push($arrayFiltrado, $conteudo);
+                $conteudo = "";
+            } else {
+                $conteudo .= substr($item, 3) . "\n";
+            }
         }
-    }
 
-    //print_r($arrayFiltrado);
-
-    return $arrayFiltrado;
+        return $arrayFiltrado;
  
     }
 }
