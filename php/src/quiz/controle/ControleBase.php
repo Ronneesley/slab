@@ -16,6 +16,8 @@ abstract class ControleBase {
     }
     
     protected function mostrarPagina($pagina, $parametros = array()){
+        $parametros["JS_DIR"] = "./node_modules/";
+        $parametros["CSS_DIR"] = "./css/";
         echo $pagina->render($parametros);
     }
     
