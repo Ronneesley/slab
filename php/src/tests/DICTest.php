@@ -63,13 +63,13 @@ final class DICTest extends TestCase
         $this->assertEqualsWithDelta(24, $dic->getGLTotal(), 0.01);
 
         //SQTRAT    
-        $this->assertEqualsWithDelta(2.135, $dic->getSQTrat(), 0.01);
+        $this->assertEqualsWithDelta(2135.94, $dic->getSQTrat(), 0.01);
 
         //SQRES
         $this->assertEqualsWithDelta(373.52, $dic->getSQRes(), 0.01);
 
         //SQTOTAL
-        $this->assertEqualsWithDelta(2.509, $dic->getSQTotal(), 0.01);
+        $this->assertEqualsWithDelta(2509.46, $dic->getSQTotal(), 0.01);
 
         //QMTRAT
         $this->assertEqualsWithDelta(533.99, $dic->getQMTrat(), 0.01);
@@ -77,8 +77,8 @@ final class DICTest extends TestCase
         //QMRES
         $this->assertEqualsWithDelta(18.68, $dic->getQMRes(), 0.01);
 
-        //FTAB
-        $this->assertEqualsWithDelta(25.59, $dic->getFTab(), 0.01);
+        //FCalculado
+        $this->assertEqualsWithDelta(28.586, $dic->getFCalc(), 0.01);
 
     }
 

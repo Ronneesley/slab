@@ -5,7 +5,7 @@ use QuizEstatistico\modelo\dao\DAO;
 
 /**
  * Classe para acesso aos dados do administador
- * Data Access Object (DAO) *
+ * Data Access Object (DAO)
  * @author Wagner e Mayko 
  */
 class AdministradorDAO extends DAO {    

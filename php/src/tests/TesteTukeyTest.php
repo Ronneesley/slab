@@ -19,7 +19,7 @@ final class TesteTukeyTest extends TestCase
         $this->assertEquals(array('b'), $r[2]);
         $this->assertEquals(array('a'), $r[3]);*/
 
-        print_r($r);
+        //print_r($r);
 
         $this->assertEquals(array('a'), $r[0]);
         $this->assertEquals(array('b'), $r[1]);
