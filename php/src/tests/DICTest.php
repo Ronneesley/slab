@@ -129,19 +129,19 @@ final class DICTest extends TestCase
             ]
         ];
 
-        $J = 5;
+        $J = 6;
 
         $dic = new DIC();
         $dic->calcular($tratamentos, $leituras, $J);
 
-        $this->assertEqualsWithDelta(14.862, $dic->getL()[0], 0.01);
-        $this->assertEqualsWithDelta(6.45, $dic->getL()[1], 0.01);
-        $this->assertEqualsWithDelta(3.163, $dic->getL()[2], 0.01);
+        $this->assertEqualsWithDelta(14862.00, $dic->getL()[0], 0.01);
+        $this->assertEqualsWithDelta(6450.0, $dic->getL()[1], 0.01);
+        $this->assertEqualsWithDelta(3163.0, $dic->getL()[2], 0.01);
         $this->assertEqualsWithDelta(938, $dic->getL()[3], 0.01);
         $this->assertEqualsWithDelta(548, $dic->getL()[4], 0.01);
 
         //TOTAL
-        $this->assertEqualsWithDelta(25.961, $dic->getG(), 0.01);
+        $this->assertEqualsWithDelta(25961.0, $dic->getG(), 0.01);
 
         //GLTRAT
         $this->assertEqualsWithDelta(4, $dic->getGLTrat(), 0.01);
@@ -153,22 +153,22 @@ final class DICTest extends TestCase
         $this->assertEqualsWithDelta(29, $dic->getGLTotal(), 0.01);
 
         //SQTRAT    
-        $this->assertEqualsWithDelta(23.145259467, $dic->getSQTrat(), 0.01);
+        $this->assertEqualsWithDelta(23145259.46, $dic->getSQTrat(), 0.01);
 
         //SQRES
-        $this->assertEqualsWithDelta(1.768643500, $dic->getSQRes(), 0.01);
+        $this->assertEqualsWithDelta(1768643.50, $dic->getSQRes(), 0.01);
 
         //SQTOTAL
-        $this->assertEqualsWithDelta(24.913902967, $dic->getSQTotal(), 0.01);
+        $this->assertEqualsWithDelta(24913902.96, $dic->getSQTotal(), 0.01);
 
         //QMTRAT
-        $this->assertEqualsWithDelta(5.786314867, $dic->getQMTrat(), 0.01);
+        $this->assertEqualsWithDelta(5786314.86, $dic->getQMTrat(), 0.01);
 
         //QMRES
-        $this->assertEqualsWithDelta(70.745740, $dic->getQMRes(), 0.01);
+        $this->assertEqualsWithDelta(70745.74, $dic->getQMRes(), 0.01);
 
-        //FTAB
-        $this->assertEqualsWithDelta(81.790, $dic->getFTab(), 0.01);
+        //FCalculado
+        $this->assertEqualsWithDelta(81.79, $dic->getFCalc(), 0.01);
     }
 
     //https://www.fcav.unesp.br/Home/departamentos/cienciasexatas/EUCLIDESBRAGAMALHEIROS/materialdidatico/anoletivo-2014/ApostilaEEAR_Cap3atm.pdf
@@ -231,13 +231,13 @@ final class DICTest extends TestCase
         $this->assertEqualsWithDelta(19, $dic->getGLTotal(), 0.01);
 
         //SQTRAT    
-        $this->assertEqualsWithDelta(3.424588, $dic->getSQTrat(), 0.01);
+        $this->assertEqualsWithDelta(3424.58, $dic->getSQTrat(), 0.01);
 
         //SQRES
         $this->assertEqualsWithDelta(355.078, $dic->getSQRes(), 0.01);
 
         //SQTOTAL
-        $this->assertEqualsWithDelta(3.779666, $dic->getSQTotal(), 0.01);
+        $this->assertEqualsWithDelta(3779.66, $dic->getSQTotal(), 0.01);
 
         //QMTRAT
         $this->assertEqualsWithDelta(856.147, $dic->getQMTrat(), 0.01);
@@ -245,8 +245,8 @@ final class DICTest extends TestCase
         //QMRES
         $this->assertEqualsWithDelta(23.672, $dic->getQMRes(), 0.01);
 
-        //FTAB
-        $this->assertEqualsWithDelta(36.167, $dic->getFTab(), 0.01);
+        //FCalculado
+        $this->assertEqualsWithDelta(36.167, $dic->getFCalc(), 0.01);
     }
 
 }
