@@ -135,7 +135,7 @@ final class DICTest extends TestCase
         $dic->calcular($tratamentos, $leituras, $J);
 
         $this->assertEqualsWithDelta(14.862, $dic->getL()[0], 0.01);
-        $this->assertEqualsWithDelta(6.450, $dic->getL()[1], 0.01);
+        $this->assertEqualsWithDelta(6.45, $dic->getL()[1], 0.01);
         $this->assertEqualsWithDelta(3.163, $dic->getL()[2], 0.01);
         $this->assertEqualsWithDelta(938, $dic->getL()[3], 0.01);
         $this->assertEqualsWithDelta(548, $dic->getL()[4], 0.01);
