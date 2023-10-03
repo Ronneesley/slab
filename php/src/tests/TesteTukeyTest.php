@@ -5,6 +5,7 @@ use QuizEstatistico\modelo\TesteTukey;
 
 final class TesteTukeyTest extends TestCase
 {
+    //
     public function testExemploVideo(): void
     {
         $t = new TesteTukey();

@@ -207,7 +207,7 @@ final class DICTest extends TestCase
             ]
         ];
 
-        $J = 5;
+        $J = 4;
 
         $dic = new DIC();
         $dic->calcular($tratamentos, $leituras, $J);
