@@ -1,6 +1,7 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Tema;
 
@@ -15,20 +16,18 @@ class TemaDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO temas(tema) VALUES (?)");
-        $stmt->bind_param("s", $tema->getTema());
+        $stmt->bindValue(1, $tema->getTema());
         $stmt->execute();
-        
-        $con->close();
     }
     
     public function alterar($tema){
         $con = $this->conectar();
         
         $stmt = $con->prepare("update temas set tema = ? where id = ?");
-        $stmt->bind_param("si", $tema->getTema(), $tema->getId());
-        $stmt->execute();        
+        $stmt->bindValue(1, $tema->getTema());
+        $stmt->bindValue(2, $tema->getId(), PDO::PARAM_INT);
         
-        $con->close();
+        $stmt->execute();        
     }
     
     public function listar(){
@@ -36,20 +35,15 @@ class TemaDAO extends DAO {
         
         $stmt = $con->prepare("select * from temas");
         $stmt->execute();
-        $res = $stmt->get_result();
-        
+        $res = $stmt->fetchAll();
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach($res as $dados){        
             $c = new Tema();
             $c->setId($dados["id"]);
             $c->setTema($dados["tema"]);
-            
             array_push($lista, $c);
         }
-        
-        $con->close();
-        
         return $lista;
     }
     
@@ -57,18 +51,15 @@ class TemaDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from temas where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
         
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Tema();
         $c->setId($dados["id"]);
         $c->setTema($dados["tema"]);
-        
-        $con->close();
-        
+
         return $c;
     }
     
@@ -76,10 +67,8 @@ class TemaDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from temas where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        
-        $con->close();
     }
 }
 
