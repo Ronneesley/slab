@@ -1,88 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="h-full bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar na conta</title>
+    <link rel="icon" href="../imagens/miniatura_logo.png" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
+    <script>
+      function ExibirSenha() {
+        $("#senha").attr("type", "text");
+        $("#exibir").hide();
+        $("#ocultar").show();
+      }
+      function OcultarSenha() {
+        $("#senha").attr("type", "password");
+        $("#ocultar").hide();
+        $("#exibir").show();
+      }
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Entrar na conta</title>
-  <link rel="icon" href="../imagens/miniatura_logo.png">
-  <link href="../dist/output.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-  <script>
-    function ExibirSenha() {
-      $("#senha").attr("type", "text");
-      $("#exibir").hide();
-      $("#ocultar").show();
-    };
-    function OcultarSenha() {
-      $("#senha").attr("type", "password");
-      $("#ocultar").hide();
-      $("#exibir").show();
-    };
-  </script>
-</head>
-
-<body class="h-full">
-  <div class="container flex flex-1 flex-col justify-center min-h-full mx-auto h-full w-full">
+  <body class="h-full">
     <div
-      class="bg-white py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-8">
-      <div class="mb-10 insert-y-12">
-        <img src="../imagens/logo.png" alt="logo_quiz" class="mx-auto h-40 w-auto">
-        <h2 class="text-2xl text-center text-gray-700 font-semibold">Entre com a sua conta</h2>
-      </div>
-      <div class="md:mx-auto md:w-full">
-        <form id="login" method="post" action="index.php?controle=principal&acao=logar">
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 font-semibold">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu email" autocomplete="email"
-              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-              required value="roni.teles@ifgoiano.edu.br" />
-          </div>
-          <div class="mb-6">
-            <label for="senha" class="block text-gray-700 font-semibold">Senha</label>
-            <div class="flex flex-1 items-center space-x-2">
-              <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
+      class="container flex flex-1 flex-col justify-center min-h-full mx-auto h-full w-full"
+    >
+      <div
+        class="bg-white py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-8"
+      >
+        <div class="mb-10 insert-y-12">
+          <img
+            src="../imagens/logo.png"
+            alt="logo_quiz"
+            class="mx-auto h-40 w-auto"
+          />
+          <h2 class="text-2xl text-center text-gray-700 font-semibold">
+            Entre com a sua conta
+          </h2>
+        </div>
+        <div class="md:mx-auto md:w-full">
+          <form
+            id="login"
+            method="post"
+            action="index.php?controle=principal&acao=logar"
+          >
+            <div class="mb-6">
+              <label for="email" class="block text-gray-700 font-semibold"
+                >E-mail</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Digite seu email"
+                autocomplete="email"
                 class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
-                required value="123456" />
-              <div>
-                <svg class="h-5 w-auto fill-current text-gray-700 hover:text-gray-900" viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg" id="exibir" onclick="ExibirSenha()">
-                  <path
-                    d="M8,2 C14,2 16,8 16,8 C16,8 14,14 8,14 C2,14 0,8 0,8 C0,8 2,2 8,2 Z M8,4 C5.76219,4 4.27954,5.08865 3.28644,6.28037 C2.78373,6.88363 2.42604,7.49505 2.1951,7.95693 L2.17372,8 L2.1951,8.04307 C2.42604,8.50495 2.78373,9.11637 3.28644,9.71963 C4.27954,10.9113 5.76219,12 8,12 C10.2378,12 11.7205,10.9113 12.7136,9.71963 C13.2163,9.11637 13.574,8.50495 13.8049,8.04307 L13.8263,8 L13.8049,7.95693 C13.574,7.49505 13.2163,6.88363 12.7136,6.28037 C11.7205,5.08865 10.2378,4 8,4 Z M8,5 C8.30747,5 8.60413,5.04625 8.88341,5.13218 C8.36251,5.36736 8,5.89135 8,6.5 C8,7.32843 8.67157,8 9.5,8 C10.1087,8 10.6326,7.63749 10.8678,7.11659 C10.9537,7.39587 11,7.69253 11,8 C11,9.65685 9.65685,11 8,11 C6.34315,11 5,9.65685 5,8 C5,6.34315 6.34315,5 8,5 Z" />
-                </svg>
-                <svg class="hidden h-5 w-auto fill-current text-gray-700 hover:text-gray-900" viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg" id="ocultar" onclick="OcultarSenha()">
-                  <path fill-rule="evenodd"
-                    d="M14.7071,1.29289075 C15.0976,1.68342075 15.0976,2.31658075 14.7071,2.70711075 L2.70711,14.7071007 C2.31658,15.0976008 1.68342,15.0976008 1.29289,14.7071007 C0.902369,14.3166007 0.902369,13.6834007 1.29289,13.2929007 L2.64723,11.9386007 C0.734146,10.2024007 5.68434189e-14,8 5.68434189e-14,8 L0.0083320632,7.97591831 C0.153635117,7.56378601 2.22222222,2 8,2 C9.45831,2 10.6803,2.35444075 11.6948,2.89103075 L13.2929,1.29289075 C13.6834,0.90236975 14.3166,0.90236975 14.7071,1.29289075 Z M14.6852,5.56108075 C15.6175,6.85245075 16,8.00000075 16,8.00000075 C16,8.00000075 14,14.0000008 8,14.0000008 C7.43058,14.0000008 6.89718,13.9460007 6.39811,13.8481007 L8.25087,11.9954008 C10.3493,11.9174008 11.758,10.8662007 12.7136,9.71963075 C13.2163,9.11637075 13.574,8.50495075 13.8049,8.04307075 L13.8263,8.00000075 L13.8049,7.95693075 C13.6663,7.67977075 13.4821,7.34875075 13.2483,6.99797075 L14.6852,5.56108075 Z M8,4.00000075 C5.76219,4.00000075 4.27954,5.08865075 3.28644,6.28037075 C2.78373,6.88363075 2.42604,7.49505075 2.1951,7.95693075 L2.17372,8.00000075 L2.1951,8.04307075 C2.42604,8.50495075 2.78373,9.11637075 3.28644,9.71963075 C3.51765,9.99708075 3.77539,10.2689008 4.06301,10.5228007 L5.29237,9.29342075 C5.10495,8.90178075 5,8.46315075 5,8.00000075 C5,6.34315075 6.34315,5.00000075 8,5.00000075 C8.46315,5.00000075 8.90178,5.10495075 9.29342,5.29237075 L10.1882,4.39756075 C9.55332,4.14919075 8.8284,4.00000075 8,4.00000075 Z" />
-                </svg>
+                required
+                value="roni.teles@ifgoiano.edu.br"
+              />
+            </div>
+            <div class="mb-6">
+              <label for="senha" class="block text-gray-700 font-semibold"
+                >Senha</label
+              >
+              <div class="flex flex-1 items-center space-x-2">
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="Digite sua senha"
+                  class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
+                  required
+                  value="123456"
+                />
+                <div>
+                  <svg
+                    class="h-5 w-auto fill-current text-gray-700 hover:text-gray-900"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="exibir"
+                    onclick="ExibirSenha()"
+                  >
+                    <path
+                      d="M8,2 C14,2 16,8 16,8 C16,8 14,14 8,14 C2,14 0,8 0,8 C0,8 2,2 8,2 Z M8,4 C5.76219,4 4.27954,5.08865 3.28644,6.28037 C2.78373,6.88363 2.42604,7.49505 2.1951,7.95693 L2.17372,8 L2.1951,8.04307 C2.42604,8.50495 2.78373,9.11637 3.28644,9.71963 C4.27954,10.9113 5.76219,12 8,12 C10.2378,12 11.7205,10.9113 12.7136,9.71963 C13.2163,9.11637 13.574,8.50495 13.8049,8.04307 L13.8263,8 L13.8049,7.95693 C13.574,7.49505 13.2163,6.88363 12.7136,6.28037 C11.7205,5.08865 10.2378,4 8,4 Z M8,5 C8.30747,5 8.60413,5.04625 8.88341,5.13218 C8.36251,5.36736 8,5.89135 8,6.5 C8,7.32843 8.67157,8 9.5,8 C10.1087,8 10.6326,7.63749 10.8678,7.11659 C10.9537,7.39587 11,7.69253 11,8 C11,9.65685 9.65685,11 8,11 C6.34315,11 5,9.65685 5,8 C5,6.34315 6.34315,5 8,5 Z"
+                    />
+                  </svg>
+                  <svg
+                    class="hidden h-5 w-auto fill-current text-gray-700 hover:text-gray-900"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="ocultar"
+                    onclick="OcultarSenha()"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M14.7071,1.29289075 C15.0976,1.68342075 15.0976,2.31658075 14.7071,2.70711075 L2.70711,14.7071007 C2.31658,15.0976008 1.68342,15.0976008 1.29289,14.7071007 C0.902369,14.3166007 0.902369,13.6834007 1.29289,13.2929007 L2.64723,11.9386007 C0.734146,10.2024007 5.68434189e-14,8 5.68434189e-14,8 L0.0083320632,7.97591831 C0.153635117,7.56378601 2.22222222,2 8,2 C9.45831,2 10.6803,2.35444075 11.6948,2.89103075 L13.2929,1.29289075 C13.6834,0.90236975 14.3166,0.90236975 14.7071,1.29289075 Z M14.6852,5.56108075 C15.6175,6.85245075 16,8.00000075 16,8.00000075 C16,8.00000075 14,14.0000008 8,14.0000008 C7.43058,14.0000008 6.89718,13.9460007 6.39811,13.8481007 L8.25087,11.9954008 C10.3493,11.9174008 11.758,10.8662007 12.7136,9.71963075 C13.2163,9.11637075 13.574,8.50495075 13.8049,8.04307075 L13.8263,8.00000075 L13.8049,7.95693075 C13.6663,7.67977075 13.4821,7.34875075 13.2483,6.99797075 L14.6852,5.56108075 Z M8,4.00000075 C5.76219,4.00000075 4.27954,5.08865075 3.28644,6.28037075 C2.78373,6.88363075 2.42604,7.49505075 2.1951,7.95693075 L2.17372,8.00000075 L2.1951,8.04307075 C2.42604,8.50495075 2.78373,9.11637075 3.28644,9.71963075 C3.51765,9.99708075 3.77539,10.2689008 4.06301,10.5228007 L5.29237,9.29342075 C5.10495,8.90178075 5,8.46315075 5,8.00000075 C5,6.34315075 6.34315,5.00000075 8,5.00000075 C8.46315,5.00000075 8.90178,5.10495075 9.29342,5.29237075 L10.1882,4.39756075 C9.55332,4.14919075 8.8284,4.00000075 8,4.00000075 Z"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="flex items-center justify-between mb-10">
-            <div class="flex items-center space-x-1">
-              <input type="checkbox" id="remember" name="remember" class="mr-2 border-gray-300" />
-              <label for="remember" class="text-gray-700 font-semibold">Lembrar Senha</label>
+            <div class="flex items-center justify-between mb-10">
+              <div class="flex items-center space-x-1">
+                <input
+                  type="checkbox"
+                  id="remember"
+                  name="remember"
+                  class="mr-2 border-gray-300"
+                />
+                <label for="remember" class="text-gray-700 font-semibold"
+                  >Lembrar Senha</label
+                >
+              </div>
+              <a
+                href="./index.php?controle=usuario&amp;acao=esqueci_senha"
+                class="text-red-500 font-medium"
+                >Esqueceu sua senha?</a
+              >
             </div>
-            <a href="./index.php?controle=usuario&amp;acao=esqueci_senha" class="text-red-500 font-medium">Esqueceu sua
-              senha?</a>
-          </div>
-          <div class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between mt-6">
-            <div class="flex items-center space-x-1">
-              <span class="text-gray-600 text-xs font-normal">Não possuí uma conta?</span>
-              <a href="./index.php?controle=usuario&acao=cadastre_se" class="text-red-500 font-medium">Cadastre-se</a>
+            <div
+              class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between mt-6"
+            >
+              <div class="flex items-center space-x-1">
+                <span class="text-gray-600 text-xs font-normal"
+                  >Não possuí uma conta?</span
+                >
+                <a
+                  href="./index.php?controle=usuario&acao=cadastre_se"
+                  class="text-red-500 font-medium"
+                  >Cadastre-se</a
+                >
+              </div>
+              <div class="flex">
+                <button
+                  type="submit"
+                  class="w-full bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full"
+                >
+                  Entrar
+                </button>
+              </div>
             </div>
-            <div class="flex">
-              <button type="submit"
-                class="w-full bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full">
-                Entrar
-              </button>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
