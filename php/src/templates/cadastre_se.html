@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro de Usuário</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="icon" href="../imagens/miniatura_logo.png">
+  <link href="../dist/output.css" rel="stylesheet">
   <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
   <script>
     // Função que valida os email
@@ -211,9 +212,9 @@
 </head>
 
 <body class="h-full">
-  <div class="container flex flex-1 md:flex-col justify-center mx-auto h-full w-full bottom-0">
+  <div class="container flex flex-1 md:flex-col justify-center mx-auto h-full w-full py-2">
     <div
-      class="bg-white md:py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-4">
+      class="bg-white px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-4">
       <div class="mb-10 insert-y-12">
         <img src="../imagens/logo.png" alt="logo_quiz" class="mx-auto h-40 w-auto" />
         <h2 class="text-2xl text-center text-gray-700 font-semibold">
@@ -299,7 +300,7 @@
           </div>
           <div class="space-y-4 md:space-y-0 md:flex md:items-center md:justify-between mb-2">
             <div class="flex items-center space-x-1">
-              <span class="text-gray-400 text-xs font-light select-none">Já possuí uma conta?</span>
+              <span class="text-gray-600 text-xs font-normal select-none">Já possuí uma conta?</span>
               <a href="./index.php?controle=principal&acao=deslogar" class="text-red-500 font-medium select-none">Faça
                 login</a>
             </div>
