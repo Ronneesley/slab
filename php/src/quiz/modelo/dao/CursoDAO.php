@@ -4,10 +4,12 @@ namespace QuizEstatistico\modelo\dao;
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Curso;
 
+use pdo;
+
 /**
  * Classe para acesso aos dados do curso
  * Data Access Object (DAO) *
- * @author aluno
+ * @author Ronneesley
  */
 class CursoDAO extends DAO {
     
@@ -15,20 +17,19 @@ class CursoDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO cursos(nome) VALUES (?)");
-        $stmt->bind_param("s", $curso->getNome());
+        $stmt->bindValue(1, $curso->getNome());
         $stmt->execute();
-        
-        $con->close();
+
+        $curso->setId( $con->lastInsertId() );
     }
     
     public function alterar($curso){
         $con = $this->conectar();
         
         $stmt = $con->prepare("update cursos set nome = ? where id = ?");
-        $stmt->bind_param("si", $curso->getNome(), $curso->getId());
+        $stmt->bindValue(1, $curso->getNome());
+        $stmt->bindValue(2, $curso->getId(), PDO::PARAM_INT);
         $stmt->execute();        
-        
-        $con->close();
     }
     
     public function listar(){
@@ -36,19 +37,17 @@ class CursoDAO extends DAO {
         
         $stmt = $con->prepare("select * from cursos");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach ($res as $dados){
             $c = new Curso();
             $c->setId($dados["id"]);
             $c->setNome($dados["nome"]);
             
             array_push($lista, $c);
         }
-        
-        $con->close();
         
         return $lista;
     }
@@ -57,17 +56,13 @@ class CursoDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from cursos where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
-        
+        $dados = $stmt->fetch();
+
         $c = new Curso();
         $c->setId($dados["id"]);
         $c->setNome($dados["nome"]);
-        
-        $con->close();
         
         return $c;
     }
@@ -76,10 +71,8 @@ class CursoDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from cursos where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();        
-        
-        $con->close();
     }
 }
 

@@ -1,6 +1,8 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
+
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dao\CursoDAO;
 use QuizEstatistico\modelo\dto\Usuario;
@@ -17,19 +19,15 @@ class UsuarioDAO extends DAO {
         
         $stmt = $con->prepare("insert into usuarios(nome, email, senha, login, curso) 
                 values(?, ?, ?, ?, ?)");
-                print_r($stmt);
-        @$stmt->bind_param("ssssi", 
-            $usuario->getNome(), 
-            $usuario->getEmail(), 
-            md5($usuario->getSenha()),
-            $usuario->getLogin(),
-            $usuario->getCurso()->getId());
+        $stmt->bindValue(1, $usuario->getNome());
+        $stmt->bindValue(2, $usuario->getEmail());
+        $stmt->bindValue(3, md5($usuario->getSenha()));
+        $stmt->bindValue(4, $usuario->getLogin());
+        $stmt->bindValue(5, $usuario->getCurso()->getId(), PDO::PARAM_INT);
 
         $stmt->execute();
 
-        $usuario->setId( $con->insert_id );
-        
-        $con->close();
+        $usuario->setId( $con->lastInsertId() );
     }
     
     public function alterar($usuario){
@@ -37,15 +35,13 @@ class UsuarioDAO extends DAO {
         
         $stmt = $con->prepare("update usuarios set 
             nome = ?, email = ?, login = ?, curso = ? where id = ?");
-        @$stmt->bind_param("sssii", 
-            $usuario->getNome(), 
-            $usuario->getEmail(), 
-            $usuario->getLogin(),
-            $usuario->getCurso()->getId(),
-            $usuario->getId());
+        $stmt->bindValue(1, $usuario->getNome());
+        $stmt->bindValue(2, $usuario->getEmail());
+        $stmt->bindValue(3, $usuario->getLogin());
+        $stmt->bindValue(4, $usuario->getCurso()->getId(), PDO::PARAM_INT);
+        $stmt->bindValue(5, $usuario->getId(), PDO::PARAM_INT);
+
         $stmt->execute();        
-        
-        $con->close();
     }
     
     public function listar(){
@@ -53,18 +49,16 @@ class UsuarioDAO extends DAO {
         
         $stmt = $con->prepare("select * from usuarios");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach ($res as $dados){
             $c = new Usuario();
             $this->preencher($c, $dados);
             
             array_push($lista, $c);
-        }
-        
-        $con->close();
+        }        
         
         return $lista;
     }
@@ -84,16 +78,12 @@ class UsuarioDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from usuarios where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindVAlue(1, $id);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Usuario();
         $this->preencher($c, $dados);
-        
-        $con->close();
         
         return $c;
     }
@@ -102,24 +92,18 @@ class UsuarioDAO extends DAO {
         $con = $this->conectar();
 
         $stmt = $con->prepare("select * from usuarios where email = ? and senha = ?");
-        @$stmt->bind_param("ss", $email, md5($senha));
+        $stmt->bindValue(1, $email);
+        $stmt->bindValue(2, md5($senha));
         $stmt->execute();
 
-        $res = $stmt->get_result();
+        $dados = $stmt->fetch();
 
-        if ($res->num_rows == 1){
-            
-            $dados = $res->fetch_assoc();
-            
+        if ($dados != false){
             $c = new Usuario();
             $this->preencher($c, $dados);
-            
-            $con->close();
-            
+
             return $c;
         } else {
-            $con->close();
-
             return null;
         }
     }
@@ -128,10 +112,8 @@ class UsuarioDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from usuarios where id = ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();        
-        
-        $con->close();
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
 

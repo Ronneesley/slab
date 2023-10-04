@@ -4,12 +4,12 @@ namespace QuizEstatistico\modelo\dto;
 /**
  * Esta classe mapeia um tema
  * Data Transfer Object (DTO)
- * @author Wagner e Mayko
+ * @author Wagner, Mayko, Ronneesley
  */
 class Tema {
     private $id;
     
-    private $tema;
+    private $nome;
     
     public function __construct() {
         
@@ -19,18 +19,17 @@ class Tema {
         return $this->id;
     }
 
-    public function getTema() {
-        return $this->tema;
+    public function getNome() {
+        return $this->nome;
     }
 
     public function setId($id): void {
         $this->id = $id;
     }
 
-    public function setTema($tema): void {
-        $this->tema = $tema;
+    public function setNome($nome): void {
+        $this->nome = $nome;
     }
-
 }
 
 ?>

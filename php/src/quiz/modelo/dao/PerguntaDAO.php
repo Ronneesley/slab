@@ -1,12 +1,15 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
+
 use QuizEstatistico\modelo\dao\DAO;
+use QuizEstatistico\modelo\dto\Pergunta;
 
 /**
  * Classe para acesso aos dados do Pergunta
- * Data Access Object (DAO) *
- * @author Wagner e Mayko
+ * Data Access Object (DAO) 
+ * @author Wagner, Mayko, Ronneesley
  */
 class PerguntaDAO extends DAO {    
     
@@ -14,20 +17,19 @@ class PerguntaDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO perguntas_quiz(questao,quiz) VALUES (??)");
-        $stmt->bind_param("ii", $pergunta->getQuestao(),$pergunta->getQuiz());
+        $stmt->bindValue(1, $pergunta->getQuestao(), PDO::PARAM_INT);
+        $stmt->bindValue(2, $pergunta->getQuiz(), PDO::PARAM_INT);
         $stmt->execute();
-        
-        $con->close();
     }
     
     public function alterar($pergunta){
         $con = $this->conectar();
         
         $stmt = $con->prepare("update pergunta_quiz set questao = ?, quiz = ? where id = ?");
-        $stmt->bind_param("iii", $pergunta->getQuestao(),$pergunta->getQuiz(),$pergunta->getId(),);
-        $stmt->execute();        
-        
-        $con->close();
+        $stmt->bindValue(1, $pergunta->getQuestao(), PDO::PARAM_INT);
+        $stmt->bindValue(2, $pergunta->getQuiz(), PDO::PARAM_INT);
+        $stmt->bindValue(3, $pergunta->getId(), PDO::PARAM_INT);
+        $stmt->execute();
     }
     
     public function listar(){
@@ -35,11 +37,11 @@ class PerguntaDAO extends DAO {
         
         $stmt = $con->prepare("select * from pergunta_quiz");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach ($res as $dados){
             $c = new Pergunta();
             $c->setId($dados["id"]);
             $c->setQuestao($dados["questao"]);
@@ -48,8 +50,6 @@ class PerguntaDAO extends DAO {
             array_push($lista, $c);
         }
         
-        $con->close();
-        
         return $lista;
     }
     
@@ -57,19 +57,14 @@ class PerguntaDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from perguntas_quiz where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Pergunta();
         $c->setId($dados["id"]);
         $c->setQuestao($dados["questao"]);
-        $c->setQuiz($dados["quiz"]);
-        
-        
-        $con->close();
+        $c->setQuiz($dados["quiz"]);        
         
         return $c;
     }
@@ -78,10 +73,8 @@ class PerguntaDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from pergunta_quiz where id = ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();        
-        
-        $con->close();
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
 

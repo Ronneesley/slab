@@ -248,6 +248,5 @@ final class DICTest extends TestCase
         //FCalculado
         $this->assertEqualsWithDelta(36.167, $dic->getFCalc(), 0.01);
     }
-
 }
 ?>

@@ -1,13 +1,15 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
+
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Questao;
 
 /**
  * Classe para acesso aos dados da Questão
- * Data Access Object (DAO) *
- * @author Mayko e Wagner
+ * Data Access Object (DAO)
+ * @author Mayko, Wagner, Ronneesley
  */
 class QuestaoDAO extends DAO {
     
@@ -37,9 +39,9 @@ class QuestaoDAO extends DAO {
         
         $stmt = $con->prepare($sql);
         $stmt->execute();
-        $res = $stmt->get_result();
+        $dados = $stmt->fetch();
         
-        if ($dados = $res->fetch_assoc()){
+        if ($dados != false){
             $c = new Questao();
             $this->preencherQuestao($c, $dados);
         }
@@ -53,10 +55,10 @@ class QuestaoDAO extends DAO {
         $c->setCurso($dados["curso"]);
         $c->setTema($dados["tema"]);
         $c->setPergunta($dados["pergunta"]);
-        $c->setResposta_certa($dados["resposta_certa"]);
-        $c->setResposta_errada1($dados["resposta_errada1"]); 
-        $c->setResposta_errada2($dados["resposta_errada2"]);            
-        $c->setResposta_errada3($dados["resposta_errada3"]);
+        $c->setRespostaCerta($dados["resposta_certa"]);
+        $c->setRespostaErrada1($dados["resposta_errada1"]); 
+        $c->setRespostaErrada2($dados["resposta_errada2"]);            
+        $c->setRespostaErrada3($dados["resposta_errada3"]);
         $c->setExplicacao($dados["explicacao"]);
     }
     
@@ -64,20 +66,38 @@ class QuestaoDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO questoes(nivel,curso,tema,pergunta,resposta_certa,resposta_errada1,resposta_errada2,resposta_errada3,explicacao) VALUES (?,?,?,?,?,?,?,?,?)");
-        $stmt->bind_param("iiissssss", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errada1(),$questao->getResposta_errada2(),$questao->getResposta_errada3(),$questao->getExplicacao());
-        $stmt->execute();
+        $stmt->bindValue(1, $questao->getNivel(), PDO::PARAM_INT);
+        $stmt->bindValue(2, $questao->getCurso(), PDO::PARAM_INT);
+        $stmt->bindValue(3, $questao->getTema(), PDO::PARAM_INT);
+        $stmt->bindValue(4, $questao->getPergunta());
+        $stmt->bindValue(5, $questao->getRespostaCerta());
+        $stmt->bindValue(6, $questao->getRespostaErrada1());
+        $stmt->bindValue(7, $questao->getRespostaErrada2());
+        $stmt->bindValue(8, $questao->getRespostaErrada3());
+        $stmt->bindValue(9, $questao->getExplicacao());
         
-        $con->close();
+        $stmt->execute();
     }
     
     public function alterar($questao){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update questoes set nivel = ?,curso = ?, tema = ?,pergunta = ?,resposta_certa = ?,resposta_errada1 = ?,resposta_errada2 = ?,resposta_errada3 = ?,explicacao = ? where id = ?");
-        $stmt->bind_param("iiissssssi", $questao->getNivel(),$questao->getCurso(), $questao->getTema(), $questao->getPergunta(), $questao->getResposta_certa(),$questao->getResposta_errada1(),$questao->getResposta_errada2(),$questao->getResposta_errada3(),$questao->getExplicacao(),$questao->getId());
+        $stmt = $con->prepare("update questoes set 
+            nivel = ?, curso = ?, tema = ?, pergunta = ?,
+            resposta_certa = ?,resposta_errada1 = ?,
+            resposta_errada2 = ?,resposta_errada3 = ?,
+            explicacao = ? where id = ?");
+        $stmt->bindValue(1, $questao->getNivel(), PDO::PARAM_INT);
+        $stmt->bindValue(2, $questao->getCurso(), PDO::PARAM_INT);
+        $stmt->bindValue(3, $questao->getTema(), PDO::PARAM_INT);
+        $stmt->bindValue(4, $questao->getPergunta());
+        $stmt->bindValue(5, $questao->getRespostaCerta());
+        $stmt->bindValue(6, $questao->getRespostaErrada1());
+        $stmt->bindValue(7, $questao->getRespostaErrada2());
+        $stmt->bindValue(8, $questao->getRespostaErrada3());
+        $stmt->bindValue(9, $questao->getExplicacao());
+        $stmt->bindValue(10, $questao->getId());
         $stmt->execute();        
-        
-        $con->close();
     }
     
     public function listar(){
@@ -85,18 +105,16 @@ class QuestaoDAO extends DAO {
         
         $stmt = $con->prepare("select * from questoes");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){
+        foreach ($res as $dados){
             $c = new Questao();
             $this->preencherQuestao($c, $dados);
             
             array_push($lista, $c);
         }
-        
-        $con->close();
         
         return $lista;
     }
@@ -105,11 +123,9 @@ class QuestaoDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from questoes where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Questao();
         $c->setId($dados["id"]);
@@ -117,13 +133,11 @@ class QuestaoDAO extends DAO {
         $c->setCurso($dados["curso"]);
         $c->setTema($dados["tema"]);
         $c->setPergunta($dados["pergunta"]);
-        $c->setResposta_certa($dados["resposta_certa"]);
-        $c->setResposta_errada1($dados["resposta_errada1"]); 
-        $c->setResposta_errada2($dados["resposta_errada2"]);            
-        $c->setResposta_errada3($dados["resposta_errada3"]);
+        $c->setRespostaCerta($dados["resposta_certa"]);
+        $c->setRespostaErrada1($dados["resposta_errada1"]); 
+        $c->setRespostaErrada2($dados["resposta_errada2"]);            
+        $c->setRespostaErrada3($dados["resposta_errada3"]);
         $c->setExplicacao($dados["explicacao"]);
-        
-        $con->close();
         
         return $c;
     }
@@ -132,10 +146,8 @@ class QuestaoDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from questoes where id = ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();        
-        
-        $con->close();
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
 

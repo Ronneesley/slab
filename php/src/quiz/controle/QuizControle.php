@@ -105,8 +105,8 @@ class QuizControle extends ControleBase {
 
             array_push($_SESSION["questoes_respondidas"], $q->getId());
 
-            $opcoes = array($q->getResposta_certa(), $q->getResposta_errada1(),
-                $q->getResposta_errada2(), $q->getResposta_errada3());
+            $opcoes = array($q->getRespostaCerta(), $q->getRespostaErrada1(),
+                $q->getRespostaErrada2(), $q->getRespostaErrada3());
             $indices = [0, 1, 2, 3];
             shuffle($indices); //ex.: [2, 1, 0, 3]
             $letrasOpcoes = array(

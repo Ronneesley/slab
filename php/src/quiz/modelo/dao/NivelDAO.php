@@ -1,34 +1,33 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
+
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Nivel;
 
 /**
  * Classe para acesso aos dados do nivel
  * Data Access Object (DAO) *
- * @author Mayko e Wagner
+ * @author Mayko, Wagner, Ronneesley
  */
 class NivelDAO extends DAO {    
     
     public function inserir($nivel){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO niveis(nivel) VALUES (?)");
-        $stmt->bind_param("s", $nivel->getNivel());
+        $stmt = $con->prepare("INSERT INTO niveis(nome) VALUES (?)");
+        $stmt->bindValue(1, $nivel->getNome());
         $stmt->execute();
-        
-        $con->close();
     }
     
     public function alterar($nivel){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update niveis set nivel = ? where id = ?");
-        $stmt->bind_param("si", $nivel->getNivel(), $nivel->getId());
+        $stmt = $con->prepare("update niveis set nome = ? where id = ?");
+        $stmt->bindValue(1, $nivel->getNome());
+        $stmt->bindValue(2, $nivel->getId(), PDO::PARAM_INT);
         $stmt->execute();        
-        
-        $con->close();
     }
     
     public function listar(){
@@ -36,19 +35,17 @@ class NivelDAO extends DAO {
         
         $stmt = $con->prepare("select * from niveis");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach ($res as $dados){
             $c = new Nivel();
             $c->setId($dados["id"]);
-            $c->setNivel($dados["nivel"]);
-            
+            $c->setNome($dados["nome"]);
+
             array_push($lista, $c);
         }
-        
-        $con->close();
         
         return $lista;
     }
@@ -57,17 +54,13 @@ class NivelDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from niveis where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Nivel();
         $c->setId($dados["id"]);
-        $c->setNivel($dados["nivel"]);
-        
-        $con->close();
+        $c->setNome($dados["nome"]);        
         
         return $c;
     }
@@ -76,10 +69,8 @@ class NivelDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from niveis where id = ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();        
-        
-        $con->close();
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
 

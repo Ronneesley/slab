@@ -7,24 +7,23 @@ use QuizEstatistico\modelo\dto\Tema;
 
 /**
  * Classe para acesso aos dados do tema
- * Data Access Object (DAO) *
- * @author Wagner e Mayko
+ * Data Access Object (DAO)
+ * @author Wagner, Mayko, Ronneesley
  */
-class TemaDAO extends DAO {    
-    
+class TemaDAO extends DAO {
     public function inserir($tema){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO temas(tema) VALUES (?)");
-        $stmt->bindValue(1, $tema->getTema());
+        $stmt = $con->prepare("INSERT INTO temas(nome) VALUES (?)");
+        $stmt->bindValue(1, $tema->getNome());
         $stmt->execute();
     }
     
     public function alterar($tema){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update temas set tema = ? where id = ?");
-        $stmt->bindValue(1, $tema->getTema());
+        $stmt = $con->prepare("update temas set nome = ? where id = ?");
+        $stmt->bindValue(1, $tema->getNome());
         $stmt->bindValue(2, $tema->getId(), PDO::PARAM_INT);
         
         $stmt->execute();        
@@ -41,7 +40,7 @@ class TemaDAO extends DAO {
         foreach($res as $dados){        
             $c = new Tema();
             $c->setId($dados["id"]);
-            $c->setTema($dados["tema"]);
+            $c->setNome($dados["nome"]);
             array_push($lista, $c);
         }
         return $lista;
@@ -58,7 +57,7 @@ class TemaDAO extends DAO {
         
         $c = new Tema();
         $c->setId($dados["id"]);
-        $c->setTema($dados["tema"]);
+        $c->setNome($dados["nome"]);
 
         return $c;
     }

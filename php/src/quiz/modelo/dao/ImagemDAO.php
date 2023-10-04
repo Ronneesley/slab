@@ -1,12 +1,15 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
+
 use QuizEstatistico\modelo\dao\DAO;
+use QuizEstatistico\modelo\dto\Imagem;
 
 /**
  * Classe para acesso aos dados da imagem
  * Data Access Object (DAO) *
- * @author Mayko
+ * @author Mayko, Ronneesley
  */
 class ImagemDAO extends DAO {    
     
@@ -14,20 +17,19 @@ class ImagemDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO imagens(imagem, identificador) VALUES (?, ?)");
-        $stmt->bind_param("ss", $imagem->getImagem(), $imagem->getIdentificador());
+        $stmt->bindValue(1, $imagem->getImagem());
+        $stmt->bindValue(2, $imagem->getIdentificador());
         $stmt->execute();
-        
-        $con->close();
     }
     
     public function alterar($imagem){
         $con = $this->conectar();
         
         $stmt = $con->prepare("update imagens set imagem = ?, identificador = ? where id = ?");
-        $stmt->bind_param("ssi", $imagem->getImagem(), $imagem->getIdentificador(), $imagem->getId());
+        $stmt->bindValue(1, $imagem->getImagem());
+        $stmt->bindValue(2, $imagem->getIdentificador());
+        $stmt->bindValue(3, $imagem->getId(), PDO::PARAM_INT);
         $stmt->execute();        
-        
-        $con->close();
     }
     
     public function listar(){
@@ -35,11 +37,11 @@ class ImagemDAO extends DAO {
         
         $stmt = $con->prepare("select * from imagens");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach ($res as $dados){
             $c = new Imagem();
             $c->setId($dados["id"]);
             $c->setImagem($dados["imagem"]);
@@ -48,8 +50,6 @@ class ImagemDAO extends DAO {
             array_push($lista, $c);
         }
         
-        $con->close();
-        
         return $lista;
     }
     
@@ -57,18 +57,14 @@ class ImagemDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from imagens where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Imagem();
         $c->setId($dados["id"]);
         $c->setImagem($dados["imagem"]);
         $c->setIdentificador($dados["identificador"]);
-        
-        $con->close();
         
         return $c;
     }
@@ -77,7 +73,7 @@ class ImagemDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from imagens where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();        
         
         $con->close();

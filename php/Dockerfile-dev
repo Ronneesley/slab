@@ -6,5 +6,5 @@ RUN apt-get update && \
     apt-get install r-base -y
 
 #Instalação da extensão do MySQLi
-RUN docker-php-ext-install gd mysqli intl && \
-    docker-php-ext-enable gd mysqli intl
+RUN docker-php-ext-install gd pdo pdo_mysql intl && \
+    docker-php-ext-enable gd pdo pdo_mysql intl

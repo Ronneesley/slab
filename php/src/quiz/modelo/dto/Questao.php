@@ -4,7 +4,7 @@ namespace QuizEstatistico\modelo\dto;
 /**
  * Esta classe mapeia um Questão
  * Data Transfer Object (DTO)
- * @author Mayko e Wagner
+ * @author Mayko, Wagner, Ronneesley
  */
 class Questao {
     private $id;
@@ -17,13 +17,13 @@ class Questao {
 
     private $pergunta;
 
-    private $resposta_certa;
+    private $respostaCerta;
 
-    private $resposta_errada1;
+    private $respostaErrada1;
 
-    private $resposta_errada2;
+    private $respostaErrada2;
 
-    private $resposta_errada3;
+    private $respostaErrada3;
 
     private $explicacao;
     
@@ -51,17 +51,17 @@ class Questao {
     public function getExplicacao() {
         return $this->explicacao;
     }
-    public function getResposta_certa() {
-        return $this->resposta_certa;
+    public function getRespostaCerta() {
+        return $this->respostaCerta;
     }
-    public function getResposta_errada1() {
-        return $this->resposta_errada1;
+    public function getRespostaErrada1() {
+        return $this->respostaErrada1;
     }
-    public function getResposta_errada2() {
-        return $this->resposta_errada2;
+    public function getRespostaErrada2() {
+        return $this->respostaErrada2;
     }    
-    public function getResposta_errada3() {
-        return $this->resposta_errada3;
+    public function getRespostaErrada3() {
+        return $this->respostaErrada3;
     }
 
 
@@ -81,28 +81,26 @@ class Questao {
     }    
     public function setPergunta($pergunta): void {
         $this->pergunta = $pergunta;
-    }   
-    public function setResposta_certa($resposta_certa): void {
-        $this->resposta_certa = $resposta_certa;
     }
     
-    public function setResposta_errada1($resposta_errada1): void {
-        $this->resposta_errada1 = $resposta_errada1;
+    public function setRespostaCerta($respostaCerta): void {
+        $this->respostaCerta = $respostaCerta;
+    }
+    
+    public function setRespostaErrada1($respostaErrada1): void {
+        $this->respostaErrada1 = $respostaErrada1;
     }
 
-    public function setResposta_errada2($resposta_errada2): void {
-        $this->resposta_errada2 = $resposta_errada2;
+    public function setRespostaErrada2($respostaErrada2): void {
+        $this->respostaErrada2 = $respostaErrada2;
     }
 
-    public function setResposta_errada3($resposta_errada3): void {
-        $this->resposta_errada3 = $resposta_errada3;
+    public function setRespostaErrada3($respostaErrada3): void {
+        $this->respostaErrada3 = $respostaErrada3;
     }
+
     public function setExplicacao($explicacao): void {
         $this->explicacao = $explicacao;
     }
-
-
-
 }
-
 ?>

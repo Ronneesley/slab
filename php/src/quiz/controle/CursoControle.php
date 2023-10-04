@@ -78,12 +78,16 @@ class CursoControle extends ControleBase {
         $this->listar("Excluído com sucesso");
     }
     
-    public function listar($mensagem = ""){
+    public function listar($mensagem = "", $tipo_mensagem = "success"){
         $dao = new CursoDAO();
         $lista = $dao->listar();
 
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/cursos/listagem.html", ["mensagem" => $mensagem, "lista" => $lista ]);
+        $this->mostrarPaginaLayout($layout, 
+            "admin/cursos/listagem.html", 
+            ["mensagem" => $mensagem, 
+             "lista" => $lista, 
+             "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     public function selecionar(){

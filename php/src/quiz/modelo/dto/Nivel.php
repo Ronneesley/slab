@@ -9,28 +9,23 @@ namespace QuizEstatistico\modelo\dto;
 class Nivel {
     private $id;
     
-    private $nivel;
-    
-    public function __construct() {
+    private $nome;
         
-    }
-    
     public function getId() {
         return $this->id;
     }
 
-    public function getNivel() {
-        return $this->nivel;
+    public function getNome() {
+        return $this->nome;
     }
 
     public function setId($id): void {
         $this->id = $id;
     }
 
-    public function setNivel($nivel): void {
-        $this->nivel = $nivel;
+    public function setNome($nome): void {
+        $this->nome = $nome;
     }
-
 }
 
 ?>

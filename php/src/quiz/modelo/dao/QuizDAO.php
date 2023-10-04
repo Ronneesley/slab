@@ -1,33 +1,33 @@
 <?php
 namespace QuizEstatistico\modelo\dao;
 
+use pdo;
+
 use QuizEstatistico\modelo\dao\DAO;
+use QuizEstatistico\modelo\dto\Quiz;
 
 /**
  * Classe para acesso aos dados do nome quiz
  * Data Access Object (DAO) *
- * @author Wagner e Mayko
+ * @author Wagner, Mayko, Ronneesley
  */
 class QuizDAO extends DAO {    
     
     public function inserir($quiz){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("INSERT INTO quizzes(nome_quiz) VALUES (?)");
-        $stmt->bind_param("s", $quiz->getNome_quiz());
+        $stmt = $con->prepare("INSERT INTO quizzes(nome) VALUES (?)");
+        $stmt->bindValue(1, $quiz->getNome());
         $stmt->execute();
-        
-        $con->close();
     }
     
     public function alterar($quiz){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update quizzes set nome_quiz = ? where id = ?");
-        $stmt->bind_param("si", $quiz->getNome_quiz(), $quiz->getId());
+        $stmt = $con->prepare("update quizzes set nome = ? where id = ?");
+        $stmt->bindValue(1, $quiz->getNome());
+        $stmt->bindValue(2, $quiz->getId(), PDO::PARAM_INT);
         $stmt->execute();
-        
-        $con->close();
     }
     
     public function listar(){
@@ -35,19 +35,17 @@ class QuizDAO extends DAO {
         
         $stmt = $con->prepare("select * from cursos");
         $stmt->execute();
-        $res = $stmt->get_result();
+        $res = $stmt->fetchAll();
         
         $lista = array();
         
-        while ($dados = $res->fetch_assoc()){        
+        foreach ($res as $dados){
             $c = new Quiz();
             $c->setId($dados["id"]);
-            $c->setNome_quiz($dados["nome_quiz"]);
+            $c->setNome($dados["nome"]);
             
             array_push($lista, $c);
         }
-        
-        $con->close();
         
         return $lista;
     }
@@ -56,17 +54,13 @@ class QuizDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from quizzes where id = ?");
-        $stmt->bind_param("i", $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
-        $res = $stmt->get_result();
-        
-        $dados = $res->fetch_assoc();
+        $dados = $stmt->fetch();
         
         $c = new Quiz();
         $c->setId($dados["id"]);
-        $c->setNome_quiz($dados["nome_quiz"]);
-        
-        $con->close();
+        $c->setNome($dados["nome"]);
         
         return $c;
     }
@@ -75,10 +69,8 @@ class QuizDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("delete from quizzes where id = ?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();        
-        
-        $con->close();
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
     }
 }
 
