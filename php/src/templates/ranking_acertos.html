@@ -1,167 +1,146 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gincana de Estatística - Ranking de acertos</title>
-	<style type="text/css">		
-		body{
-            margin: auto;
-            padding: auto;
-            background-color: red;
-            }
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ranking dos Melhores Usuários</title>
+    <link rel="icon" href="../imagens/miniatura_logo.png" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
+  </head>
+  <body class="bg-gray-200">
+    <!-- Navbar -->
+    <nav class="bg-red-500 p-4">
+      <div class="container mx-auto">
+        <h1 class="text-white text-2xl font-semibold">
+          Ranking dos Melhores Usuários
+        </h1>
+      </div>
+    </nav>
 
-        nav {
-            background-color: rgb(253, 253, 0);
-            height: 75px;
-            }
+    <!-- Conteúdo principal -->
+    <div class="container mx-auto mt-8 p-4">
+      <!-- Lista de Ranking -->
+      <div class="max-w-md mx-auto">
+        <!-- Usuário 1 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">1</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário A</h2>
+            <p class="text-gray-600">Pontuação: 950</p>
+          </div>
+        </div>
 
-        #logo{
-              height: 70px;
-              width: 70px;
-            }
+        <!-- Usuário 2 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">2</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário B</h2>
+            <p class="text-gray-600">Pontuação: 890</p>
+          </div>
+        </div>
 
-        .menu {
-            	background-color: white;
-                border-radius: 8px;
-                border: none;
-                padding: 8px  8px  8px  8px;
-                height: 30px;
-                width: 120px;
-                cursor: pointer;
-            }
+        <!-- Usuário 3 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">3</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário C</h2>
+            <p class="text-gray-600">Pontuação: 820</p>
+          </div>
+        </div>
 
-        .menu:active {
-                background-color: rgb(240, 240, 240);
-                border: none;
-                border-radius: 8px;
-                padding: 8px  8px  8px  8px;
-                height: 30px;
-                width: 120px;
-                cursor: pointer; 
-            }
+        <!-- Usuário 4 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">4</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário D</h2>
+            <p class="text-gray-600">Pontuação: 780</p>
+          </div>
+        </div>
 
-        #divmenu{
-                margin: -70px 0px 20px 150px;
-            }
+        <!-- Usuário 5 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">5</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário E</h2>
+            <p class="text-gray-600">Pontuação: 650</p>
+          </div>
+        </div>
 
-        #divmenu div {
-                display: inline;
-                padding: 0px 30px 0px 100px;
-                margin: 0px 0px 0px 0px;
-            }
+        <!-- Usuário 6 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">6</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário F</h2>
+            <p class="text-gray-600">Pontuação: 600</p>
+          </div>
+        </div>
 
-        #ranking {
-            	border-style: solid;
-            	border-width: 0;
-            	width: 400px;
-            	height: auto;
-            	margin: 100px 30px 50px 300px;
+        <!-- Usuário 7 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">7</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário G</h2>
+            <p class="text-gray-600">Pontuação: 560</p>
+          </div>
+        </div>
 
-            }
-        
-       .titulo {
-       			color: yellow;
-       			background-color: red;
-       		}
+        <!-- Usuário 8 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">8</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário H</h2>
+            <p class="text-gray-600">Pontuação: 550</p>
+          </div>
+        </div>
 
-       	.titulo-1 {
-       		color: yellow;
-       		width: 300px;
-       		background-color: red;
-       	}
+        <!-- Usuário 9 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">9</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário I</h2>
+            <p class="text-gray-600">Pontuação: 500</p>
+          </div>
+        </div>
 
-       	.nulo {
-       		background-color: red;
-       		width: 80px;
-       		border-color: red;
-       	}
+        <!-- Usuário 10 -->
+        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="mr-4">
+            <span class="text-4xl font-semibold text-red-500">10</span>
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold">Usuário J</h2>
+            <p class="text-gray-600">Pontuação: 250</p>
+          </div>
+        </div>
 
-       	.titulo-2 {
-       		width: 20px;
-       		background-color: red;
-       		color: yellow;
-       	}
+        <!-- Adicione mais usuários conforme necessário -->
+      </div>
+    </div>
 
-       	.primeiro {
-       		background-color: white;
-
-       	}
-
-	</style>
-</head>
-
-<body >
-	 <nav>
-	 		<img src="../imagens/Logocortada.png" id="logo">
-            <div id="divmenu">
-                <div>
-                    <button class="menu">Inicio</button>
-                </div>
-
-                <div>
-                    <button class="menu">Perguntas</button>
-                </div>
-
-                <div>
-                    <button class="menu">Pontuacao</button>
-                </div>
-
-                <div>
-                    <button class="menu">Conteudos</button>
-                </div>
-                
-                <div>
-                    <button class="menu">Rank</button>
-                </div>
-            </div>
-   	 </nav>
-	
-	<div class="tabela">
-		<table id="ranking">
-			<thead>
-			<tr>
-				<td class="titulo, titulo-1">Nome:</td>
-				<td class="nulo"></td>
-				<td class="titulo, titulo-2">Pontuação:</td>
-			</tr>
-			</thead>
-			
-			<tbody>
-	      	 	<td class="primeiro">Aluno1</td>
-	      	 	<td class="nulo">     </td>
-	       	 	<td class="primeiro">50</td>
-	       	</tr>
-	       	<tr>
-	      	 	<td class="primeiro">Aluno2</td>
-	      	 	<td class="nulo">     </td>
-	       	 	<td class="primeiro">40</td>
-	       	</tr>
-	       	<tr>
-	      	 	<td class="primeiro">Aluno Aluno</td>
-	      	 	<td class="nulo">     </td>
-	       	 	<td class="primeiro">30</td>
-	       	</tr>
-	       	<tr>
-	      	 	<td class="primeiro">Aluno Aluno2</td>
-	      	 	<td class="nulo">     </td>
-	       	 	<td class="primeiro">20</td>
-	       	</tr>
-	       	<tr>
-	      	 	<td class="primeiro">Aluno Aluno Aluno</td>
-	      	 	<td class="nulo">     </td>
-	       	 	<td class="primeiro">10</td>
-	       	</tr>
-	       	<tr>
-	      	 	<td class="primeiro">Aluno Aluno Aluno</td>
-	      	 	<td class="nulo">     </td>
-	       	 	<td class="primeiro">00</td>
-	       	</tr>
-	   		</tbody>
-
-		</table>
-	</div>
-
-</body>
+    <!-- Rodapé -->
+    <footer class="bg-gray-300 p-4 mt-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2023 Ranking dos Melhores Usuários</p>
+      </div>
+    </footer>
+  </body>
 </html>
