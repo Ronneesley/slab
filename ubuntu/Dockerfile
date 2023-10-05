@@ -1,13 +1,14 @@
+# Jammy version
 FROM ubuntu:22.04
 
-RUN sudo apt update \
-  && sudo apt install snapd
+WORKDIR /home
 
-RUN sudo apt install composer
-RUN sudo snap install node --classic
+RUN apt update \
+  && apt install -y \ 
+  apache2 snapd
 
 # Fazer um requirements file para instalar estes softwares:
-#   Apache, PHP, Node, Composer, R, Twig, NPM, PDO, PDO Mysql, INTL, GD
+#   apache2, php, Node, Composer, R, Twig, NPM, PDO, PDO Mysql, INTL, GD
 
 # Verificar e definir os WORKDIR deste Dockerfile
 # Inserir os RUN nos WORKDIR corretos

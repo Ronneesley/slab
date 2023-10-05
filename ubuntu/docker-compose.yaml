@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  # Container do servidor web Ubuntu da aplicação
+  web-server:
+    container_name: ubuntu
+    build: .
+    ports:
+      - "3000:80"
+    #depends_on:
+    #  - db
+
+  # Container do servidor de banco de dados MySQL
+  #db:
+  #  container_name: mysql
+  #  build:
+  #    context: mysql
+  #    dockerfile: ./Dockerfile
+  #  ports:
+  #    - "13306:3306"
