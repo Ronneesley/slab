@@ -7,7 +7,7 @@ RUN sudo apt install composer
 RUN sudo snap install node --classic
 
 # Fazer um requirements file para instalar estes softwares:
-#   Apache, PHP, Node, Composer, R, Twig, NPM
+#   Apache, PHP, Node, Composer, R, Twig, NPM, PDO, PDO Mysql, INTL, GD
 
 # Verificar e definir os WORKDIR deste Dockerfile
 # Inserir os RUN nos WORKDIR corretos
