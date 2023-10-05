@@ -18,5 +18,15 @@
                     <button type="submit" class="btn btn-dark rounded-3 mx-2">Confirmar</button>
                 </div>
             </form>
+
+
+            <div class="mb-3">
+                <form action="./index.php?controle=dbc&acao=importar" method="post" enctype="multipart/form-data">
+                    <label for="arquivo" class="form-label text-dark mx-2 fw-bold">Selecione um arquivo JSON/CSV:</label>
+                    <input type="file" name="arquivo" id="arquivo" accept=".json" class="form-control">
+                    <br>
+                    <button type="submit" class="btn btn-dark rounded-3 mx-2" value="Importar">Importar</button>
+                </form>
+            </div>
     </div>
 </div>

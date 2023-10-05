@@ -18,6 +18,8 @@ class DBC {
 
     private $J;
 
+    private $K;
+
     private $C;
 
     private $L;
@@ -29,6 +31,14 @@ class DBC {
     private $SQTrat;
 
     private $QMTrat;
+
+    private $SQBloco;
+
+    private $GLBloco;
+
+    private $QMBloco;
+
+    private $FBlocoCalc;
 
     private $FCalc;
 
@@ -74,8 +84,8 @@ class DBC {
             $this->G += $this->L[$i];
         }
     
-        //Calculando o valor C
-        $this->C = $this->G ** 2 / ($this->I * $this->J);
+        //Calculando o valor K
+        $this->K = $this->G ** 2 / ($this->I * $this->J);
    
         //Calculando SQTotal
         $S = 0;
@@ -85,7 +95,7 @@ class DBC {
             }
         }
     
-        $this->SQTotal = $S - $this->C;
+        $this->SQTotal = $S - $this->K;
     
         //Calculando SQTrat
         $S = 0;
@@ -93,24 +103,49 @@ class DBC {
             $S += $this->L[$i] ** 2;
         }
     
-        $this->SQTrat = $S / $this->J - $this->C;
+        $this->SQTrat = $S / $this->J - $this->K;
+
+        //Calculando o total por Bloco
+        $this->C = array();
+
+        for ($j = 0; $j < $this->J; $j++){
+            $soma = 0;
+
+            for ($i = 0; $i < $this->I; $i++){
+                $soma += $this->leituras[$i][$j];
+            }
+
+            array_push($this->C, $soma);
+        }
+
+        //Calculando SQBloco
+        $somaQuadrados = 0;
+        for ($j = 0; $j < $this->J; $j++){
+            $somaQuadrados += $this->C[$j] ** 2;
+        }
+        $this->SQBloco = 1/$this->I * $somaQuadrados - $this->K;
+
+        $this->GLBloco = $this->J - 1;
+        $this->QMBloco = $this->SQBloco / $this->GLBloco;        
     
         //Calculando SQRes
-        $this->SQRes = $this->SQTotal - $this->SQTrat;
+        $this->SQRes = $this->SQTotal - $this->SQTrat - $this->SQBloco;
     
         $this->GLTrat = $this->I - 1;
-        $this->GLRes = $this->I * ($this->J - 1);
+        $this->GLRes = ($this->I - 1) * ($this->J - 1);
     
         $this->GLTotal = $this->I * $this->J - 1;
     
         $this->QMTrat = $this->SQTrat / $this->GLTrat;
         $this->QMRes = $this->SQRes / $this->GLRes;
-    
+
+        //Calcula os valores calculados de F
+        $this->FBlocoCalc = $this->QMBloco / $this->QMRes;    
         $this->FCalc = $this->QMTrat / $this->QMRes;
 
         $this->alfa = 0.05; //Nível de significância
 
-        $this->FTab = 2.87; //Trabalho a ser feito
+        $this->FTab = 3.16; //Trabalho a ser feito
 
         if ($this->FCalc < $this->FTab){
             $this->conclusao = "O teste é não significativo ao nível de significância de $this->alfa. Aceitamos H0.";
@@ -231,12 +266,12 @@ class DBC {
         $this->conclusao = $conclusao;
     }
     
-    public function getC() {
-        return $this->C;
+    public function getK() {
+        return $this->K;
     }
 
-    public function setC($C): void {
-        $this->C = $C;
+    public function setK($K): void {
+        $this->K = $K;
     }
     
     public function getAlfa() {
@@ -269,6 +304,46 @@ class DBC {
 
     public function setLeituras($leituras): void {
         $this->leituras = $leituras;
+    }
+
+    public function getC(){
+        return $this->C;
+    }
+
+    public function setC($C){
+        $this->C = $C;
+    }
+
+    public function getSQBloco(){
+        return $this->SQBloco;
+    }
+
+    public function setSQBloco($SQBloco){
+        $this->SQBloco = $SQBloco;
+    }
+
+    public function getGLBloco(){
+        return $this->GLBloco;
+    }
+
+    public function setGLBloco($GLBloco){
+        $this->GLBloco = $GLBloco;
+    }
+
+    public function getQMBloco(){
+        return $this->QMBloco;
+    }
+
+    public function setQMBloco($QMBloco){
+        $this->QMBloco = $QMBloco;
+    }
+
+    public function getFBlocoCalc(){
+        return $this->FBlocoCalc;
+    }
+
+    public function setFBlocoCalc($FBlocoCalc){
+        $this->FBlocoCalc = $FBlocoCalc;
     }
 }
 
