@@ -8,8 +8,6 @@ namespace QuizEstatistico\modelo\dto;
  */
 class Rank {
     private $id;
-    
-    private $nome;
 
     private $pontuacao;
 
@@ -17,7 +15,7 @@ class Rank {
 
     private $erro;
 
-    private $curso;
+    private $usuario;
     
     public function __construct() {
         
@@ -25,10 +23,6 @@ class Rank {
     
     public function getId() {
         return $this->id;
-    }
-
-    public function getNome() {
-        return $this->nome;
     }
 
     public function getPontuacao() {
@@ -43,17 +37,13 @@ class Rank {
         return $this->erro;
     }
 
-    public function getCurso() {
-        return $this->curso;
+    public function getUsuario() {
+        return $this->usuario;
     }
 
     
     public function setId($id): void {
         $this->id = $id;
-    }
-
-    public function setNome($nome): void {
-        $this->nome = $nome;
     }
 
     public function setPontuacao($pontuacao): void {
@@ -68,8 +58,8 @@ class Rank {
         $this->erro = $erro;
     }
 
-    public function setCurso($curso): void {
-        $this->curso = $curso;
+    public function setUsuario($usuario): void {
+        $this->usuario = $usuario;
     }
 }
 
