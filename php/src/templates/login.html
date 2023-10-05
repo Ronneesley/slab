@@ -18,6 +18,9 @@
         $("#ocultar").hide();
         $("#exibir").show();
       }
+      function alerta() {
+        alert("Insira as credenciais corretas ou cadastre-se!");
+      }
     </script>
   </head>
 
@@ -43,6 +46,7 @@
             id="login"
             method="post"
             action="index.php?controle=principal&acao=logar"
+            onchange="return ( alerta() )"
           >
             <div class="mb-6">
               <label for="email" class="block text-gray-700 font-semibold"
