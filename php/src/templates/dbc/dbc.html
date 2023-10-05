@@ -6,7 +6,7 @@
     <thead class="text-center table-secondary">
         <tr>
             <th rowspan="2">Tratamentos</th>
-            <th colspan="{{ dbc.J }}">Repetições</th>
+            <th colspan="{{ dbc.J }}">Blocos</th>
             <th rowspan="2">Total</th>
         </tr>
 
@@ -28,7 +28,7 @@
                     </td>
                 {% endfor %}
 
-                <td style="text-align: center;">
+                <td style="text-align: center; font-weight: bold;">
                     {{ dbc.L[i] | number_format(2, ',', '.') }}
                 </td>
             </tr>            
@@ -37,7 +37,14 @@
 
     <tfoot>
         <tr>
-            <th style="text-align: center;" colspan="{{ dbc.J + 1 }}">TOTAL</th>
+            <th style="text-align: center;">TOTAL</th>
+
+            {% for j in 0..dbc.J - 1 %}
+                <th class="text-center">
+                    {{ dbc.C[j] | number_format(2, ',', '.') }}
+                </th>
+            {% endfor %}
+
             <th style="text-align: center;">{{ dbc.G | number_format(2, ',', '.') }}</th>
         </tr>
     </tfoot>
@@ -66,6 +73,14 @@
             </tr>
 
             <tr>
+                <td>Bloco</td>
+                <td style="text-align: center;">{{ dbc.GLBloco }}</td>
+                <td style="text-align: center;">{{ dbc.SQBloco | number_format(3, ',', '.') }}</td>
+                <td style="text-align: center;">{{ dbc.QMBloco | number_format(3, ',', '.') }}</td>
+                <td style="text-align: center;">{{ dbc.FBlocoCalc | number_format(3, ',', '.') }}</td>
+            </tr>
+
+            <tr>
                 <td>Resíduo</td>
                 <td style="text-align: center;">{{ dbc.GLRes }}</td>
                 <td style="text-align: center;">{{ dbc.SQRes | number_format(3, ',', '.') }}</td>
@@ -85,3 +100,22 @@
     Conclusão:
     {{ dbc.conclusao }}
 </div>
+
+<form method="post" action="./index.php?controle=dbc&acao=salvar_dados">    
+    <input type="hidden" name="I" value="{{ dbc.I }}" />
+    <input type="hidden" name="J" value="{{ dbc.J }}" />
+
+    {% for i in 0..dbc.I - 1 %}
+        <input type="hidden" name="tratamentos[]" value="{{ dbc.tratamentos[i] }}" />
+    {% endfor %}
+
+    {% for i in 0..dbc.I - 1 %}
+        {% for j in 0..dbc.J - 1 %}
+            <input type="hidden" name="leituras[{{ i }}][{{ j }}]" value="{{ dbc.leituras[i][j] }}" />
+        {% endfor %}
+    {% endfor %}
+
+    <button type="submit" class="btn btn-primary">
+        Salvar dados
+    </button>
+</form>
