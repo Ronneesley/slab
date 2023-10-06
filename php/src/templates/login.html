@@ -18,15 +18,10 @@
         $("#ocultar").hide();
         $("#exibir").show();
       }
-
-      $(document).ready(function () {
-        $("#login").change(function (event) {
-          event.preventDefault();
-          $("#btnLogin").click(function () {
-            alert("Insira as credenciais corretas ou cadastre-se!");
-          });
-        });
-      });
+      setTimeout(function () {
+        var a = document.getElementById("erro");
+        a.style = "display:none";
+      }, 3000);
     </script>
   </head>
 
@@ -37,7 +32,7 @@
       <div
         class="bg-white py-4 px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-8"
       >
-        <div class="mb-10 insert-y-12">
+        <div class="mb-4 insert-y-12">
           <img
             src="../imagens/logo.png"
             alt="logo_quiz"
@@ -46,6 +41,13 @@
           <h2 class="text-2xl text-center text-gray-700 font-semibold">
             Entre com a sua conta
           </h2>
+          <h1
+            id="erro"
+            class="text-xl text-center text-gray-700 font-light text-red-500 font-medium"
+          >
+            <br />
+            {{mensagem}}
+          </h1>
         </div>
         <div class="md:mx-auto md:w-full">
           <form
