@@ -18,20 +18,11 @@
         $("#ocultar").hide();
         $("#exibir").show();
       }
-
-      $(document).ready(function(){
-        $("#login").change(function(event){
-          event.preventDefault();
-
-          $("#btnLogin").click(function(){
-            alert("Insira as credenciais corretas ou cadastre-se!");
-          })
-        })
-      })
     </script>
   </head>
 
   <body class="h-full">
+    {{mensagem}}
     <div
       class="container flex flex-1 flex-col justify-center min-h-full mx-auto h-full w-full"
     >
