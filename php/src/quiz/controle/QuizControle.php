@@ -5,6 +5,10 @@ use QuizEstatistico\modelo\dto\Quiz;
 use QuizEstatistico\modelo\dao\QuizDAO;
 use QuizEstatistico\controle\ControleBase;
 use QuizEstatistico\modelo\dao\QuestaoDAO;
+use QuizEstatistico\modelo\dao\UsuarioDAO;
+use QuizEstatistico\modelo\dao\RankDAO;
+use QuizEstatistico\modelo\dto\Rank;
+use QuizEstatistico\modelo\dto\Usuario;
 
 /**
  * Description of QuizControle
@@ -202,6 +206,16 @@ class QuizControle extends ControleBase {
         $c = $dao->selecionar($_REQUEST["id"]);
         
         print_r($c);
+    }
+    public function salvarRank(){
+        $rank = new Rank();
+        $rank->setId();
+        $rank->setPontuacao();
+        $rank->setAcerto();
+        $rank->setErro();
+        $rank->setUsuario(new Usuario());
+
+        
     }
 }
 ?>
