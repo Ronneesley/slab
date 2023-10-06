@@ -18,6 +18,10 @@
         $("#ocultar").hide();
         $("#exibir").show();
       }
+      setTimeout(function () {
+        var a = document.getElementById("erro");
+        a.style = "display:none";
+      }, 3000);
     </script>
   </head>
 
@@ -38,6 +42,7 @@
             Entre com a sua conta
           </h2>
           <h1
+            id="erro"
             class="text-xl text-center text-gray-700 font-light text-red-500 font-medium"
           >
             <br />
