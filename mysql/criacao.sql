@@ -24,7 +24,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`niveis` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL COMMENT 'Representa o nível de dificuldade que vai ter na pergunta',
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -34,7 +36,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`cursos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -44,7 +48,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`temas` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -80,7 +86,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`questoes` (
     REFERENCES `slab`.`temas` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -100,7 +108,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`usuarios` (
     REFERENCES `slab`.`cursos` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -110,7 +120,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`quizzes` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -122,21 +134,16 @@ CREATE TABLE IF NOT EXISTS `slab`.`ranks` (
   `acerto` INT NOT NULL,
   `erro` INT NOT NULL,
   `usuario` INT NOT NULL,
-  `quiz` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_ranks_usuarios1_idx` (`usuario` ASC) VISIBLE,
-  INDEX `fk_ranks_quizzes1_idx` (`quiz` ASC) VISIBLE,
   CONSTRAINT `fk_ranks_usuarios1`
     FOREIGN KEY (`usuario`)
     REFERENCES `slab`.`usuarios` (`id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_ranks_quizzes1`
-    FOREIGN KEY (`quiz`)
-    REFERENCES `slab`.`quizzes` (`id`)
-    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -159,7 +166,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`questoes_quiz` (
     REFERENCES `slab`.`quizzes` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -172,7 +181,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`administradores` (
   `senha` VARCHAR(32) NOT NULL,
   `login` VARCHAR(20) NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
@@ -183,7 +194,9 @@ CREATE TABLE IF NOT EXISTS `slab`.`imagens` (
   `arquivo` BLOB NOT NULL,
   `identificador` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
