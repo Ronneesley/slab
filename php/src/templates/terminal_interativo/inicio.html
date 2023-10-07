@@ -4,20 +4,34 @@
 
 <link rel="stylesheet" href="./css/terminal_interativo.css">
 
-<form method="post" action="./index.php?controle=terminalinterativo&acao=processar">
+<form id="add" name="formulario" method="post" action="./index.php?controle=terminalinterativo&acao=processar">
     <div style="padding: 20px;">
         {% for c in comandos %}
             <div class="comando">
                 <textarea name="comandos[]">{{ c }}</textarea>
             </div>
 
-            <div class="resultado">
+            <div id="result" class="resultado">
                 {{ resultados[loop.index - 1] | nl2br }}
             </div>
             <br />
         {% endfor %}
         
-        <input type="submit" value="Adicionar comando" />
+        <input onclick="criarComando()" type="button" value="Adicionar comando" />
         <input type="submit" value="Calcular" />
+        
     </div>
+    
 </form>
+<script>
+    function criarComando(){
+        var criar = document.createElement('textarea', 'div');
+        var elemento = document.getElementById('add');
+        var ele = document.querySelector(".comando");
+        
+        elemento.appendChild(criar);
+        ele.appendChild(criar)
+        
+    }
+    
+</script>
