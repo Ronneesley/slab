@@ -69,15 +69,19 @@ class RankDAO extends DAO {
         $stmt->execute();
         $dados = $stmt->fetch();
         
-        $c = new Rank();
-        $c->setId($dados["id"]);
-        $c->setUsuario($dados["nome"]);
-        $c->setPontuacao($dados["pontuacao"]);
-        $c->setAcerto($dados["acerto"]);
-        $c->setErro($dados["erro"]);
-        $c->setCurso($dados["curso"]);
+        if ($dados !== false) {
+            $c = new Rank();
+            $c->setId($dados["id"]);
+            $c->setUsuario($dados["nome"]);
+            $c->setPontuacao($dados["pontuacao"]);
+            $c->setAcerto($dados["acerto"]);
+            $c->setErro($dados["erro"]);
+            $c->setCurso($dados["curso"]);
         
-        return $c;
+            return $c;
+        } else {
+            return null;
+        }
     }
     
     public function excluir($id){
