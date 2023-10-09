@@ -4,7 +4,9 @@ services:
   # Container do ambiente de desenvolvimento
   web-server:
     container_name: ubuntu
-    build: .
+    build:
+      context: ../php
+      dockerfile: ./Dockerfile-ubuntu-dev
     ports:
       - "3000:80"
     #depends_on:
