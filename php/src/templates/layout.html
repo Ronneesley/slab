@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>SLab</title>
-        
-        <link rel="stylesheet" href="{{CSS_DIR}}/layout.css" />
-        <link rel="stylesheet" href="{{JS_DIR}}/bootstrap/dist/css/bootstrap.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <script src="{{JS_DIR}}/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
-    </head>
-    
-    <body>
-        <div class="layout">
-            <div class="menu">
-                {{ include("menu.html") }} 
-            </div>
+    <title>SLab</title>
 
-            <div class="conteudo">
-                {{ include(pagina) }}
-            </div>
+    <link rel="stylesheet" href="{{CSS_DIR}}/layout.css" />
+    <link rel="stylesheet" href="{{JS_DIR}}/bootstrap/dist/css/bootstrap.min.css" />
 
-            <div class="rodape">
-                {{ include("rodape.html") }}
-            </div>
-        </div>
-    </body>
+    <script src="{{JS_DIR}}/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
+  </head>
+
+  <body>
+    <div class="layout">
+      <div class="menu">{{ include("menu.html") }}</div>
+
+      <div class="conteudo">{{ include(pagina) }}</div>
+
+      <div class="rodape">{{ include("rodape.html") }}</div>
+    </div>
+  </body>
 </html>

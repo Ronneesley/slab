@@ -17,26 +17,23 @@ class RankDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO 
-            ranks(nome, pontuacao, acerto, erro, curso) 
-            VALUES (?, ?, ?, ?, ?)");
-        $stmt->bindValue(1, $rank->getNome());
-        $stmt->bindValue(2, $rank->getPontuacao());
-        $stmt->bindValue(3, $rank->getAcerto());
-        $stmt->bindValue(4, $rank->getErro());
-        $stmt->bindValue(5, $rank->getCurso()->getId(), PDO::PARAM_INT);
+            ranks(pontuacao, acerto, erro, usuario)
+            VALUES (?, ?, ?, ?)");
+        $stmt->bindValue(1, $rank->getPontuacao());
+        $stmt->bindValue(2, $rank->getAcerto());
+        $stmt->bindValue(3, $rank->getErro());
+        $stmt->bindValue(4, $rank->getUsuario()->getId(), PDO::PARAM_INT);
         $stmt->execute();
     }
     
     public function alterar($rank){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("update ranks set nome = ?, pontuacao = ?, acerto = ?, erro = ?, curso = ? where id = ?");
-        $stmt->bindValue(1, $rank->getNome());
-        $stmt->bindValue(2, $rank->getPontuacao());
-        $stmt->bindValue(3, $rank->getAcerto());
-        $stmt->bindValue(4, $rank->getErro());
-        $stmt->bindValue(5, $rank->getCurso()->getId(), PDO::PARAM_INT);
-        $stmt->bindValue(5, $rank->getId(), PDO::PARAM_INT);
+        $stmt = $con->prepare("update ranks set pontuacao = ?, acerto = ?, erro = ?, where usuario = ?");
+        $stmt->bindValue(1, $rank->getPontuacao());
+        $stmt->bindValue(2, $rank->getAcerto());
+        $stmt->bindValue(3, $rank->getErro());
+        $stmt->bindValue(4, $rank->getUsuario()->getId(), PDO::PARAM_INT);
         $stmt->execute();        
     }
     
@@ -89,6 +86,22 @@ class RankDAO extends DAO {
         $stmt = $con->prepare("delete from ranks where id = ?");
         $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
+    }
+        public function verificarUsuario($id){
+        $con = $this->conectar();
+        
+        $stmt = $con->prepare("select * from ranks where usuario = ?");
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->execute();
+        $dados = $stmt->fetch();
+        
+        $c = new Rank();
+        $c->setId($dados["id"]);
+        $c->setPontuacao($dados["pontuacao"]);
+        $c->setAcerto($dados["acerto"]);
+        $c->setErro($dados["erro"]);
+        
+        return $c;
     }
 }
 

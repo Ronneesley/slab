@@ -45,6 +45,9 @@ class QuizControle extends ControleBase {
             case "selecionar":
                 $this->selecionar();
                 break;
+            case "salvarRank":
+                $this->salvarRank();
+                break;
         }
     }
     
@@ -208,13 +211,16 @@ class QuizControle extends ControleBase {
         print_r($c);
     }
     public function salvarRank(){
+        session_start();
         $rank = new Rank();
-        $rank->setId();
-        $rank->setPontuacao();
-        $rank->setAcerto();
-        $rank->setErro();
-        $rank->setUsuario(new Usuario());
-
+        $usuarioDAO = new UsuarioDAO();
+        $rank->setPontuacao($_SESSION["pontuacao"]);
+        $rank->setAcerto($_SESSION["pontuacao"]);
+        $rank->setErro(count($_SESSION["questoes_respondidas"])-$_SESSION["pontuacao"]);
+        $rank->setUsuario($usuarioDAO->selecionar($_SESSION["id_usuario"]));
+        $RankDAO = new RankDAO();
+        
+        $RankDAO->inserir($rank);
         
     }
 }

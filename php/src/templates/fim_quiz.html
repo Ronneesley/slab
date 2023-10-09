@@ -1,27 +1,24 @@
-<link rel="stylesheet" href="./css/fim.css">
+<link rel="stylesheet" href="./css/fim.css" />
 
 <div class="final">
-    <table class="imagem">
-        <tr>
-            <td colspan="3">
-            <center> <img src="./imagens/quiz.png" id="imgquiz"> </center>
-            </td>
-        </tr>
-    </table>
-    <center>
-        <strong><h1 class="reslth1">Resultado</h1></strong>
+  <table class="imagem">
+    <tr>
+      <td colspan="3">
+        <center><img src="./imagens/quiz.png" id="imgquiz" /></center>
+      </td>
+    </tr>
+  </table>
+  <center>
+    <strong><h1 class="reslth1">Resultado</h1></strong>
 
-        <p class="reslt">{{ pontuacao }} acertos de {{ qtde_questoes_respondidas }} questões</p>
-        <br />
+    <p class="reslt">{{ pontuacao }} acertos de {{ qtde_questoes_respondidas }} questões</p>
+    <br />
 
-        <a href="./index.php?controle=principal&acao=inicio" class="link">
-            Voltar para a página inicial do Quiz
-        </a>
-        <br />
-        <br />
+    <a href="./index.php?controle=principal&acao=inicio" class="link"> Voltar para a página inicial do Quiz </a>
+    <br />
+    <br />
 
-        <a href="./index.php?controle=quiz&acao=comecar" class="link">
-            Tentar novamente
-        </a>
-    </center>
+    <a href="./index.php?controle=quiz&acao=comecar" class="link"> Tentar novamente </a>
+    <a href="./index.php?controle=quiz&acao=salvarRank" class="link"> Salvar Tentativa </a>
+  </center>
 </div>
