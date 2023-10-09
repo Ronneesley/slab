@@ -29,7 +29,7 @@ class RankControle {
                 break;
         }
     }
-    
+
     public function inserir(){
         $c = new Rank();
         $c->setNome($_REQUEST["nome"]);
@@ -73,7 +73,9 @@ class RankControle {
         $dao = new RankDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        print_r($c);
+        $res = print_r($c);
+
+        return $res;
     }
 }
 ?>

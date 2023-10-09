@@ -40,7 +40,7 @@ class RankDAO extends DAO {
     public function listar(){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select * from ranks");
+        $stmt = $con->prepare("select  usuarios.id ,usuarios.nome,ranks.pontuacao as 'pontuacao', ranks.acerto as 'acerto', ranks.erro as 'erro', cursos.nome as 'curso' from slab.ranks left join slab.usuarios on ranks.usuario =  usuarios.id left join slab.cursos on usuarios.curso = cursos.id  order by pontuacao desc");
         $stmt->execute();
         $res = $stmt->fetchAll();
         
@@ -49,7 +49,7 @@ class RankDAO extends DAO {
         foreach ($res as $dados){
             $c = new Rank();
             $c->setId($dados["id"]);
-            $c->setNome($dados["nome"]);
+            $c->setUsuario($dados["nome"]);
             $c->setPontuacao($dados["pontuacao"]);
             $c->setAcerto($dados["acerto"]);
             $c->setErro($dados["erro"]);
@@ -64,14 +64,14 @@ class RankDAO extends DAO {
     public function selecionar($id){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select * from ranks where id = ?");
+        $stmt = $con->prepare("select usuarios.id, usuarios.nome, sum(ranks.pontuacao) as 'pontuacao', sum(ranks.acerto) as 'acerto', sum(ranks.erro) as 'erro', cursos.nome as 'curso' from ranks left join usuarios on ranks.usuario = usuarios.id left join cursos on usuarios.curso = cursos.id where usuarios.id = ? group by usuarios.id, usuarios.nome;");
         $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
         $dados = $stmt->fetch();
         
         $c = new Rank();
         $c->setId($dados["id"]);
-        $c->setNome($dados["nome"]);
+        $c->setUsuario($dados["nome"]);
         $c->setPontuacao($dados["pontuacao"]);
         $c->setAcerto($dados["acerto"]);
         $c->setErro($dados["erro"]);
