@@ -249,7 +249,6 @@ class PrincipalControle extends ControleBase {
         if ($usuario != null){
             session_start();
             $_SESSION["id_usuario"] = $usuario->getId();
-            print_r($_SESSION["id_usuario"]);
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");
