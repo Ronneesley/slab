@@ -64,14 +64,14 @@ class RankDAO extends DAO {
     public function selecionar($id){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select * from ranks where id = ?");
+        $stmt = $con->prepare("select usuarios.id, usuarios.nome, sum(ranks.pontuacao) as 'pontuacao', sum(ranks.acerto) as 'acerto', sum(ranks.erro) as 'erro', cursos.nome as 'curso' from ranks left join usuarios on ranks.usuario = usuarios.id left join cursos on usuarios.curso = cursos.id where usuarios.id = ? group by usuarios.id, usuarios.nome;");
         $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
         $dados = $stmt->fetch();
         
         $c = new Rank();
         $c->setId($dados["id"]);
-        $c->setNome($dados["nome"]);
+        $c->setUsuario($dados["nome"]);
         $c->setPontuacao($dados["pontuacao"]);
         $c->setAcerto($dados["acerto"]);
         $c->setErro($dados["erro"]);
