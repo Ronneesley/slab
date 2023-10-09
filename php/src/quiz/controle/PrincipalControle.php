@@ -242,7 +242,6 @@ class PrincipalControle extends ControleBase {
     public function logar() {
         $email = $_REQUEST["email"];
         $senha = $_REQUEST["senha"];
-
         $usuarioDAO = new UsuarioDAO();
         $usuario = $usuarioDAO->logar($email, $senha);
 
