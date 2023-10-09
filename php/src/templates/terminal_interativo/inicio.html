@@ -6,32 +6,33 @@
 
 <form id="add" name="formulario" method="post" action="./index.php?controle=terminalinterativo&acao=processar">
     <div style="padding: 20px;">
-        {% for c in comandos %}
-            <div class="comando">
-                <textarea name="comandos[]">{{ c }}</textarea>
-            </div>
+        <div id="comandos">
+            {% for c in comandos %}
+                <div class="comando">
+                    <textarea name="comandos[]">{{ c }}</textarea>
+                </div>
 
-            <div id="result" class="resultado">
-                {{ resultados[loop.index - 1] | nl2br }}
-            </div>
-            <br />
-        {% endfor %}
+                <div class="resultado">
+                    {{ resultados[loop.index - 1] | nl2br }}
+                </div>
+            {% endfor %}
+        </div>
         
         <input onclick="criarComando()" type="button" value="Adicionar comando" />
-        <input type="submit" value="Calcular" />
-        
+        <input type="submit" value="Calcular" />        
     </div>
     
 </form>
 <script>
     function criarComando(){
-        var criar = document.createElement('textarea', 'div');
-        var elemento = document.getElementById('add');
-        var ele = document.querySelector(".comando");
-        
-        elemento.appendChild(criar);
-        ele.appendChild(criar)
-        
-    }
-    
+        var div = document.createElement('div');
+        var comando = document.createElement('textarea');
+        div.className = "comando";
+        comando.name = "comandos[]";
+
+        var comandos = document.getElementById("comandos");        
+
+        div.appendChild(comando);
+        comandos.appendChild(div);
+    }    
 </script>
