@@ -351,7 +351,9 @@ class TesteTukey {
 
                     //Elementos são diferentes
                     if ($temLetrasDiferentes){
+                        if(empty($resultado[$j])){
                         array_push($resultado[$j], $proximaLetra);
+                        }
                     }
 
                     $letra = $proximaLetra;
