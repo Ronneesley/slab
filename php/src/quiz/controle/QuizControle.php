@@ -166,6 +166,7 @@ class QuizControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "fim_quiz.html", 
                 ["pontuacao" => $pontuacao,
                  "qtde_questoes_respondidas" => $qtde_questoes_respondidas]);
+        $this->salvarRank();
     }
     
     public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){        
@@ -219,7 +220,7 @@ class QuizControle extends ControleBase {
         $rank->setErro(count($_SESSION["questoes_respondidas"])-$_SESSION["pontuacao"]);
         $rank->setUsuario($usuarioDAO->selecionar($_SESSION["id_usuario"]));
         $RankDAO = new RankDAO();
-        
+
         $RankDAO->inserir($rank);
         
     }
