@@ -9,9 +9,12 @@ use QuizEstatistico\modelo\dao\RankDAO;
  *
  * @author Wagner e Mayko
  */
-class RankControle {    
+class RankControle extends ControleBase{    
     public function processar($acao){
         switch ($acao){
+            case "buscar":
+                $this->mostrarBusca();
+                break;
             case "inserir":
                 $this->inserir();
                 break;
@@ -28,6 +31,14 @@ class RankControle {
                 $this->selecionar();
                 break;
         }
+    }
+
+    public function mostrarBusca( $rank = new Rank(),
+        $mensagem = "", $tipo_mensagem = "success"){
+
+            $layout = $this->configurarTemplate("layout.html");
+            $this->mostrarPaginaLayout($layout, "ranking_acertos.html",["rank" => $rank, "mensagem" => $mensagem, 
+            "tipo_mensagem" => $tipo_mensagem]);
     }
 
     public function inserir(){
@@ -73,9 +84,11 @@ class RankControle {
         $dao = new RankDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        $res = print_r($c);
-
-        return $res;
+        if ($c === null) {
+        $this->mostrarBusca(null, "Usuário não encontrado");
+        } else {
+        $this->mostrarBusca($c, "Usuário encontrado com sucesso!");
+        }
     }
 }
 ?>
