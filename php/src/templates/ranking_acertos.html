@@ -15,15 +15,49 @@
     <div
       class="bg-white px-4 w-full text-sm md:text-base md:border-2 md:shadow-md md:shadow-grey-900 md:rounded-lg md:max-w-lg md:mx-auto md:px-8 md:py-4"
     >
-      <form action="index.php?controle=rank&acao=selecionar" method="post">
-        <div class="bg-white p-4 rounded-lg shadow-md mb-4">
-          <label for="buscarId" class="block text-gray-700 font-semibold">Buscar usuário no rank</label>
+      <form action="index.php?controle=rank&acao=selecionar" class="space-y-4" method="post">
+        <div class="bg-white p-4 space-y-4 rounded-lg shadow-md mb-4">
+          <label for="buscarId" class="block text-lg text-gray-700 font-semibold">Buscar usuário no rank</label>
           <div class="flex items-center justify-end space-x-4">
-            <input type="text" name="id" id="id" class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500">
+            <input type="text" name="id" id="id" placeholder="Digite o id do usuário para buscar" class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500">
             <input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" class="bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full"></input>
           </div>
-          <div id="resultado">
-  
+          <div id="resultado" class="container space-y-4 text-md">
+            {% if rank != null %}
+            <div class="bg-green-400 text-center" role="alert">
+              {{ mensagem }}
+            </div>
+            {% else %}
+            <div class="bg-red-400 text-center">
+              {{ mensagem }}
+            </div>
+            {% endif %}
+            <div>
+              <div>
+                <span class="text-gray-700 font-semibold">ID: </span>
+                <span>{{ rank.id }}</span>
+              </div>
+              <div>
+                <span class="text-gray-700 font-semibold">Nome: </span>
+                <span>{{ rank.usuario }}</span>
+              </div>
+              <div>
+                <span class="text-gray-700 font-semibold">Pontuação total: </span>
+                <span>{{ rank.pontuacao }}</span>
+              </div>
+              <div>
+                <span class="text-gray-700 font-semibold">Total de acertos: </span>
+                <span>{{ rank.acerto }}</span>
+              </div>
+              <div>
+                <span class="text-gray-700 font-semibold">Total de erros: </span>
+                <span>{{ rank.erro }}</span>
+              </div>
+              <div>
+                <span class="text-gray-700 font-semibold">Curso: </span>
+                <span>{{ rank.curso }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </form>

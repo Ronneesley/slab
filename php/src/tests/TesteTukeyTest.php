@@ -5,9 +5,9 @@ use QuizEstatistico\modelo\TesteTukey;
 
 final class TesteTukeyTest extends TestCase
 {
-    //https://www.youtube.com/watch?v=9qNXNPqKrAc
+    //https://www.youtube.com/watch?v=9qNXNPqKrAc //FORMULA ERRADA
     //https://www.youtube.com/watch?v=zV7ToVXQCBA teste OK!
-    //https://www.youtube.com/watch?v=qnpP3-sP6Uc teste OK! ULTIMO TESTE
+    //https://www.youtube.com/watch?v=qnpP3-sP6Uc teste OK!
     public function testExemploVideo(): void
     {
         $t = new TesteTukey();
@@ -15,7 +15,7 @@ final class TesteTukeyTest extends TestCase
 
         $this->assertEqualsWithDelta(0.888, $delta, 0.01);
 
-        $r = $t->classificar([22,19,18.5,20],0.888);
+        $r = $t->classificar([7.3,5.9,8.6],0.888);
         
         /*$this->assertEquals(array('c'), $r[0]);
         $this->assertEquals(array('b'), $r[1]);
