@@ -313,7 +313,7 @@ class TesteTukey {
      * Calcula a diferença mínima significativa de Tukey
      */
     public function calcularDelta($q, $qmRes, $r){
-        return $q * sqrt($qmRes) / $r;
+        return $q * sqrt($qmRes / $r);
     }
 
     public function classificar($medias, $delta){
@@ -337,7 +337,16 @@ class TesteTukey {
             $proximaLetra = chr(ord($letra) + 1);
 
             for ($j = $i + 1; $j < $n; $j++){
+                if ($j == $n - 1 && !empty($resultado[$j]) && $medias[$j] >= $delta) {
+                    // O último grupo já tem uma letra atribuída e seu nível de significância é maior ou igual ao valor pedido
+                    break;
+                } else if ($j == $n - 1 && $medias[$j] == $medias[$j - 1]) {
+                    // O ultimo grupo tem a mesma média do penúltimo
+                    array_push($resultado[$j], $resultado[$j - 1][0]);
+                } else {
+
                 $diferenca = $medias[$i] - $medias[$j];
+
 
                 if ($diferenca > $delta){
 
@@ -348,7 +357,6 @@ class TesteTukey {
                             break;
                         }
                     }
-
                     //Elementos são diferentes
                     if ($temLetrasDiferentes){
                         if(empty($resultado[$j])){
@@ -359,10 +367,18 @@ class TesteTukey {
                     $letra = $proximaLetra;
                     break;
                 } else {
+            
                     //Elementos são iguais
+                    if(empty($resultados[$j])){
                     array_push($resultado[$j], $letra);
+                    }
+                 else {
+                    // Mesma letra para grupos com médias iguais
+                    $letraAnterior = end($resultado[$j]);
+                    array_push($resultado[$j], $letraAnterior);
                 }
-            }
+                }
+            }}
         }
 
         //Retorna o resultado
