@@ -9,14 +9,14 @@ services:
       dockerfile: ./Dockerfile-ubuntu
     ports:
       - "3000:80"
-    #depends_on:
-    #  - db
+    depends_on:
+      - db
 
   # Container do servidor de banco de dados MySQL
-  #db:
-  #  container_name: mysql
-  #  build:
-  #    context: mysql
-  #    dockerfile: ./Dockerfile
-  #  ports:
-  #    - "13306:3306"
+  db:
+    container_name: mysql
+    build:
+      context: ../mysql
+      dockerfile: ./Dockerfile
+    ports:
+      - "13306:3306"

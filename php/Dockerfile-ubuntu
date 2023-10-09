@@ -10,7 +10,7 @@ ENV TZ=America/Sao_Paulo
 # Aloca o dado do fuso horário em /etc/timezone
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN RUN apt-get update && apt-get -y upgrade && \
+RUN apt-get update && apt-get -y upgrade && \
     apt install -y apache2 apache2-utils php libapache2-mod-php php-mysql php-gd php-xml \
     && apt clean
 
@@ -19,22 +19,17 @@ WORKDIR /var/www/
 RUN chmod -R 777 html/
 
 WORKDIR /var/www/html/
-
 RUN rm -f index.html
+COPY src/ .
 
-COPY src/ /var/www/html/
-
-RUN /etc/init.d/apache2 restart
+#RUN /etc/init.d/apache2 restart
 
 WORKDIR /
 
-RUN apt install -y composer r-base nodejs
-RUN apt install -y npm \
-    && apt clean
+RUN apt install -y composer r-base nodejs npm && apt clean
 
 RUN apt update && \
-    apt install -y php-twig php-intl php-pdo php-pdo-mysql \
-    && apt clean
+    apt install -y php-twig php-intl php-pdo php-pdo-mysql && apt clean
 
 # Não é possível instalar snap em um container
 
@@ -42,7 +37,8 @@ RUN chmod -R 777 /var/www/html/configuracoes.json
 
 RUN useradd -m composer && chown -R composer:composer /var/www/html
 USER composer
-WORKDIR /var/www/html
+
+WORKDIR /var/www/html/
 RUN composer install
 
 USER root
