@@ -242,14 +242,12 @@ class PrincipalControle extends ControleBase {
     public function logar() {
         $email = $_REQUEST["email"];
         $senha = $_REQUEST["senha"];
-
         $usuarioDAO = new UsuarioDAO();
         $usuario = $usuarioDAO->logar($email, $senha);
 
         if ($usuario != null){
             session_start();
             $_SESSION["id_usuario"] = $usuario->getId();
-            print_r($_SESSION["id_usuario"]);
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");
