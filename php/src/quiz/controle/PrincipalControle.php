@@ -96,6 +96,9 @@ class PrincipalControle extends ControleBase {
             case "inicio":
                 $this->mostrarPaginaInicial();
                 break;
+            case "inicio_rank":
+                $this->mostrarPaginaInicialRank();
+                break;
             case "login":
                 $this->mostrarPaginaLogin();
                 break;
@@ -261,6 +264,11 @@ class PrincipalControle extends ControleBase {
     public function mostrarPaginaInicial() {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "pagina_inicial.html");
+    }
+
+    public function mostrarPaginaInicialRank() {
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "ranking_acertos.html");
     }
     
     public function mostrarPaginaInicialQuiz() {
