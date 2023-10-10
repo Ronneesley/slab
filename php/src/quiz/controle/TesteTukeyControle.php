@@ -11,9 +11,6 @@ class TesteTukeyControle extends ControleBase {
     
     public function processar($acao){
         switch ($acao){
-            case "novo_teste":
-                $this->novoTeste();
-                break;
             case "novo":
                 $this->mostrarConfiguracaoInicial();
                 break;
@@ -33,13 +30,6 @@ class TesteTukeyControle extends ControleBase {
         }
     }
 
-    public function novoTeste(){
-        $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, 
-            "calculadora/teste_tukey/novo.html",
-            [ "letra" => chr(ord('a') + 1) ]);
-    }
-
     public function mostrarConfiguracaoInicial(){
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/teste_tukey/novo.html");
@@ -50,7 +40,7 @@ class TesteTukeyControle extends ControleBase {
         $J = $_POST["n_blocos"];
 
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "dbc/quadro.html", 
+        $this->mostrarPaginaLayout($layout, "calculadora/teste_tukey/quadro.html", 
             [ "I" => $I, "J" => $J ]);
     }
 
