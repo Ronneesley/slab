@@ -46,31 +46,26 @@ class TesteTukeyControle extends ControleBase {
     }
 
     public function montarQuadro(){
-        // Verifique se as chaves estão definidas no array $_POST
-        if (isset($_POST["n_tratamentos"]) && isset($_POST["n_blocos"])) {
-            $I = $_POST["n_tratamentos"];
-            $J = $_POST["n_blocos"];
-    
-            $layout = $this->configurarTemplate("layout.html");
-            $this->mostrarPaginaLayout($layout, "calculadora/teste_tukey/quadro.html", 
-                [ "I" => $I, "J" => $J ]);
-        } else {
-            // Trate o erro ou defina um comportamento padrão caso as chaves não estejam definidas
-            echo "Erro: Número de tratamentos e/ou blocos não definidos.";
-        }
+        $I = $_POST["n_tratamentos"];
+        $J = $_POST["n_blocos"];
+
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "dbc/quadro.html", 
+            [ "I" => $I, "J" => $J ]);
     }
 
-    public function calcular(){
-        // Verifique se as variáveis estão definidas antes de usá-las
-        if (isset($_POST["n_tratamentos"]) && isset($_POST["n_blocos"])) {
-            $n_tratamentos = $_POST["n_tratamentos"];
-            $n_blocos = $_POST["n_blocos"];
+    function formatarNumero($numero, $digitos = 2){
+        return strtr( number_format($numero, $digitos) , ".", ",");
+    }
+
+    public function calcular(){    
+        $tratamentos = $_REQUEST["tratamentos"];
+        $leiturasString = $_REQUEST["leituras"];        
+        $leituras = $this->formatarLeituras($leiturasString);
+        
+        $J = $_REQUEST["n_blocos"];        
     
-            // Resto do seu código de cálculo aqui, usando $n_tratamentos e $n_blocos conforme necessário
-        } else {
-            // Trate o erro ou defina um comportamento padrão caso as variáveis não estejam definidas
-            echo "Erro: Número de tratamentos e/ou blocos não definidos.";
-        }
+        $this->calcularTukey($tratamentos, $leituras, $J);
     }
 
     public function calcularTukey($tratamentos, $leituras, $J){
