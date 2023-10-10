@@ -1,4 +1,8 @@
-x   .comando {
+#comandos {
+    padding-bottom: 20px;
+}
+
+.comando {
     background-color: blue; 
     min-height: 50px; 
     margin-top: 10px;

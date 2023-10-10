@@ -5,7 +5,7 @@ use QuizEstatistico\modelo\TesteTukey;
 
 final class TesteTukeyTest extends TestCase
 {
-    //https://www.youtube.com/watch?v=9qNXNPqKrAc //FORMULA ERRADA
+    //https://www.youtube.com/watch?v=9qNXNPqKrAc // Errado a formula
     //https://www.youtube.com/watch?v=zV7ToVXQCBA teste OK!
     //https://www.youtube.com/watch?v=qnpP3-sP6Uc teste OK!
     public function testExemploVideo(): void
@@ -29,5 +29,23 @@ final class TesteTukeyTest extends TestCase
         //$this->assertEquals(array('b'), $r[3]);        
         print_r($r);
     }
-}
-?>
+
+    
+        public function testExemploVideo2(): void
+        {
+            $t = new TesteTukey();
+            $delta = $t->calcularDelta(4.20,0.5883,4);
+    
+            $this->assertEqualsWithDelta(1.61, $delta, 0.01);
+    
+            $r = $t->classificar([11.2,9.3,8.2,7.9],1.61);
+            
+    
+            $this->assertEquals(array('a'), $r[0]);
+            $this->assertEquals(array('b'), $r[1]);
+            $this->assertEquals(array('b'), $r[2]);
+            $this->assertEquals(array('b'), $r[3]);        
+            print_r($r);
+        }
+    }
+?> 
