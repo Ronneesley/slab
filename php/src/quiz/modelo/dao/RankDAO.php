@@ -18,12 +18,13 @@ class RankDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("INSERT INTO 
-            ranks(pontuacao, acerto, erro, usuario)
-            VALUES (?, ?, ?, ?)");
+            ranks(pontuacao, acerto, erro, usuario, quiz)
+            VALUES (?, ?, ?, ?, ?)");
         $stmt->bindValue(1, $rank->getPontuacao());
         $stmt->bindValue(2, $rank->getAcerto());
         $stmt->bindValue(3, $rank->getErro());
         $stmt->bindValue(4, $rank->getUsuario()->getId(), PDO::PARAM_INT);
+        $stmt->bindValue(5, $rank->getQuiz()->getId(), PDO::PARAM_INT);
         $stmt->execute();
     }
     

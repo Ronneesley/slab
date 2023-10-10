@@ -57,6 +57,7 @@ class QuizControle extends ControleBase {
         $_SESSION["pontuacao"] = 0;
         $_SESSION["questoes_respondidas"] = array();
         $_SESSION["ultima_questao"] = "";
+        $_SESSION["quiz_id"] = $_REQUEST["quiz_id"];
         $this->mostrarProximaQuestao();        
     }
     
@@ -218,10 +219,12 @@ class QuizControle extends ControleBase {
     public function salvarRank(){
         $rank = new Rank();
         $usuarioDAO = new UsuarioDAO();
+        $quizDAO = new QuizDAO();
         $rank->setPontuacao($_SESSION["pontuacao"]);
         $rank->setAcerto($_SESSION["pontuacao"]);
         $rank->setErro(count($_SESSION["questoes_respondidas"])-$_SESSION["pontuacao"]);
         $rank->setUsuario($usuarioDAO->selecionar($_SESSION["id_usuario"]));
+        $rank->setQuiz($quizDAO->selecionar($_SESSION["quiz_id"]));
         $RankDAO = new RankDAO();
 
         $RankDAO->inserir($rank);
