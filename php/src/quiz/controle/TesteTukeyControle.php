@@ -50,7 +50,7 @@ class TesteTukeyControle extends ControleBase {
         $J = $_POST["n_blocos"];
 
         $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "calculadora/teste_tukey/quadro.html", 
+        $this->mostrarPaginaLayout($layout, "dbc/quadro.html", 
             [ "I" => $I, "J" => $J ]);
     }
 

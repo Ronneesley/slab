@@ -5,7 +5,7 @@
         <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
             Teste de Tukey
         </div>
-            <form  method="POST" action="./index.php?controle=dbc&acao=montar_quadro">
+            <form  method="POST" action="./index.php?controle=teste_tukey&acao=montar_quadro">
                 <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
                     <label class="text-dark fw-bold mb-2 mx-2 ">Número de Tratamentos</label>
                     <input type="text" class="form-control" name="n_tratamentos" placeholder="Digite o nº de tratamentos">
@@ -23,7 +23,7 @@
 
 
             <div class="mb-3">
-                <form action="./index.php?controle=tukey&acao=importar" method="post" enctype="multipart/form-data">
+                <form action="./index.php?controle=teste_tukey&acao=importar" method="post" enctype="multipart/form-data">
                     <label for="arquivo" class="form-label text-dark mx-2 fw-bold">Selecione um arquivo JSON/CSV:</label>
                     <input type="file" name="arquivo" id="arquivo" accept=".json" class="form-control">
                     <br>

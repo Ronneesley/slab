@@ -17,7 +17,7 @@ class Rank {
 
     private $usuario;
     
-    private $curso;
+    private $quiz;
     
     public function __construct() {
         
@@ -43,8 +43,8 @@ class Rank {
         return $this->usuario;
     }
 
-    public function getCurso() {
-        return $this->curso;
+    public function getQuiz() {
+        return $this->quiz;
     }
 
     
@@ -68,8 +68,8 @@ class Rank {
         $this->usuario = $usuario;
     }
 
-    public function setCurso($curso): void {
-        $this->curso = $curso;
+    public function setQuiz($quiz): void {
+        $this->quiz = $quiz;
     }
 }
 

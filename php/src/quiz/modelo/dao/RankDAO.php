@@ -5,6 +5,7 @@ use pdo;
 
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Rank;
+use QuizEstatistico\modelo\dto\Usuario;
 
 /**
  * Classe para acesso aos dados do rank
@@ -40,7 +41,17 @@ class RankDAO extends DAO {
     public function listar(){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select  usuarios.id ,usuarios.nome,ranks.pontuacao as 'pontuacao', ranks.acerto as 'acerto', ranks.erro as 'erro', cursos.nome as 'curso' from slab.ranks left join slab.usuarios on ranks.usuario =  usuarios.id left join slab.cursos on usuarios.curso = cursos.id  order by pontuacao desc");
+        $stmt = $con->prepare(
+            "select usuarios.id as id_usuario, 
+            usuarios.nome as nome_usuario, 
+            r.pontuacao as 'pontuacao', 
+            r.acerto as 'acerto', 
+            r.erro as 'erro', 
+            from ranks as r
+            left join usuarios as u
+            on r.usuario = u.id 
+            order by r.pontuacao desc");
+
         $stmt->execute();
         $res = $stmt->fetchAll();
         
@@ -49,11 +60,16 @@ class RankDAO extends DAO {
         foreach ($res as $dados){
             $c = new Rank();
             $c->setId($dados["id"]);
-            $c->setUsuario($dados["nome"]);
+
+
+            $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"]);
+            $c->setUsuario($u);
+            
+
             $c->setPontuacao($dados["pontuacao"]);
             $c->setAcerto($dados["acerto"]);
             $c->setErro($dados["erro"]);
-            $c->setCurso($dados["curso"]);
+            //$c->setCurso($dados["curso"]);
             
             array_push($lista, $c);
         }
