@@ -134,11 +134,18 @@ CREATE TABLE IF NOT EXISTS `slab`.`ranks` (
   `acerto` INT NOT NULL,
   `erro` INT NOT NULL,
   `usuario` INT NOT NULL,
+  `quiz` INT NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_ranks_usuarios1_idx` (`usuario` ASC) VISIBLE,
+  INDEX `fk_ranks_quizzes1_idx` (`quiz` ASC) VISIBLE,
   CONSTRAINT `fk_ranks_usuarios1`
     FOREIGN KEY (`usuario`)
     REFERENCES `slab`.`usuarios` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ranks_quizzes1`
+    FOREIGN KEY (`quiz`)
+    REFERENCES `slab`.`quizzes` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
