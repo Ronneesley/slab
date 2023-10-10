@@ -61,9 +61,11 @@ class RankDAO extends DAO {
             $c = new Rank();
             $c->setId($dados["id"]);
 
+
             $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"]);
             $c->setUsuario($u);
             
+
             $c->setPontuacao($dados["pontuacao"]);
             $c->setAcerto($dados["acerto"]);
             $c->setErro($dados["erro"]);
