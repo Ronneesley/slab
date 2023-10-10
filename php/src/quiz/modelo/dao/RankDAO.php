@@ -42,15 +42,10 @@ class RankDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare(
-            "select usuarios.id as id_usuario, 
-            usuarios.nome as nome_usuario, 
-            r.pontuacao as 'pontuacao', 
-            r.acerto as 'acerto', 
-            r.erro as 'erro', 
-            from ranks as r
-            left join usuarios as u
-            on r.usuario = u.id 
-            order by r.pontuacao desc");
+            "select u.id as 'id_usuario', u.nome as 'nome_usuario', sum(r.pontuacao) 
+            as 'pontuacao_acumulada', sum(r.acerto) as 'acertos_acumulados', sum(r.erro) 
+            as 'erros acumulados' from ranks as r left join usuarios as u on r.usuario = u.id 
+            group by u.id order by sum(r.pontuacao) desc");
 
         $stmt->execute();
         $res = $stmt->fetchAll();
@@ -59,16 +54,13 @@ class RankDAO extends DAO {
         
         foreach ($res as $dados){
             $c = new Rank();
-            $c->setId($dados["id"]);
-
-
             $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"]);
+            $u->setId($dados["id_usuario"]);
+            $u->setNome($dados["nome_usuario"]);
             $c->setUsuario($u);
-            
-
-            $c->setPontuacao($dados["pontuacao"]);
-            $c->setAcerto($dados["acerto"]);
-            $c->setErro($dados["erro"]);
+            $c->setPontuacao($dados["pontuacao_acumulada"]);
+            $c->setAcerto($dados["acertos_acumulados"]);
+            $c->setErro($dados["erros acumulados"]);
             //$c->setCurso($dados["curso"]);
             
             array_push($lista, $c);
