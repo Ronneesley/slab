@@ -1,4 +1,6 @@
 <link rel="stylesheet" href="./css/quiz_inicio.css">
+<link rel="icon" href="../imagens/miniatura_logo.png">
+<link href="../dist/output.css" rel="stylesheet">
         
 <div id="painel" class="quiz_css">
     <table>
@@ -18,6 +20,21 @@
             </td>
 
             <td><img src="./imagens/laptop.png" id="imglaptop"></td>
+
+            <td>
+            <div id="centro">
+                <select
+                class="w-full mt-1 p-2 text-xl outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
+                id="curso" name="curso">
+                <option>Selecione um Tema</option>
+                {% for curso in cursos %}
+                <option value="{{ curso.id }}" {{ curso.id==usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}
+                </option>
+                {% endfor %}
+                </select>
+            </div>
+            </td>
         </tr>
+
     </table>           
 </div>

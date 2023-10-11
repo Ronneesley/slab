@@ -1,62 +1,67 @@
 .quiz_css body {
-    margin: auto;
-    padding: auto;
+  margin: auto;
+  padding: auto;
 }
-.quiz_css nav{
-    background-color: rgb(253, 253, 0);
-    height: 75px;
-}
-
-#logo{
-    height: 70px;
-    width: 70px;
+.quiz_css nav {
+  background-color: rgb(253, 253, 0);
+  height: 75px;
 }
 
-#divmenu{
-    margin: -55px 0px 20px 150px;
+#logo {
+  height: 70px;
+  width: 70px;
+}
+
+#divmenu {
+  margin: -55px 0px 20px 150px;
 }
 
 #divmenu div {
-    display: inline;
-    padding: 0px 30px 0px 100px;
-    margin: 0px 0px 0px 0px;
+  display: inline;
+  padding: 0px 30px 0px 100px;
+  margin: 0px 0px 0px 0px;
 }
 
 #painel {
-    margin: 0px;
-    border-style: solid;
-    background-color: #F0F0F0;
-    height: 930px;
-    width: 1900px;
-    padding: 0px 0px 0px 0px;
-    position: fixed;
+  margin: 0px;
+  border-style: solid;
+  background-color: #f0f0f0;
+  height: 930px;
+  width: 1900px;
+  padding: 0px 0px 0px 0px;
+  position: fixed;
 }
 
-.quiz_css .a{
-    cursor: pointer; 
+.quiz_css .a {
+  cursor: pointer;
 }
 
-#imgcomeca{
-    position: absolute;
-    left: 650px;
-    top: 300px;
-
+#imgcomeca {
+  position: absolute;
+  left: 650px;
+  top: 300px;
 }
 
-#imgquiz{
-    position: absolute;
-    left: 580px;
-    top: 50px;
+#centro {
+  position: absolute;
+  padding-left: 36%;
+  padding-top: 23%;
 }
 
-#imghomem{
-    position: absolute;
-    left: 200px;
-    top: 300px;
+#imgquiz {
+  position: absolute;
+  left: 580px;
+  top: 50px;
 }
 
-#imglaptop{
-    position: absolute;
-    left: 1100px;
-    top: 280px;
+#imghomem {
+  position: absolute;
+  left: 200px;
+  top: 300px;
+}
+
+#imglaptop {
+  position: absolute;
+  left: 1100px;
+  top: 280px;
 }
