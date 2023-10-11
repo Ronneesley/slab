@@ -1,35 +1,48 @@
-<link rel="stylesheet" href="./css/fim.css" />
+<link rel="icon" href="../imagens/miniatura_logo.png" />
+<link href="../dist/output.css" rel="stylesheet" />
 
-<div class="final">
-  <table class="imagem">
-    <tr>
-      <td colspan="3">
-        <div class="m-0"><img src="./imagens/quiz.png" id="imgquiz" /></div>
-      </td>
-    </tr>
-  </table>
-  <div class="text-center">
-    <strong><h1 class="reslth1">Resultado</h1></strong>
-
-    <p class="reslt">
-      {{ pontuacao }} acertos de {{ qtde_questoes_respondidas }} questões
-    </p>
-    <br />
-
-    <a href="./index.php?controle=principal&acao=inicio" class="link">
-      Voltar para a página inicial do Quiz
-    </a>
+<div
+  class="container flex justify-center items-center mx-auto h-full w-full p-10"
+>
+  <div class="w-1/2 mx-auto">
+    <img
+      src="./imagens/quiz.png"
+      id="imgquiz"
+      alt="logo_quiz"
+      class="mx-auto h-auto w-auto"
+    />
     <br />
     <br />
+    <div class="text-center">
+      <strong><h1 class="reslth1">Resultado:</h1></strong>
+      <br />
+      <p>{{ pontuacao }} acertos de {{ qtde_questoes_respondidas }} questões</p>
+      <br />
 
-    <a href="./index.php?controle=quiz&acao=comecar" class="link">
-      Tentar novamente
-    </a>
-    <br />
-    <br />
+      <a
+        href="./index.php?controle=principal&acao=inicio"
+        class="text-blue-500 hover:underline"
+      >
+        Voltar para a página inicial
+      </a>
+      <br />
+      <br />
 
-    <a href="./index.php?controle=rank&acao=listar" class="link">
-      Ranking
-    </a>
+      <a
+        href="./index.php?controle=quiz&acao=comecar"
+        class="text-blue-500 hover:underline"
+      >
+        Tentar novamente
+      </a>
+      <br />
+      <br />
+
+      <a
+        href="./index.php?controle=rank&acao=listar"
+        class="text-blue-500 hover:underline"
+      >
+        Ranking
+      </a>
+    </div>
   </div>
 </div>

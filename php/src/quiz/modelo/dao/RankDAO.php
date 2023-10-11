@@ -6,6 +6,7 @@ use pdo;
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Rank;
 use QuizEstatistico\modelo\dto\Usuario;
+use QuizEstatistico\modelo\dto\Curso;
 
 /**
  * Classe para acesso aos dados do rank
@@ -73,19 +74,42 @@ class RankDAO extends DAO {
     public function selecionar($id){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select usuarios.id, usuarios.nome, sum(ranks.pontuacao) as 'pontuacao', sum(ranks.acerto) as 'acerto', sum(ranks.erro) as 'erro', cursos.nome as 'curso' from ranks left join usuarios on ranks.usuario = usuarios.id left join cursos on usuarios.curso = cursos.id where usuarios.id = ? group by usuarios.id, usuarios.nome;");
+        $stmt = $con->prepare(
+            "select usuarios.id, 
+            usuarios.nome, 
+            sum(ranks.pontuacao) as 'pontuacao', 
+            sum(ranks.acerto) as 'acerto', 
+            sum(ranks.erro) as 'erro',
+            cursos.nome as 'curso', 
+            quizzes.nome as 'quiz' 
+            from ranks 
+            inner join usuarios 
+            on ranks.usuario = usuarios.id
+            inner join cursos 
+            on usuarios.curso = cursos.id 
+            inner join quizzes on 
+            ranks.quiz = quizzes.id 
+            where usuarios.id = ? 
+            group by usuarios.id, usuarios.nome, ranks.id;");
         $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
         $dados = $stmt->fetch();
         
         if ($dados !== false) {
             $c = new Rank();
-            $c->setId($dados["id"]);
-            $c->setUsuario($dados["nome"]);
+            $u = new Usuario();
+            $cs = new Curso();
+
+            $u->setId($dados["id"]);
+            $u->setNome($dados["nome"]);
+            $cs->setNome($dados["curso"]);
+            $c->setId($u->getId());
+            $c->setUsuario($u->getNome());
             $c->setPontuacao($dados["pontuacao"]);
             $c->setAcerto($dados["acerto"]);
             $c->setErro($dados["erro"]);
-            $c->setCurso($dados["curso"]);
+            $c->setQuiz($dados["quiz"]);
+
         
             return $c;
         } else {
