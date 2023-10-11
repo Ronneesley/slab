@@ -1,17 +1,23 @@
-<h1>Teste F</h1>
+<div class="row justify-content-md-center">
+    <div class="col-md-auto border border-dark-subtle p-2 border-4 rounded-1">
+        <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
+            Teste F
+        </div>
 
-<form action="./index.php?controle=teste_f" method="post">
-    <div class="mb-3">
-        <label for="amostra_a" class="form-label">Amostra A:</label>
-        <input type="text" class="col-md-4  form-control" name="amostra_a" id="amostra_a" value="48; 48; 49; 50; 52; 54; 58" />
-    </div>
-      
-    <div class="mb-3">
-        <label for="amostra_b" class="form-label">Amostra B:</label>
-        <input type="text" class="col-md-4 form-control" name="amostra_b" id="amostra_b" value="37; 42; 43; 46; 47; 48" />
-    </div>
+        <form action="./index.php?controle=teste_f" method="post">
+            <div class="mb-3">
+                <label for="amostra_a" class="form-label">Amostra A:</label>
+                <input type="text" class="form-control" name="amostra_a" id="amostra_a" value="48; 48; 49; 50; 52; 54; 58" />
+            </div>
+        
+            <div class="mb-3">
+                <label for="amostra_b" class="form-label">Amostra B:</label>
+                <input type="text" class="form-control" name="amostra_b" id="amostra_b" value="37; 42; 43; 46; 47; 48" />
+            </div>
 
-    <button type="submit" class="btn btn-primary" name="acao" value="calcular">
-        Calcular
-    </button>
-</form>
+            <button type="submit" class="btn btn-primary" name="acao" value="calcular">
+                Calcular
+            </button>
+        </form>
+    </div>
+</div>
