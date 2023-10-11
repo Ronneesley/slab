@@ -1,58 +1,58 @@
 .pergunta {
-    background-color: #faee46;
-    color: black;
-    border-radius: 25px;
-    padding: 30px;
+  background-color: #faee46;
+  color: black;
+  border-radius: 25px;
+  padding: 30px;
 }
 
 .opcao {
-    background-color: #ffffff;
-    border-color: #df2a2d;
-    color: rgb(0, 0, 0);
-    padding: 0px 30px;
-    word-wrap: normal;
-    font-size: 16px;
-    margin: 9px 200px;
-    cursor: pointer;
-    border-radius: 25px;
-    width: 1300px;
-    height: 50px;
+  background-color: #ffffff;
+  border-color: #df2a2d;
+  color: rgb(0, 0, 0);
+  padding: 0px 30px;
+  word-wrap: normal;
+  font-size: 16px;
+  margin: 9px 140px;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 1000px;
+  height: 50px;
 }
 
 .btnproximo {
-    background-color: #df2a2d;
-    border: none;
-    color: white;
-    padding: 20px 150px;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 25px;    
+  background-color: #df2a2d;
+  border: none;
+  color: white;
+  padding: 20px 150px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
 }
 
-.conteudo p{
-    font-family: arial;
-    font-size: 16px;
+.conteudo p {
+  font-family: arial;
+  font-size: 16px;
 }
 
-.txtpontuacao{
-    font-size: 30px;
-    color: #000000;
-    text-align: right;
+.txtpontuacao {
+  font-size: 30px;
+  color: #000000;
+  text-align: right;
 }
 
-.vlpontuacao{
-    font-size: 30px;
-    color: #000000;
-    text-align: center;
+.vlpontuacao {
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
 }
 
-#acertou{
-    background-color: #faee46;
-    padding-top: 15px ;
-    color: #000000;
-    width: 200px;
-    height: 50px;
-    font-size: 25px;
-    text-align: center;
+#acertou {
+  background-color: #faee46;
+  padding-top: 15px;
+  color: #000000;
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+  text-align: center;
 }
