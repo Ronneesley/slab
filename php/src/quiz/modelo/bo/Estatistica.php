@@ -1,5 +1,5 @@
 <?php
-namespace QuizEstatistico\modelo;
+namespace QuizEstatistico\modelo\bo;
 
 class Estatistica {
     public function calcularMedia($V){

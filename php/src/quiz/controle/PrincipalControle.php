@@ -1,118 +1,21 @@
 <?php
-
 namespace QuizEstatistico\controle;
 
-use QuizEstatistico\controle\QuizControle;
-use QuizEstatistico\controle\AdministradorControle;
-use QuizEstatistico\controle\CalculadoraControle;
-use QuizEstatistico\controle\UsuarioControle;
-use QuizEstatistico\controle\DICControle;
-use QuizEstatistico\controle\DBCControle;
-use QuizEstatistico\controle\TesteFControle;
-use QuizEstatistico\controle\TesteTukeyControle;
+session_start();
+
 use QuizEstatistico\modelo\dao\QuizDAO;
 use QuizEstatistico\modelo\dao\UsuarioDAO;
 
 class PrincipalControle extends ControleBase {
 
-    public function processarControles($controle, $acao) {
-        switch ($controle) {
-            case "principal":
-                $this->processar($acao);
-                break;
-            case "quiz":
-                $controle = new QuizControle();
-                $controle->processar($acao);
-                break;
-            case "conceito":
-                $controle = new ConceitoControle();
-                $controle->processar($acao);
-                break;
-            case "curso":
-                $controle = new CursoControle();
-                $controle->processar($acao);
-                break;
-            case "administrador":
-                $controle = new AdministradorControle();
-                $controle->processar($acao);
-                break;
-            case "imagem":
-                $controle = new ImagemControle();
-                $controle->processar($acao);
-                break;
-            case "nivel":
-                $controle = new NivelControle();
-                $controle->processar($acao);
-                break;
-            case "pergunta":
-                $controle = new PerguntaControle();
-                $controle->processar($acao);
-                break;
-            case "questao":
-                $controle = new QuestaoControle();
-                $controle->processar($acao);
-                break;
-            case "rank":
-                $controle = new RankControle();
-                $controle->processar($acao);
-                break;
-            case "tema":
-                $controle = new TemaControle();
-                $controle->processar($acao);
-                break;
-            case "usuario":
-                $controle = new UsuarioControle();
-                $controle->processar($acao);
-                break;
-            case "calculadora":
-                $controle = new CalculadoraControle();
-                $controle->processar($acao);
-                break;
-            case "dic":
-                $controle = new DICControle();
-                $controle->processar($acao);
-                break;
-            case "dbc":
-                $controle = new DBCControle();
-                $controle->processar($acao);
-                break;
-            case "terminalinterativo":
-                $controle = new TerminalInterativoControle();
-                $controle->processar($acao);
-                break;
-            case "teste_f":
-                $controle = new TesteFControle();
-                $controle->processar($acao);
-                break;
-            case "teste_tukey":
-                $controle = new TesteTukeyControle();
-                $controle->processar($acao);
-                break;
-        }
-    }
-
     public function processar($acao) {
+        //Ações que não precisam de login
         switch ($acao) {
-            case "inicio":
-                $this->mostrarPaginaInicial();
-                break;
-            case "inicio_rank":
-                $this->mostrarPaginaInicialRank();
-                break;
             case "login":
                 $this->mostrarPaginaLogin();
                 break;
             case "logar":
                 $this->logar();
-                break;
-            case "quiz":
-                $this->mostrarPaginaInicialQuiz();
-                break;
-            case "conteudos":
-                $this->mostrarConteudos();
-                break;
-            case "expediente":
-                $this->mostrarPaginaExpediente();
                 break;
             case "testar_conexao":
                 $this->testarConexao();
@@ -123,9 +26,35 @@ class PrincipalControle extends ControleBase {
             case "salvar_configuracao":
                 $this->salvarConfiguracao();
                 break;
-            default:                
-                $this->mostrarPaginaVerificacaoInstalacao();
+            default:
+                if (!$this->configuracaoEstaCorreta()) $this->mostrarPaginaVerificacaoInstalacao();
                 break;
+        }
+
+        //Ações que precisam de login
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "inicio":
+                    $this->mostrarPaginaInicial();
+                    break;
+                case "inicio_rank":
+                    $this->mostrarPaginaInicialRank();
+                    break;
+                case "deslogar":
+                    $this->deslogar();
+                    break;
+                case "quiz":
+                    $this->mostrarPaginaInicialQuiz();
+                    break;
+                case "conteudos":
+                    $this->mostrarConteudos();
+                    break;
+                case "expediente":
+                    $this->mostrarPaginaExpediente();
+                    break;
+            }
+        } else {
+            $this->mostrarPaginaLogin("Faça seu login primeiro");
         }
     }
 
@@ -204,12 +133,22 @@ class PrincipalControle extends ControleBase {
                      "banco_dados" => $bancoDados,
                     ]);
     }
+
+    private function configuracaoEstaCorreta(){
+        $dao = new QuizDAO();
+        
+        try {            
+            return true;
+        } catch (\Exception $ex){
+            return false;
+        }
+    }
     
     public function mostrarPaginaVerificacaoInstalacao(){
         $dao = new QuizDAO();
         
         try {            
-            $dao->conectar();            
+            $dao->conectar();
             
             $this->mostrarPaginaLogin();
         } catch (\Exception $ex){
@@ -246,12 +185,18 @@ class PrincipalControle extends ControleBase {
         $usuario = $usuarioDAO->logar($email, $senha);
 
         if ($usuario != null){
-            session_start();
-            $_SESSION["id_usuario"] = $usuario->getId();
+            $_SESSION["usuario"] = $usuario;
+
             $this->mostrarPaginaInicial();
         } else {
             $this->mostrarPaginaLogin("Usuário ou senha incorretos");
         }
+    }
+
+    public function deslogar(){
+        session_destroy();
+
+        $this->mostrarPaginaLogin();
     }
 
     public function mostrarConteudos() {

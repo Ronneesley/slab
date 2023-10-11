@@ -1,5 +1,5 @@
 <?php
-namespace QuizEstatistico\modelo;
+namespace QuizEstatistico\modelo\bo;
 
 class R {
     public function criarArquivoTemporario($nome){

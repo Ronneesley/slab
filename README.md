@@ -22,6 +22,9 @@ sudo ./slab.sh dev
 
 Pronto! Agora você já pode fazer edições nos códigos do SLab e acessá-lo em [localhost:3000](http://localhost:3000).
 
+**NOTA**: em ambiente Windows execute os mesmos arquivos de configuração na versão *Batch (.bat)*.
+Note que a instalação do Node, Composer e Docker deve ser feita separadamente pelo desenvolvedor.
+
 ## Como iniciar o ambiente em produção?
 
 Entre dentro da pasta `bin` e emita o comando:

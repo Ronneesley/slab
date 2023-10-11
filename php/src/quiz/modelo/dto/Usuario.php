@@ -18,6 +18,10 @@ class Usuario {
     private $curso;
 
     private $login;
+
+    public function getPrimeiroNome(){
+        return explode(" ", $this->nome)[0];
+    }
     
     public function getId() {
         return $this->id;

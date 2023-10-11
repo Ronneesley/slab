@@ -6,9 +6,9 @@ use QuizEstatistico\modelo\bo\DBC;
 
 /**
  * Controle para o DBC
- * @author Ronneesley
+ * @author Ronneesley Moura Teles
  */
-class DBCControle extends ControleBase {
+class DBCControle extends DelineamentosControle {
     public function processar($acao){
         switch ($acao){
             case "novo":
@@ -43,10 +43,6 @@ class DBCControle extends ControleBase {
             [ "I" => $I, "J" => $J ]);
     }
 
-    function formatarNumero($numero, $digitos = 2){
-        return strtr( number_format($numero, $digitos) , ".", ",");
-    }
-
     public function calcular(){    
         $tratamentos = $_REQUEST["tratamentos"];
         $leiturasString = $_REQUEST["leituras"];        
@@ -64,23 +60,6 @@ class DBCControle extends ControleBase {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "dbc/dbc.html", 
             [ "dbc" => $dbc ]);
-    }
-
-    function formatarLeituras($leiturasString){
-        $leituras = array();
-        for ($i = 0; $i < count($leiturasString); $i++){
-            $ts = array();
-            
-            for ($j = 0; $j < count($leiturasString[$i]); $j++){                
-                $valorConvertido = floatval(str_replace(",", ".", $leiturasString[$i][$j]));
-                
-                array_push($ts, $valorConvertido);
-            }
-            
-            array_push($leituras, $ts);
-        }
-
-        return $leituras;
     }
 
     public function salvarDados(){

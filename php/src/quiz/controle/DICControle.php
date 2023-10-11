@@ -6,9 +6,9 @@ use QuizEstatistico\modelo\bo\DIC;
 
 /**
  * Controle para as funções integradas ao R
- * @author Ronneesley
+ * @author Ronneesley Moura Teles
  */
-class DICControle extends ControleBase {
+class DICControle extends DelineamentosControle {
     public function processar($acao){
         switch ($acao){
             case "novo":
@@ -41,27 +41,6 @@ class DICControle extends ControleBase {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "dic/quadro.html", 
             [ "I" => $I, "J" => $J ]);
-    }
-
-    function formatarNumero($numero, $digitos = 2){
-        return strtr( number_format($numero, $digitos) , ".", ",");
-    }
-
-    function formatarLeituras($leiturasString){
-        $leituras = array();
-        for ($i = 0; $i < count($leiturasString); $i++){
-            $ts = array();
-            
-            for ($j = 0; $j < count($leiturasString[$i]); $j++){                
-                $valorConvertido = floatval(str_replace(",", ".", $leiturasString[$i][$j]));
-                
-                array_push($ts, $valorConvertido);
-            }
-            
-            array_push($leituras, $ts);
-        }
-
-        return $leituras;
     }
 
     public function calcular(){    

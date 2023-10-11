@@ -2,7 +2,7 @@
 
 namespace QuizEstatistico\controle;
 
-use QuizEstatistico\modelo\R;
+use QuizEstatistico\modelo\bo\R;
 
 /**
  * Classe que gerencia o terminal interativo

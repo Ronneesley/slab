@@ -1,8 +1,8 @@
 <?php
 namespace QuizEstatistico\controle;
 
-use QuizEstatistico\modelo\Estatistica;
-use QuizEstatistico\modelo\TesteF;
+use QuizEstatistico\modelo\bo\Estatistica;
+use QuizEstatistico\modelo\bo\TesteF;
 
 /**
  * Controle para o teste F

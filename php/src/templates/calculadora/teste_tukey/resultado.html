@@ -1,0 +1,39 @@
+<div class="p-3 text-dark" style="font-family: Arial, Helvetica, sans-serif; font-size: 24px; text-align: center;">
+    Resultado
+</div>
+
+<b>Delta: </b>
+{{ teste.delta | number_format(5, ',', '.') }}
+
+<table style="width:50%; font-family: Arial, Helvetica, sans-serif; font-size: 16px; margin-left: 25%;" class="table table-bordered table-hover">
+    <thead class="text-center table-secondary">
+        <tr>
+            <th style="width: 100px;" rowspan="2">Média</th>
+            <th colspan="{{ teste.nClasses }}">Classe</th>
+        </tr>
+
+        <tr>
+            {% for i in 1..teste.nClasses %}
+                <th>{{ teste.getNomeClasse(i) }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for i in 0..teste.nTratamentos - 1 %}
+            <tr>
+                <td class="text-center">{{ teste.mediasOrdenadas[i] | number_format(2, ',', '.') }}</td>
+
+                {% for k in 1..teste.nClasses %}
+                    <td style="text-align: center;">
+                        {% if teste.temClasse(i, k) == true %}
+                            {{ teste.getNomeClasse(k) }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>            
+        {% endfor %}
+    </tbody>
+</table>
+
+Classes com a mesma letra, não diferem estatítisticamente entre si.

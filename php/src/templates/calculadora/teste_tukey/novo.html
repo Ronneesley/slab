@@ -3,30 +3,31 @@
         <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
             Teste de Tukey
         </div>
-            <form  method="POST" action="./index.php?controle=teste_tukey&acao=montar_quadro">
-                <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
-                    <label class="text-dark fw-bold mb-2 mx-2 ">Número de Tratamentos</label>
-                    <input type="text" class="form-control" name="n_tratamentos" placeholder="Digite o nº de tratamentos">
-                </div>
-                <br/>
-                <div style=" font-family: Arial, Helvetica, sans-serif; font-size: 14px; width: 30vw; height: 10vh;">
-                    <label class="text-dark fw-bold mb-2 mx-2" >Número de Blocos</label>
-                    <input type="text" class="form-control" name="n_blocos" placeholder="Digite o nº de blocos"/>                
-                </div>
 
-                <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif;" class="mt-3">
-                    <button type="submit" class="btn btn-dark rounded-3 mx-2">Confirmar</button>
-                </div>
-            </form>
-
-
-            <div class="mb-3">
-                <form action="./index.php?controle=teste_tukey&acao=importar" method="post" enctype="multipart/form-data">
-                    <label for="arquivo" class="form-label text-dark mx-2 fw-bold">Selecione um arquivo JSON/CSV:</label>
-                    <input type="file" name="arquivo" id="arquivo" accept=".json" class="form-control">
-                    <br>
-                    <button type="submit" class="btn btn-dark rounded-3 mx-2" value="Importar">Importar</button>
-                </form>
+        <form  method="POST" action="./index.php?controle=teste_tukey&acao=calcular">
+            <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
+                <label class="text-dark fw-bold mb-2 mx-2">Médias</label>
+                <input type="text" class="form-control" name="medias" placeholder="Digite as médias separadas por ;">
             </div>
+
+            <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
+                <label class="text-dark fw-bold mb-2 mx-2">q (valor tabelado)</label>
+                <input type="text" class="form-control" name="q" placeholder="">
+            </div>
+
+            <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif; font-size: 14px;">
+                <label class="text-dark fw-bold mb-2 mx-2">Quadrado médio do resíduo (QMRes)</label>
+                <input type="text" class="form-control" name="qmRes" placeholder="">
+            </div>
+
+            <div style=" font-family: Arial, Helvetica, sans-serif; font-size: 14px; width: 30vw; height: 10vh;">
+                <label class="text-dark fw-bold mb-2 mx-2" >Número de repetições</label>
+                <input type="text" class="form-control" name="n_repeticoes" placeholder="Digite o nº de repetições"/>
+            </div>
+
+            <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif;" class="mt-3">
+                <button type="submit" class="btn btn-dark rounded-3 mx-2">Calcular</button>
+            </div>
+        </form>
     </div>
 </div>
