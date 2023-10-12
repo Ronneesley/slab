@@ -78,7 +78,7 @@ class UsuarioDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare("select * from usuarios where id = ?");
-        $stmt->bindVAlue(1, $id);
+        $stmt->bindValue(1, $id, PDO::PARAM_INT);
         $stmt->execute();
         $dados = $stmt->fetch();
         

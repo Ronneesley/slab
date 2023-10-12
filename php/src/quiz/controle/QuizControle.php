@@ -55,17 +55,17 @@ class QuizControle extends ControleBase {
     }
     
     public function comecar(){
-        session_start();
+        @session_start();
         
         $_SESSION["pontuacao"] = 0;
         $_SESSION["questoes_respondidas"] = array();
         $_SESSION["ultima_questao"] = "";
-        $_SESSION["quiz_id"] = $_REQUEST["quiz_id"];
+        $_SESSION["quiz_id"] = $_REQUEST["quizzes"];
         $this->mostrarProximaQuestao();        
     }
     
     public function responder(){
-        session_start();
+        @session_start();
         
         $resposta = $_REQUEST["resposta"];
 
@@ -226,7 +226,7 @@ class QuizControle extends ControleBase {
         $rank->setPontuacao($_SESSION["pontuacao"]);
         $rank->setAcerto($_SESSION["pontuacao"]);
         $rank->setErro(count($_SESSION["questoes_respondidas"])-$_SESSION["pontuacao"]);
-        $rank->setUsuario($usuarioDAO->selecionar($_SESSION["id_usuario"]));
+        $rank->setUsuario($_SESSION["usuario"]);
         $rank->setQuiz($quizDAO->selecionar($_SESSION["quiz_id"]));
         $RankDAO = new RankDAO();
 
