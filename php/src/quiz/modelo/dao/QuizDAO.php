@@ -33,7 +33,7 @@ class QuizDAO extends DAO {
     public function listar(){
         $con = $this->conectar();
         
-        $stmt = $con->prepare("select * from cursos");
+        $stmt = $con->prepare("select * from quizzes");
         $stmt->execute();
         $res = $stmt->fetchAll();
         

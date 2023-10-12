@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
 use PHPUnit\Framework\TestCase;
-use QuizEstatistico\modelo\Estatistica;
-use QuizEstatistico\modelo\TesteF;
+use QuizEstatistico\modelo\bo\Estatistica;
+use QuizEstatistico\modelo\bo\TesteF;
 
 final class TesteFTest extends TestCase
 {

@@ -22,15 +22,16 @@
 
       <br /><br />
 
-      <select
-        class="justify-center mx-auto p-2 text-l outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
-        id="quizzes" name="quizzes">
-        <option>Selecione um Tema</option>
-        {% for curso in cursos %}
-        <option value="{{ curso.id }}" {{ curso.id==usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}
-        </option>
-        {% endfor %}
-      </select>
+      <table border="1">
+      {% for quiz in quizzes %}
+        <tr>
+          <td>{{ quiz.nome }}</td>        
+          <td>
+            <a href="#?id={{ quiz.id }}">Selecionar</a>
+          </td>        
+        </tr>
+      {% endfor %}
+      </table>
 
       <br /><br /><br />
 

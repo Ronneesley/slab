@@ -43,9 +43,6 @@ class PrincipalControle extends ControleBase {
                 case "deslogar":
                     $this->deslogar();
                     break;
-                case "quiz":
-                    $this->mostrarPaginaInicialQuiz();
-                    break;
                 case "conteudos":
                     $this->mostrarConteudos();
                     break;
@@ -212,11 +209,6 @@ class PrincipalControle extends ControleBase {
     public function mostrarPaginaInicialRank() {
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "ranking_acertos.html");
-    }
-    
-    public function mostrarPaginaInicialQuiz() {
-        $layout = $this->configurarTemplate("layout.html");
-        $this->mostrarPaginaLayout($layout, "inicio_quiz.html");
     }
 
     public function mostrarPaginaLogin($mensagem = "") {

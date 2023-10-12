@@ -39,7 +39,7 @@ class TesteTukey {
         //Determina a quantidade de tratamentos
         $this->nTratamentos = count($this->mediasOrdenadas);
 
-        list($c, $nC) = $this->classificar($this->mediasOrdenadas, $this->indices, $this->delta);
+        list($c, $nC) = $this->classificar($this->mediasOrdenadas, $this->delta);
 
         $this->setClasses($c);
         $this->setNClasses($nC);
@@ -61,7 +61,7 @@ class TesteTukey {
      * Fontes:
      * https://www.youtube.com/watch?v=9qNXNPqKrAc&ab_channel=JefersonRibeiro
      */
-    public function classificar($mediasO, $indices, $delta){
+    public function classificar($mediasO, $delta){
         //Determina a quantidade de tratamentos
         $n = count($mediasO);
 

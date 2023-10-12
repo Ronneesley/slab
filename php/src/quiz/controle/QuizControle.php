@@ -48,6 +48,9 @@ class QuizControle extends ControleBase {
             case "salvarRank":
                 $this->salvarRank();
                 break;
+            case "quiz":
+                $this->mostrarPaginaInicialQuiz();
+                break;
         }
     }
     
@@ -229,6 +232,15 @@ class QuizControle extends ControleBase {
 
         $RankDAO->inserir($rank);
         
+    }
+
+    public function mostrarPaginaInicialQuiz() {
+        $dao = new QuizDAO();
+        $quizzes = $dao->listar();
+
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "inicio_quiz.html",
+            ["quizzes" => $quizzes]);
     }
 }
 ?>
