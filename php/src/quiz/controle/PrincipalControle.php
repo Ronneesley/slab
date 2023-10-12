@@ -1,8 +1,6 @@
 <?php
 namespace QuizEstatistico\controle;
 
-session_start();
-
 use QuizEstatistico\modelo\dao\QuizDAO;
 use QuizEstatistico\modelo\dao\UsuarioDAO;
 

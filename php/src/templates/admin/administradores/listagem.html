@@ -1,0 +1,53 @@
+<h2>Listagem de Administradores</h2>
+
+<a class="btn btn-primary" href="./index.php?controle=administrador&acao=novo">Criar novo administrador</a>
+<br />
+<br />
+
+{% if mensagem != "" %}
+    <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+        {{ mensagem }}
+    </div>
+{% endif %}
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr>
+            <th style="width: 50px;">ID</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Login</th>
+            <th style="width: 170px;">Opções</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for item in lista %}
+        <tr>
+            <td style="text-align: right;">
+                {{ item.id }}
+            </td>
+
+            <td>
+                {{ item.nome }}
+            </td>
+
+            <td>
+                {{ item.email }}
+            </td>
+
+            <td>
+                {{ item.login }}
+            </td>
+
+            <td style="text-align: center;">
+                <a class="btn btn-primary" 
+                    href="./index.php?controle=administrador&acao=selecionar&id={{ item.id }}">Editar</a>
+                <a class="btn btn-danger" 
+                    href="./index.php?controle=administrador&acao=excluir&id={{ item.id }}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+

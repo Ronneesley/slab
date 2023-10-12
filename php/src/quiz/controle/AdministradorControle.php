@@ -105,13 +105,14 @@ class AdministradorControle extends ControleBase {
         $dao->excluir($_REQUEST["id"]);
     }
     
-    public function listar(){
+    public function listar($mensagem = "", $tipo_mensagem = "success"){
         $dao = new AdministradorDAO();
         $lista = $dao->listar();
         
-        print("<pre>");
-        print_r($lista);
-        print("</pre>");
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/administradores/listagem.html", 
+            ["mensagem" => $mensagem, "lista" => $lista,
+            "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     public function selecionar(){

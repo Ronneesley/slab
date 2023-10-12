@@ -3,6 +3,8 @@ namespace QuizEstatistico\controle;
 
 use Twig\Extra\Intl\IntlExtension;
 
+session_start();
+
 abstract class ControleBase {
     public abstract function processar($acao);
 
@@ -62,6 +64,10 @@ abstract class ControleBase {
     protected function mostrarPaginaLayout($layout, $arquivoPagina, $parametros = array()){
         $parametros["pagina"] = $arquivoPagina;
         $this->configurarVariaveis($parametros);
+
+        /*print("<pre>");
+        print_r($parametros);
+        print("</pre>");*/
 
         echo $layout->render($parametros);
     }

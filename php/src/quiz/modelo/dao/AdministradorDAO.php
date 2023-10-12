@@ -53,6 +53,7 @@ class AdministradorDAO extends DAO {
             $c->setNome($dados["nome"]);
             $c->setEmail($dados["email"]);
             $c->setSenha($dados["senha"]);
+            $c->setLogin($dados["login"]);
             
             array_push($lista, $c);
         }

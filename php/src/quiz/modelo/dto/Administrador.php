@@ -15,6 +15,8 @@ class Administrador {
     private $email;
 
     private $senha;
+
+    private $login;
     
     public function __construct() {
         
@@ -51,8 +53,15 @@ class Administrador {
         $this->senha = $senha;
     }
 
+    public function getLogin()
+    {
+        return $this->login;
+    }
 
-
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
 }
 
 ?>
