@@ -36,7 +36,7 @@ class RankControle extends ControleBase{
     public function mostrarBusca( $rank = new Rank(),
         $mensagem = "", $tipo_mensagem = "success"){
             $rankDAO = new RankDAO();
-            $ranks = $rankDAO->listarRank();
+            $ranks = $rankDAO->listar();
 
             $layout = $this->configurarTemplate("layout.html");
             $this->mostrarPaginaLayout($layout, "ranking_acertos.html",["rank" => $rank, "mensagem" => $mensagem, 

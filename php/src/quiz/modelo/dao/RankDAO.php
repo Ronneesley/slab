@@ -45,8 +45,10 @@ class RankDAO extends DAO {
         $stmt = $con->prepare(
             "select u.id as 'id_usuario', u.nome as 'nome_usuario', sum(r.pontuacao) 
             as 'pontuacao_acumulada', sum(r.acerto) as 'acertos_acumulados', sum(r.erro) 
-            as 'erros acumulados' from ranks as r left join usuarios as u on r.usuario = u.id 
-            group by u.id order by sum(r.pontuacao) desc");
+            as 'erros acumulados', max(c.nome) as 'curso_usuario', max(q.nome) as 'quiz' 
+            from ranks as r left join usuarios as u on r.usuario = u.id 
+            left join cursos as c on u.curso = c.id left join quizzes as q on r.quiz = q.id
+            group by u.id order by sum(r.pontuacao) desc limit 10");
 
         $stmt->execute();
         $res = $stmt->fetchAll();
@@ -55,14 +57,16 @@ class RankDAO extends DAO {
         
         foreach ($res as $dados){
             $c = new Rank();
-            $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"]);
+            $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"], $dados["curso_usuario"]);
+
             $u->setId($dados["id_usuario"]);
             $u->setNome($dados["nome_usuario"]);
+            $u->setCurso($dados["curso_usuario"]);
             $c->setUsuario($u);
             $c->setPontuacao($dados["pontuacao_acumulada"]);
             $c->setAcerto($dados["acertos_acumulados"]);
             $c->setErro($dados["erros acumulados"]);
-            //$c->setCurso($dados["curso"]);
+            $c->setQuiz($dados["quiz"]);
             
             array_push($lista, $c);
         }
@@ -136,38 +140,6 @@ class RankDAO extends DAO {
         $c->setErro($dados["erro"]);
         
         return $c;
-    }
-
-    public function listarRank(){
-        $con = $this->conectar();
-        
-        $stmt = $con->prepare("select u.id as 'id_usuario', 
-        u.nome as 'nome_usuario', 
-        sum(r.pontuacao) as 'pontuacao_rank' 
-        from ranks as r 
-        inner join usuarios as u 
-        on r.usuario = u.id 
-        group by u.id 
-        order by sum(r.pontuacao) desc 
-        limit 10;");
-
-        $stmt->execute();
-        $res = $stmt->fetchAll();
-        
-        $lista = array();
-        
-        foreach ($res as $dados){
-            $c = new Rank();
-            $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"]);
-            $u->setId($dados["id_usuario"]);
-            $u->setNome($dados["nome_usuario"]);
-            $c->setUsuario($u);
-            $c->setPontuacao($dados["pontuacao_rank"]);
-            
-            array_push($lista, $c);
-        }
-        
-        return $lista;
     }
 }
 
