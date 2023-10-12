@@ -17,7 +17,7 @@
     >
       <form action="index.php?controle=rank&acao=selecionar" class="space-y-4" method="post">
         <div class="bg-white p-4 space-y-4 rounded-lg shadow-md mb-4">
-          <label for="buscarId" class="block text-lg text-gray-700 font-semibold">Buscar usuário no rank</label>
+          <label for="buscarId" class="block text-lg text-gray-700 font-semibold">Exibir informação do usuário no rank</label>
           <div class="flex items-center justify-end space-x-4">
             <input type="text" name="id" id="id" placeholder="Digite o id do usuário para buscar" class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500">
             <input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" class="bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full"></input>
@@ -35,11 +35,11 @@
             <div>
               <div>
                 <span class="text-gray-700 font-semibold">ID: </span>
-                <span>{{ rank.id }}</span>
+                <span>{{ rank.usuario.id }}</span>
               </div>
               <div>
                 <span class="text-gray-700 font-semibold">Nome: </span>
-                <span>{{ rank.usuario }}</span>
+                <span>{{ rank.usuario.nome }}</span>
               </div>
               <div>
                 <span class="text-gray-700 font-semibold">Pontuação total: </span>
@@ -54,6 +54,10 @@
                 <span>{{ rank.erro }}</span>
               </div>
               <div>
+                <span class="text-gray-700 font-semibold">Curso: </span>
+                <span>{{ rank.usuario.curso }}</span>
+              </div>
+              <div>
                 <span class="text-gray-700 font-semibold">Quiz: </span>
                 <span>{{ rank.quiz }}</span>
               </div>
@@ -62,119 +66,21 @@
         </div>
       </form>
       <!-- Lista de Ranking -->
+      {% for rank in ranks %}
       <div class="max-w-md mx-auto">
         <!-- Usuário 1 -->
         <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
           <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">1</span>
+            <span class="text-4xl font-semibold text-red-500"> {{ loop.index }} </span>
           </div>
           <div>
-            <h2 class="text-lg font-semibold">Usuário A</h2>
-            <p class="text-gray-600">Pontuação: 950</p>
+            <h2 class="text-lg font-semibold">{{ rank.usuario.nome }}</h2>
+            <p class="text-gray-600">Pontuação: {{ rank.pontuacao }} </p>
           </div>
         </div>
-
-        <!-- Usuário 2 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">2</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário B</h2>
-            <p class="text-gray-600">Pontuação: 890</p>
-          </div>
-        </div>
-
-        <!-- Usuário 3 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">3</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário C</h2>
-            <p class="text-gray-600">Pontuação: 820</p>
-          </div>
-        </div>
-
-        <!-- Usuário 4 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">4</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário D</h2>
-            <p class="text-gray-600">Pontuação: 780</p>
-          </div>
-        </div>
-
-        <!-- Usuário 5 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">5</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário E</h2>
-            <p class="text-gray-600">Pontuação: 650</p>
-          </div>
-        </div>
-
-        <!-- Usuário 6 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">6</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário F</h2>
-            <p class="text-gray-600">Pontuação: 600</p>
-          </div>
-        </div>
-
-        <!-- Usuário 7 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">7</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário G</h2>
-            <p class="text-gray-600">Pontuação: 560</p>
-          </div>
-        </div>
-
-        <!-- Usuário 8 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">8</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário H</h2>
-            <p class="text-gray-600">Pontuação: 550</p>
-          </div>
-        </div>
-
-        <!-- Usuário 9 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">9</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário I</h2>
-            <p class="text-gray-600">Pontuação: 500</p>
-          </div>
-        </div>
-
-        <!-- Usuário 10 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
-            <span class="text-4xl font-semibold text-red-500">10</span>
-          </div>
-          <div>
-            <h2 class="text-lg font-semibold">Usuário J</h2>
-            <p class="text-gray-600">Pontuação: 250</p>
-          </div>
-        </div>
-
-        <!-- Adicione mais usuários conforme necessário -->
       </div>
+      {% endfor %}
+        <!-- Adicione mais usuários conforme necessário -->
     </div>
     <br />
   </body>
