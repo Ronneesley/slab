@@ -33,6 +33,16 @@
       {% endfor %}
       </table>
 
+      <select
+              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
+              id="quizzes" name="quizzes">
+              <option>Selecione um QUIZ</option>
+              {% for quiz in quizzes %}
+              <option value="{{ quiz.id }}" {{ quiz.id==nome.quiz.id ? "selected" : "" }}>{{ quiz.nome }}
+              </option>
+              {% endfor %}
+            </select>
+
       <br /><br /><br />
 
       <button
