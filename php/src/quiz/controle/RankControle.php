@@ -3,6 +3,7 @@ namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\dto\Rank;
 use QuizEstatistico\modelo\dao\RankDAO;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Description of RankControle
@@ -11,25 +12,30 @@ use QuizEstatistico\modelo\dao\RankDAO;
  */
 class RankControle extends ControleBase{    
     public function processar($acao){
-        switch ($acao){
-            case "buscar":
-                $this->mostrarBusca();
-                break;
-            case "inserir":
-                $this->inserir();
-                break;
-            case "alterar":
-                $this->alterar();
-                break;
-            case "listar":
-                $this->listar();
-                break;
-            case "excluir":
-                $this->excluir();
-                break;
-            case "selecionar":
-                $this->selecionar();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "buscar":
+                    $this->mostrarBusca();
+                    break;
+                case "inserir":
+                    $this->inserir();
+                    break;
+                case "alterar":
+                    $this->alterar();
+                    break;
+                case "listar":
+                    $this->listar();
+                    break;
+                case "excluir":
+                    $this->excluir();
+                    break;
+                case "selecionar":
+                    $this->selecionar();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
 

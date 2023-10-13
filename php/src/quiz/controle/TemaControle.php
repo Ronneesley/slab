@@ -3,6 +3,7 @@ namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\dto\Tema;
 use QuizEstatistico\modelo\dao\TemaDAO;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Description of TemaControle
@@ -11,28 +12,33 @@ use QuizEstatistico\modelo\dao\TemaDAO;
  */
 class TemaControle extends ControleBase {    
     public function processar($acao){
-        switch ($acao){
-            case "novo":
-                $this->mostrarFormularioCadastro();
-                break;
-            case "salvar":
-                $this->salvar();
-                break;
-            case "inserir":
-                $this->inserir();
-                break;
-            case "alterar":
-                $this->alterar();
-                break;
-            case "listar":
-                $this->listar();
-                break;
-            case "excluir":
-                $this->excluir();
-                break;
-            case "selecionar":
-                $this->selecionar();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "novo":
+                    $this->mostrarFormularioCadastro();
+                    break;
+                case "salvar":
+                    $this->salvar();
+                    break;
+                case "inserir":
+                    $this->inserir();
+                    break;
+                case "alterar":
+                    $this->alterar();
+                    break;
+                case "listar":
+                    $this->listar();
+                    break;
+                case "excluir":
+                    $this->excluir();
+                    break;
+                case "selecionar":
+                    $this->selecionar();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
     

@@ -2,6 +2,7 @@
 namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\bo\TesteTukey;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Controle para o teste de Tukey
@@ -10,13 +11,18 @@ use QuizEstatistico\modelo\bo\TesteTukey;
 class TesteTukeyControle extends ControleBase {    
     
     public function processar($acao){
-        switch ($acao){
-            case "novo":
-                $this->mostrarConfiguracaoInicial();
-                break;
-            case "calcular":
-                $this->calcular();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "novo":
+                    $this->mostrarConfiguracaoInicial();
+                    break;
+                case "calcular":
+                    $this->calcular();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
 

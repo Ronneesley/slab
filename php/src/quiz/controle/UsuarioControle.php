@@ -5,6 +5,7 @@ use QuizEstatistico\modelo\dto\Usuario;
 use QuizEstatistico\modelo\dao\UsuarioDAO;
 use QuizEstatistico\modelo\dto\Curso;
 use QuizEstatistico\modelo\dao\CursoDAO;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Controle de ações relacionadas com usuários
@@ -14,8 +15,13 @@ class UsuarioControle extends ControleBase {
     public function processar($acao){
         switch ($acao){
             case "novo":
-                $this->mostrarFormularioCadastro();
-                break;
+                if ($this->estaLogado()){
+                    $this->mostrarFormularioCadastro();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "esqueci_senha":
                 $this->mostrarFormularioEsqueciSenha();
                 break;
@@ -23,26 +29,61 @@ class UsuarioControle extends ControleBase {
                 $this->mostrarFormularioCadastreSe();
                 break;
             case "inserir_novo":
-                $this->inserir_novo();
-                break;
+                if ($this->estaLogado()){
+                    $this->inserir_novo();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "salvar":
-                $this->salvar();
-                break;
+                if ($this->estaLogado()){
+                    $this->salvar();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "inserir":
-                $this->inserir();
-                break;
+                if ($this->estaLogado()){
+                    $this->inserir();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "alterar":
-                $this->alterar();
-                break;
+                if ($this->estaLogado()){
+                    $this->alterar();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "listar":
-                $this->listar();
-                break;
+                if ($this->estaLogado()){
+                    $this->listar();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "excluir":
-                $this->excluir();
-                break;
+                if ($this->estaLogado()){
+                    $this->excluir();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
             case "selecionar":
-                $this->selecionar();
-                break;
+                if ($this->estaLogado()){
+                    $this->selecionar();
+                    break;
+                }else{
+                    $p = new PrincipalControle();
+                    $p->mostrarPaginaLogin("Faça login primeiro!");
+                }
         }
     }
     

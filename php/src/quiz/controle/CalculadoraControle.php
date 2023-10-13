@@ -11,7 +11,6 @@ use QuizEstatistico\controle\PrincipalControle;
 class CalculadoraControle extends ControleBase {
     public function processar($acao){
         if ($this->estaLogado()){
-            
             switch ($acao){
                 case "mostrar_calculo_media":
                     $this->mostrarCalculadoraMedia();

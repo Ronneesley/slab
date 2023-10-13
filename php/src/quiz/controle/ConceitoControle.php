@@ -1,15 +1,22 @@
 <?php
 namespace QuizEstatistico\controle;
 
+use QuizEstatistico\controle\PrincipalControle;
+
 /**
  * Classe de Controle de conceitos
  */
 class ConceitoControle extends ControleBase {
     public function processar($acao){
-        switch ($acao){
-            case "exibir":
-                $this->exibir();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "exibir":
+                    $this->exibir();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
     

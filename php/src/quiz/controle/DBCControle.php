@@ -3,6 +3,7 @@
 namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\bo\DBC;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Controle para o DBC
@@ -10,22 +11,27 @@ use QuizEstatistico\modelo\bo\DBC;
  */
 class DBCControle extends DelineamentosControle {
     public function processar($acao){
-        switch ($acao){
-            case "novo":
-                $this->mostrarConfiguracaoInicial();
-                break;
-            case "montar_quadro":
-                $this->montarQuadro();
-                break;
-            case "calcular":
-                $this->calcular();
-                break;
-            case "salvar_dados":
-                $this->salvarDados();
-                break;
-            case "importar":
-                $this->importar();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "novo":
+                    $this->mostrarConfiguracaoInicial();
+                    break;
+                case "montar_quadro":
+                    $this->montarQuadro();
+                    break;
+                case "calcular":
+                    $this->calcular();
+                    break;
+                case "salvar_dados":
+                    $this->salvarDados();
+                    break;
+                case "importar":
+                    $this->importar();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
 

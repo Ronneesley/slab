@@ -3,6 +3,7 @@ namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\bo\Estatistica;
 use QuizEstatistico\modelo\bo\TesteF;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Controle para o teste F
@@ -10,13 +11,18 @@ use QuizEstatistico\modelo\bo\TesteF;
  */
 class TesteFControle extends ControleBase {    
     public function processar($acao){
-        switch ($acao){
-            case "novo_teste":
-                $this->novoTeste();
-                break;
-            case "calcular":
-                $this->calcular();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "novo_teste":
+                    $this->novoTeste();
+                    break;
+                case "calcular":
+                    $this->calcular();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
 
