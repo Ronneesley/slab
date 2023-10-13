@@ -2,77 +2,85 @@
 
 namespace QuizEstatistico\controle;
 
+use QuizEstatistico\controle\PrincipalControle;
+
 /**
  * Controle para as funções integradas ao R
  * @author Ronneesley
  */
 class CalculadoraControle extends ControleBase {
     public function processar($acao){
-        switch ($acao){
-            case "mostrar_calculo_media":
-                $this->mostrarCalculadoraMedia();
-                break;
-            case "mostrar_calculo_mediana":
-                $this->mostrarCalculadoraMediana();
-                break;
-            case "mostrar_calculo_amplitude":
-                $this->mostrarCalculadoraAmplitude();
-                break;
-            case "mostrar_calculo_moda":
-                $this->mostrarCalculadoraModa();
-                break;
-            case "mostrar_calculo_desvio_amostral":
-                $this->mostrarCalculadoraDesvioAmostral();
-                break;
-            case "mostrar_calculo_desvio_populacional":
-                $this->mostrarCalculadoraDesvioPopulacional();
-                break;
-            case "mostrar_calculo_coeficiente_variacao_amostral":
-                $this->mostrarCalculadoraCoeficienteVariacaoAmostral();
-                break;
-            case "mostrar_calculo_coeficiente_variacao_populacional":
-                $this->mostrarCalculadoraCoeficienteVariacaoPopulacional();
-                break;
-            case "mostrar_calculo_variancia_amostral":
-                $this->mostrarCalculadoraVarianciaAmostral();
-                break;
-            case "mostrar_calculo_variancia_populacional":
-                $this->mostrarCalculadoraVarianciaPopulacional();
-                break;
-            case "calcular_media":
-                $this->calcularMedia();
-                break;
-            case "calcular_mediana":
-                $this->calcularMediana();
-                break;
-            case "calcular_moda":
-                $this->calcularModa();
-                break;
-            case "calcular_amplitude":
-                $this->calcularAmplitude();
-                break;
-            case "calcular_variancia_amostral":
-                $this->calcularVarianciaAmostral();
-                break;
-            case "calcular_variancia_populacional":
-                $this->calcularVarianciaPopulacional();
-                break;
-            case "calcular_desvio_amostral":
-                $this->calcularDesvioAmostral();
-                break;
-            case "calcular_desvio_populacional":
-                $this->calcularDesvioPopulacional();
-                break;    
-            case "calcular_coeficiente_variacao_amostral":
-                $this->calcularCoeficienteAmostral();
-                break;      
-            case "calcular_coeficiente_variacao_populacional":
-                $this->calcularCoeficientePopulacional();
-                break;                                                    
-            case "opcoes":
-                $this->mostrarOpcoes();
-                break;
-        }        
+        if ($this->estaLogado()){
+            
+            switch ($acao){
+                case "mostrar_calculo_media":
+                    $this->mostrarCalculadoraMedia();
+                    break;
+                case "mostrar_calculo_mediana":
+                    $this->mostrarCalculadoraMediana();
+                    break;
+                case "mostrar_calculo_amplitude":
+                    $this->mostrarCalculadoraAmplitude();
+                    break;
+                case "mostrar_calculo_moda":
+                    $this->mostrarCalculadoraModa();
+                    break;
+                case "mostrar_calculo_desvio_amostral":
+                    $this->mostrarCalculadoraDesvioAmostral();
+                    break;
+                case "mostrar_calculo_desvio_populacional":
+                    $this->mostrarCalculadoraDesvioPopulacional();
+                    break;
+                case "mostrar_calculo_coeficiente_variacao_amostral":
+                    $this->mostrarCalculadoraCoeficienteVariacaoAmostral();
+                    break;
+                case "mostrar_calculo_coeficiente_variacao_populacional":
+                    $this->mostrarCalculadoraCoeficienteVariacaoPopulacional();
+                    break;
+                case "mostrar_calculo_variancia_amostral":
+                    $this->mostrarCalculadoraVarianciaAmostral();
+                    break;
+                case "mostrar_calculo_variancia_populacional":
+                    $this->mostrarCalculadoraVarianciaPopulacional();
+                    break;
+                case "calcular_media":
+                    $this->calcularMedia();
+                    break;
+                case "calcular_mediana":
+                    $this->calcularMediana();
+                    break;
+                case "calcular_moda":
+                    $this->calcularModa();
+                    break;
+                case "calcular_amplitude":
+                    $this->calcularAmplitude();
+                    break;
+                case "calcular_variancia_amostral":
+                    $this->calcularVarianciaAmostral();
+                    break;
+                case "calcular_variancia_populacional":
+                    $this->calcularVarianciaPopulacional();
+                    break;
+                case "calcular_desvio_amostral":
+                    $this->calcularDesvioAmostral();
+                    break;
+                case "calcular_desvio_populacional":
+                    $this->calcularDesvioPopulacional();
+                    break;    
+                case "calcular_coeficiente_variacao_amostral":
+                    $this->calcularCoeficienteAmostral();
+                    break;      
+                case "calcular_coeficiente_variacao_populacional":
+                    $this->calcularCoeficientePopulacional();
+                    break;                                                    
+                case "opcoes":
+                    $this->mostrarOpcoes();
+                    break;
+            }        
+        }else{
+                $p = new PrincipalControle();
+                $p->mostrarPaginaLogin("Faça login primeiro!");
+        }
     }
     
     public function criarArquivoTemporario($nome){

@@ -12,37 +12,42 @@ use QuizEstatistico\controle\PrincipalControle;
  */
 class AdministradorControle extends ControleBase {    
     public function processar($acao){
-        switch ($acao){
-            case "painel":
-                $this->mostrarPainelAdministrativo();
-                break;
-            case "login":
-                $this->mostrarPaginaLogin();
-                break;
-            case "deslogar":
-                $this->deslogar();
-                break;
-            case "logar":
-                $this->logar();
-                break;
-            case "inserir":
-                $this->inserir();
-                break;
-            case "alterar":
-                $this->alterar();
-                break;
-            case "listar":
-                $this->listar();
-                break;
-            case "excluir":
-                $this->excluir();
-                break;
-            case "selecionar":
-                $this->selecionar();
-                break;
-            case "novo":
-                $this->mostrarFormularioCadastro();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "painel":
+                    $this->mostrarPainelAdministrativo();
+                    break;
+                case "login":
+                    $this->mostrarPaginaLogin();
+                    break;
+                case "deslogar":
+                    $this->deslogar();
+                    break;
+                case "logar":
+                    $this->logar();
+                    break;
+                case "inserir":
+                    $this->inserir();
+                    break;
+                case "alterar":
+                    $this->alterar();
+                    break;
+                case "listar":
+                    $this->listar();
+                    break;
+                case "excluir":
+                    $this->excluir();
+                    break;
+                case "selecionar":
+                    $this->selecionar();
+                    break;
+                case "novo":
+                    $this->mostrarFormularioCadastro();
+                    break;
+            }
+        }else{
+                $p = new PrincipalControle();
+                $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
 

@@ -3,6 +3,7 @@
 namespace QuizEstatistico\controle;
 
 use QuizEstatistico\modelo\bo\R;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Classe que gerencia o terminal interativo
@@ -11,14 +12,19 @@ use QuizEstatistico\modelo\bo\R;
 class TerminalInterativoControle extends ControleBase {
     
     public function processar($acao) {
-        switch ($acao){
-            case "mostrar_terminal":
-                $this->mostrarTerminal();
-                break;
-
-            case "processar":
-                $this->processarR();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "mostrar_terminal":
+                    $this->mostrarTerminal();
+                    break;
+    
+                case "processar":
+                    $this->processarR();
+                    break;
+            }
+        }else{
+                $p = new PrincipalControle();
+                $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
     

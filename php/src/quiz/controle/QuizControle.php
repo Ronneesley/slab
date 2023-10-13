@@ -9,6 +9,7 @@ use QuizEstatistico\modelo\dao\UsuarioDAO;
 use QuizEstatistico\modelo\dao\RankDAO;
 use QuizEstatistico\modelo\dto\Rank;
 use QuizEstatistico\modelo\dto\Usuario;
+use QuizEstatistico\controle\PrincipalControle;
 
 /**
  * Description of QuizControle
@@ -17,41 +18,46 @@ use QuizEstatistico\modelo\dto\Usuario;
  */
 class QuizControle extends ControleBase {
     public function processar($acao){
-        switch ($acao){
-            case "novo":
-                $this->mostrarFormularioCadastro();
-                break;
-            case "comecar":
-                $this->comecar();
-                break;
-            case "responder":
-                $this->responder();
-                break;
-            case "proximo":
-                $this->mostrarProximaQuestao();
-                break;
-            case "inserir":
-                $this->inserir();
-                break;
-            case "alterar":
-                $this->alterar();
-                break;
-            case "listar":
-                $this->listar();
-                break;
-            case "excluir":
-                $this->excluir();
-                break;
-            case "selecionar":
-                $this->selecionar();
-                break;
-            case "salvarRank":
-                $this->salvarRank();
-                break;
-            case "quiz":
-                $this->mostrarPaginaInicialQuiz();
-                break;
-        }
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "novo":
+                    $this->mostrarFormularioCadastro();
+                    break;
+                case "comecar":
+                    $this->comecar();
+                    break;
+                case "responder":
+                    $this->responder();
+                    break;
+                case "proximo":
+                    $this->mostrarProximaQuestao();
+                    break;
+                case "inserir":
+                    $this->inserir();
+                    break;
+                case "alterar":
+                    $this->alterar();
+                    break;
+                case "listar":
+                    $this->listar();
+                    break;
+                case "excluir":
+                    $this->excluir();
+                    break;
+                case "selecionar":
+                    $this->selecionar();
+                    break;
+                case "salvarRank":
+                    $this->salvarRank();
+                    break;
+                case "quiz":
+                    $this->mostrarPaginaInicialQuiz();
+                    break;
+                }
+            }else{
+                $p = new PrincipalControle();
+                $p->mostrarPaginaLogin("Faça login primeiro!");
+            }
     }
     
     public function comecar(){
