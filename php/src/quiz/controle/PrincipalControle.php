@@ -7,8 +7,8 @@ use QuizEstatistico\modelo\dao\UsuarioDAO;
 class PrincipalControle extends ControleBase {
 
     public function processar($acao) {
-        //Ações que não precisam de login
         switch ($acao) {
+            //Ações que não precisam de login
             case "login":
                 $this->mostrarPaginaLogin();
                 break;
@@ -24,32 +24,51 @@ class PrincipalControle extends ControleBase {
             case "salvar_configuracao":
                 $this->salvarConfiguracao();
                 break;
-            default:
-                if (!$this->configuracaoEstaCorreta()) $this->mostrarPaginaVerificacaoInstalacao();
-                break;
-        }
-
-        //Ações que precisam de login
-        if ($this->estaLogado()){
-            switch ($acao){
-                case "inicio":
+            //Ações que precisam de login
+            case "inicio":
+                if ($this->estaLogado()){
                     $this->mostrarPaginaInicial();
                     break;
-                case "inicio_rank":
+                }else{
+                    $this->mostrarPaginaLogin("Faça login primeiro!");
+                    break;
+                }
+            case "inicio_rank":
+                if ($this->estaLogado()){
                     $this->mostrarPaginaInicialRank();
                     break;
-                case "deslogar":
+                }else{
+                    $this->mostrarPaginaLogin("Faça login primeiro!");
+                    break;
+                }
+            case "deslogar":
+                if ($this->estaLogado()){
                     $this->deslogar();
                     break;
-                case "conteudos":
+                }else{
+                    $this->mostrarPaginaLogin("Faça login primeiro!");
+                    break;
+                }
+            case "conteudos":
+                if ($this->estaLogado()){
                     $this->mostrarConteudos();
                     break;
-                case "expediente":
+                }else{
+                    $this->mostrarPaginaLogin("Faça login primeiro!");
+                    break;
+                }
+            case "expediente":
+                if ($this->estaLogado()){
                     $this->mostrarPaginaExpediente();
                     break;
-            }
-        } else {
-            $this->mostrarPaginaLogin("Faça seu login primeiro");
+                }else{
+                    $this->mostrarPaginaLogin("Faça login primeiro!");
+                    break;
+                }
+            default:
+                if (!$this->configuracaoEstaCorreta()) $this->mostrarPaginaVerificacaoInstalacao();
+                $this->mostrarPaginaLogin();
+                break;
         }
     }
 
