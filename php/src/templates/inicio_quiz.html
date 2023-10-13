@@ -22,10 +22,10 @@
 
       <br /><br />
 
+      <p>Selecione um QUIZ</p>
       <select
               class="w-auto mt-2 items-center justify-center p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
               id="quizzes" name="quizzes" required>
-              <option>Selecione um QUIZ</option>
               {% for quiz in quizzes %}
               <option value="{{ quiz.id }}" {{ quiz.id==nome.quiz.id ? "selected" : "" }}>{{ quiz.nome }}
               </option>
