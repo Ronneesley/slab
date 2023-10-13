@@ -22,19 +22,8 @@
 
       <br /><br />
 
-      <table border="1">
-      {% for quiz in quizzes %}
-        <tr>
-          <td>{{ quiz.nome }}</td>        
-          <td>
-            <a href="#?id={{ quiz.id }}">Selecionar</a>
-          </td>        
-        </tr>
-      {% endfor %}
-      </table>
-
       <select
-              class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
+              class="w-auto mt-2 items-center justify-center p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-inset focus:ring-gray-500"
               id="quizzes" name="quizzes" required>
               <option>Selecione um QUIZ</option>
               {% for quiz in quizzes %}
@@ -43,7 +32,7 @@
               {% endfor %}
             </select>
 
-      <br /><br /><br />
+      <br /><br />
 
       <button
         type="submit"
