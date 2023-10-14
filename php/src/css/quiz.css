@@ -93,7 +93,7 @@ input {
   transition: all ease-in-out 0.3s;
 }
 input:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 /*estilos complementares*/
 .a > input {
@@ -131,4 +131,10 @@ input:hover {
   background-color: #590004;
   color: whitesmoke;
   border-radius: 15px;
+}
+button {
+  transition: all ease-in-out 0.2s;
+}
+.btnproximo:hover {
+  transform: scale(1.02);
 }
