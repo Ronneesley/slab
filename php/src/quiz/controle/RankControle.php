@@ -120,9 +120,9 @@ class RankControle extends ControleBase{
         $posicao = $this->encontrarPosicao($lista, $login);
     
         if ($posicao !== null) {
-            $this->mostrarBusca($posicao, "Usuário encontrado na $posicao º posição do rank.", "success");
+            $this->mostrarBusca($posicao, "$login encontrado na $posicao º posição do rank.", "success");
         } else {
-            $this->mostrarBusca(null, "Usuário não encontrado no rank ou não existe.", "error");
+            $this->mostrarBusca(null, "$login não encontrado no rank ou não existe.", "error");
         }
     }
 }

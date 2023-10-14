@@ -152,9 +152,9 @@ class UsuarioControle extends ControleBase {
         $inserir = $dao->inserir($u);
 
         if ($inserir === false) {
-            $this->mostrarFormularioCadastreSe(null, "Falha: E-mail já está em uso", "error");
+            $this->mostrarFormularioCadastreSe(null, "E-mail já está em uso", "error");
         } else {
-            $this->mostrarFormularioCadastreSe($u, "Cadastrado com sucesso!", "success");
+            $this->mostrarFormularioCadastreSe($u, "Usuário cadastrado", "success");
         }
     }
     

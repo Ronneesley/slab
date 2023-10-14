@@ -42,13 +42,15 @@
           </div>
           <div id="resultado" class="container space-y-4 text-md">
             {% if tipo_mensagem == "success" %}
-            <div class="bg-green-400 text-center" role="alert">
-              {{ mensagem }}
-            </div>
-            {% else %}
-            <div class="bg-red-400 text-center">
-              {{ mensagem }}
-            </div>
+              <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3" role="alert">
+                <p class="font-bold">Busca realizada!</p>
+                <p class="text-sm">{{ mensagem }}</p>
+              </div>
+            {% elseif tipo_mensagem == "error" %}
+              <div class="bg-red-100 border-t border-b border-red-500 text-red-700 px-4 py-3" role="alert">
+                <p class="font-bold">Busca realizada!</p>
+                <p class="text-sm">{{ mensagem }}</p>
+              </div>
             {% endif %}
           </div>
         </div>
