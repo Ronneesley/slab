@@ -29,13 +29,8 @@ class UsuarioControle extends ControleBase {
                 $this->mostrarFormularioCadastreSe();
                 break;
             case "inserir_novo":
-                if ($this->estaLogado()){
-                    $this->inserir_novo();
-                    break;
-                }else{
-                    $p = new PrincipalControle();
-                    $p->mostrarPaginaLogin("Faça login primeiro!");
-                }
+                $this->inserir_novo();
+                break;
             case "salvar":
                 if ($this->estaLogado()){
                     $this->salvar();
@@ -96,7 +91,7 @@ class UsuarioControle extends ControleBase {
     }
 
     public function mostrarFormularioCadastreSe($usuario = new Usuario(), 
-        $mensagem = "", $tipo_mensagem = "success"){
+        $mensagem = "", $tipo_mensagem = ""){
         $cursoDAO = new CursoDAO();
         $cursos = $cursoDAO->listar();
         
@@ -136,8 +131,13 @@ class UsuarioControle extends ControleBase {
 
         $dao = new UsuarioDAO();
         $dao->inserir($u);
+
+        if ($dao != false){
+            $this->mostrarFormularioCadastro($u, "Inserido com sucesso!");
+        }else{
+            $this->mostrarFormularioCadastreSe($u, "Erro: E-mail já em uso!", "error");
+        }
         
-        $this->mostrarFormularioCadastro($u, "Inserido com sucesso");
     }
 
      public function inserir_novo(){
@@ -149,9 +149,13 @@ class UsuarioControle extends ControleBase {
         $u->setCurso(new Curso($_REQUEST["curso"]));
 
         $dao = new UsuarioDAO();
-        $dao->inserir($u);
-        
-        $this->mostrarFormularioCadastreSe($u, "Cadastrado com sucesso");
+        $inserir = $dao->inserir($u);
+
+        if ($inserir === false) {
+            $this->mostrarFormularioCadastreSe(null, "Falha: E-mail já está em uso", "error");
+        } else {
+            $this->mostrarFormularioCadastreSe($u, "Cadastrado com sucesso!", "success");
+        }
     }
     
     public function alterar(){

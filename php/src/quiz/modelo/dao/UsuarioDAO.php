@@ -16,18 +16,30 @@ class UsuarioDAO extends DAO {
     
     public function inserir($usuario){
         $con = $this->conectar();
-        
-        $stmt = $con->prepare("insert into usuarios(nome, email, senha, login, curso) 
-                values(?, ?, ?, ?, ?)");
-        $stmt->bindValue(1, $usuario->getNome());
-        $stmt->bindValue(2, $usuario->getEmail());
-        $stmt->bindValue(3, md5($usuario->getSenha()));
-        $stmt->bindValue(4, $usuario->getLogin());
-        $stmt->bindValue(5, $usuario->getCurso()->getId(), PDO::PARAM_INT);
 
+        $stmt = $con->prepare("select count(*) from usuarios where email = ?");
+        $stmt->bindValue(1, $usuario->getEmail());
         $stmt->execute();
+        $res = $stmt->fetchColumn();
 
-        $usuario->setId( $con->lastInsertId() );
+        if ($res > 0){
+            return false;
+        }else{
+            $stmt = $con->prepare("insert into usuarios(nome, email, senha, login, curso) 
+                    values(?, ?, ?, ?, ?)");
+            $stmt->bindValue(1, $usuario->getNome());
+            $stmt->bindValue(2, $usuario->getEmail());
+            $stmt->bindValue(3, md5($usuario->getSenha()));
+            $stmt->bindValue(4, $usuario->getLogin());
+            $stmt->bindValue(5, $usuario->getCurso()->getId(), PDO::PARAM_INT);
+    
+            $stmt->execute();
+    
+            $usuario->setId( $con->lastInsertId() );
+            
+            return true;
+        }
+        
     }
     
     public function alterar($usuario){

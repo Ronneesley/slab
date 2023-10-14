@@ -222,7 +222,18 @@
         </h2>
       </div>
       <div class="md:mx-auto md:w-full">
-        <form method="post" action="./index.php?controle=usuario&acao=salvar" id="cadastrar">
+        <form method="post" action="./index.php?controle=usuario&acao=inserir_novo" id="cadastrar">
+          <div class="mb-6">
+            {% if tipo_mensagem == "success" %}
+              <div class="bg-green-400 text-center" role="alert">
+                {{ mensagem }}
+              </div>
+            {% else %}
+              <div class="bg-red-400 text-center">
+                {{ mensagem }}
+              </div>
+            {% endif %}
+          </div>
           <div class="mb-6">
             <label for="nome" class="block text-gray-700 font-semibold select-none">Nome completo</label>
             <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo"
