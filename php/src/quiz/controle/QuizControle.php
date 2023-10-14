@@ -88,8 +88,8 @@ class QuizControle extends ControleBase {
         $ultima_questao = $_SESSION["ultima_questao"];
         $pontuacao = $_SESSION["pontuacao"];        
         
-        $coloracoes = array("white", "white", "white", "white");
-        $coloracoes[$_SESSION["indice_resposta_correta"]] = "green";
+        $coloracoes = array("#EB6534", "#EB6534", "#EB6534", "#EB6534");
+        $coloracoes[$_SESSION["indice_resposta_correta"]] = "#24bf1f";
         
         if ($acertou){
             if($ultima_questao != $q){
@@ -227,7 +227,6 @@ class QuizControle extends ControleBase {
     }
     public function salvarRank(){
         $rank = new Rank();
-        $usuarioDAO = new UsuarioDAO();
         $quizDAO = new QuizDAO();
         $rank->setPontuacao($_SESSION["pontuacao"]);
         $rank->setAcerto($_SESSION["pontuacao"]);

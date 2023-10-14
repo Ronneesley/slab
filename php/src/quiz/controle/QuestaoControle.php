@@ -74,10 +74,10 @@ class QuestaoControle extends ControleBase {
         $c->setCurso($_REQUEST["curso"]);
         $c->setTema($_REQUEST["tema"]);
         $c->setPergunta($_REQUEST["pergunta"]);
-        $c->setResposta_certa($_REQUEST["resposta_certa"]);
-        $c->setResposta_errada1($_REQUEST["resposta_errada1"]);
-        $c->setResposta_errada2($_REQUEST["resposta_errada2"]);
-        $c->setResposta_errada3($_REQUEST["resposta_errada3"]);
+        $c->setRespostaCerta($_REQUEST["resposta_certa"]);
+        $c->setRespostaErrada1($_REQUEST["resposta_errada1"]);
+        $c->setRespostaErrada2($_REQUEST["resposta_errada2"]);
+        $c->setRespostaErrada3($_REQUEST["resposta_errada3"]);
         $c->setExplicacao($_REQUEST["explicacao"]);
 
 
@@ -94,10 +94,10 @@ class QuestaoControle extends ControleBase {
         $c->setCurso($_REQUEST["curso"]);
         $c->setTema($_REQUEST["tema"]);
         $c->setPergunta($_REQUEST["pergunta"]);
-        $c->setResposta_certa($_REQUEST["resposta_certa"]);
-        $c->setResposta_errada1($_REQUEST["resposta_errada1"]);
-        $c->setResposta_errada2($_REQUEST["resposta_errada2"]);
-        $c->setResposta_errada3($_REQUEST["resposta_errada3"]);
+        $c->setRespostaCerta($_REQUEST["resposta_certa"]);
+        $c->setRespostaErrada1($_REQUEST["resposta_errada1"]);
+        $c->setRespostaErrada2($_REQUEST["resposta_errada2"]);
+        $c->setRespostaErrada3($_REQUEST["resposta_errada3"]);
         $c->setExplicacao($_REQUEST["explicacao"]);
 
         $dao = new QuestaoDAO();

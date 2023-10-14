@@ -1,58 +1,134 @@
-.pergunta {
-  background-color: #faee46;
-  color: black;
-  border-radius: 25px;
-  padding: 30px;
+/*Definição das grids*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.6fr 0.5fr 1.5fr 0.2fr 0fr 0.8fr 0.8fr 0.8fr 0.4fr 0.8fr 0fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . . logoQuiz logoQuiz logoQuiz . . . ."
+    ". . . . . . . . . pontuacao pontuacao"
+    "questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz questaoQuiz"
+    ". . . . . . . . . . ."
+    "form form form form form form form form form form form"
+    "form form form form form form form form form form form"
+    "form form form form form form form form form form form"
+    "form form form form form form form form form form form"
+    "form form form form form form form form form form form"
+    "form form form form form form form form form form form"
+    "form form form form form form form form form form form";
 }
 
-.opcao {
-  background-color: #ffffff;
-  border-color: #df2a2d;
-  color: rgb(0, 0, 0);
-  padding: 0px 30px;
-  word-wrap: normal;
-  font-size: 16px;
-  margin: 9px 140px;
-  cursor: pointer;
-  border-radius: 25px;
-  width: 1000px;
-  height: 50px;
+.logoQuiz {
+  grid-area: logoQuiz;
+  justify-self: center;
 }
 
-.btnproximo {
-  background-color: #df2a2d;
+.questaoQuiz {
+  grid-area: questaoQuiz;
+  background-color: #ffc53a;
+  width: 100%;
+  height: min-content;
+  padding: 20px 20px 20px 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 43px -16px #590004;
+  align-self: center;
+}
+
+.pontuacao {
+  grid-area: pontuacao;
+  justify-self: end;
+  align-self: center;
+  font-size: 1.5em;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "a a a a a a a a"
+    "b b b b b b b b"
+    "c c c c c c c c"
+    "d d d d d d d d"
+    ". . . . prox prox prox prox";
+  grid-area: form;
+}
+
+.a {
+  grid-area: a;
+  justify-self: start;
+  align-self: center;
+}
+
+.b {
+  grid-area: b;
+  justify-self: start;
+  align-self: center;
+}
+
+.c {
+  grid-area: c;
+  justify-self: start;
+  align-self: center;
+}
+
+.d {
+  grid-area: d;
+  justify-self: start;
+  align-self: center;
+}
+
+.prox {
+  grid-area: prox;
+  justify-self: end;
+  align-self: center;
   border: none;
-  color: white;
-  padding: 20px 150px;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 25px;
+  width: 50%;
 }
-
-.conteudo p {
-  font-family: arial;
-  font-size: 16px;
+input {
+  transition: all ease-in-out 0.3s;
 }
-
-.txtpontuacao {
-  font-size: 30px;
-  color: #000000;
-  text-align: right;
+input:hover {
+  transform: scale(1.1);
 }
-
-.vlpontuacao {
-  font-size: 30px;
-  color: #000000;
-  text-align: center;
+/*estilos complementares*/
+.a > input {
+  width: max-content;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  background-color: #eb6534;
+  border-radius: 15px;
 }
-
-#acertou {
-  background-color: #faee46;
-  padding-top: 15px;
-  color: #000000;
-  width: 200px;
-  height: 50px;
-  font-size: 25px;
-  text-align: center;
+.b > input {
+  width: max-content;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  background-color: #eb6534;
+  border-radius: 15px;
+}
+.c > input {
+  width: max-content;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  background-color: #eb6534;
+  border-radius: 15px;
+}
+.d > input {
+  width: max-content;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  background-color: #eb6534;
+  border-radius: 15px;
+}
+.btnproximo {
+  width: 100%;
+  border: none;
+  padding: 20px 20px 20px 20px;
+  background-color: #590004;
+  color: whitesmoke;
+  border-radius: 15px;
 }

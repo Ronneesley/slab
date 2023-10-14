@@ -52,11 +52,11 @@ class RankControle extends ControleBase{
 
     public function inserir(){
         $c = new Rank();
-        $c->setNome($_REQUEST["nome"]);
         $c->setPontuacao($_REQUEST["pontuacao"]);
         $c->setAcerto($_REQUEST["acerto"]);
         $c->setErro($_REQUEST["erro"]);
-        $c->setCurso($_REQUEST["curso"]);
+        $c->setUsuario($_REQUEST["usuario"]);
+        $c->setQuiz($_REQUEST["quiz"]);
 
         $dao = new RankDAO();
         $dao->inserir($c);
@@ -65,11 +65,11 @@ class RankControle extends ControleBase{
     public function alterar(){
         $c = new Rank();
         $c->setId($_REQUEST["id"]);
-        $c->setNome($_REQUEST["nome"]);
         $c->setPontuacao($_REQUEST["pontuacao"]);
         $c->setAcerto($_REQUEST["acerto"]);
         $c->setErro($_REQUEST["erro"]);
-        $c->setCurso($_REQUEST["curso"]);
+        $c->setUsuario($_REQUEST["usuario"]);
+        $c->setQuiz($_REQUEST["quiz"]);
 
         $dao = new RankDAO();
         $dao->alterar($c);

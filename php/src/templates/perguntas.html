@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="./css/quiz.css" />
-
 <script>
   function responder(letra) {
     $("#resposta").val(letra);
@@ -13,85 +12,56 @@
     $("#formulario").submit();
   }
 </script>
-
-<div>
-  <form method="get" action="./index.php" id="formulario">
-    <div class="row">
-      <div class="col">
-        <img
-          src="./imagens/quiz.png"
-          alt="fotologin"
-          height="100"
-          width="200"
-        />
-      </div>
-
-      <div class="col-md-2 txtpontuacao">Pontuação:</div>
-
-      <div class="col-md-1 vlpontuacao">{{ pontuacao }}</div>
+<div class="container">
+  <div class="logoQuiz">
+    <img src="./imagens/quiz.png" alt="fotologin" height="100" width="200" />
+  </div>
+  <div class="pontuacao">
+    <p>Pontuação: {{ pontuacao }}</p>
+  </div>
+  <div class="questaoQuiz">{{ questao.pergunta }}</div>
+  <form class="form" method="get" action="./index.php" id="formulario">
+    <input type="hidden" id="resposta" name="resposta" value="" />
+    <input type="hidden" name="controle" value="quiz" />
+    <input type="hidden" name="acao" id="acao" value="" />
+    <div class="a">
+      <input
+        type="button"
+        class="opcao"
+        style="background-color: {{ coloracoes[0] }}"
+        onclick="responder('0')"
+        value="A) {{ letrasOpcoes[0] }}"
+      />
     </div>
-    <br />
-    <div>
-      <div class="pergunta">{{ questao.pergunta }}</div>
-
-      <p id="opcao">
-        <br />
-        Escolha uma opção:
-      </p>
-
-      <input type="hidden" id="resposta" name="resposta" value="" />
-      <input type="hidden" name="controle" value="quiz" />
-      <input type="hidden" name="acao" id="acao" value="" />
-
-      <div id="A">
-        <input
-          type="button"
-          class="opcao"
-          style="background-color: {{ coloracoes[0] }}"
-          onclick="responder('0')"
-          value="A) {{ letrasOpcoes[0] }}"
-        />
-      </div>
-
-      <div id="B">
-        <input
-          type="button"
-          class="opcao"
-          style="background-color: {{ coloracoes[1] }}"
-          onclick="responder('1')"
-          value="B) {{ letrasOpcoes[1] }}"
-        />
-      </div>
-
-      <div id="C">
-        <input
-          type="button"
-          class="opcao"
-          style="background-color: {{ coloracoes[2] }}"
-          onclick="responder('2')"
-          value="C) {{ letrasOpcoes[2] }}"
-        />
-      </div>
-
-      <div id="D">
-        <input
-          type="button"
-          class="opcao"
-          style="background-color: {{ coloracoes[3] }}"
-          onclick="responder('3')"
-          value="D) {{ letrasOpcoes[3] }}"
-        />
-      </div>
-
-      <div style="text-align: right; margin-top: 40px">
-        <button
-          type="button"
-          class="btnproximo"
-          onclick="mostrarProximaQuestao()"
-        >
-          Próximo
-        </button>
-      </div>
+    <div class="b">
+      <input
+        type="button"
+        class="opcao"
+        style="background-color: {{ coloracoes[1] }}"
+        onclick="responder('1')"
+        value="B) {{ letrasOpcoes[1] }}"
+      />
+    </div>
+    <div class="c">
+      <input
+        type="button"
+        class="opcao"
+        style="background-color: {{ coloracoes[2] }}"
+        onclick="responder('2')"
+        value="C) {{ letrasOpcoes[2] }}"
+      />
+    </div>
+    <div class="d">
+      <input
+        type="button"
+        class="opcao"
+        style="background-color: {{ coloracoes[3] }}"
+        onclick="responder('3')"
+        value="D) {{ letrasOpcoes[3] }}"
+      />
+    </div>
+    <div class="prox">
+      <button type="button" class="btnproximo" onclick="mostrarProximaQuestao()">Próximo</button>
     </div>
   </form>
 </div>
