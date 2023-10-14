@@ -14,7 +14,7 @@ class RankControle extends ControleBase{
     public function processar($acao){
         if ($this->estaLogado()){
             switch ($acao){
-                case "buscar":
+                case "inicio":
                     $this->mostrarBusca();
                     break;
                 case "inserir":
@@ -31,6 +31,9 @@ class RankControle extends ControleBase{
                     break;
                 case "selecionar":
                     $this->selecionar();
+                    break;
+                case "buscar":
+                    $this->buscar();
                     break;
             }
         }else{
@@ -100,13 +103,24 @@ class RankControle extends ControleBase{
 
     public function selecionar(){
         $dao = new RankDAO();
-        $lista = $dao->listar();
+        $c = $dao->selecionar($_REQUEST["id"]);
+        
+        if ($c === null) {
+            $this->mostrarBusca(null, "Usuário não encontrado");
+        } else {
+            $this->mostrarBusca($c, "Usuário encontrado com sucesso!");
+        }
+    }
 
+    public function buscar(){
+        $dao = new RankDAO();
+        $lista = $dao->listar();
+    
         $login = $_REQUEST["login"];
         $posicao = $this->encontrarPosicao($lista, $login);
-
+    
         if ($posicao !== null) {
-            $this->mostrarBusca($posicao, "Usuário encontrado no rank na posição $posicao.", "success");
+            $this->mostrarBusca($posicao, "Usuário encontrado na $posicao º posição do rank.", "success");
         } else {
             $this->mostrarBusca(null, "Usuário não encontrado no rank ou não existe.", "error");
         }

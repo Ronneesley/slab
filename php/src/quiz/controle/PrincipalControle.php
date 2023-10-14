@@ -66,8 +66,7 @@ class PrincipalControle extends ControleBase {
                     break;
                 }
             default:
-                if (!$this->configuracaoEstaCorreta()) $this->mostrarPaginaVerificacaoInstalacao();
-                $this->mostrarPaginaLogin();
+                if ($this->configuracaoEstaCorreta()) $this->mostrarPaginaVerificacaoInstalacao();
                 break;
         }
     }
@@ -164,7 +163,11 @@ class PrincipalControle extends ControleBase {
         try {            
             $dao->conectar();
             
-            $this->mostrarPaginaLogin();
+            if($this->estaLogado()){
+                $this->mostrarPaginaInicial();
+            }else{
+                $this->mostrarPaginaLogin();
+            }
         } catch (\Exception $ex){
             $pagina = $this->configurarTemplate("instalacao/verificacao_instalacao.html");
             
