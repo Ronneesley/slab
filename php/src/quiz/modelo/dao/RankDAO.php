@@ -6,6 +6,7 @@ use pdo;
 use QuizEstatistico\modelo\dao\DAO;
 use QuizEstatistico\modelo\dto\Rank;
 use QuizEstatistico\modelo\dto\Usuario;
+use QuizEstatistico\util\GuardaRank;
 
 /**
  * Classe para acesso aos dados do rank
@@ -43,12 +44,21 @@ class RankDAO extends DAO {
         $con = $this->conectar();
         
         $stmt = $con->prepare(
-            "select u.id as 'id_usuario', u.nome as 'nome_usuario', sum(r.pontuacao) 
-            as 'pontuacao_acumulada', sum(r.acerto) as 'acertos_acumulados', sum(r.erro) 
-            as 'erros acumulados', max(c.nome) as 'curso_usuario', max(q.nome) as 'quiz' 
-            from ranks as r left join usuarios as u on r.usuario = u.id 
-            left join cursos as c on u.curso = c.id left join quizzes as q on r.quiz = q.id
-            group by u.id order by sum(r.pontuacao) desc limit 10");
+            "select u.id as 'id_usuario',
+            u.nome as 'nome_usuario',
+            u.login as 'login_usuario',
+            round(sum(r.acerto) / count(u.id), 0) as 'md_acerto',
+            sum(r.pontuacao) as 'pontuacao_acumulada',
+            sum(r.acerto) as 'acertos_acumulados',
+            sum(r.erro) as 'erros_acumulados',
+            max(c.nome) as 'curso_usuario',
+            max(q.nome) as 'quiz'
+            from ranks as r
+            left join usuarios as u on r.usuario = u.id
+            left join cursos as c on u.curso = c.id
+            left join quizzes as q on r.quiz = q.id
+            group by u.id
+            order by sum(r.pontuacao) desc");
 
         $stmt->execute();
         $res = $stmt->fetchAll();
@@ -57,16 +67,20 @@ class RankDAO extends DAO {
         
         foreach ($res as $dados){
             $c = new Rank();
-            $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"], $dados["curso_usuario"]);
+            $g = new GuardaRank();
+            $u = new Usuario($dados["id_usuario"], $dados["nome_usuario"], $dados["login_usuario"], $dados["curso_usuario"]);
 
             $u->setId($dados["id_usuario"]);
             $u->setNome($dados["nome_usuario"]);
             $u->setCurso($dados["curso_usuario"]);
+            $u->setLogin($dados["login_usuario"]);
             $c->setUsuario($u);
             $c->setPontuacao($dados["pontuacao_acumulada"]);
             $c->setAcerto($dados["acertos_acumulados"]);
-            $c->setErro($dados["erros acumulados"]);
+            $c->setErro($dados["erros_acumulados"]);
             $c->setQuiz($dados["quiz"]);
+            $g->setMd($dados["md_acerto"]);
+            $c->setUtils($g);
             
             array_push($lista, $c);
         }
@@ -74,9 +88,9 @@ class RankDAO extends DAO {
         return $lista;
     }
     
-    public function selecionar($id){
+    public function selecionar($login){
         $con = $this->conectar();
-        
+
         $stmt = $con->prepare(
             "select u.id as 'id_usuario', 
             u.nome as 'nome_usuario', 
@@ -92,9 +106,9 @@ class RankDAO extends DAO {
             on u.curso = c.id 
             inner join quizzes as q 
             on r.quiz = q.id 
-            where u.id = ? 
+            where u.login = ? 
             group by u.id");
-        $stmt->bindValue(1, $id, PDO::PARAM_INT);
+        $stmt->bindValue(1, $login);
         $stmt->execute();
         $dados = $stmt->fetch();
         
@@ -110,7 +124,6 @@ class RankDAO extends DAO {
             $c->setAcerto($dados["acerto"]);
             $c->setErro($dados["erro"]);
             $c->setQuiz($dados["quiz"]);
-
         
             return $c;
         } else {

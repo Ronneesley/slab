@@ -18,6 +18,8 @@ class Rank {
     private $usuario;
     
     private $quiz;
+
+    private $utils;
     
     public function __construct() {
         
@@ -47,6 +49,10 @@ class Rank {
         return $this->quiz;
     }
 
+    public function getUtils() {
+        return $this->utils;
+    }
+
     
     public function setId($id): void {
         $this->id = $id;
@@ -70,6 +76,10 @@ class Rank {
 
     public function setQuiz($quiz): void {
         $this->quiz = $quiz;
+    }
+
+    public function setUtils($utils): void {
+        $this->utils = $utils;
     }
 }
 

@@ -40,7 +40,7 @@ class RankControle extends ControleBase{
     }
 
     public function mostrarBusca( $rank = new Rank(),
-        $mensagem = "", $tipo_mensagem = "success"){
+        $mensagem = "", $tipo_mensagem = ""){
             $rankDAO = new RankDAO();
             $ranks = $rankDAO->listar();
 
@@ -89,14 +89,26 @@ class RankControle extends ControleBase{
         print("</pre>");
     }
     
+    public function encontrarPosicao($lista, $login) {
+        foreach ($lista as $posicao => $rank) {
+            if ($rank->getUsuario()->getLogin() === $login) {
+                return $posicao + 1;
+            }
+    }
+        return null;
+    }
+
     public function selecionar(){
         $dao = new RankDAO();
-        $c = $dao->selecionar($_REQUEST["id"]);
-        
-        if ($c === null) {
-        $this->mostrarBusca(null, "Usuário não encontrado");
+        $lista = $dao->listar();
+
+        $login = $_REQUEST["login"];
+        $posicao = $this->encontrarPosicao($lista, $login);
+
+        if ($posicao !== null) {
+            $this->mostrarBusca($posicao, "Usuário encontrado no rank na posição $posicao.", "success");
         } else {
-        $this->mostrarBusca($c, "Usuário encontrado com sucesso!");
+            $this->mostrarBusca(null, "Usuário não encontrado no rank ou não existe.", "error");
         }
     }
 }

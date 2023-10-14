@@ -7,6 +7,24 @@
     <link rel="icon" href="../imagens/miniatura_logo.png" />
     <link href="../dist/output.css" rel="stylesheet" />
     <script src="{{JS_DIR}}/jquery/dist/jquery.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $("#inp").change(function(){
+          if((this.checked)){
+            $(".svg-top").css("transform", "rotate(180deg)");
+            setTimeout(function () {
+              $(".info").show();
+              }, 100);
+          }else{
+            $(".svg-top").css("transform", "rotate(0deg)");
+            setTimeout(function () {
+              $(".info").hide();
+            }, 100);
+          }
+          })
+      })
+    </script>
   </head>
   <body class="bg-white">
     <br />
@@ -17,13 +35,13 @@
     >
       <form action="index.php?controle=rank&acao=selecionar" class="space-y-4" method="post">
         <div class="bg-white p-4 space-y-4 rounded-lg shadow-md mb-4">
-          <label for="buscarId" class="block text-lg text-gray-700 font-semibold">Exibir informação do usuário no rank</label>
+          <label for="buscarId" class="block text-lg text-gray-700 font-semibold">Buscar usuários no rank</label>
           <div class="flex items-center justify-end space-x-4">
-            <input type="text" name="id" id="id" placeholder="Digite o id do usuário para buscar" class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500">
+            <input type="text" name="login" id="login" placeholder="Digite o nome do usuário para buscar" class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500">
             <input type="submit" name="btnBuscar" id="btnBuscar" value="Buscar" class="bg-red-500 hover:bg-red-700 text-white items-center font-medium py-2 px-6 rounded-full"></input>
           </div>
           <div id="resultado" class="container space-y-4 text-md">
-            {% if rank != null %}
+            {% if tipo_mensagem == "success" %}
             <div class="bg-green-400 text-center" role="alert">
               {{ mensagem }}
             </div>
@@ -32,50 +50,41 @@
               {{ mensagem }}
             </div>
             {% endif %}
-            <div>
-              <div>
-                <span class="text-gray-700 font-semibold">ID: </span>
-                <span>{{ rank.usuario.id }}</span>
-              </div>
-              <div>
-                <span class="text-gray-700 font-semibold">Nome: </span>
-                <span>{{ rank.usuario.nome }}</span>
-              </div>
-              <div>
-                <span class="text-gray-700 font-semibold">Pontuação total: </span>
-                <span>{{ rank.pontuacao }}</span>
-              </div>
-              <div>
-                <span class="text-gray-700 font-semibold">Total de acertos: </span>
-                <span>{{ rank.acerto }}</span>
-              </div>
-              <div>
-                <span class="text-gray-700 font-semibold">Total de erros: </span>
-                <span>{{ rank.erro }}</span>
-              </div>
-              <div>
-                <span class="text-gray-700 font-semibold">Curso: </span>
-                <span>{{ rank.usuario.curso }}</span>
-              </div>
-              <div>
-                <span class="text-gray-700 font-semibold">Quiz: </span>
-                <span>{{ rank.quiz }}</span>
-              </div>
-            </div>
           </div>
         </div>
       </form>
+      <div class="flex">
+        <label for="inp" class="cursor-pointer">
+          <svg class="h-8 w-auto fill-current text-gray-700 hover:text-gray-900 svg-top" viewBox="0 0 32 32"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.997 13.374l-7.081 7.081L7 18.54l8.997-8.998 9.003 9-1.916 1.916z" />
+          </svg>
+        </label>
+        <div class="mx-auto">
+          <span class="text-2xl font-semibold text-gray-700">Top 10 melhores jogadores</span>
+        </div>
+      </div>
       <!-- Lista de Ranking -->
-      {% for rank in ranks %}
+      {% for rank in ranks|slice(0, 10) %}
       <div class="max-w-md mx-auto">
+        <input type="checkbox" id="inp" class="hidden inp-top">
         <!-- Usuário 1 -->
-        <div class="flex items-center bg-white p-4 rounded-lg shadow-md mb-4">
-          <div class="mr-4">
+        <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-md mb-4">
+          <div class="flex mr-4 space-x-4">
             <span class="text-4xl font-semibold text-red-500"> {{ loop.index }} </span>
+            <div class="block">
+              <h2 class="text-lg font-semibold">{{ rank.usuario.login }}</h2>
+              <p class="text-gray-600">Pontuação: {{ rank.pontuacao }} </p>
+            </div>
           </div>
           <div>
-            <h2 class="text-lg font-semibold">{{ rank.usuario.nome }}</h2>
-            <p class="text-gray-600">Pontuação: {{ rank.pontuacao }} </p>
+          </div>
+          <div class="block hidden info space-y-2 text-sm">
+            <p>Nome: {{ rank.usuario.nome }} </p>
+            <p>Curso: {{ rank.usuario.curso }} </p>
+            <p>Acertou: {{ rank.acerto }} perguntas</p>
+            <p>Errou: {{ rank.erro }} perguntas</p>
+            <p>Média: {{ rank.utils.md }} acertos por tentativa</p>
           </div>
         </div>
       </div>
