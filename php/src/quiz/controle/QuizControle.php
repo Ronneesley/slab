@@ -190,7 +190,7 @@ class QuizControle extends ControleBase {
     
     public function inserir(){
         $c = new Quiz();
-        $c->setNome_quiz($_REQUEST["nome_quiz"]);
+        $c->setNome($_REQUEST["nome_quiz"]);
 
         $dao = new QuizDAO();
         $dao->inserir($c);
@@ -199,7 +199,7 @@ class QuizControle extends ControleBase {
     public function alterar(){
         $c = new Quiz();
         $c->setId($_REQUEST["id"]);
-        $c->setNome_quiz($_REQUEST["nome_quiz"]);
+        $c->setNome($_REQUEST["nome_quiz"]);
 
         $dao = new QuizDAO();
         $dao->alterar($c);
