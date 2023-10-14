@@ -9,24 +9,29 @@ use QuizEstatistico\modelo\dao\PerguntaDAO;
  *
  * @author Diosef e Wagner
  */
-class PerguntaControle {    
+class PerguntaControle extends ControleBase {    
     public function processar($acao){
-        switch ($acao){
-            case "inserir":
-                $this->inserir();
-                break;
-            case "alterar":
-                $this->alterar();
-                break;
-            case "listar":
-                $this->listar();
-                break;
-            case "excluir":
-                $this->excluir();
-                break;
-            case "selecionar":
-                $this->selecionar();
-                break;
+        if ($this->estaLogado()){
+            switch ($acao){
+                case "inserir":
+                    $this->inserir();
+                    break;
+                case "alterar":
+                    $this->alterar();
+                    break;
+                case "listar":
+                    $this->listar();
+                    break;
+                case "excluir":
+                    $this->excluir();
+                    break;
+                case "selecionar":
+                    $this->selecionar();
+                    break;
+            }
+        }else{
+            $p = new PrincipalControle();
+            $p->mostrarPaginaLogin("Faça login primeiro!");
         }
     }
     
