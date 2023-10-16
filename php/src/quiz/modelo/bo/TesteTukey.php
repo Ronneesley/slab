@@ -49,7 +49,7 @@ class TesteTukey {
      * Calcula a diferença mínima significativa de Tukey
      */
     public function calcularDelta($q, $qmRes, $r){
-        return $q * sqrt($qmRes) / $r;
+        return $q * sqrt($qmRes / $r);
     }
   
 
