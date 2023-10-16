@@ -9,9 +9,10 @@ cd ../php/src
 echo "###########################################"
 echo -n "Verificando se o NPM está instalado: "
 npm --version
+RESULTADO=$?
 echo "###########################################"
 
-if [ $? -ne 0 ]; then
+if [ $RESULTADO -ne 0 ]; then
     echo "Iniciando a instalação do NPM primeiro: "
     sudo ./instalar_ferramenta.sh node
 fi
@@ -23,9 +24,10 @@ verificar_operacao
 echo "###########################################"
 echo -n "Verificando se o Composer está instalado: "
 composer --version
+RESULTADO=$?
 echo "###########################################"
 
-if [ $? -ne 0 ]; then
+if [ $RESULTADO -ne 0 ]; then
     echo "Iniciando a instalação do Composer primeiro: "
     sudo ./instalar_ferramenta.sh composer
 fi
@@ -47,9 +49,10 @@ chmod 777 configuracoes.json
 echo "###########################################"
 echo -n "Verificando se o Docker está instalado: "
 docker --version
+RESULTADO=$?
 echo "###########################################"
 
-if [ $? -ne 0 ]; then
+if [ $RESULTADO -ne 0 ]; then
     echo "Iniciando a instalação do Docker primeiro: "
     sudo ./instalar_ferramenta.sh docker
 fi

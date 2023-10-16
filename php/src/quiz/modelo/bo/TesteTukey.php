@@ -73,28 +73,39 @@ class TesteTukey {
 
         //Determina a letra inicial
         $letra = 'a';
-        $atribuiuLetra = false;
         $nClasses = 1;
 
         for ($i = 0; $i < $n; $i++){            
             $teveElementoIgual = false;
-
+            $atribuiuLetra = false;
+            
             for ($j = $i + 1; $j < $n; $j++){
                 //Calcula o valor absoluto da diferença
                 $diferenca = abs($mediasO[$i] - $mediasO[$j]);
 
                 //Se são iguais
                 if ($diferenca <= $delta){
-                    if (!$atribuiuLetra) {
-                        array_push($resultado[$i], $letra);
-                        $atribuiuLetra = true;
+                    $compartilhamMesmaLetra = false;
+
+                    for ($k = 0; $k < count($resultado[$i]); $k++){
+                        if (in_array($resultado[$i][$k], $resultado[$j])){
+                            $compartilhamMesmaLetra = true;
+                            break;
+                        }
                     }
 
-                    //Elementos são iguais
-                    array_push($resultado[$j], $letra);
+                    if (!$compartilhamMesmaLetra){
+                        if (!$atribuiuLetra) {
+                            array_push($resultado[$i], $letra);
+                            $atribuiuLetra = true;
+                        }
 
-                    //Marca que houve um elemento igual
-                    $teveElementoIgual = true;
+                        //Elementos são iguais
+                        array_push($resultado[$j], $letra);
+
+                        //Marca que houve um elemento igual
+                        $teveElementoIgual = true;
+                    }
                 } else {
                     break;
                 }
@@ -104,13 +115,17 @@ class TesteTukey {
             if ($teveElementoIgual){
                 $letra = chr(ord($letra) + 1);
             } else {
-                if ($i == 0 || $i == $n - 1){
+                if (empty($resultado[$i])){
                     array_push($resultado[$i], $letra);
 
                     $letra = chr(ord($letra) + 1);
                 }
             }     
         }
+
+        /*print("<pre>");
+        print_r($resultado);
+        print("</pre>");*/
 
         //Calcula o número de classes ao final do processo
         $nClasses = ord($letra) - ord('a');
