@@ -15,11 +15,17 @@
 
   <body>
     <div class="layout">
-      <div class="menu">{{ include("menu.html") }}</div>
+      <header>
+        <div class="menu">{{ include("menu.html") }}</div>
+      </header>
 
-      <div class="conteudo" style="background-color: #f5f5f5">{{ include(pagina) }}</div>
+      <section>
+        <div class="conteudo" style="background-color: #f5f5f5">{{ include(pagina) }}</div>
+      </section>
 
-      <div class="rodape">{{ include("rodape.html") }}</div>
+      <footer>
+        <div class="rodape">{{ include("rodape.html") }}</div>
+      </footer>
     </div>
   </body>
 </html>
