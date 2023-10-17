@@ -55,6 +55,35 @@
           </div>
         </div>
       </form>
+      <div>
+        <div class="mb-4">
+          <span class="text-lg font-semibold text-gray-700">Minha posição atual</span>
+        </div>
+        {% for rank in ranks %}
+        <!-- Lista de Ranking -->
+        {% if usuario.nome == rank.usuario.nome %}
+          <div class="max-w-md mx-auto">
+            <!-- Usuário 1 -->
+            <div class="flex items-center justify-between bg-white p-4 rounded-lg border-2 border-gray-200 mb-4">
+              <div class="flex mr-4 space-x-4">
+                <span class="text-4xl font-semibold text-red-500"> {{ loop.index }} </span>
+                <div class="block">
+                  <h2 class="text-lg font-semibold">{{ rank.usuario.login }}</h2>
+                  <p class="text-gray-600">Pontuação: {{ rank.pontuacao }} </p>
+                </div>
+              </div>
+              <div class="block text-center font-light space-y-2 text-sm">
+                <p>Nome: {{ rank.usuario.primeiroNome }} </p>
+                <p>Curso: {{ rank.usuario.curso }} </p>
+                <p>Acertou: {{ rank.acerto }} perguntas</p>
+                <p>Errou: {{ rank.erro }} perguntas</p>
+                <p>Média: {{ rank.utils.md }} acertos por tentativa</p>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+      </div>
       <div class="flex">
         <label for="inp" class="cursor-pointer">
           <svg class="h-8 w-auto fill-current text-gray-700 hover:text-gray-900 svg-top" viewBox="0 0 32 32"
@@ -66,20 +95,18 @@
           <span class="text-2xl font-semibold text-gray-700">Top 10 melhores jogadores</span>
         </div>
       </div>
-      <!-- Lista de Ranking -->
-      {% for rank in ranks|slice(0, 10) %}
+        {% for rank in ranks|slice(0, 10) %}
       <div class="max-w-md mx-auto">
         <input type="checkbox" id="inp" class="hidden inp-top">
         <!-- Usuário 1 -->
-        <div class="flex items-center justify-between bg-white p-4 rounded-lg border-2 border-gray-200 mb-4">
+        {% if usuario.nome == rank.usuario.nome %}
+        <div class="flex items-center justify-between bg-yellow-100 p-4 rounded-lg border-2 border-yellow-200 mb-4">
           <div class="flex mr-4 space-x-4">
             <span class="text-4xl font-semibold text-red-500"> {{ loop.index }} </span>
             <div class="block">
               <h2 class="text-lg font-semibold">{{ rank.usuario.login }}</h2>
               <p class="text-gray-600">Pontuação: {{ rank.pontuacao }} </p>
             </div>
-          </div>
-          <div>
           </div>
           <div class="block text-center font-light hidden info space-y-2 text-sm">
             <p>Nome: {{ rank.usuario.primeiroNome }} </p>
@@ -89,9 +116,27 @@
             <p>Média: {{ rank.utils.md }} acertos por tentativa</p>
           </div>
         </div>
+        {% else %}
+        <div class="flex items-center justify-between bg-white p-4 rounded-lg border-2 border-gray-200 mb-4">
+          <div class="flex mr-4 space-x-4">
+            <span class="text-4xl font-semibold text-red-500"> {{ loop.index }} </span>
+            <div class="block">
+              <h2 class="text-lg font-semibold">{{ rank.usuario.login }}</h2>
+              <p class="text-gray-600">Pontuação: {{ rank.pontuacao }} </p>
+            </div>
+          </div>
+          <div class="block text-center font-light hidden info space-y-2 text-sm">
+            <p>Nome: {{ rank.usuario.primeiroNome }} </p>
+            <p>Curso: {{ rank.usuario.curso }} </p>
+            <p>Acertou: {{ rank.acerto }} perguntas</p>
+            <p>Errou: {{ rank.erro }} perguntas</p>
+            <p>Média: {{ rank.utils.md }} acertos por tentativa</p>
+          </div>
+        </div>
+        {% endif %}
       </div>
       {% endfor %}
-        <!-- Adicione mais usuários conforme necessário -->
+      <!-- Adicione mais usuários conforme necessário -->
     </div>
     <br />
   </body>
