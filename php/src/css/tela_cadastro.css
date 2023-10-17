@@ -1,0 +1,18 @@
+.card {
+    border-color: red;
+    max-width: 35rem;
+}
+
+.card-header {
+    font-size: 40px;
+    color: rgb(128, 3, 3);
+    background-color: transparent;
+}
+
+.btn {
+    background-color: red;
+}
+
+.form-control {
+    background-color: rgb(248, 247, 247);
+}
