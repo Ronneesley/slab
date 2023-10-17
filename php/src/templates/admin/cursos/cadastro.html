@@ -4,31 +4,32 @@
         <title>Cadastro de Cursos</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../../../css/tela_cadastro.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/admin/cadastro/tela_cadastro.css">
     </head>
     <body>
 
         <div class="d-flex justify-content-center align-items-center">
-            <div class="card text-center w-50 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-                <div class="card-header">
-                  Cadastro de cursos
+            <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-header text-center">
+                  Cadastro de curso
                 </div>
                 <div class="card-body">
-                    <form method="post" action="./index.php?controle=curso&acao=salvar">
+                    <form  class="form-inline" smethod="post" action="./index.php?controle=curso&acao=salvar">
                         {{ mensagem }}
-                        <br /><br />
+                        <br />
                         
                         <div>
-                            <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko -->
+                            <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko 
                             <label for="id">ID</label>
                             <input type="text" class="form-control" name="id" id="id" value="{{ curso.id }}"/>
-                            <br /><br />
+                            <br /><br /> -->
                             
-                            <label for="nome">Curso</label>
-                            <input type="text" class="form-control"  name="nome" id="nome" value="{{ curso.nome }}" />
+                            <label class="custom-label" style="font-size: 23px;" for="nome">Curso: </label>
+                            <input type="text" class="form-control" name="nome" id="nome" value="{{ curso.nome }}" />
                             <br /><br />
-                            
-                            <button class="btn btn-danger" type="submit">Cadastrar</button>
+                             <div class="text-center">
+                                <button class="btn btn-danger" type="submit">Cadastrar</button>
+                             </div>
                         </div>
                     </form>
                 </div>
