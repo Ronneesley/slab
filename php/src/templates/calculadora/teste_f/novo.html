@@ -1,3 +1,5 @@
+<script src="{{ JS_DIR }}/teste_f.js"></script>
+
 <div class="row justify-content-md-center">
     <div class="col-md-auto border border-dark-subtle p-2 border-4 rounded-1">
         <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
@@ -5,9 +7,13 @@
         </div>
 
         <form action="./index.php?controle=teste_f" method="post">
-            <div class="mb-3">
-                <label for="amostra_a" class="form-label">Amostra A:</label>
-                <input type="text" class="form-control" name="amostra_a" id="amostra_a" value="48; 48; 49; 50; 52; 54; 58" />
+            <label for="amostra_a" class="form-label">Amostra A:</label>
+
+            <div id="entradas_a">
+                <input type="number" class="form-control" 
+                    name="amostra_a[]" id="amostra_a" 
+                    value=""
+                    onkeydown="teclaApertada(event)" />
             </div>
         
             <div class="mb-3">
