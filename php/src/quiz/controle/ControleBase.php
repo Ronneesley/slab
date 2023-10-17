@@ -52,8 +52,10 @@ abstract class ControleBase {
             $parametros["usuario"] = $_SESSION["usuario"];
         } 
 
-        $parametros["JS_DIR"] = "./node_modules/";
+        $parametros["NODE_DIR"] = "./node_modules/";
+        
         $parametros["CSS_DIR"] = "./css/";
+        $parametros["JS_DIR"] = "./js/";
     }
     
     protected function mostrarPagina($pagina, $parametros = array()){
