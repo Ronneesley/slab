@@ -1,7 +1,7 @@
 .background {
     background-image: url(../../../imagens/miniatura_logo.png);
     background-position: left bottom;
-    background-size: 300px 300px;
+    background-size: 18rem 18rem;
     background-repeat: no-repeat;
     background-attachment: fixed;
     
@@ -19,7 +19,7 @@
 }
 
 .card-header {
-    font-size: 40px;
+    font-size: 2.5rem;
     color: rgb(160, 23, 23);
     background-color: transparent;
 }
@@ -37,5 +37,10 @@
 }
 
 .custom-form {
-    font-size: 18px;
+    font-size: 1.125rem;
+}
+
+.form-select,
+option{
+    background-color: #f8f7f7;
 }

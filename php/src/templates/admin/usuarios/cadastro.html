@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/admin/usuarios/cadastro.css">
+    <link rel="stylesheet" href="../../../css/admin/cadastro/tela_cadastro.css">
 </head>
-<body>
+<body class="background">
     <div class="d-flex justify-content-center align-items-center p-5">
         
             <div class="card w-80 shadow p-3 mb-5 bg-body-tertiary rounded" >
@@ -39,16 +39,17 @@
                         </div>
 
                         <div class="form-floating mb-3 custom-form ">
-                            <select class="form-select" name="curso">
+                            <select class="form-select" name="curso"  >
                                 <option disabled selected value="" >Selecione um curso</option>
                                 {% for curso in cursos %}
-                                    <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}</option>
+                                    <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "" : "" }}>{{ curso.nome }}</option>
                                 {% endfor %}
                             </select>
                             <label for="floatingInput">Curso</label>
                         </div>
 
-                        <div class="form-floating mb-3 custom-form ">
+                        <!--  Campo Login e Senha desnecessários-->
+                        <!-- <div class="form-floating mb-3 custom-form ">
                             <input type="text" name="login" id="login" class="form-control" placeholder="login" />
                             <label for="floatingInput">Login</label>
                         </div>
@@ -62,11 +63,12 @@
                             <div class="form-floating mb-3 custom-form ">
                                 <input type="password" name="confirmar_senha" id="confirmar_senha" value="" class="form-control" />
                                 <label for="floatingInput">Confirmar Senha</label>
-                            </div>
-                        {% endif %}
+                            </div> 
+                        {% endif %} -->
+
                             <div class="text-center">
                                 <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
-                                <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=usuario&amp;acao=listar"> Cursos Cadastrados</a>
+                                <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=usuario&amp;acao=listar"> Usuários Cadastrados</a>
                             </div>
                     </form>
                 </div>
