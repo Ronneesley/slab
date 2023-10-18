@@ -4,21 +4,30 @@
         <title>Cadastro de Questõs</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../css/admin/cadastro/tela_cadastro.css">
+
     </head>
     <body>
-        <h1>Cadastro de Questões</h1>
+
+        <div class="d-flex justify-content-center align-items-center p-5">
+            <div class="card-quest card w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-header text-center">
+                  Cadastro de Questões
+                </div>
 
         <form method="post" action="./index.php?controle=questao&acao=salvar">
             {{ mensagem}}
             <br /><br />
 
             <div>
-
                 <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko -->
-                <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ questao.id }}"/>
-                <br /><br />
-
+                <!--
+                <div class="form-floating mb-3">
+                    <input class="form-control" type="text" name="id" id="id " value="{{ questao.id }}" placeholder="name@example.com"/>
+                    <label for="id">ID</label>
+                </div>
+                <br/><br/>
+                -->
 
                 <!-- lista por radio by Mayko
                 
@@ -52,84 +61,91 @@
 
                 <!-- lista por select by Mayko -->
 
-                <div>
-                    <label for="nivel">Nível</label>
-                    <select id="nivel" name="nivel">
-                        <option value="">Selecione o nível</option>
+                <div class="form-floating">
+                    <select class="form-select" id="nivel floatingSelect" name="nivel" aria-label="Floating label select example">
+                        <option selected>Selecione o nível</option>
                         {% for item in niveis %}
                         <option value="{{ item.id }}" {{ item.id == questao.nivel ? "selected":""  }}>{{ item.nivel }}</option>
                         {% endfor %}
                     </select>
+                    <label for="floatingSelect">Nível</label>
                 </div>
-                <br />
+                  
+                <br>
 
-                <div>
-                    <label for="curso">Curso</label>
-                    <select id="curso" name="curso">
-                        <option value="">Selecione o curso</option>
+                <div class="form-floating">
+                    <select class="form-select" id="curso floatingSelect" name="curso" aria-label="Floating label select example">
+                        <option selected >Selecione o curso</option>
                         {% for item in cursos %}
                         <option value="{{ item.id }}" {{ item.id == questao.curso ? "selected":""  }}>{{ item.nome }}</option>
                         {% endfor %}
                     </select>
+                    <label for="floatingSelect">Cursos</label>
                 </div>
-                <br />
 
-                <div>
-                    <label for="tema">Tema</label>
-                    <select id="tema" name="tema">
+                <br>
+
+                <div class="form-floating">
+                    <select class="form-select" id="tema floatingSelect" name="tema" aria-label="Floating label select example">
                         <option value="">Selecione o tema</option>
                         {% for item in temas %}
                         <option value="{{ item.id }}" {{ item.id == questao.tema ? "selected":""  }}>{{ item.tema }}</option>
                         {% endfor %}
                     </select>
+                    <label for="floatingSelect">Temas</label>
                 </div>
-                <br />
 
-                <label for="pergunta">Pergunta</label>
-                <br />
-                <textarea id="resposta_certa" name="pergunta" style="width:400px; height:75px;">
-{{ questao.pergunta }}
-                </textarea>
-                <br /><br />
+                <br>
 
-                <label for="resposta_certa">Resposta certa</label>
-                <br />
-                <textarea id="resposta_certa" name="resposta_certa" style="width:400px; height:75px;">
-{{ questao.resposta_certa }}
-                </textarea>
-                <br /><br />
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="resposta_certa floatingTextarea2" name="pergunta" style="height: 150px">{{ questao.pergunta }}</textarea>
+                    <label for="floatingTextarea2">Pergunta</label>
+                </div>
 
-                <label for="resposta_errada1">Resposta Errada 1</label>
-                <br />
-                <textarea id="resposta_errada1" name="resposta_errada1" style="width:400px; height:75px;">
-{{ questao.resposta_errada1 }}
-                </textarea>
-                <br /><br />
+                <br>
 
-                <label for="resposta_errada2">Resposta Errada 2</label>
-                <br />
-                <textarea id="resposta_errada2" name="resposta_errada2" style="width:400px; height:75px;">
-{{ questao.resposta_errada2 }}
-                </textarea>
-                <br /><br />
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="resposta_certa floatingTextarea2" name="resposta_certa" style="height: 100px">{{ questao.resposta_certa }}</textarea>
+                    <label for="floatingTextarea2">Resposta Certa</label>
+                </div>
 
-                <label for="resposta_errada3">Resposta Errada 3</label>
-                <br />
-                <textarea id="resposta_errada3" name="resposta_errada3" style="width:400px; height:75px;">
-{{ questao.resposta_errada3 }}
-                </textarea>
-                <br /><br />
+                <br>
 
-                <label for="explicacao">Explicação</label>
-                <br />
-                <textarea id="explicacao" name="explicacao" style="width:400px; height:75px;">
-{{ questao.explicacao }}
-                </textarea>
-                <br /><br />
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="resposta_errada1 floatingTextarea2" name="resposta_errada1" style="height: 100px">{{ questao.resposta_errada1 }}</textarea>
+                    <label for="floatingTextarea2">Resposta Errada 1</label>
+                </div>
 
-                <input type="submit" value="Salvar" />
+                <br>
+
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="resposta_errada2 floatingTextarea2" name="resposta_errada2" style="height: 100px">{{ questao.resposta_errada2 }}</textarea>
+                    <label for="floatingTextarea2">Resposta Errada 2</label>
+                </div>
+
+                <br>
+
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="resposta_errada3 floatingTextarea2" name="resposta_errada3" style="height: 100px">{{ questao.resposta_errada3 }}</textarea>
+                    <label for="floatingTextarea2">Resposta Errada 3</label>
+                </div>
+
+                <br>
+                
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="explicacao floatingTextarea2" name="explicacao" style="height: 150px">{{ questao.explicacao }}</textarea>
+                    <label for="floatingTextarea2">Explicação</label>
+                </div>
+
+                <br>
+
+                <div class="text-center">
+                    <input class="btn btn-danger" type="submit" value="Salvar"></input>
+                </div>
+                
             </div>
 
         </form>
     </body>
+    
 </html>
