@@ -1,41 +1,43 @@
-<h2>Listagem de Cursos</h2>
+<div class="container-sm">
+    <br />
+    <h2>Listagem de Cursos</h2><br>
 
-<a class="btn btn-primary" href="./index.php?controle=curso&acao=novo">Criar novo curso</a>
-<br />
-<br />
+    {% if mensagem != "" %}
+        <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+            {{ mensagem }}
+        </div>
+    {% endif %}
 
-{% if mensagem != "" %}
-    <div class="alert alert-{{ tipo_mensagem }}" role="alert">
-        {{ mensagem }}
-    </div>
-{% endif %}
+    <table class="table table-responsive table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th>Nome</th>
+                <th style="width: 170px;">Opções</th>
+            </tr>
+        </thead>
 
-<table class="table table-bordered table-striped table-hover">
-    <thead>
-        <tr>
-            <th style="width: 50px;">ID</th>
-            <th>Nome</th>
-            <th style="width: 170px;">Opções</th>
-        </tr>
-    </thead>
+        <tbody>
+            {% for item in lista %}
+            <tr>
+                <td style="text-align: right;">
+                    {{ item.id }}
+                </td>
 
-    <tbody>
-        {% for item in lista %}
-        <tr>
-            <td style="text-align: right;">
-                {{ item.id }}
-            </td>
+                <td>
+                    {{ item.nome }}
+                </td>
 
-            <td>
-                {{ item.nome }}
-            </td>
+                <td>
+                    <a class="btn btn-primary" href="./index.php?controle=curso&acao=selecionar&id={{ item.id }}">Editar</a>
+                    <a class="btn btn-danger" href="./index.php?controle=curso&acao=excluir&id={{ item.id }}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-            <td>
-                <a class="btn btn-primary" href="./index.php?controle=curso&acao=selecionar&id={{ item.id }}">Editar</a>
-                <a class="btn btn-danger" href="./index.php?controle=curso&acao=excluir&id={{ item.id }}">Excluir</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+    <a class="btn btn-danger" href="./index.php?controle=curso&acao=novo">Criar novo curso</a>
+    <br />
+    <br />
+</div>
