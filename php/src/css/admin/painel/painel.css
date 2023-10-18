@@ -22,25 +22,23 @@
     border-radius: 15px;
     display: inline-block;
     padding: 20px;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
-
-.caixa a {
-    display: inline-block;
-
+a{
     color: black;
-    text-align: center;
     text-decoration: none;
-    display: block;
+    text-align: center;
     font-weight: bold;
     font-size: 20px;
     font-family: Comic Sans MS, Comic Sans, cursive;
     cursor: pointer;
 }
 
-.caixa p{
-    text-align: center;
-    font-family: Comic Sans MS, Comic Sans, cursive;
+
+p{
+    font-weight: normal;
+    font-size: medium;
 }
 
 .caixa:hover {
@@ -49,6 +47,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-.caixa:hover a{
+
+a:hover{
     color: rgb(160, 23, 23);
 }
