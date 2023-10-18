@@ -1,29 +1,35 @@
+.conteudo{
+    padding-top: 2rem;
+}
+
 .caixas {
-    background: white;
-    border: 1px solid white;
+    justify-content: center;
+    margin: 0;
+    /* border: 1px solid black; */
     border-radius: 10px;
     font: normal 16px Arial;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 50px;
     padding: 20px;
 }
 
 .caixa {
-    border: 1px solid rgb(191, 255, 0);
-    width: 275px;
+    border: 2px solid rgb(0, 0, 0);
+    width: 18rem;
     border-radius: 15px;
     display: inline-block;
     padding: 20px;
 }
 
-.caixa:hover {
-    background-color: #f0f0f0;
-}
 
 .caixa a {
+    display: inline-block;
+
+    color: black;
+    text-align: center;
     text-decoration: none;
     display: block;
     font-weight: bold;
@@ -32,6 +38,17 @@
     cursor: pointer;
 }
 
-.caixa a:first-child {
-    margin-bottom: 50px;
+.caixa p{
+    text-align: center;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.caixa:hover {
+    background-color: #f0f0f0;
+    border-color: rgb(160, 23, 23);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.caixa:hover a{
+    color: rgb(160, 23, 23);
 }

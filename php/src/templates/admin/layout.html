@@ -5,7 +5,8 @@
         <title>Painel Administrativo</title>
 
         <link rel="stylesheet" href="{{NODE_DIR}}/bootstrap/dist/css/bootstrap.min.css" />
-
+        <link rel="stylesheet" href="css/admin/painel/painel.css">
+        
         <script src="{{NODE_DIR}}/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{NODE_DIR}}/jquery/dist/jquery.js"></script>
     </head>
@@ -15,7 +16,7 @@
                 {{ include("admin/menu.html") }}
             </div>
             
-            <div class="conteudo">
+            <div class="conteudo container-lg">
                 {{ include(pagina) }}
             </div>
         </div>
