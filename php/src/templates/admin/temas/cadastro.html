@@ -4,26 +4,36 @@
         <title>Cadastro de Temas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../css/admin/cadastro/tela_cadastro.css">
     </head>
     <body>
-        <h1>Cadastro de Temas</h1>
-        
-        <form method="post" action="./index.php?controle=tema&acao=salvar">
-            {{ mensagem }}
-            <br /><br />
-            
-            <div>
-                <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko | disabled -->
-                <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ tema.id }}"/>
-                <br /><br />
-                
-                <label for="tema">Tema</label>
-                <input type="text" name="tema" id="tema" value="{{ tema.tema }}" />
-                <br /><br />
-                
-                <input type="submit" value="Salvar" />
+
+        <div class="d-flex justify-content-center align-items-center p-5">
+            <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-header text-center">
+                    Cadastro de Temas
+                </div>
+                <div class="card-body">
+                    <form  class="form-inline" method="post" action="./index.php?controle=tema&acao=salvar">
+                        {{ mensagem }}
+                        <br />
+                        <div class="form-floating mb-3 custom-form">
+                            <input type="text" class="form-control" name="tema" id="tema" placeholder="tema" value="{{ tema.tema }}">
+                            <label for="floatingInput tema">Tema</label>
+                        </div>
+                        
+                        <div>
+                            <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko | disabled 
+                            <label for="id">ID</label>
+                            <input type="text" name="id" id="id" value="{{ tema.id }}"/>-->
+                            <br /><br />                        
+                             <div class="text-center">
+                                <button class="btn btn-danger" type="submit">Cadastrar</button>
+                             </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </div>
     </body>
 </html>
