@@ -1,21 +1,25 @@
 .card {
-    border-color: red;
+    border-color: rgb(160, 23, 23);
     max-width: 35rem;
 }
 
 .card-quest {
-    border-color: red;
+    border-color: rgb(160, 23, 23)ed;
     max-width: 55rem;
 }
 
 .card-header {
     font-size: 40px;
-    color: rgb(128, 3, 3);
+    color: rgb(160, 23, 23);
     background-color: transparent;
 }
 
-.btn {
-    background-color: red;
+.custom-btn {
+    background-color: rgb(46, 136, 43);
+}
+
+.custom-btn-cadastrados{
+    background-color: rgb(160, 23, 23);
 }
 
 .form-control {

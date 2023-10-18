@@ -14,8 +14,12 @@
                 </div>
                 <div class="card-body">
                     <form  class="form-inline" method="post" action="./index.php?controle=curso&acao=salvar">
-                        {{ mensagem }}
-                        <br />
+                        {% if mensagem != "" %}
+                            <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+                                {{ mensagem }}
+                            </div>
+                        {% endif %}
+                                            <br />
                         <div class="form-floating mb-3 custom-form">
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="nome" value="{{ curso.nome }}">
                             <label for="floatingInput">Curso</label>
@@ -27,9 +31,10 @@
                             <input type="text" class="form-control" name="id" id="id" value="{{ curso.id }}"/>
                             <br /><br /> -->                            
                             <br /><br />
-                             <div class="text-center">
-                                <button class="btn btn-danger" type="submit">Cadastrar</button>
-                             </div>
+                            <div class="text-center">
+                                <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=curso&amp;acao=listar"> Cursos Cadastrados</a>
+                            </div>
                         </div>
                     </form>
                 </div>

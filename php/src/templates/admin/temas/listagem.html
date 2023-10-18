@@ -1,8 +1,13 @@
+<link rel="stylesheet" type="text/css" href="../../../css/admin/listagem/tela_listagem.css">
 <div class="container-sm">
     <br />
     <h2>Lista de temas</h2><br>
 
-    {{ mensagem }}
+    {% if mensagem != "" %}
+        <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+            {{ mensagem }}
+        </div>
+    {% endif %}
 
     <table class="table table-responsive table-bordered table-hover">
         <thead>
@@ -33,7 +38,7 @@
         </tbody>
     </table>
 
-    <a class="btn btn-danger" href="./index.php?controle=tema&acao=novo">Criar novo tema</a>
+    <a class="btn btn-danger custom-btn" href="./index.php?controle=tema&acao=novo">Criar novo tema</a>
     <br />
     <br />
 </div>

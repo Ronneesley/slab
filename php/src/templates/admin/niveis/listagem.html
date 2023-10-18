@@ -1,33 +1,42 @@
-<a href="./index.php?controle=nivel&acao=novo">Criar novo nível</a>
-<br />
+<link rel="stylesheet" type="text/css" href="../../../css/admin/listagem/tela_listagem.css">
+<div class="container-sm">
+    <br />
+    <h2>Lista de níveis</h2><br>
 
-{{ mensagem }}
+    {% if mensagem != "" %}
+        <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+            {{ mensagem }}
+        </div>
+    {% endif %}
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nível</th>
-            <th>Opçãoes</th>
-        </tr>
-    </thead>
-    
-    <tbody>
-        {% for item in lista %}
-        <tr>
-            <td>
-                {{ item.id }}
-            </td>
-            
-            <td>
-                {{ item.nivel }}
-            </td>
-            
-            <td>
-                <a href="./index.php?controle=nivel&acao=selecionar&id={{ item.id }}">Editar</a>
-                <a href="./index.php?controle=nivel&acao=excluir&id={{ item.id }}">Excluir</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <table class="table table-responsive table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th>Nível</th>
+                <th style="width: 170px;">Opções</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for item in lista %}
+            <tr>
+                <td>
+                    {{ item.id }}
+                </td>
+                
+                <td>
+                    {{ item.nivel }}
+                </td>
+                
+                <td>
+                    <a class="btn btn-primary" href="./index.php?controle=nivel&acao=selecionar&id={{ item.id }}">Editar</a>
+                    <a class="btn btn-danger" href="./index.php?controle=nivel&acao=excluir&id={{ item.id }}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-danger custom-btn" href="./index.php?controle=nivel&acao=novo">Criar novo nível</a>
+</div>
