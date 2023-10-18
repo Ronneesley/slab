@@ -1,34 +1,39 @@
-<a href="./index.php?controle=tema&acao=novo">Criar novo tema</a>
-<br />
+<div class="container-sm">
+    <br />
+    <h2>Lista de temas</h2><br>
 
-{{ mensagem }}
+    {{ mensagem }}
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Opções</th>
-        </tr>
-    </thead>
+    <table class="table table-responsive table-bordered table-hover">
+        <thead>
+            <tr>
+                <th style="width: 50px;">ID</th>
+                <th>Tema</th>
+                <th style="width: 170px;">Opções</th>
+            </tr>
+        </thead>
 
-    <tbody>
-        {% for item in lista %}
-        <tr>
-            <td>
-                {{ item.id }}
-            </td>
+        <tbody>
+            {% for item in lista %}
+            <tr>
+                <td>
+                    {{ item.id }}
+                </td>
+    
+                <td>
+                    {{ item.tema }}
+                </td>
+    
+                <td>
+                    <a class="btn btn-primary" href="./index.php?controle=tema&acao=selecionar&id={{ item.id }}">Editar</a>
+                    <a class="btn btn-danger" href="./index.php?controle=tema&acao=excluir&id={{ item.id }}">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-            <td>
-                {{ item.tema }}
-            </td>
-
-            <td>
-                <a href="./index.php?controle=tema&acao=selecionar&id={{ item.id }}">Editar</a>
-                <a href="./index.php?controle=tema&acao=excluir&id={{ item.id }}">Excluir</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+    <a class="btn btn-danger" href="./index.php?controle=tema&acao=novo">Criar novo tema</a>
+    <br />
+    <br />
+</div>
