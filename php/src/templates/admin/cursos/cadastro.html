@@ -8,27 +8,25 @@
     </head>
     <body>
 
-        <div class="d-flex justify-content-center align-items-center p-3">
+        <div class="d-flex justify-content-center align-items-center p-5">
             <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
                 <div class="card-header text-center">
                   Cadastro de curso
                 </div>
                 <div class="card-body">
-                    <form  class="form-inline" smethod="post" action="./index.php?controle=curso&acao=salvar">
+                    <form  class="form-inline" method="post" action="./index.php?controle=curso&acao=salvar">
                         {{ mensagem }}
                         <br />
                         <div class="form-floating mb-3 custom-form">
-                            <input type="text" class="form-control" name="nome" id="nome floatingInput" placeholder="name@example.com" value="{{ curso.nome }}">
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="nome" value="{{ curso.nome }}">
                             <label for="floatingInput">Curso</label>
                         </div>
-
+                        
                         <div>
                             <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko 
                             <label for="id">ID</label>
                             <input type="text" class="form-control" name="id" id="id" value="{{ curso.id }}"/>
-                            <br /><br /> -->
-                            
-                            <label class="custom-label" style="font-size: 23px;" for="nome"> </label>
+                            <br /><br /> -->                            
                             <br /><br />
                              <div class="text-center">
                                 <button class="btn btn-danger" type="submit">Cadastrar</button>
