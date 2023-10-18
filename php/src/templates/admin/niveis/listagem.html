@@ -1,7 +1,6 @@
 <link rel="stylesheet" type="text/css" href="../../../css/admin/listagem/tela_listagem.css">
 <div class="container-sm">
-    <br />
-    <h2>Lista de níveis</h2><br>
+    <h2>Lista de níveis</h2><hr><br>
 
     {% if mensagem != "" %}
         <div class="alert alert-{{ tipo_mensagem }}" role="alert">
@@ -10,28 +9,28 @@
     {% endif %}
 
     <table class="table table-responsive table-bordered table-hover">
-        <thead>
+        <thead class="thead">
             <tr>
-                <th style="width: 50px;">ID</th>
-                <th>Nível</th>
-                <th style="width: 170px;">Opções</th>
+                <th class="custom-id">ID</th>
+                <th class="custom-nome">Nível</th>
+                <th class="custom-opcoes">Opções</th>
             </tr>
         </thead>
 
         <tbody>
             {% for item in lista %}
             <tr>
-                <td>
+                <td class="custom-id">
                     {{ item.id }}
                 </td>
                 
-                <td>
+                <td class="custom-nome">
                     {{ item.nivel }}
                 </td>
                 
                 <td>
-                    <a class="btn btn-primary" href="./index.php?controle=nivel&acao=selecionar&id={{ item.id }}">Editar</a>
-                    <a class="btn btn-danger" href="./index.php?controle=nivel&acao=excluir&id={{ item.id }}">Excluir</a>
+                    <a class="btn btn-outline-primary" href="./index.php?controle=nivel&acao=selecionar&id={{ item.id }}">Editar</a>
+                    <a class="btn btn-outline-danger" href="./index.php?controle=nivel&acao=excluir&id={{ item.id }}">Excluir</a>
                 </td>
             </tr>
             {% endfor %}
