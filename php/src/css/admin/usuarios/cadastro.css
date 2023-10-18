@@ -1,0 +1,44 @@
+.card {
+    border-color: rgb(160, 23, 23);
+    max-width: 35rem;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+}
+
+.text-id{
+    text-align: right;
+    width: 3.75rem;
+    /* padding-top: 0.7rem; */
+    /* padding-bottom: 0.7rem; */
+}
+.form-select,
+option{
+    background-color: #f8f7f7;
+}
+.card-quest {
+    border-color: rgb(160, 23, 23)ed;
+    max-width: 55rem;
+}
+
+.card-header {
+    font-size: 2.5rem;
+    color: rgb(160, 23, 23);
+    background-color: transparent;
+}
+
+.custom-btn {
+    background-color: rgb(46, 136, 43);
+}
+
+.custom-btn-cadastrados{
+    background-color: rgb(160, 23, 23);
+}
+
+
+
+.custom-form {
+    font-size: 1.125rem;
+}
+
+.form-control {
+    background-color: rgb(248, 247, 247);
+}

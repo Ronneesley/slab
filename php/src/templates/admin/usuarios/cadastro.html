@@ -1,65 +1,77 @@
-<form method="post" action="./index.php?controle=usuario&acao=salvar">
-    <div class="card" style="width: 400px; margin: 0 auto;">
-        <div class="card-header">
-            Cadastro de Usuários
-        </div>
-        <div class="card-body">
-            {% if mensagem != "" %}
-                <div class="alert alert-{{ tipo_mensagem }}" role="alert">
-                    {{ mensagem }}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/admin/usuarios/cadastro.css">
+</head>
+<body>
+    <div class="d-flex justify-content-center align-items-center p-5">
+        
+            <div class="card w-80 shadow p-3 mb-5 bg-body-tertiary rounded" >
+                <div class="card-header text-center">
+                    Cadastro de Usuários
                 </div>
-            {% endif %}
+                <div class="card-body">
+                    <form method="post" action="./index.php?controle=usuario&acao=salvar"></form>
+                        {% if mensagem != "" %}
+                            <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+                                {{ mensagem }}
+                            </div>
+                        {% endif %}
 
-            {% if usuario.id != null %}
-                <div class="mb-3">
-                    <label for="id" class="form-label">ID</label>
-                    <input type="text" name="id" id="id" class="form-control" value="{{ usuario.id }}" 
-                        style="text-align: right; width: 80px;" />
+                        <!-- {% if usuario.id != null %}
+                            <div class="form-floating mb-2  custom-form text-id">
+                                <input type="text" name="id" id="id" class="form-control" placeholder="id" />
+                                <label for="floatingInput">Id</label>
+                            </div>
+                        {% endif %} -->
+                        
+                        <div class="form-floating mb-3 custom-form ">
+                            <input type="text" class="form-control" name="nome" placeholder="nome" id="nome" />
+                            <label  for="floatingInput">Nome</label>
+                            <!-- O seguinte atributo value="{{ usuario.nome }}" colocado inicialmente foi retirado, assim como em todos inputs abaixo -->
+                        </div>
+
+                        <div class="form-floating mb-3 custom-form ">
+                            <input type="email" class="form-control" placeholder="nome" name="email" id="email" />
+                            <label for="floatingInput">E-mail</label>
+                        </div>
+
+                        <div class="form-floating mb-3 custom-form ">
+                            <select class="form-select" name="curso">
+                                <option disabled selected value="" >Selecione um curso</option>
+                                {% for curso in cursos %}
+                                    <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="floatingInput">Curso</label>
+                        </div>
+
+                        <div class="form-floating mb-3 custom-form ">
+                            <input type="text" name="login" id="login" class="form-control" placeholder="login" />
+                            <label for="floatingInput">Login</label>
+                        </div>
+
+                        {% if usuario.id == null %}
+                            <div class="form-floating mb-3 custom-form ">
+                                <input type="password" name="senha" id="senha" value="" class="form-control" placeholder="senha"/>
+                                <label for="floatingInput">Senha</label>
+                            </div>
+
+                            <div class="form-floating mb-3 custom-form ">
+                                <input type="password" name="confirmar_senha" id="confirmar_senha" value="" class="form-control" />
+                                <label for="floatingInput">Confirmar Senha</label>
+                            </div>
+                        {% endif %}
+                            <div class="text-center">
+                                <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=usuario&amp;acao=listar"> Cursos Cadastrados</a>
+                            </div>
+                    </form>
                 </div>
-            {% endif %}
-            
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" name="nome" id="nome" value="{{ usuario.nome }}" class="form-control" />
-            </div>
-
-            <div class="mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" name="email" id="email" value="{{ usuario.email }}" class="form-control" />
-            </div>
-
-            <div class="mb-3">
-                <label for="curso" class="form-label">Curso</label>
-                <select class="form-select" name="curso">
-                    <option>Selecione um curso</option>
-
-                    {% for curso in cursos %}
-                        <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "selected" : "" }}>{{ curso.nome }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="mb-3">
-                <label for="login" class="form-label">Login</label>
-                <input type="text" name="login" id="login" value="{{ usuario.login }}" class="form-control" />
-            </div>
-
-            {% if usuario.id == null %}
-                <div class="mb-3">
-                    <label for="senha" class="form-label">Senha</label>
-                    <input type="password" name="senha" id="senha" value="" class="form-control" />
-                </div>
-
-                <div class="mb-3">
-                    <label for="confirmar_senha" class="form-label">Confirmar Senha</label>
-                    <input type="password" name="confirmar_senha" id="confirmar_senha" value="" class="form-control" />
-                </div>
-            {% endif %}
-            
-            <div style="float: right;">
-                <input type="submit" class="btn btn-primary" value="Salvar" />
-            </div>
-        </div>
-    </div>    
-    
-</form>
+            </div>    
+        
+    </div>
+</body>
+</html>
