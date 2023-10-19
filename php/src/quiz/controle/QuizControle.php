@@ -32,6 +32,9 @@ class QuizControle extends ControleBase {
                 case "proximo":
                     $this->mostrarProximaQuestao();
                     break;
+                case "salvar":
+                    $this->salvar();
+                    break;
                 case "inserir":
                     $this->inserir();
                     break;
@@ -182,24 +185,35 @@ class QuizControle extends ControleBase {
         $_SESSION["questoes_respondidas"] = array();
 
     }
-    
-    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){
-        $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/quiz/cadastro.html");
+    public function salvar(){
+        if (isset($_REQUEST["id"]) && $_REQUEST["id"] != ""){
+            $this->alterar();            
+        } else {
+            $this->inserir();
+        }
     }
+
+    public function mostrarFormularioCadastro($quiz = null, $mensagem = "",$parametros = array()){
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/quiz/cadastro.html",
+        [ "quiz" => $quiz, "mensagem" => $mensagem ]);
+    }
+    
     
     public function inserir(){
         $c = new Quiz();
-        $c->setNome($_REQUEST["nome_quiz"]);
+        $c->setNome($_REQUEST["nome"]);
 
         $dao = new QuizDAO();
         $dao->inserir($c);
+
+        $this->mostrarFormularioCadastro($c, "Inserido com sucesso");
     }
     
     public function alterar(){
         $c = new Quiz();
         $c->setId($_REQUEST["id"]);
-        $c->setNome($_REQUEST["nome_quiz"]);
+        $c->setNome($_REQUEST["nome"]);
 
         $dao = new QuizDAO();
         $dao->alterar($c);
@@ -208,15 +222,20 @@ class QuizControle extends ControleBase {
     public function excluir(){
         $dao = new QuizDAO();
         $dao->excluir($_REQUEST["id"]);
+
+        $this->listar("Excluído com sucesso");
     }
     
-    public function listar($mensagem = ""){
+    public function listar($mensagem = "", $tipo_mensagem = "success"){
         $dao = new QuizDAO();
         $lista = $dao->listar();
         
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/quiz/listagem.html", 
-                ["mensagem" => $mensagem, "lista" => $lista ]);
+        $this->mostrarPaginaLayout($layout, 
+            "admin/quiz/listagem.html", 
+            ["mensagem" => $mensagem, 
+            "lista" => $lista,
+            "tipo_mensagem" => $tipo_mensagem]);
     }
     
     public function selecionar(){

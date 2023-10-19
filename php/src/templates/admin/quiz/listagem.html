@@ -3,7 +3,11 @@
 <div class="container-sm">
     <h2>Listagem de Quizes</h2><hr><br>
 
-    {{ mensagem }}
+    {% if mensagem != "" %}
+        <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+            {{ mensagem }}
+        </div>
+    {% endif %}
 
     <table class="table table-responsive table-bordered table-hover shadow-sm p-3 mb-5 bg-body-tertiary rounded">
         <thead class="thead">
@@ -25,8 +29,8 @@
                 </td>
 
                 <td class="text-center">
-                    <a class="btn btn-outline-primary" href="./index.php?controle=tema&acao=selecionar&id={{ item.id }}"><span class="material-symbols-outlined icone">edit</span></a>
-                    <a class="btn btn-outline-danger" href="./index.php?controle=tema&acao=excluir&id={{ item.id }}"><span class="material-symbols-outlined icone">delete</span></a>
+                    <a class="btn btn-outline-primary" href="./index.php?controle=quiz&acao=selecionar&id={{ item.id }}"><span class="material-symbols-outlined icone">edit</span></a>
+                    <a class="btn btn-outline-danger" href="./index.php?controle=quiz&acao=excluir&id={{ item.id }}"><span class="material-symbols-outlined icone">delete</span></a>
                 </td>
             </tr>
             {% endfor %}
