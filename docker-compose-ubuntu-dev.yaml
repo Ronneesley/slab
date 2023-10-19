@@ -5,7 +5,7 @@ services:
   web-server:
     container_name: ubuntu
     build:
-      context: ../php
+      context: php
       dockerfile: ./Dockerfile-ubuntu
     ports:
       - "3000:80"
@@ -16,7 +16,7 @@ services:
   db:
     container_name: mysql
     build:
-      context: ../mysql
+      context: mysql
       dockerfile: ./Dockerfile
     ports:
       - "13306:3306"
