@@ -183,7 +183,7 @@ class QuizControle extends ControleBase {
 
     }
     
-    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){        
+    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/quiz/cadastro.html");
     }
@@ -210,13 +210,13 @@ class QuizControle extends ControleBase {
         $dao->excluir($_REQUEST["id"]);
     }
     
-    public function listar(){
+    public function listar($mensagem = ""){
         $dao = new QuizDAO();
         $lista = $dao->listar();
         
-        print("<pre>");
-        print_r($lista);
-        print("</pre>");
+        $layout = $this->configurarTemplate("admin/layout.html");
+        $this->mostrarPaginaLayout($layout, "admin/quiz/listagem.html", 
+                ["mensagem" => $mensagem, "lista" => $lista ]);
     }
     
     public function selecionar(){

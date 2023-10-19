@@ -58,7 +58,7 @@ class TemaControle extends ControleBase {
     
     public function inserir(){
         $c = new Tema();
-        $c->setTema($_REQUEST["tema"]);
+        $c->setNome($_REQUEST["nome"]);
 
         $dao = new TemaDAO();
         $dao->inserir($c);
@@ -69,7 +69,7 @@ class TemaControle extends ControleBase {
     public function alterar(){
         $c = new Tema();
         $c->setId($_REQUEST["id"]);
-        $c->setTema($_REQUEST["tema"]);
+        $c->setNome($_REQUEST["nome"]);
 
         $dao = new TemaDAO();
         $dao->alterar($c);
@@ -88,7 +88,7 @@ class TemaControle extends ControleBase {
         $dao = new TemaDAO();
         $lista = $dao->listar();
         
-                $layout = $this->configurarTemplate("admin/layout.html");
+        $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/temas/listagem.html", 
                 ["mensagem" => $mensagem, "lista" => $lista ]);
     }
