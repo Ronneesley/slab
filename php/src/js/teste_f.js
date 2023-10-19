@@ -27,3 +27,32 @@ function teclaApertada(evt){
         evt.preventDefault();
     }
 }
+
+var ultimoAdicionadob = null;
+
+window.onload = function(){
+    ultimoAdicionadob = document.getElementById("amostra_b");
+}
+
+function teclaApertada(vta){
+    if (evt.keyCode === 13) {
+        if (evt.target == ultimoAdicionadob){
+            var campo = document.createElement("input");
+            campo.type = "number";
+            campo.className = "form-control";
+            campo.name = "amostra_b[]";
+
+            campo.addEventListener("keydown", teclaApertada);
+
+            let entradasB = document.getElementById("entradas_a");
+            entradasB.appendChild(campo);
+
+            ultimoAdicionadob = campo;
+
+        } else {
+            ultimoAdicionadob.focus();
+        }
+
+        evt.preventDefault();
+    }
+}
