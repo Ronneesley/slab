@@ -51,3 +51,47 @@ p{
 a:hover{
     color: rgb(160, 23, 23);
 }
+
+
+.logo-fundo{
+    position: fixed;
+    display: flex;
+    bottom: 2rem;
+    left: 2rem;
+}
+
+
+
+.logo {
+    animation: animacao 2s linear infinite reverse;
+    max-width: 8rem; 
+    transition: transform 1s ease;
+}
+
+.logo:hover{
+    animation: none;
+    transform: scale(0.9); 
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0, 0.1);
+    margin: 0;
+ 
+}
+
+
+  
+@keyframes animacao {
+    0%, 100% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+
+  
+  
+  
+  
+  
