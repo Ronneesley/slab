@@ -4,26 +4,43 @@
         <title>Cadastro de Quiz</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../../css/admin/cadastro/tela_cadastro.css">
     </head>
-    <body>
-        <h1>Cadastro de Quiz</h1>
-        
-        <form method="post" action="./index.php?controle=tema&acao=salvar">
-            {{ mensagem }}
-            <br /><br />
-            
-            <div>
-                <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko | disabled -->
-                <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="{{ tema.id }}"/>
-                <br /><br />
-                
-                <label for="tema">Quiz</label>
-                <input type="text" name="tema" id="tema" value="{{ tema.tema }}" />
-                <br /><br />
-                
-                <input type="submit" value="Salvar" />
+    <body class="background">
+        <div class="d-flex justify-content-center align-items-center p-5">
+            <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
+                <div class="card-header text-center">
+                  Cadastro de Quiz
+                </div>
+
+                <div class="card-body">
+                    <form method="post" action="./index.php?controle=quizzes&acao=salvar">
+                        {% if mensagem != "" %}
+                            <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+                                {{ mensagem }}
+                            </div>
+                        {% endif %}
+                                            <br />
+                        <div class="form-floating mb-3 custom-form">
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="nome" value="{{ quiz.nome }}">
+                            <label for="floatingInput">Quiz</label>
+                        </div>
+                        <div>
+                            <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko | disabled 
+                            <label for="id">ID</label>
+                            <input type="text" name="id" id="id" value="{{ tema.id }}"/>
+                            <br /><br />-->
+                            <br /><br />
+                           
+                            <div class="text-center">
+                                <input class="btn btn-success custom-btn" type="submit" value="Cadastrar"></input>
+                                <a class="btn btn-danger custom-btn-cadastrados" href=".Quizes Cadastrados">Quizes Cadastrados</a>
+                                <br>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
+        </div>
     </body>
 </html>
