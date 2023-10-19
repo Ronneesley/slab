@@ -1,29 +1,58 @@
-var ultimoAdicionado = null;
+var ultimoAdicionadoA = null;
+var ultimoAdicionadoB = null;
 
-window.onload = function () {
-    ultimoAdicionado = document.getElementById("amostra_a");
+window.onload = function(){
+    ultimoAdicionadoA = document.getElementById("amostra_a");
+    ultimoAdicionadoB = document.getElementById("amostra_b");
 }
 
-function teclaApertada(evt) {
+function teclaApertadaA(evt){
     if (evt.keyCode === 13) {
-        var campo = document.createElement("input");
-        campo.type = "number";
-        campo.className = "form-control";
-
-        if (evt.target.name === "amostra_a[]") {
+        if (evt.target == ultimoAdicionadoA){
+            var campo = document.createElement("input");
+            campo.type = "number";
+            campo.step = "any"; 
+            campo.className = "form-control";
             campo.name = "amostra_a[]";
+
+            campo.addEventListener("keydown", teclaApertadaA);
+
             let entradasA = document.getElementById("entradas_a");
             entradasA.appendChild(campo);
+
+            ultimoAdicionadoA = campo;
+
+            campo.focus();
+        
         } else {
-            campo.name = "amostra_b[]";
-            let entradasB = document.getElementById("entradas_b");
-            entradasB.appendChild(campo);
-            
+            ultimoAdicionadoA.focus();
         }
 
-        campo.addEventListener("keydown", teclaApertada);
-        ultimoAdicionado = campo;
-        campo.focus();
+        evt.preventDefault();
+        
+    }
+}
+
+function teclaApertadaB(evt){
+    if (evt.keyCode === 13) {
+        if (evt.target == ultimoAdicionadoB){
+            var campo = document.createElement("input");
+            campo.type = "number";
+            campo.step = "any"; 
+            campo.className = "form-control";
+            campo.name = "amostra_b[]";
+
+            campo.addEventListener("keydown", teclaApertadaB);
+
+            let entradasB = document.getElementById("entradas_b");
+            entradasB.appendChild(campo);
+
+            ultimoAdicionadoB = campo;
+
+            campo.focus();
+        } else {
+            ultimoAdicionadoB.focus();
+        }
         evt.preventDefault();
     }
 }
