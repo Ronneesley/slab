@@ -48,7 +48,5 @@ function teclaApertadaB(evt){
         } else {
             ultimoAdicionadoB.focus();
         }
-
-        evt.preventDefault();
     }
 }
