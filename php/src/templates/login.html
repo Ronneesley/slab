@@ -22,45 +22,6 @@
         var a = document.getElementById("erro");
         a.style = "display:none";
       }, 3000);
-
-      document.addEventListener("DOMContentLoaded", function () {
-          const lembrarSenha = document.getElementById("remember");
-          const senhaInput = document.getElementById("senha");
-
-          function setCookie(name, value, days) {
-            const expires = new Date();
-            expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-            document.cookie = name + "=" + value + ";expires=" + expires.toUTCString();
-          }
-
-          function getCookie(name) {
-            const cookieName = name + "=";
-            const cookies = document.cookie.split(";");
-            for (const cookie of cookies) {
-              if (cookie.trim().startsWith(cookieName)) {
-                return cookie.trim().substring(cookieName.length);
-              }
-            }
-            return null;
-          }
-
-          if (getCookie("lembrarCredenciais") === "true") {
-            const storedSenha = getCookie("senha");
-
-            senhaInput.value = storedSenha;
-            lembrarSenha.checked = true;
-          }
-
-          lembrarSenha.addEventListener("change", function () {
-            if (lembrarSenha.checked) {
-              setCookie("lembrarCredenciais", "true", 30);
-              setCookie("senha", senhaInput.value, 30);
-            } else {
-              setCookie("lembrarCredenciais", "false", -1);
-              setCookie("senha", "", -1);
-            }
-          });
-      });
     </script>
   </head>
 
