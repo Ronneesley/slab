@@ -43,4 +43,6 @@
 .form-select,
 option{
     background-color: #f8f7f7;
+    border-color: rgb(160, 23, 23);
+    border-width: auto;
 }

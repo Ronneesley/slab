@@ -8,7 +8,7 @@
 <body class="background">
     <div class="d-flex justify-content-center align-items-center p-5">
         
-            <div class="card w-80 shadow p-3 mb-5 bg-body-tertiary rounded" >
+            <div class="card w-80 shadow p-2 mb-5 bg-body-tertiary rounded" >
                 <div class="card-header text-center">
                     Cadastro de Usuários
                 </div>
@@ -27,29 +27,36 @@
                             </div>
                         {% endif %} -->
                         
-                        <div class="form-floating mb-3 custom-form ">
-                            <input type="text" class="form-control" name="nome" placeholder="nome" id="nome" />
-                            <label  for="floatingInput">Nome</label>
-                            <!-- O seguinte atributo value="{{ usuario.nome }}" colocado inicialmente foi retirado, assim como em todos inputs abaixo -->
-                        </div>
+                        <div class="form-floating mb-3 custom-form input-group has-validation">
+                            <div class="col-md inputNome">
+                                <div class="form-floating ">
+                                    <input type="text" class="form-control " name="nome" placeholder="nome" id="nome" />
+                                    <label  for="floatingInput">Nome</label>
+                                </div>
+                            </div>
+                            <!-- O seguinte atributo value="{{ usuario.nome }}" colocado inicialmente foi retirado, assim como em todos inputs abaixo --></div>
 
-                        <div class="form-floating mb-3 custom-form ">
-                            <input type="email" class="form-control" placeholder="nome" name="email" id="email" />
-                            <label for="floatingInput">E-mail</label>
-                        </div>
+                            <div class="col-md inputEmail">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" placeholder="nome" name="email" id="email" />
+                                    <label for="floatingInput">E-mail</label>
+                                </div>
+                            </div>
 
-                        <div class="form-floating mb-3 custom-form ">
-                            <select class="form-select" name="curso"  >
-                                <option disabled selected value="" >Selecione um curso</option>
-                                {% for curso in cursos %}
-                                    <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "" : "" }}>{{ curso.nome }}</option>
-                                {% endfor %}
-                            </select>
-                            <label for="floatingInput">Curso</label>
-                        </div>
+                            <div class="col-md pt-3 ">
+                                <div class="form-floating border border-secondary-subtle rounded">
+                                    <select class="form-select" name="curso" id="floatingSelectGrid" >
+                                        <option disabled selected  >Selecione um curso</option>
+                                        {% for curso in cursos %}
+                                            <option value="{{ curso.id }}" {{ curso.id == usuario.curso.id ? "" : "" }}>{{ curso.nome }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <label for="floatingSelectGrid">Curso</label>
+                                </div>
+                            </div>
 
-                        <!--  Campo Login e Senha desnecessários-->
-                        <!-- <div class="form-floating mb-3 custom-form ">
+                        <!--  Campo Login e Senha desnecessários
+                        <div class="form-floating mb-3 custom-form ">
                             <input type="text" name="login" id="login" class="form-control" placeholder="login" />
                             <label for="floatingInput">Login</label>
                         </div>
@@ -65,7 +72,7 @@
                                 <label for="floatingInput">Confirmar Senha</label>
                             </div> 
                         {% endif %} -->
-
+                        </div>
                             <div class="text-center">
                                 <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
                                 <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=usuario&amp;acao=listar"> Usuários Cadastrados</a>
