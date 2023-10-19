@@ -21,7 +21,7 @@ RUN rm -f index.html
 
 COPY src/ .
 
-RUN apt-get install -y composer r-base nodejs npm && \
+RUN apt-get install -y composer r-base nodejs npm \
     php-twig php-intl php-pdo php-pdo-mysql 
 
 # Não é possível instalar snap em um container
