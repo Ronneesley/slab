@@ -33,11 +33,11 @@ class TesteFControle extends ControleBase {
 
     public function calcular(){
         //$sA = $_REQUEST["amostra_a"];
-        $sB = $_REQUEST["amostra_b"];
+        //$sB = $_REQUEST["amostra_b"];
 
         $A = $_REQUEST["amostra_a"];
-        $B = explode(";", $sB);
-        //$B = $_REQUEST["amostra_b"];
+        //$B = explode(";", $sB);
+        $B = $_REQUEST["amostra_b"];
 
         $estatistico = new Estatistica();
         $mediaA = $estatistico->calcularMedia($A);
