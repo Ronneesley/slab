@@ -30,3 +30,40 @@ hr {
     border-radius: 10px;
     overflow: hidden;
 }
+
+.custom-question-id{
+    width: 10px;
+    text-align: center;
+    vertical-align: middle
+}
+.custom-question-nivel{
+    width: 10px;
+    text-align: center;
+    vertical-align: middle
+}
+.custom-question-curso{
+    width: 10px;
+    text-align: center;
+    vertical-align: middle
+}
+.custom-question-tema{
+    width: 10px;
+    text-align: center;
+    vertical-align: middle
+}
+
+.custom-question-pergunta{
+    width: 200px;
+    text-align: center;
+    vertical-align: middle
+}
+
+.custom-question-opcoes{
+    width: 180px;
+    text-align: center;
+    vertical-align: middle
+}
+
+.alinhamento{
+    text-align: justify;
+}

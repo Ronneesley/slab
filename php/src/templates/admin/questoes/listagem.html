@@ -1,25 +1,23 @@
-<a href="./index.php?controle=questao&acao=novo">Criar nova questão</a>
-<br />
+<link rel="stylesheet" type="text/css" href="../../../css/admin/listagem/tela_listagem.css">
 
-{{ mensagem }}
-
-<table border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nível</th>
-            <th>Curso</th>
-            <th>Tema</th>
-            <th>Pergunta</th>
-            <th>Resposta Certa</th>            
-            <th>Resposta Errada 1</th>            
-            <th>Resposta Errada 2</th>            
-            <th>Resposta Errada 3</th>
-            <th>Explicação</th>            
-            <th>Opçãoes</th>
-        </tr>
-    </thead>
+<div class="container-sm">
+    <h2>Listagem de Questões</h2><hr><br>
     
+    {{ mensagem }}
+
+    <table class="table table-responsive table-bordered table-hover shadow-sm p-3 mb-5 bg-body-tertiary rounded table-overflow">
+        <thead class="thead">
+            <tr>
+                <th class="custom-question">ID </th>
+                <th class="custom-question">Nível</th>
+                <th class="custom-question">Curso</th>
+                <th class="custom-question">Tema</th>
+                <th class="custom-question">Pergunta</th>
+                      
+                <th class="custom-question-opcoes">Opções</th>
+            </tr>
+        </thead>
+        
     <tbody>
         {% for item in lista %}
         <tr>
@@ -36,29 +34,19 @@
             <td>
                 {{ item.tema }}
             </td>
-            <td>
+            <td class="alinhamento">
                 {{ item.pergunta }}
             </td>
-            <td>
-                {{ item.resposta_certa }}
-            </td>
-            <td>
-                {{ item.resposta_errada1 }}
-            </td>
-            <td>
-                {{ item.resposta_errada2 }}
-            </td>
-            <td>
-                {{ item.resposta_errada3 }}
-            </td>            
-            <td>
-                {{ item.explicacao }}
-            </td>
-            <td>
-                <a href="./index.php?controle=questao&acao=selecionar&id={{ item.id }}">Editar</a>
-                <a href="./index.php?controle=questao&acao=excluir&id={{ item.id }}">Excluir</a>
+            
+            <td class="text-center">
+                <a class="btn btn-outline-primary" href="./index.php?controle=questao&acao=selecionar&id={{ item.id }}">Editar</a>
+                <a class="btn btn-outline-danger" href="./index.php?controle=questao&acao=excluir&id={{ item.id }}">Excluir</a>
             </td>
         </tr>
         {% endfor %}
     </tbody>
-</table>
+    </table>
+
+    <a class="btn btn-danger custom-btn" href="./index.php?controle=questao&acao=novo">Criar nova questão</a>
+   <br><br>
+   </div>
