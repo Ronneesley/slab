@@ -1,17 +1,35 @@
-<div class="text-dark fw-bold text-center p-2">
-    <h1>Resultado do Teste F</h1>
-
-    <h2>A</h2>
-
-    Média: {{ mediaA }}<br />
-    Variância: {{ varianciaA }}
-
-    <h2>B</h2>
-
-    Média: {{ mediaB }}<br />
-    Variância: {{ varianciaB }}
-
-    <h2>F calculado</h2>
-
-    {{ fCalculado }}
+<div class="row justify-content-md-center">
+    <div class="col-md-auto border border-dark-subtle p-2 border-4 rounded-1">
+        
+            <table class="table table-bordered">
+                <tr>
+                    <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
+                        Resultado do Teste F
+                    </div>
+                </tr>
+            
+                <tr>
+                    <td></td>
+                    <td>Média</td>
+                    <td>Variância</td>
+                </tr>
+            
+                <tr>
+                    <td>Amostra A</td>
+                    <td>{{ mediaA }}</td>
+                    <td>{{ varianciaA }}</td>
+                </tr>
+            
+                <tr>
+                    <td>Amostra B</td>
+                    <td>{{ mediaB }}</td>
+                    <td>{{ varianciaB }}</td>
+                </tr>
+            
+                <tr>
+                    <td>F calculado</td>
+                    <td>{{ fCalculado }}</td>
+                </tr>
+            </table>
+    </div>
 </div>

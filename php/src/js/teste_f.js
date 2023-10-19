@@ -11,6 +11,7 @@ function teclaApertadaA(evt){
         if (evt.target == ultimoAdicionadoA){
             var campo = document.createElement("input");
             campo.type = "number";
+            campo.step = "any"; 
             campo.className = "form-control";
             campo.name = "amostra_a[]";
 
@@ -22,11 +23,13 @@ function teclaApertadaA(evt){
             ultimoAdicionadoA = campo;
 
             campo.focus();
+        
         } else {
             ultimoAdicionadoA.focus();
         }
 
         evt.preventDefault();
+        
     }
 }
 
@@ -35,6 +38,7 @@ function teclaApertadaB(evt){
         if (evt.target == ultimoAdicionadoB){
             var campo = document.createElement("input");
             campo.type = "number";
+            campo.step = "any"; 
             campo.className = "form-control";
             campo.name = "amostra_b[]";
 
@@ -45,8 +49,10 @@ function teclaApertadaB(evt){
 
             ultimoAdicionadoB = campo;
 
+            campo.focus();
         } else {
             ultimoAdicionadoB.focus();
         }
+        evt.preventDefault();
     }
 }
