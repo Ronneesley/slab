@@ -39,6 +39,8 @@ RUN composer install
 USER root
 RUN npm install
 
+RUN apt-get clean
+
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
 #apache2, php, Node, Composer, R, Twig, NPM, PDO, PDO Mysql, INTL, GD
