@@ -21,6 +21,10 @@ class TerminalInterativoControle extends ControleBase {
                 case "processar":
                     $this->processarR();
                     break;
+
+                case "exibir_ajuda":
+                        $this->exibirAjuda();
+                        break;                   
             }
         }else{
                 $p = new PrincipalControle();
@@ -50,6 +54,14 @@ class TerminalInterativoControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "terminal_interativo/inicio.html",
             [ "resultados" => $resultados,
               "comandos" => $comandos ]);
+    }
+
+
+    public function exibirAjuda(){
+
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "terminal_interativo/ajuda_terminal.html");
+    
     }
 }
 
