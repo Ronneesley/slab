@@ -2,21 +2,24 @@ version: '3.1'
 
 services:
   # Container do servidor web Ubuntu da aplicação
-  web-server:
-    container_name: ubuntu
+  php-ubuntu:
+    image: slab_php-ubuntu
     build:
       context: php
-      dockerfile: ./Dockerfile-ubuntu
+      dockerfile: ./Dockerfile-ubuntu-dev
     ports:
-      - "3000:80"
+      - 3000:80
+    volumes:
+      - ./php/src/:/var/www/html/
+      - ./php/src/php.ini:/etc/php/8.1/apache2/php.ini
     depends_on:
-      - db
+      - mysql
 
   # Container do servidor de banco de dados MySQL
-  db:
-    container_name: mysql
+  mysql:
+    image: slab_mysql
     build:
       context: mysql
       dockerfile: ./Dockerfile
     ports:
-      - "13306:3306"
+      - 13306:3306

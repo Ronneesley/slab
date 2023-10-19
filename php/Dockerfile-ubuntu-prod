@@ -11,29 +11,24 @@ ENV TZ=America/Sao_Paulo
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt-get update && apt-get -y upgrade && \
-    apt install -y apache2 apache2-utils php libapache2-mod-php php-mysql php-gd php-xml \
-    && apt clean
+    apt-get install -y apache2 php libapache2-mod-php php-mysql php-gd php-xml
 
 WORKDIR /var/www/
-
 RUN chmod -R 777 html/
 
 WORKDIR /var/www/html/
 RUN rm -f index.html
+
 COPY src/ .
 
-#RUN /etc/init.d/apache2 restart
-
-WORKDIR /
-
-RUN apt install -y composer r-base nodejs npm && apt clean
-
-RUN apt update && \
-    apt install -y php-twig php-intl php-pdo php-pdo-mysql && apt clean
+RUN apt-get install -y composer r-base nodejs npm && \
+    php-twig php-intl php-pdo php-pdo-mysql 
 
 # Não é possível instalar snap em um container
-
 RUN chmod -R 777 /var/www/html/configuracoes.json
+
+RUN mkdir /var/www/html/tmp && \ 
+    chmod -R 777 /var/www/html/tmp
 
 RUN useradd -m composer && chown -R composer:composer /var/www/html
 USER composer
@@ -42,9 +37,10 @@ WORKDIR /var/www/html/
 RUN composer install
 
 USER root
-
 RUN npm install
+
+RUN apt-get clean
 
 CMD ["apache2ctl", "-D", "FOREGROUND"]
 
-#   apache2, php, Node, Composer, R, Twig, NPM, PDO, PDO Mysql, INTL, GD
+#apache2, php, Node, Composer, R, Twig, NPM, PDO, PDO Mysql, INTL, GD
