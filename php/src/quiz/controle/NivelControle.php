@@ -91,6 +91,7 @@ class NivelControle extends ControleBase {
         $this->mostrarPaginaLayout($layout, "admin/niveis/listagem.html", ["mensagem" => $mensagem, "lista" => $lista]);
     }
     
+    
     public function selecionar(){
         $dao = new NivelDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
