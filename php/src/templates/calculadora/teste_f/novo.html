@@ -15,12 +15,16 @@
                     value=""
                     onkeydown="teclaApertada(event)" />
             </div>
-        
-            <div class="mb-3">
-                <label for="amostra_b" class="form-label">Amostra B:</label>
-                <input type="text" class="form-control" name="amostra_b" id="amostra_b" value="37; 42; 43; 46; 47; 48" />
-            </div>
+            <label for="amostra_b" class="form-label">Amostra B:</label>
 
+            <div id="entradas_b">
+                <input type="number" class="form-control" 
+                    name="amostra_b[]" id="amostra_b" 
+                    value=""
+                    onkeydown="teclaApertada(event)" />
+            </div>
+        
+           
             <button type="submit" class="btn btn-primary" name="acao" value="calcular">
                 Calcular
             </button>
