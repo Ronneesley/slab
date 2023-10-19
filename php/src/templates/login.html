@@ -22,6 +22,45 @@
         var a = document.getElementById("erro");
         a.style = "display:none";
       }, 3000);
+
+      document.addEventListener("DOMContentLoaded", function () {
+          const lembrarSenha = document.getElementById("remember");
+          const senhaInput = document.getElementById("senha");
+
+          function setCookie(name, value, days) {
+            const expires = new Date();
+            expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + value + ";expires=" + expires.toUTCString();
+          }
+
+          function getCookie(name) {
+            const cookieName = name + "=";
+            const cookies = document.cookie.split(";");
+            for (const cookie of cookies) {
+              if (cookie.trim().startsWith(cookieName)) {
+                return cookie.trim().substring(cookieName.length);
+              }
+            }
+            return null;
+          }
+
+          if (getCookie("lembrarCredenciais") === "true") {
+            const storedSenha = getCookie("senha");
+
+            senhaInput.value = storedSenha;
+            lembrarSenha.checked = true;
+          }
+
+          lembrarSenha.addEventListener("change", function () {
+            if (lembrarSenha.checked) {
+              setCookie("lembrarCredenciais", "true", 30);
+              setCookie("senha", senhaInput.value, 30);
+            } else {
+              setCookie("lembrarCredenciais", "false", -1);
+              setCookie("senha", "", -1);
+            }
+          });
+      });
     </script>
   </head>
 
@@ -63,6 +102,7 @@
                 type="email"
                 id="email"
                 name="email"
+                maxlength="100"
                 placeholder="Digite seu email"
                 autocomplete="email"
                 class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
@@ -79,6 +119,7 @@
                   type="password"
                   id="senha"
                   name="senha"
+                  maxlength="32"
                   placeholder="Digite sua senha"
                   class="w-full mt-2 p-2 outline-none text-gray-700 rounded-md ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-1 focus:ring-inset focus:text-gray-900 focus:ring-gray-500"
                   required
