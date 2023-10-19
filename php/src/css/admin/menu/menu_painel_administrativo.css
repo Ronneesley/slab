@@ -3,3 +3,55 @@
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;
 }
+
+
+.bg-menu-inicial {
+    background-color: rgb(160, 23, 23);
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+.navbar-brand{
+    font-size: x-large;
+    color: white;
+}
+
+.navbar-brand:hover{
+    color: aliceblue;
+}
+
+
+
+
+
+.navbar-nav .nav-link {
+    color: white; 
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 50%; /* Posiciona a barra no centro horizontal */
+    transform: translateX(-50%); /* Centraliza a barra horizontalmente */
+    width: 0; /* Largura inicial da margem */
+    height: 4px; /* Altura margem */
+    background-color: rgb(215, 215, 215); /* Cor da margem */
+    transition: width 0.3s ease; /* Transição suave para aparecer/desaparecer */
+    opacity: 0; /* Deixando ela invisível */
+}
+
+/* Ao passar o mouse sobre o link, a margem aparece */
+.navbar-nav .nav-link:hover::before {
+    width: 100%; /* Largura da barra lateral ao passar o mouse */
+    opacity: 1; /* Tornar a barra lateral visível */
+}
+
+.navbar-nav .nav-link:hover{    
+    color: rgb(215, 215, 215);
+}
