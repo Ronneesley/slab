@@ -13,7 +13,7 @@
                     Cadastro de Usuários
                 </div>
                 <div class="card-body">
-                    <form method="post" action="./index.php?controle=usuario&acao=salvar"></form>
+                    <form method="post" action="./index.php?controle=usuario&acao=salvar">
                         {% if mensagem != "" %}
                             <div class="alert alert-{{ tipo_mensagem }}" role="alert">
                                 {{ mensagem }}
@@ -74,8 +74,8 @@
                         {% endif %} -->
                         </div>
                             <div class="text-center">
-                                <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
-                                <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=usuario&amp;acao=listar"> Usuários Cadastrados</a>
+                                    <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                    <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=usuario&amp;acao=listar"> Usuários Cadastrados</a>
                             </div>
                     </form>
                 </div>
