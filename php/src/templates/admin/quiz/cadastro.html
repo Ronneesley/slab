@@ -14,7 +14,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="post" action="./index.php?controle=quizzes&acao=salvar">
+                    <form method="post" action="./index.php?controle=quiz&acao=salvar">
                         {% if mensagem != "" %}
                             <div class="alert alert-{{ tipo_mensagem }}" role="alert">
                                 {{ mensagem }}
@@ -34,7 +34,7 @@
                            
                             <div class="text-center">
                                 <input class="btn btn-success custom-btn" type="submit" value="Cadastrar"></input>
-                                <a class="btn btn-danger custom-btn-cadastrados" href=".Quizes Cadastrados">Quizes Cadastrados</a>
+                                <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=quiz&amp;acao=listar">Quizes Cadastrados</a>
                                 <br>
                             </div>
                         </div>

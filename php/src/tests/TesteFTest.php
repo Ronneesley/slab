@@ -8,8 +8,8 @@ final class TesteFTest extends TestCase
 {
     public function testExemplo1(): void
     {
-        $A = [48, 48, 49, 50, 52, 54, 58];
-        $B = [37, 42, 43, 46, 47, 48];
+        $A = [];
+        $B = [];
 
         $estatistico = new Estatistica();
         $mediaA = $estatistico->calcularMedia($A);
@@ -27,7 +27,9 @@ final class TesteFTest extends TestCase
         $testeF = new TesteF();
         $fCalculado = $testeF->calcular($B, $A);
 
-        $this->assertEqualsWithDelta(1.22, $fCalculado, 0.01);        
+        $this->assertEqualsWithDelta(1.22, $fCalculado, 0.01);
+
+               
     }
 }
 ?>

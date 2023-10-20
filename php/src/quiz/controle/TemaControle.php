@@ -84,16 +84,19 @@ class TemaControle extends ControleBase {
         $this->listar("Excluído com sucesso");
     }
     
-    public function listar($mensagem = ""){
+    public function listar($mensagem = "", $tipo_mensagem = "success"){
         $dao = new TemaDAO();
         $lista = $dao->listar();
         
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/temas/listagem.html", 
-                ["mensagem" => $mensagem, "lista" => $lista ]);
+        $this->mostrarPaginaLayout($layout, 
+                "admin/temas/listagem.html", 
+                ["mensagem" => $mensagem, 
+                "lista" => $lista,
+                "tipo_mensagem" => $tipo_mensagem ]);
     }
     
-    public function selecionar(){
+    public function selecionar($mensagem = "", $tipo_mensagem = "sucess"){
         $dao = new TemaDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         

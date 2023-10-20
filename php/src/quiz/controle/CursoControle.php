@@ -65,7 +65,7 @@ class CursoControle extends ControleBase {
         
         $this->mostrarFormularioCadastro($c, "Inserido com sucesso");
     }
-    
+
     public function alterar(){
         $c = new Curso();
         $c->setId($_REQUEST["id"]);
