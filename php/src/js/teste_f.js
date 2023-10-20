@@ -10,8 +10,10 @@ function teclaApertadaA(evt){
     if (evt.keyCode === 13) {
         if (evt.target == ultimoAdicionadoA){
             var campo = document.createElement("input");
+
+            if (evt.target.value !== ""){
             campo.type = "number";
-            campo.step = "any"; 
+            campo.step = "any";
             campo.className = "form-control";
             campo.name = "amostra_a[]";
 
@@ -24,11 +26,14 @@ function teclaApertadaA(evt){
 
             campo.focus();
         
-        } else {
-            ultimoAdicionadoA.focus();
-        }
-
-        evt.preventDefault();
+        }else{
+            alert("O campo não pode estar vazio!")
+        }        
+            }else {
+                    ultimoAdicionadoA.focus();
+                }
+            
+                evt.preventDefault();
         
     }
 }
@@ -37,8 +42,10 @@ function teclaApertadaB(evt){
     if (evt.keyCode === 13) {
         if (evt.target == ultimoAdicionadoB){
             var campo = document.createElement("input");
+            
+            if (evt.target.value !== ""){
             campo.type = "number";
-            campo.step = "any"; 
+            campo.step = "any";
             campo.className = "form-control";
             campo.name = "amostra_b[]";
 
@@ -50,9 +57,12 @@ function teclaApertadaB(evt){
             ultimoAdicionadoB = campo;
 
             campo.focus();
-        } else {
-            ultimoAdicionadoB.focus();
+        }else{
+            alert("O campo não pode estar vazio!")
         }
-        evt.preventDefault();
+            } else {
+                ultimoAdicionadoB.focus();
+            }
+            evt.preventDefault();
     }
 }

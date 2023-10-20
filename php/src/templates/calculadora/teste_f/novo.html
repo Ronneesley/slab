@@ -1,30 +1,30 @@
 <script src="{{ JS_DIR }}/teste_f.js"></script>
 
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center container text-center style="width: 30vw" ">
     <div class="col-md-auto border border-dark-subtle p-2 border-4 rounded-1">
         <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
             Teste F
         </div>
 
         <form action="./index.php?controle=teste_f" method="post">
-            <label for="amostra_a" class="form-label">Amostra A:</label>
+            <label for="amostra_a" class="form-label">Digite os valores de cada amostra</label>
 
             <div id="entradas_a">
-                <input type="number" class="form-control" 
+                <input type="number " class="form-control" placeholder="Amostra A"
                     name="amostra_a[]" id="amostra_a" 
                     value=""
                     onkeydown="teclaApertadaA(event)" />
             </div>
-            <label for="amostra_b" class="form-label">Amostra B:</label>
+            <label for="amostra_b" class="form-label"></label>
 
             <div id="entradas_b">
-                <input type="number" class="form-control" 
+                <input type="number" class="form-control" placeholder="Amostra B"
                     name="amostra_b[]" id="amostra_b" 
                     value=""
                     onkeydown="teclaApertadaB(event)" />
             </div>
         
-           
+           <br>
             <button type="submit" class="btn btn-primary" name="acao" value="calcular">
                 Calcular
             </button>
