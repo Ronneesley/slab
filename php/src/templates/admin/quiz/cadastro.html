@@ -15,12 +15,13 @@
 
                 <div class="card-body">
                     <form method="post" action="./index.php?controle=quiz&acao=salvar">
+                        <br />
                         {% if mensagem != "" %}
                             <div class="alert alert-{{ tipo_mensagem }}" role="alert">
                                 {{ mensagem }}
                             </div>
                         {% endif %}
-                                            <br />
+                        <br />
                         <div class="form-floating mb-3 custom-form">
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="nome" value="{{ quiz.nome }}">
                             <label for="floatingInput">Quiz</label>

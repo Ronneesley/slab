@@ -50,10 +50,12 @@ class TemaControle extends ControleBase {
         }
     }
     
-    public function mostrarFormularioCadastro($tema = null, $mensagem = "" ){
+    public function mostrarFormularioCadastro($tema = null, $mensagem = "", $tipo_mensagem = "success"){
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/temas/cadastro.html",
-                [ "tema" => $tema, "mensagem" => $mensagem ]);
+                [ "tema" => $tema, 
+                "mensagem" => $mensagem,
+                "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     public function inserir(){
@@ -96,7 +98,7 @@ class TemaControle extends ControleBase {
                 "tipo_mensagem" => $tipo_mensagem ]);
     }
     
-    public function selecionar($mensagem = "", $tipo_mensagem = "sucess"){
+    public function selecionar(){
         $dao = new TemaDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         

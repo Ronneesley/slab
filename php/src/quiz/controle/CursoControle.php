@@ -50,10 +50,12 @@ class CursoControle extends ControleBase {
         }
     }
     
-    public function mostrarFormularioCadastro($curso = null, $mensagem = "" ){
+    public function mostrarFormularioCadastro($curso = null, $mensagem = "", $tipo_mensagem = "success" ){
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/cursos/cadastro.html", 
-                [ "curso" => $curso, "mensagem" => $mensagem ]);
+                [ "curso" => $curso, 
+                "mensagem" => $mensagem,
+                "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     public function inserir(){

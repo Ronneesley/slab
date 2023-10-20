@@ -16,8 +16,13 @@
                 </div>
 
         <form method="post" action="./index.php?controle=questao&acao=salvar">
-            {{ mensagem}}
-            <br /><br />
+            <br />
+            {% if mensagem != "" %}
+                <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+                    {{ mensagem }}
+                </div>
+            {% endif %}
+            <br />
 
             <div>
                 <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko -->
@@ -65,7 +70,7 @@
                     <select class="form-select" id="nivel floatingSelect" name="nivel" aria-label="Floating label select example">
                         <option selected>Selecione o nível</option>
                         {% for item in niveis %}
-                        <option value="{{ item.id }}" {{ item.id == questao.nivel ? "selected":""  }}>{{ item.nivel }}</option>
+                        <option value="{{ item.id }}" {{ item.id == questao.nivel ? "selected":""  }}>{{ item.nome }}</option>
                         {% endfor %}
                     </select>
                     <label for="floatingSelect">Nível</label>
@@ -89,7 +94,7 @@
                     <select class="form-select" id="tema floatingSelect" name="tema" aria-label="Floating label select example">
                         <option value="">Selecione o tema</option>
                         {% for item in temas %}
-                        <option value="{{ item.id }}" {{ item.id == questao.tema ? "selected":""  }}>{{ item.tema }}</option>
+                        <option value="{{ item.id }}" {{ item.id == questao.tema ? "selected":""  }}>{{ item.nome }}</option>
                         {% endfor %}
                     </select>
                     <label for="floatingSelect">Temas</label>

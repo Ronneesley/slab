@@ -53,7 +53,7 @@ class QuestaoControle extends ControleBase {
         }
     }
     
-    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$parametros = array()){
+    public function mostrarFormularioCadastro($questao = null, $mensagem = "",$tipo_mensagem = "success", $parametros = array()){
         $nivelDao = new NivelDAO();
         $cursoDao = new CursoDAO();
         $temaDao = new TemaDAO();
@@ -65,7 +65,8 @@ class QuestaoControle extends ControleBase {
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/questoes/cadastro.html",
             [   "questao" => $questao, "mensagem" => $mensagem,
-                "niveis"=>$niveis, "cursos"=>$cursos, "temas"=>$temas ]);
+                "niveis"=>$niveis, "cursos"=>$cursos, "temas"=>$temas,
+                "tipo_mensagem" => $tipo_mensagem ]);
     }
 
     public function inserir(){
@@ -113,12 +114,16 @@ class QuestaoControle extends ControleBase {
         $this->listar("Excluído com sucesso");
     }
     
-    public function listar($mensagem = ""){
+    public function listar($mensagem = "", $tipo_mensagem = "success"){
         $dao = new QuestaoDAO();
         $lista = $dao->listar();
         
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/questoes/listagem.html", ["mensagem" => $mensagem, "lista" => $lista ]);
+        $this->mostrarPaginaLayout($layout, 
+        "admin/questoes/listagem.html", 
+        ["mensagem" => $mensagem, 
+        "lista" => $lista,
+        "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     public function selecionar(){

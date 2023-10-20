@@ -4,7 +4,11 @@
 <div class="container-sm">
     <h2>Listagem de Questões</h2><hr><br>
     
-    {{ mensagem }}
+    {% if mensagem != "" %}
+        <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+            {{ mensagem }}
+        </div>
+    {% endif %}
 
     <table class="table table-responsive table-bordered table-hover shadow-sm p-3 mb-5 bg-body-tertiary rounded table-overflow">
         <thead class="thead">

@@ -14,12 +14,13 @@
                 </div>
                 <div class="card-body">
                     <form method="post" action="./index.php?controle=usuario&acao=salvar"></form>
+                        <br />
                         {% if mensagem != "" %}
                             <div class="alert alert-{{ tipo_mensagem }}" role="alert">
                                 {{ mensagem }}
                             </div>
                         {% endif %}
-
+                        <br />
                         <!-- {% if usuario.id != null %}
                             <div class="form-floating mb-2  custom-form text-id">
                                 <input type="text" name="id" id="id" class="form-control" placeholder="id" />
