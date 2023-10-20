@@ -9,49 +9,50 @@ window.onload = function(){
 function teclaApertadaA(evt){
     if (evt.keyCode === 13) {
         if (evt.target == ultimoAdicionadoA){
-            var campo = document.createElement("input");
-            campo.type = "number";
-            campo.step = "any"; 
-            campo.className = "form-control";
-            campo.name = "amostra_a[]";
+            if (ultimoAdicionadoA.value.trim() !== "") {
+                var campo = document.createElement("input");
+                campo.type = "number";
+                campo.step = "any"; 
+                campo.className = "form-control";
+                campo.name = "amostra_a[]";
 
-            campo.addEventListener("keydown", teclaApertadaA);
+                campo.addEventListener("keydown", teclaApertadaA);
 
-            let entradasA = document.getElementById("entradas_a");
-            entradasA.appendChild(campo);
+                let entradasA = document.getElementById("entradas_a");
+                entradasA.appendChild(campo);
 
-            ultimoAdicionadoA = campo;
+                ultimoAdicionadoA = campo;
 
-            campo.focus();
-        
-        } else {
-            ultimoAdicionadoA.focus();
+                campo.focus();
+            } else {
+                alert("Campo Amostra A não pode estar vazio!");
+            }
         }
-
         evt.preventDefault();
-        
     }
 }
 
 function teclaApertadaB(evt){
     if (evt.keyCode === 13) {
         if (evt.target == ultimoAdicionadoB){
-            var campo = document.createElement("input");
-            campo.type = "number";
-            campo.step = "any"; 
-            campo.className = "form-control";
-            campo.name = "amostra_b[]";
+            if (ultimoAdicionadoB.value.trim() !== "") {
+                var campo = document.createElement("input");
+                campo.type = "number";
+                campo.step = "any"; 
+                campo.className = "form-control";
+                campo.name = "amostra_b[]";
 
-            campo.addEventListener("keydown", teclaApertadaB);
+                campo.addEventListener("keydown", teclaApertadaB);
 
-            let entradasB = document.getElementById("entradas_b");
-            entradasB.appendChild(campo);
+                let entradasB = document.getElementById("entradas_b");
+                entradasB.appendChild(campo);
 
-            ultimoAdicionadoB = campo;
+                ultimoAdicionadoB = campo;
 
-            campo.focus();
-        } else {
-            ultimoAdicionadoB.focus();
+                campo.focus();
+            } else {
+                alert("Campo Amostra B não pode estar vazio!");
+            }
         }
         evt.preventDefault();
     }
