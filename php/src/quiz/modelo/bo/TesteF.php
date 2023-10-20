@@ -9,9 +9,17 @@ class TesteF {
         $estatistico = new Estatistica();
 
         $varA = $estatistico->calcularVariancia($A);
-        $varB = $estatistico->calcularVariancia($B);
+        $varAFloat = (float)$varA;
 
-        return $varA / $varB;
+        $varB = $estatistico->calcularVariancia($B);
+        $varBFloat = (float)$varB;
+
+
+        $resultado = $varAFloat / $varBFloat; 
+        $resultadoF = number_format($resultado, 2, ',', '');
+
+        //return $varA / $varB;
+        return $resultadoF;
     }
 }
 ?>
