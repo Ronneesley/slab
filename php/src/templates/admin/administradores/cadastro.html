@@ -1,24 +1,56 @@
-<meta charset="utf-16">
-<style>
- .bot {
-	background-color:#ffff00;
-	display:inline-block;
-	cursor:pointer;
-	color:#000000;
-	font-family:Roboto Serif;
-	font-size:22px;
-	padding:16px 12px;
-	text-decoration:none;
-</style>
-<body style="background-color: FF0000;">
- <div style="font-size: 32;text-align: center; font-family: Roboto Serif">
-  <p style="color: #000000; background-color: #FFFF00">CADASTRO DE ADMIN</p>
- </div>
- <br> 
- <center><img src="./imagens/logo.png" class="logo"></center><br>
- <center><div font-size:22px;>Nome:  </div><input type="text"; id: "nomeA"; style="width: 750px; height: 31px;"placeholder="Nome"></center><br>
- <center><div font-size:22px;>E-mail:  </div><input type="text"; id: "emailA"; style="width: 750px; height: 31px;"placeholder="E-mail"></center><br>
- <center><div font-size:22px;>Senha:  </div><input type="text"; id: "senhaA"; style="width: 750px; height: 31px;" placeholder="Senha"></center><br>
- <center><div font-size:22px;>id:  </div><input type="text"; id: "id"; style="width: 750px; height: 31px;" placeholder="ID"></center><br>
- <center><a href="#" class="bot">CADASTRAR ADMIN</a></center>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../../css/admin/cadastro/tela_cadastro.css">
+</head>
+<body class="background">
+	<div class="d-flex justify-content-center align-items-center p-5">
+		<div class="card w-80 shadow p-2 mb-5 bg-body-tertiary rounded">
+			<div class="card-header text-center">Cadastro de Administradores</div>
+			<div class="card-body">
+				<form method="post" action="./index.php?controle=administrador&acao=salvar"> <!-- conferir link-->
+				{% if mensagem != "" %}
+					<div class="alert alert-{{ tipo_mensagem}}" role="alert">
+						{{ mensagem }}
+					</div>
+				{% endif %}
+
+					<div class="form-floating mb-3 ">
+						<div class="col-md inputNome ">
+							<div class="form-floating p-3 custom-form">
+								<input type="text" class="form-control" name="nome" placeholder="nome" id="nome"/>
+								<label for="floatingInput">Nome</label>
+							</div>
+						</div>
+						<div></div>
+						<div class="col-md inputEmail">
+							<div class="form-floating p-3 custom-form">
+								<input type="email" class="form-control" name="email" placeholder="email" id="email"/>
+								<label for="floatingInput">Email</label>
+							</div>
+						</div>
+						
+						<div class="col-md inputSenha">
+							<div class="form-floating custom-form">
+								<input type="password" class="form-control" name="senha" placeholder="senha" id="senha"/>
+								<label for="floatingInput">Senha</label>
+							</div>
+						</div>
+					</div>
+					<div class="text-center">
+						<button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+						<a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=administrador&amp;acao=listar"> Administradores Cadastrados</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
 </body>
+</html>
+
+
+

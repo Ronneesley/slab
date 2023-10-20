@@ -1,53 +1,58 @@
-<h2>Listagem de Administradores</h2>
+<link rel="stylesheet" type="text/css" href="../../../css/admin/listagem/tela_listagem.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div class="container-sm">
 
-<a class="btn btn-primary" href="./index.php?controle=administrador&acao=novo">Criar novo administrador</a>
-<br />
-<br />
+    <h2>Lista de Administradores</h2> <hr><br>
 
-{% if mensagem != "" %}
-    <div class="alert alert-{{ tipo_mensagem }}" role="alert">
-        {{ mensagem }}
-    </div>
-{% endif %}
+   
+    {% if mensagem != "" %}
+        <div class="alert alert-{{ tipo_mensagem }}" role="alert">
+            {{ mensagem }}
+        </div>
+    {% endif %}
 
-<table class="table table-bordered table-striped table-hover">
-    <thead>
-        <tr>
-            <th style="width: 50px;">ID</th>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>Login</th>
-            <th style="width: 170px;">Opções</th>
-        </tr>
-    </thead>
+    <table class="table table-responsive table-bordered  table-hover shadow-sm p-3 mb-3 bg-body-tertiary rounded">
+        <thead class="thead">
+            <tr>
+                <th class="custom-id">ID</th>
+                <th class="custom-nome">Nome</th>
+                <th class="custom-email">E-mail</th>
+                <th class="custom-login">Login</th>
+                <th class="custom-opcoes">Opções</th>
+            </tr>
+        </thead>
 
-    <tbody>
-        {% for item in lista %}
-        <tr>
-            <td style="text-align: right;">
-                {{ item.id }}
-            </td>
+        <tbody>
+            {% for item in lista %}
+            <tr>
+                <td class="custom-id">
+                    {{ item.id }}
+                </td>
 
-            <td>
-                {{ item.nome }}
-            </td>
+                <td class="custom-nome">
+                    {{ item.nome }}
+                </td>
 
-            <td>
-                {{ item.email }}
-            </td>
+                <td class="custom-email">
+                    {{ item.email }}
+                </td>
 
-            <td>
-                {{ item.login }}
-            </td>
+                <td class="custom-login">
+                    {{ item.login }}
+                </td>
 
-            <td style="text-align: center;">
-                <a class="btn btn-primary" 
-                    href="./index.php?controle=administrador&acao=selecionar&id={{ item.id }}">Editar</a>
-                <a class="btn btn-danger" 
-                    href="./index.php?controle=administrador&acao=excluir&id={{ item.id }}">Excluir</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+                <td class="text-center">
+                    <a class="btn btn-outline-primary" 
+                        href="./index.php?controle=administrador&acao=selecionar&id={{ item.id }}"><span class="material-symbols-outlined icone">edit</span></a>
+                    <a class="btn btn-outline-danger" 
+                        href="./index.php?controle=administrador&acao=excluir&id={{ item.id }}"><span class="material-symbols-outlined icone">delete</span></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-danger custom-btn" href="./index.php?controle=administrador&acao=novo">Criar novo administrador</a>
+
+</div>
 
