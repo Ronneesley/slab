@@ -242,7 +242,7 @@ class QuizControle extends ControleBase {
         $dao = new QuizDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
         
-        print_r($c);
+        $this->mostrarFormularioCadastro($c, "Selecionado com sucesso");
     }
     public function salvarRank(){
         $rank = new Rank();
