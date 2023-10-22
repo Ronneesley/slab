@@ -32,6 +32,7 @@ function teclaApertadaA(evt){
     }
 }
 
+
 function teclaApertadaB(evt){
     if (evt.keyCode === 13) {
         if (evt.target == ultimoAdicionadoB){
@@ -57,3 +58,4 @@ function teclaApertadaB(evt){
         evt.preventDefault();
     }
 }
+

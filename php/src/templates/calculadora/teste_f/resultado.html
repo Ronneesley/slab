@@ -1,32 +1,32 @@
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center" style="margin-top: 17vh">
     <div class="col-md-auto border border-dark-subtle p-2 border-4 rounded-1">
         <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
             Resultado do Teste F
         </div>
             <table class="table table-bordered">
                 <thead>
-                    <tr>
-                        <td></td>
-                        <td>Média</td>
-                        <td>Variância</td>
+                    <tr style="border-color: rgba(250, 235, 215, 0);">
+                        <td style="border-color: rgba(250, 235, 215, 0);"></td>
+                        <td class="table-active"><b>Média</b></td>
+                        <td class="table-active"><b>Variância</b></td>
                     </tr>
                 </thead> 
                 
                 <tbody>            
                     <tr>
-                        <td>Amostra A</td>
+                        <td class="table-active"><b>Amostra A</b></td>
                         <td>{{ mediaAFormatada }}</td>
                         <td>{{ varianciaAFormatada }}</td>
                     </tr>
             
                     <tr>
-                        <td>Amostra B</td>
+                        <td class="table-active"><b>Amostra B</b></td>
                         <td>{{ mediaBFormatada }}</td>
                         <td>{{ varianciaBFormatada }}</td>
                     </tr>
             
                     <tr>
-                        <td>F calculado</td>
+                        <td class="table-active"><b>F calculado</b></td>
                         <td style="text-align: center;" colspan="2">{{ fCalculado }}</td>
                     </tr>
                 </tbody>
