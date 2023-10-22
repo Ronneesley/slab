@@ -41,6 +41,7 @@ class TesteFControle extends ControleBase {
 
         $estatistico = new Estatistica();
         $mediaA = $estatistico->calcularMedia($A);
+
         $varianciaA = $estatistico->calcularVariancia($A);
 
         $mediaB = $estatistico->calcularMedia($B);
@@ -49,11 +50,25 @@ class TesteFControle extends ControleBase {
         $testeF = new TesteF();
         $fCalculado = $testeF->calcular($B, $A);
 
+        $mediaAFloat = floatval($mediaA);
+        $mediaAFormatada = number_format($mediaAFloat, 2 , ',', '.');
+
+        $mediaBFloat = floatval($mediaB);
+        $mediaBFormatada = number_format($mediaBFloat, 2 , ',', '.');
+
+        $varianciaAFloat = floatval($varianciaA);
+        $varianciaAFormatada = number_format($varianciaAFloat, 2 , ',', '.');
+
+        $varianciaBFloat = floatval($varianciaB);
+        $varianciaBFormatada = number_format($varianciaBFloat, 2 , ',', '.');
+
         $layout = $this->configurarTemplate("layout.html");
         $this->mostrarPaginaLayout($layout, "calculadora/teste_f/resultado.html",
             ["mediaA" => $mediaA, "varianciaA" => $varianciaA,
              "mediaB" => $mediaB, "varianciaB" => $varianciaB,
-             "fCalculado" => $fCalculado]);
+             "fCalculado" => $fCalculado, "mediaAFormatada" => $mediaAFormatada,
+             "mediaBFormatada" => $mediaBFormatada, "varianciaAFormatada" => $varianciaAFormatada,
+             "varianciaBFormatada" => $varianciaBFormatada]);
     }
 }
 ?>

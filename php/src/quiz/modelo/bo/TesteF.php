@@ -11,11 +11,23 @@ class TesteF {
 
         $varA = $estatistico->calcularVariancia($A);
         $varB = $estatistico->calcularVariancia($B);
-        
+
+        $var = $varA / $varB;
+
+        $varFormatado = number_format($var, 2, ',', '.');
+
+        $varFormatadoNotacao = sprintf("%.2e", $var);
+        list($base, $exponent) = explode("e", $varFormatadoNotacao);
+        $base2 = number_format($base, 2, ',', '.');
+        $varFormatadoNotacaoFinal = $base2 . " x 10^" . $exponent;
+
         if ($varA === 0 || $varB === 0) {
-            echo "Não é possível calcular o F, pois não existe variância em um dos grupos.";
-        } else {
-            return $varA / $varB;
+            return "O teste F não pode ser calculado quando não há variabilidade em um dos grupos.";
+        } elseif (abs($var) < 0.01) {
+            return $varFormatadoNotacaoFinal;
+
+        } else{
+            return $varFormatado;
         }
     }
 }
