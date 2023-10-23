@@ -1,33 +1,34 @@
 <script src="{{ JS_DIR }}/teste_f.js"></script>
 
-<div class="row justify-content-md-center text-center style="width: 30vw" ">
+<div class="row justify-content-md-center">
     <div class="col-md-auto border border-dark-subtle p-2 border-4 rounded-1">
         <div style="font-size: 36px; font-family: Arial, Helvetica, sans-serif;" class="text-dark fw-bold text-center p-2">
             Teste F
         </div>
 
         <form action="./index.php?controle=teste_f" method="post">
-            <label for="amostra_a" class="form-label">Digite os valores de cada amostra</label>
+            <div style="width: 30vw; height: 10vh; font-family: Arial, Helvetica, sans-serif; font-size: 20px; text-align: center;">
+            <label class="text-dark fw-bold mb-2 mx-2 ">Digite os valores de cada amostra</label>
+            </div>   
 
             <div id="entradas_a">
-                <input type="number " class="form-control" placeholder="Amostra A"
+                <label for="amostra_a"  class="text-dark fw-bold mb-2 mx-2 ">Amostra A</label>
+                <input type="number " class="form-control" placeholder="Digite e precione 'Enter'"
                     name="amostra_a[]" id="amostra_a" 
                     value=""
                     onkeydown="teclaApertadaA(event)" />
             </div>
-            <label for="amostra_b" class="form-label"></label>
-
+            <br>
             <div id="entradas_b">
-                <input type="number" class="form-control" placeholder="Amostra B"
+                <label for="amostra_b"  class="text-dark fw-bold mb-2 mx-2 ">Amostra B</label>
+                <input type="number" class="form-control" placeholder="Digite e precione 'Enter'"
                     name="amostra_b[]" id="amostra_b" 
                     value=""
                     onkeydown="teclaApertadaB(event)" />
             </div>
         
            <br>
-            <button type="submit" class="btn btn-primary" name="acao" value="calcular">
-                Calcular
-            </button>
+            <button type="submit" class="btn btn-dark rounded-3 mx-2" name="acao" value="calcular">Calcular</button>
         </form>
     </div>
 </div>
