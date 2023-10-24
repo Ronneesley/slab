@@ -50,9 +50,11 @@ class NivelControle extends ControleBase {
         }
     }
     
-    public function mostrarFormularioCadastro($nivel = null, $mensagem = "" ){
+    public function mostrarFormularioCadastro($nivel = null, $mensagem = "", $tipo_mensagem = "success"){
         $layout = $this->configurarTemplate("admin/layout.html");
-        $this->mostrarPaginaLayout($layout, "admin/niveis/cadastro.html", [ "nivel" => $nivel, "mensagem" => $mensagem]);
+        $this->mostrarPaginaLayout($layout, "admin/niveis/cadastro.html", [ "nivel" => $nivel, 
+        "mensagem" => $mensagem,
+        "tipo_mensagem" => $tipo_mensagem]);
     }
 
         public function inserir(){
@@ -95,7 +97,7 @@ class NivelControle extends ControleBase {
     public function selecionar(){
         $dao = new NivelDAO();
         $c = $dao->selecionar($_REQUEST["id"]);
-        
+
         $this->mostrarFormularioCadastro($c, "Selecionado com sucesso");
     }
 }

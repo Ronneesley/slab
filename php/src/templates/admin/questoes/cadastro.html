@@ -12,7 +12,11 @@
         <div class="d-flex justify-content-center align-items-center p-5">
             <div class="card-quest card w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
                 <div class="card-header text-center">
-                  Cadastro de Questões
+                    {% if questao.id == "" %}
+                        <h2>Cadastro de Temas</h2>
+                    {% else %}
+                        <h2>Editar Temas</h2>
+                    {% endif %}
                 </div>
 
         <form method="post" action="./index.php?controle=questao&acao=salvar">
@@ -27,12 +31,12 @@
             <div>
                 <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko -->
                 <!--
-                <div class="form-floating mb-3">
-                    <input class="form-control" type="text" name="id" id="id " value="{{ questao.id }}" placeholder="name@example.com"/>
-                    <label for="id">ID</label>
+                <div class="form-floating mb-3">-->
+                    <input class="form-control" type="hidden" name="id" id="id " value="{{ questao.id }}" placeholder="name@example.com"/>
+                   <!-- <label for="id">ID</label>
                 </div>
-                <br/><br/>
-                -->
+                <br/><br/>-->
+                
 
                 <!-- lista por radio by Mayko
                 
@@ -145,7 +149,11 @@
                 <br>
 
                 <div class="text-center">
-                    <input class="btn btn-success custom-btn" type="submit" value="Cadastrar"></input>
+                    {% if questao.id == "" %}
+                        <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                    {% else %}
+                        <button class="btn btn-success custom-btn" type="submit">Salvar</button>
+                    {% endif %}
                     <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=questao&amp;acao=listar">Questões Cadastradas</a>
                 </div>
                 

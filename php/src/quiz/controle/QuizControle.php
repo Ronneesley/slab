@@ -193,10 +193,12 @@ class QuizControle extends ControleBase {
         }
     }
 
-    public function mostrarFormularioCadastro($quiz = null, $mensagem = "",$parametros = array()){
+    public function mostrarFormularioCadastro($quiz = null, $mensagem = "",$tipo_mensagem = "success",$parametros = array()){
         $layout = $this->configurarTemplate("admin/layout.html");
         $this->mostrarPaginaLayout($layout, "admin/quiz/cadastro.html",
-        [ "quiz" => $quiz, "mensagem" => $mensagem ]);
+        [ "quiz" => $quiz, 
+        "mensagem" => $mensagem,
+        "tipo_mensagem" => $tipo_mensagem ]);
     }
     
     

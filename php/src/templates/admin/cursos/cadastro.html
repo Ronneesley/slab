@@ -10,7 +10,11 @@
         <div class="d-flex justify-content-center align-items-center p-5">
             <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
                 <div class="card-header text-center">
-                  Cadastro de curso
+                    {% if curso.id == "" %}
+                        <h2>Cadastro de Curso</h2>
+                    {% else %}
+                        <h2>Editar Curso</h2>
+                    {% endif %}
                 </div>
                 <div class="card-body">
                     <form  class="form-inline" method="post" action="./index.php?controle=curso&acao=salvar">
@@ -28,12 +32,15 @@
                         
                         <div>
                             <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko 
-                            <label for="id">ID</label>
-                            <input type="text" class="form-control" name="id" id="id" value="{{ curso.id }}"/>
-                            <br /><br /> -->                            
+                            <label for="id">ID</label>--> 
+                            <input type="hidden" class="form-control" name="id" id="id" value="{{ curso.id }}"/>                          
                             <br /><br />
                             <div class="text-center">
-                                <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                {% if curso.id == "" %}
+                                    <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                {% else %}
+                                    <button class="btn btn-success custom-btn" type="submit">Salvar</button>
+                                {% endif %}
                                 <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=curso&amp;acao=listar"> Cursos Cadastrados</a>
                             </div>
                         </div>

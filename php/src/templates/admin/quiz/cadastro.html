@@ -10,7 +10,11 @@
         <div class="d-flex justify-content-center align-items-center p-5">
             <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
                 <div class="card-header text-center">
-                  Cadastro de Quiz
+                    {% if quiz.id == "" %}
+                        <h2>Cadastro de Quiz</h2>
+                    {% else %}
+                        <h2>Editar Quiz</h2>
+                    {% endif %}
                 </div>
 
                 <div class="card-body">
@@ -28,13 +32,16 @@
                         </div>
                         <div>
                             <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko | disabled 
-                            <label for="id">ID</label>
-                            <input type="text" name="id" id="id" value="{{ tema.id }}"/>
-                            <br /><br />-->
+                            <label for="id">ID</label>-->
+                            <input type="hidden" name="id" id="id" value="{{ quiz.id }}"/>
                             <br /><br />
                            
                             <div class="text-center">
-                                <input class="btn btn-success custom-btn" type="submit" value="Cadastrar"></input>
+                                {% if tema.id == "" %}
+                                    <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                {% else %}
+                                    <button class="btn btn-success custom-btn" type="submit">Salvar</button>
+                                {% endif %}
                                 <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=quiz&amp;acao=listar">Quizes Cadastrados</a>
                                 <br>
                             </div>

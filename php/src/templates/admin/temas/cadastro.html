@@ -11,7 +11,11 @@
         <div class="d-flex justify-content-center align-items-center p-5">
             <div class="card  w-50 shadow p-3 mb-5 bg-body-tertiary rounded">
                 <div class="card-header text-center">
-                    Cadastro de Temas
+                    {% if tema.id == "" %}
+                        <h2>Cadastro de Temas</h2>
+                    {% else %}
+                        <h2>Editar Temas</h2>
+                    {% endif %}
                 </div>
                 <div class="card-body">
                     <form  class="form-inline" method="post" action="./index.php?controle=tema&acao=salvar">
@@ -29,11 +33,16 @@
                         
                         <div>
                             <!-- Ocultar id, desnecessário exibir, foi usado apenas para verificação de funcionabilidade by Mayko | disabled 
-                            <label for="id">ID</label>
-                            <input type="text" name="id" id="id" value="{{ tema.id }}"/>-->
+                            <label for="id">ID</label> -->
+                            <input type="hidden" name="id" id="id" value="{{ tema.id }}"/>
                             <br /><br />                        
                             <div class="text-center">
-                                <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                {% if tema.id == "" %}
+                                    <button class="btn btn-success custom-btn" type="submit">Cadastrar</button>
+                                {% else %}
+                                    <button class="btn btn-success custom-btn" type="submit">Salvar</button>
+                                {% endif %}
+                                
                                 <a class="btn btn-danger custom-btn-cadastrados" href="./index.php?controle=tema&amp;acao=listar">Temas Cadastrados</a>
                             </div>
                         </div>
