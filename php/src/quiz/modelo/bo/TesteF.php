@@ -14,7 +14,7 @@ class TesteF {
 
 
         if ($varA === 0 || $varB === 0) {
-            return "O teste F não pode ser calculado quando não há variabilidade em um dos grupos.";
+            return "O teste F não pode ser calculado quando não há variabilidade.";
         }
 
         $var = $varA / $varB;

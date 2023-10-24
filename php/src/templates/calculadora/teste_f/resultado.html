@@ -7,26 +7,26 @@
                 <thead>
                     <tr style="border-color: rgba(250, 235, 215, 0);">
                         <td style="border-color: rgba(250, 235, 215, 0);"></td>
-                        <td class="table-active"><b>Média</b></td>
-                        <td class="table-active"><b>Variância</b></td>
+                        <td class="table-active" style="text-align: center"><b>Média</b></td>
+                        <td class="table-active" style="text-align: center"><b>Variância</b></td>
                     </tr>
                 </thead> 
                 
                 <tbody>            
                     <tr>
-                        <td class="table-active"><b>Amostra A</b></td>
-                        <td>{{ mediaAFormatada }}</td>
-                        <td>{{ varianciaAFormatada }}</td>
+                        <td class="table-active" style="text-align: center"><b>Amostra A</b></td>
+                        <td style="text-align: right">{{ mediaAFormatada }}</td>
+                        <td style="text-align: right">{{ varianciaAFormatada }}</td>
                     </tr>
             
                     <tr>
-                        <td class="table-active"><b>Amostra B</b></td>
-                        <td>{{ mediaBFormatada }}</td>
-                        <td>{{ varianciaBFormatada }}</td>
+                        <td class="table-active" style="text-align: center"><b>Amostra B</b></td>
+                        <td style="text-align: right">{{ mediaBFormatada }}</td>
+                        <td style="text-align: right">{{ varianciaBFormatada }}</td>
                     </tr>
             
                     <tr>
-                        <td class="table-active"><b>F calculado</b></td>
+                        <td class="table-active" style="text-align: center"><b>F calculado</b></td>
                         <td style="text-align: center;" colspan="2">{{ fCalculado }}</td>
                     </tr>
                 </tbody>
