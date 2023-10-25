@@ -1,0 +1,13 @@
+<h1>Amplitude Total Studentizada (q)</h1>
+
+<table class="table table-striped table-hover">
+    {% for i in 0..m|length - 1 %}
+        <tr>
+            {% for j in 0..m[0]|length - 1 %}
+                <td>
+                    {{ m[i][j] }}
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

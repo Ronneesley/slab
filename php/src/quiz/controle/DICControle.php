@@ -28,11 +28,34 @@ class DICControle extends DelineamentosControle {
                 case "importar":
                     $this->importar();
                     break;
+                case "iniciar_plano":
+                    $this->iniciarPlano();
+                    break;
+                case "planejar":
+                    $this->planejar();
+                    break;
             }
         }else{
             $p = new PrincipalControle();
             $p->mostrarPaginaLogin("Faça login primeiro!");
         }
+    }
+
+    public function iniciarPlano(){
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "dic/iniciar_plano.html");        
+    }
+
+    public function planejar(){
+        $I = $this->obterPostInteiro("n_tratamentos");
+        $J = $this->obterPostInteiro("n_repeticoes");
+
+        $dic = new DIC();        
+        $M = $dic->planejar($I, $J);
+
+        $layout = $this->configurarTemplate("layout.html");
+        $this->mostrarPaginaLayout($layout, "dic/planejamento.html",
+            ["plano" => $M, "I" => $I, "J" => $J]);
     }
 
     public function mostrarConfiguracaoInicial(){

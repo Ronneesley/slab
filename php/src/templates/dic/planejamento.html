@@ -1,0 +1,13 @@
+<h1>Planejamento do DIC</h1>
+
+<table class="table table-bordered table-hover">
+    {% for i in 0..I - 1 %}
+        <tr>
+            {% for j in 0..J - 1 %}
+                <td style="text-align: center;">
+                    Y{{ plano[i][j].tratamento }},{{ plano[i][j].repeticao }}
+                </td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>

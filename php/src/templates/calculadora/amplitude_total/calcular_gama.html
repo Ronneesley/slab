@@ -1,0 +1,16 @@
+<form method="post" action="./index.php?controle=amplitude_total">
+    <div class="mb-3">
+        <label class="form-label">x</label>
+        <input type="number" class="form-control" name="x" value="{{ x }}" />
+    </div>
+
+    <button type="submit" name="acao" value="calcular_gama"
+        class="btn btn-primary">
+        Calcular
+    </button>
+
+    <div class="alert alert-primary mt-5" role="alert">
+        Resultado:
+        <strong>{{ gama | number_format(3, ',', '.') }}</strong>
+    </div>
+</form>

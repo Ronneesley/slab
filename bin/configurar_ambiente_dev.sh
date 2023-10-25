@@ -9,7 +9,7 @@ BIN=`pwd`
 echo "###########################################"
 echo -n "Verificando se o NPM está instalado: "
 npm --version
-RESULTADO=1
+RESULTADO=$?
 echo "###########################################"
 
 if [ $RESULTADO -ne 0 ]; then

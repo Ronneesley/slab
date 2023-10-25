@@ -87,6 +87,10 @@ class Roteador {
                 $controle = new TesteTukeyControle();
                 $controle->processar($acao);
                 break;
+            case "amplitude_total":
+                $controle = new AmplitudeTotalControle();
+                $controle->processar($acao);
+                break;
         }
     }
 }

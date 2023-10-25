@@ -2,6 +2,8 @@
 
 namespace QuizEstatistico\modelo\bo;
 
+use QuizEstatistico\modelo\dto\Parcela;
+
 /**
  * Delineamento Inteiramente Casualizado (DIC)
  * Autor: Ronneesley Moura Teles
@@ -50,6 +52,42 @@ class DIC {
     private $alfa;
 
     private $FTab;
+
+    function planejar($I, $J){
+        $Q = [ ];
+
+        for ($i = 1; $i <= $I; $i++){
+            for ($j = 1; $j <= $J; $j++){
+                array_push($Q, new Parcela($i, $j) );
+            }
+        }
+
+        $P = [];
+        for ($k = 0; $k < $I * $J; $k++){
+            $pos = rand(0, count($Q) - 1);
+            $chaves = array_keys($Q);
+            $x = $chaves[$pos];
+            
+            $parcela = $Q[$x];
+
+            array_push($P, $parcela);
+
+            unset($Q[$x]);
+        }
+
+        $M = [];
+        for ($i = 0; $i < $I; $i++){
+            $M[$i] = [];
+
+            for ($j = 0; $j < $J; $j++){
+                $pos = $i * $I + $j;
+
+                array_push($M[$i], $P[$pos]);
+            }
+        }
+
+        return $M;
+    }
 
     function converterNumero($numero_em_string){
         return floatval(strtr($numero_em_string, ",", "."));
