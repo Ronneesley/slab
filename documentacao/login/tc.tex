@@ -1,0 +1,55 @@
+\documentclass[versao=digital]{tc_ifgoiano_ceres}
+
+\author{Ronneesley Moura Teles}
+\title{Documentação do Login de Usuário}
+\curso{Sistema de Informação}
+
+\data{\today}
+\ano{ANO}
+\local{Ceres}
+\uf{GO}
+
+\instituicao{Instituto Federal Goiano Campus Ceres}
+\tipotrabalho{Monografia (Bacharelado)}
+
+\orientador{Dr. Ronneesley Moura Teles}
+\orientadorInstituicao{Instituto Federal Goiano Campus Ceres}
+
+\primeiroMembroBanca{TITULO. NOME MEMBRO 1}
+\primeiroMembroBancaInstituicao{INTITUIÇÃO DO MEMBRO 1}
+
+\segundoMembroBanca{TITULO. NOME MEMBRO 2}
+\segundoMembroBancaInstituicao{INSTITUIÇÃO DO MEMBRO 2}
+
+\dataDefesa{DATA DA DEFESA}
+
+%\fichaCatalografica{./documentos_externos/ficha_catalografica.pdf}
+%\folhaAprovacaoAssinada{./documentos_assinados/folha_aprovacao.pdf}
+
+\configurarInformacoesPDF
+
+\usetikzlibrary{shapes,arrows}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{mathtools}
+
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\textrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\textrm{tg}}
+\providecommand{\coth}{} \renewcommand{\coth}{\hspace{2pt}\textrm{cotg}}
+
+\begin{document}
+	\input{./preambulo/preambulo.tex}
+	
+	%Início da parte textual
+	\textual
+
+	\input{./capitulos/introducao.tex}
+	
+	%Início da parte pós-textual
+	\postextual	
+	\bibliography{referencias}
+
+	%Apêndices
+	%\apendices
+	%\input{./capitulos/anexo.tex}
+\end{document}

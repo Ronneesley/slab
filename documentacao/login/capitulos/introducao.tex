@@ -1,0 +1,83 @@
+\chapter{Introdução}
+\label{capitulo:introducao}
+
+Este documento trata da documentação da funcionalidade de cálculo de teste F. (importância)
+
+\section{Requisitos}
+
+%%%%%%%%%%%%%%%%
+% preciso revisar
+%%%%%%%%%%%%%%%%
+
+\subsection{Requisitos Não Funcionais}
+
+%Será que preciso mesmo disso?
+\requisitoNaoFuncional{RNF1}{O sistema deve ser feito na linguagem Java}
+{Dr. Fulano de Tal}{30 de outubro de 2023}{IF Goiano Ceres}
+{Ronneesley Moura Teles}{rnf:linguagem}
+{
+Tendo em vista o \textit{stack} de tecnologia utilizado na empresa X,
+optamos por utilizar a linguagem Java, já que, 90\% dos
+sistemas da empresa são feitos nesta linguagem.
+}
+
+\requisitoNaoFuncional{RNF2}{O sistema deve ser portável}
+{Dr. Fulano de Tal}{30 de outubro de 2023}{IF Goiano Ceres}
+{Ronneesley Moura Teles}{rnf:linguagem}
+{
+Grande parte das máquinas da instituição funcionam em Windows e em
+Linux, então o sistema deve rodar em ambos ambientes.
+}
+
+\requisitoNaoFuncional{RNF3}{O sistema deve funcionar na Web}
+{Dr. Fulano de Tal}{30 de outubro de 2023}{IF Goiano Ceres}
+{Ronneesley Moura Teles}{rnf:linguagem}
+{
+O sistema deve ser acessível via navegador Web
+}
+
+\subsection{Requisitos Funcionais}
+
+\requisito{RF1}{O sistema deve ter um cadastro de usuários}
+{Dr. Fulano de Tal}{30 de outubro de 2023}{IF Goiano Ceres}
+{Ronneesley Moura Teles}{req:cadastro_usuario}
+{usuario = @id + nome + cpf + email + telefone}
+{
+O sistema deve prover um cadastro de usuários contendo: nome,
+Cadastro de Pessoa Física (CPF), e-mail e telefone.
+Os usuários são as pessoas responsáveis pela venda no sistema.
+}
+
+\section{Caso de Uso}
+
+\casoUsoDetalhadoTextual{UC1}{Fazer login}
+{Internauta}
+{Usuário: o usuário deseja autenticar-se para acessar as funções do sistema.}
+{Nenhuma}
+{O usuário estará autenticado e com uma sessão no sistema}
+{
+	\begin{enumerate}[label=FB\arabic*.]
+		\item O internauta acessa o sistema via navegador;
+		
+		\item O sistema exibe a tela de login para o internauta;
+		
+		\item O internauta preenche o seu e-mail e senha;
+		
+		\item O internauta aciona o botão "Entrar";
+		
+		\item O sistema verifica os dados da autenticação,
+		se o e-mail e senha correspondem ao de um usuário, 
+		o sistema inicia uma sessão para o usuário;
+		
+		\item O sistema exibe a tela principal do SLab.
+	\end{enumerate}
+}{
+	\begin{enumerate}[label=FA\arabic*.]
+		\item Se o e-mail e senha não correspondem ao de um usuário:
+			\begin{enumerate}
+				\item O sistema volta para tela de login;
+				
+				\item O sistema exibe a mensagem "Usuário ou senha não encontrados"
+			\end{enumerate}
+	\end{enumerate}
+}{}{}
