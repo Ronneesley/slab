@@ -1,0 +1,812 @@
+%%
+% Comandos para edicao de textos em latex
+% Autor: Ronneesley Moura Teles
+% Desde: 22/06/2009 15:16
+% Modificado em: 23/07/2016 15:01 (melhorias)
+% Codificação: ISO-8859-1
+%%
+\RequirePackage{url}
+\RequirePackage{listings}
+\RequirePackage{graphicx}
+\RequirePackage{color}
+\RequirePackage{fontenc}
+\RequirePackage{colortbl}
+\RequirePackage{longtable}
+\RequirePackage{indentfirst}
+\RequirePackage{float}
+\RequirePackage{verbatim}
+\RequirePackage{ifthen}
+\RequirePackage{xifthen}
+\RequirePackage{multirow}
+\RequirePackage{lmodern}
+\RequirePackage[portuguese, lined, boxruled, commentsnumbered, linesnumbered]{algorithm2e}
+\RequirePackage{subcaption}
+\RequirePackage{pgfpages}
+\RequirePackage{tikz}
+\RequirePackage{multicol}
+\RequirePackage{amsmath}
+\RequirePackage{lscape}
+\RequirePackage{setspace}
+\RequirePackage{mathtools}
+\RequirePackage[alf]{abntex2cite}
+\RequirePackage{array}
+
+%%%%%%%%%%%%%%%%%
+% Parâmetros do pacote
+%%%%%%%%%%%%%%%%%
+
+%Habilita as legendas para apresentações como números
+\DeclareOption{apresentacao}{
+	\setbeamertemplate{caption}[numbered]
+}
+
+%Coloca um documento em quatro páginas por papel A4
+\DeclareOption{impressao}{
+	\pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
+}
+
+%Processa as diretivas acima
+\ProcessOptions\relax
+
+\let\Tiny=\tiny
+
+%Configuração nota de rodapé de tabela
+%\makesavenoteenv{tabular}
+
+%%%%%%%%%%%%%%%%%
+% Parâmetros opcionais de configuração
+%%%%%%%%%%%%%%%%%
+
+\def\larguraTabelaRequisitos#1{\def\@larguraTabelaRequisitos{#1}}		\larguraTabelaRequisitos{10cm}
+\def\larguraTabela#1{\def\@larguraTabela{#1}}							\larguraTabela{15.5cm}
+\def\modoResposta#1{\def\@modoResposta{#1}}								\modoResposta{nao}
+
+%%%%%%%%%%%%%%%%%
+% Definições de cores
+%%%%%%%%%%%%%%%%%
+
+\definecolor{tcCinza}{rgb}{0.960000,0.960000,0.960000}
+\definecolor{tcCinzaClaro}{rgb}{0.980000,0.980000,0.980000}
+\definecolor{tcBranco}{rgb}{1.000000,1.000000,1.000000}
+
+%%%%%%%%%%%%%%%%%
+% Codificações (Linguagens)
+%%%%%%%%%%%%%%%%%
+
+%Codificação com Matlab
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,
+    tabsize=3,
+    breaklines=true,
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},
+    morekeywords=[2]{1}, 
+    keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle={\tiny \color{black}},
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break,if,function,while,classdef,properties,methods},
+    emphstyle=[1]\color{blue}, %some words to emphasise
+    inputencoding=cp1252,
+    extendedchars=true
+}
+
+%Codificação da linguagem Nice
+\lstdefinelanguage{Nice}
+	{morekeywords={var,let,override,enum,assert,requires,ensures,alike},
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+}
+
+%Codificação da linguagem JavaFX
+\lstdefinelanguage{JavaFX}
+	{morekeywords={},
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+}
+
+%Codificação da linguagem JavaScript
+%Fonte das palavras-chave: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
+\lstdefinelanguage{JavaScript}
+	{morekeywords={var, function, return, const, break, case, catch, class, continue, debugger, default, delete, do, else, export, extends, finally, for, if, import, in, instanceof, new, super, switch, this, throw, try, typeof, var, void, while, with, yield, abstract, boolean, byte, char, double, final, float, goto, int, long, native, short, synchronized, throws, transient, volatile},
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+}
+
+%Codificação da linguagem algoritmo
+\lstdefinelanguage{algoritmo}
+	{morekeywords={algoritmo, var, inicio, numerico, fimalgoritmo, escreva, leia, repita, ate, se, fimse, entao, escreval, real, inteiro, logico, literal, para, fimpara, faca, senao},
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+}
+
+%Codificação para Nula (sem marcações)
+\lstdefinelanguage{nula}
+	{morekeywords={},
+	sensitive=false,
+	morecomment=[l]{//},
+	morecomment=[s]{/*}{*/},
+	morestring=[b]",
+}
+
+%%%%%%%%%%%%%%%%%
+% Codificações (Estilos)
+%%%%%%%%%%%%%%%%%
+
+%Código-fonte
+\lstdefinestyle{CodigoFonte}{
+	numbers=left,
+	xleftmargin=5mm, 
+	showspaces=false, 
+	showstringspaces=false, 
+	showtabs=false, 
+	extendedchars=true, 
+	frame=trBL, 
+	frameround=fttf
+}
+
+%Resultado
+\lstdefinestyle{Resultado}{
+	numbers=left,
+	xleftmargin=5mm, 
+	showspaces=false, 
+	showstringspaces=false, 
+	showtabs=false, 
+	extendedchars=true, 
+	framexleftmargin=0mm, 
+	frame=shadowbox, 
+	rulesepcolor=\color{black}
+}
+
+%Arquivo
+\lstdefinestyle{Arquivo}{
+	numbers=left,
+	xleftmargin=5mm, 
+	showspaces=false, 
+	showstringspaces=false, 
+	showtabs=false, 
+	extendedchars=true, 
+	framexleftmargin=5mm, 
+	frame=shadowbox, 
+	rulesepcolor=\color{black}
+}
+
+
+%%%%%%%%%%%%%%%%%%
+% Novos comandos
+%%%%%%%%%%%%%%%%%%
+
+%Funções de arrendondamento
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+%Abreviação do comando multicol
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+
+%Comando abs
+\newcommand\abs[1]{\left|#1\right|}
+
+%\arquivoResultado[\small]{caminhoArquivo}{descricao do arquivo}{codigo:label}
+\newcommand{\arquivoResultado}[4][\small]{
+    \def\lstlistingname{Resultado}
+
+	\lstinputlisting[
+		language=nula, 
+		caption={#3}, 
+		label=#4, 
+		basicstyle=#1,
+		style=Resultado]{#2}
+}
+
+%\arquivo[\small]{caminhoArquivo}{descricao do arquivo}{codigo:label}
+\newcommand{\arquivo}[4][\small]{
+    \def\lstlistingname{Arquivo}
+
+	\lstinputlisting[
+		language=nula, 
+		caption={#3}, 
+		label=#4, 
+		basicstyle=#1,
+		style=Arquivo]{#2}
+}
+
+%\codigoFonte[\small]{caminhoArquivo}{descricao do arquivo}{codigo:label}{linguagem}
+\newcommand{\codigoFonte}[5][\small]{
+	\def\lstlistingname{C\'odigo}
+
+	\lstinputlisting[
+		language=#5,
+		caption={#3}, 
+		label=#4, 
+		basicstyle=#1,
+		style=CodigoFonte]{#2}
+}
+
+%\parteCodigoFonte[\small]{caminhoArquivo}{descricao do arquivo}{codigo:label}{linguagem}{linha_inicio}{linha_fim}
+\newcommand{\parteCodigoFonte}[7][\small]{
+	\def\lstlistingname{C\'odigo}
+
+	{
+		\lstset{firstnumber=#6}
+		\lstinputlisting[
+			language=#5,
+			caption={#3}, 
+			label=#4, 
+			basicstyle=#1,
+			firstline=#6, 
+			lastline=#7,
+			style=CodigoFonte]{#2}
+	}
+}
+
+%\figuraTabela{caminho}{tamanho cm}
+\newcommand{\figuraTabela}[2]{
+    \raisebox{-\totalheight}{\figuraPura{#1}{#2}}
+}
+
+%\figuraPura{caminho}{tamanho cm}
+\newcommand{\figuraPura}[2]{
+    \includegraphics[width=#2]{#1}    
+}
+
+%\parteFigura{caminho}{tamanho cm}{legenda}{referencia}{esquerda}{inferior}{direita}{superior}
+\newcommand{\parteFigura}[8]{
+  \begin{figure}[H]
+    \centering	
+    \ifx &#3&
+    \else
+	    \caption{#3}
+    \fi
+
+    \includegraphics[width=#2, trim={#5 #6 #7 #8}, clip]{#1}    
+
+    \label{#4}
+  \end{figure}
+}
+
+
+%\figura{caminho}{tamanho cm}{legenda}{referencia}
+\newcommand{\figura}[4]{
+  \begin{figure}[H]
+    \centering	
+    \ifx &#3&
+    \else
+	    \caption{#3}
+		\label{#4}
+    \fi
+    \includegraphics[width=#2]{#1}    
+  \end{figure}
+}
+
+%\figuraCortada{caminho}{tamanho cm}{legenda}{referencia}{esquerda}{baixo}{direita}{cima}
+\newcommand{\figuraCortada}[8]{
+  \begin{figure}[H]
+    \centering	
+    \ifx &#3&
+    \else
+	    \caption{#3}
+    \fi
+
+    \includegraphics[trim={#5 #6 #7 #8},clip,width=#2]{#1}    
+	
+
+    \label{#4}
+  \end{figure}
+}
+
+%\figuraCortadaHRef{caminho}{tamanho cm}{legenda}{referencia}{esquerda}{baixo}{direita}{cima}{href}
+\newcommand{\figuraCortadaHRef}[9]{
+  \begin{figure}[H]
+    \centering	
+    \ifx &#3&
+    \else
+	    \caption{#3}
+    \fi
+
+	\href{#9}{
+		\includegraphics[trim={#5 #6 #7 #8},clip,width=#2]{#1}    
+	}
+	
+
+    \label{#4}
+  \end{figure}
+}
+
+%\figuraRotacionada{caminho}{tamanho cm}{angulo}{legenda}{referencia}
+\newcommand{\figuraRotacionada}[5]{
+  \begin{figure}[H]
+    \centering    
+    \ifx &#4&
+    \else
+	    \caption{#4}
+    \fi
+
+    \includegraphics[width=#2,angle=#3]{#1}
+
+    \label{#5}
+  \end{figure}
+}
+
+%subfiguraCortada{./recursos/figura.png}{4.3cm}{Legenda}{Rotulo}{esquerda}{baixo}{direita}{cima}
+\newcommand{\subfiguraCortada}[8]{
+ 	\begin{minipage}[b]{#2}
+ 		\subcaption{#3}
+ 		\label{#4}		
+ 		\centering 
+		\includegraphics[trim={#5 #6 #7 #8},clip,width=#2]{#1}
+ 	\end{minipage}
+}
+
+%subfigura{./recursos/figura.png}{4.3cm}{Legenda}{Rotulo}
+\newcommand{\subfigura}[4]{
+ 	\begin{minipage}[b]{#2}
+ 		\subcaption{#3}
+ 		\label{#4}
+ 		\centering \includegraphics[width=#2]{#1} 
+ 	\end{minipage}
+}
+
+\newcommand{\figuraFixa}[4]{
+  \begin{figure}[H]
+    \centering    
+    \ifx &#3&
+    \else
+    	\caption{#3}
+    \fi
+
+    \includegraphics[width=#2\textwidth]{#1}
+    
+    \label{#4}    
+  \end{figure}
+}
+
+%\figuraPDF{arquivo}{largura cm}{pagina}{caption}{label}{0cm 0cm 0cm 0cm}
+\newcommand{\figuraPDF}[7][H]{
+  \begin{figure}[#1]
+    \centering    
+    \ifx &#5&
+    \else
+    	\caption{#5}
+    \fi
+
+    \ifthenelse{ \equal{#7}{} }{
+      \includegraphics[width=#3, page=#4]{#2}
+    }{
+      \includegraphics[width=#3, page=#4, clip=true, trim=#7]{#2}
+    }
+
+    \label{#6}
+  \end{figure}
+}
+
+%\figuraPDFHRef{arquivo}{largura cm}{pagina}{caption}{label}{0cm 0cm 0cm 0cm}
+\newcommand{\figuraPDFHRef}[7][H]{
+  \begin{figure}[#1]
+	\centering    
+	\ifx &#5&
+	\else
+		\caption{#5}
+	\fi
+
+	\href{#2}{
+		\ifthenelse{ \equal{#7}{} }{
+		  \includegraphics[width=#3, page=#4]{#2}
+		}{
+		  \includegraphics[width=#3, page=#4, clip=true, trim=#7]{#2}
+		}
+	}
+
+	\label{#6}	
+  \end{figure}  
+}
+
+
+\newcommand{\figuraVertical}[4]{
+  \begin{figure}[ht]
+    \centering    
+    \ifx &#3&
+    \else
+    	\caption{#3}
+    \fi
+
+    \includegraphics[scale=#2,angle=90]{#1}
+    
+    \label{#4}
+  \end{figure}
+}
+
+\newcommand{\figuraVerticalFixa}[4]{
+  \begin{figure}[H]
+    \centering    
+    \ifx &#3&
+    \else
+	    \caption{#3}
+    \fi
+
+    \includegraphics[scale=#2,angle=90]{#1}
+    
+    \label{#4}
+  \end{figure}
+}
+
+\newcommand{\figuraSimples}[2]{
+  \begin{figure}[ht]
+    \centering
+
+    \includegraphics[width=#2\textwidth]{#1}
+  \end{figure}
+}
+
+\newcommand{\linhaResposta}{
+  \noindent\hrulefill
+
+}
+
+
+\newcommand{\icone}[1]{
+  \includegraphics[width=0.05\textwidth]{#1}
+}
+
+%Este comando permite identar dentro da descrição dos requisitos
+\newcommand*{\indentar}{\hspace*{1cm}}%
+
+\newcommand{\requisitoComTitulo}[9]{
+  \subsubsection{{#1}: {#2}}
+
+  \requisito{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}
+}
+
+%\requisito{RF10}{Descrição}
+%{Fonte do requisito}{Data}{Local}
+%{Responsável}{label}
+%{Dicionario de dados}
+%{Especificação}
+\newcommand{\requisito}[9]{
+	\begin{center}
+	
+	\def\eVazioParametroOito{\equal{\unexpanded{#8}}{}}
+	\def\eVazioParametroNove{\equal{\unexpanded{#9}}{}}
+	
+	%\ifthenelse{\eVazioParametroOito}{Oito vazio}{Oito cheio}
+		
+	\ifthenelse{ \eVazioParametroOito \and \eVazioParametroNove }{
+		\begin{longtable}[H]{|l|p{\@larguraTabelaRequisitos}|}
+			\caption{Requisito Funcional (#1): #2.}
+			\label{#7}\\
+			
+			\hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Identifica\c{c}\~ao do Requisito} & \textbf{#1}\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Nome do Requisito} & #2\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Fonte do Requisito} & #3\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Data} & #4\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Local e/ou Reuni\~ao} & #5\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Respons\'avel pelo Requisito} & #6\\ \hline
+		\end{longtable}
+	}{
+		\ifthenelse{ \eVazioParametroOito \and \not \eVazioParametroNove }{
+			\begin{longtable}[H]{|l|p{\@larguraTabelaRequisitos}|}
+				\caption{Requisito Funcional (#1): #2.}
+				\label{#7}\\
+				
+				\hline
+				\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Identifica\c{c}\~ao do Requisito} & \textbf{#1}\\ \hline
+				\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Nome do Requisito} & #2\\ \hline
+				\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Fonte do Requisito} & #3\\ \hline
+				\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Data} & #4\\ \hline
+				\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Local e/ou Reuni\~ao} & #5\\ \hline
+				\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Respons\'avel pelo Requisito} & #6\\ \hline
+				\multicolumn{2}{|>{\columncolor{tcCinza}}c|}{Especifica\c{c}ão do Requisito} \\ \hline
+				\multicolumn{2}{|p{\@larguraTabela}|}{#9} \\ \hline
+			\end{longtable}
+		}{
+			\ifthenelse{ \eVazioParametroNove \and \not \eVazioParametroOito }{
+				\begin{longtable}[H]{|l|p{\@larguraTabelaRequisitos}|}
+					\caption{Requisito Funcional (#1): #2.}
+					\label{#7}\\
+					
+					\hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Identifica\c{c}\~ao do Requisito} & \textbf{#1}\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Nome do Requisito} & #2\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Fonte do Requisito} & #3\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Data} & #4\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Local e/ou Reuni\~ao} & #5\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Respons\'avel pelo Requisito} & #6\\ \hline
+					\multicolumn{2}{|>{\columncolor{tcCinza}}c|}{Dicion\'ario de Dados} \\ \hline
+					\multicolumn{2}{|p{\@larguraTabela}|}{#8} \\ \hline
+				\end{longtable}
+			}{
+				\begin{longtable}[H]{|l|p{\@larguraTabelaRequisitos}|}
+					\caption{Requisito Funcional (#1): #2.}
+					\label{#7}\\
+					
+					\hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Identifica\c{c}\~ao do Requisito} & \textbf{#1}\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Nome do Requisito} & #2\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Fonte do Requisito} & #3\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Data} & #4\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Local e/ou Reuni\~ao} & #5\\ \hline
+					\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Respons\'avel pelo Requisito} & #6\\ \hline
+					\multicolumn{2}{|>{\columncolor{tcCinza}}c|}{Dicion\'ario de Dados} \\ \hline
+					\multicolumn{2}{|p{\@larguraTabela}|}{#8} \\ \hline
+					\multicolumn{2}{|>{\columncolor{tcCinza}}c|}{Especifica\c{c}\~ao do Requisito} \\ \hline
+					\multicolumn{2}{|p{\@larguraTabela}|}{ #9 } \\ \hline
+				\end{longtable}
+			}
+		}
+	}
+
+	\end{center}
+}
+
+\newcommand{\requisitoNaoFuncionalComTitulo}[8]{
+  \subsubsection{{#1}: {#2}}
+
+  \requisitoNaoFuncional{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}
+}
+
+\newcommand{\requisitoNaoFuncional}[8]{
+	\begin{center}
+		\begin{longtable}[h]{|l|p{\@larguraTabelaRequisitos}|}
+			\caption{Requisito N\~{a}o Funcional (#1): #2.}
+			\label{#7}\\
+	
+			\hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Identifica\c{c}\~ao do Requisito} & \textbf{#1}\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Nome do Requisito} & #2\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Fonte do Requisito} & #3\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Data} & #4\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Local e/ou Reuni\~ao} & #5\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Respons\'avel pelo Requisito} & #6\\ \hline
+			\multicolumn{2}{|>{\columncolor{tcCinza}}c|}{Especifica\c{c}\~ao do Requisito} \\ \hline
+			\multicolumn{2}{|p{\@larguraTabela}|}{#8} \\ \hline
+		\end{longtable}
+	\end{center}
+}
+
+
+\newcommand{\resumoCasoUso}[6]{
+	\begin{table}[h]
+		\begin{center}
+			\begin{longtable}{l|p{\@larguraTabelaRequisitos}}
+				\multicolumn{1}{>{\columncolor{tcCinza}}l}{Identificador} & #1 \\
+				\multicolumn{1}{>{\columncolor{tcCinza}}l}{Nome} & #2 \\
+				\multicolumn{1}{>{\columncolor{tcCinza}}l}{Descri\c{c}\~ao} & #3 \\
+				\multicolumn{1}{>{\columncolor{tcCinza}}l}{Resumo} & #4 
+			\end{longtable}
+		\end{center}
+
+		\caption{#5}
+		\label{#6}
+	\end{table}
+}
+
+\newcommand{\casoUsoDetalhadoTabela}[9]{
+	\begin{center}
+		\begin{longtable}[h]{|l|p{\@larguraTabelaRequisitos}|}
+			\caption{Caso de Uso (#1): #2.}
+			\label{#7}\\
+
+			\hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Identificador} & \textbf{#1}\\ \hline
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Nome} & #2\\ \hline
+			
+			\multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Ator principal} & #3\\ \hline
+			
+			\multicolumn{2}{|>{\columncolor{tcCinza}}l|}{Interessados (stakeholders) e Interesses} \\ \hline 
+			\multicolumn{2}{|l|}{#4} \\ \hline
+			
+			%\casoUsoDetalhadoTabelaContinuacao
+		\end{longtable}
+	\end{center}
+}
+\newcommand{\casoUsoDetalhadoTabelaContinuacao}[1]{
+    \ifx &#1&
+    \else
+      \multicolumn{1}{|>{\columncolor{tcCinza}}l|}{Problemas em Aberto} & #1\\ \hline
+      
+    \fi
+}
+
+%\casoUsoDetalhadoTextual{UC3}{Descrição}
+%{Ator principal}
+%{Interessados e interesses}
+%{Pré-condições}
+%{Garantia de sucesso}
+%{
+%	\begin{enumerate}[label=FB\arabic*.]
+%		\item Fluxo básico
+%	\end{enumerate}
+%}{
+%	\begin{enumerate}[label=FA\arabic*.]
+%		\item Fluxo alternativo
+%	\end{enumerate}
+%}{}{}
+\newcommand{\casoUsoDetalhadoTextual}[9]{
+    \ifthenelse{ \not \equal{#1}{} }{ \textbf{Identificador}: #1
+    
+    }{}
+
+    \ifthenelse{ \not \equal{#2}{} }{ \textbf{Nome}: #2
+    
+    }{}
+    
+    \ifthenelse{ \not \equal{#3}{} }{ \textbf{Ator principal}: #3
+    
+    }{}
+    \ifx &#4&
+    \else
+      \textbf{Interessados (stakeholders) e Interesses}: #4
+      
+    \fi
+    \ifthenelse{ \not \equal{#5}{} }{ \textbf{Pr\'e-Condi\c{c}\~oes}: #5
+    
+    }{} 
+    \ifthenelse{ \not \equal{#6}{} }{ \textbf{Garantia de Sucesso (P\'os-Condi\c{c}\~oes)}: #6
+    
+    }{} 
+    \ifx &#7&
+    \else
+      \textbf{Cen\'ario de Sucesso Principal (ou Fluxo B\'asico)}: #7
+      
+    \fi 
+    \ifx &#8&
+    \else
+      \textbf{Extens\~oes (ou Fluxos Alternativos)}: #8
+      
+    \fi 
+    \ifthenelse{ \not \equal{#9}{} }{ \textbf{Frequ\^encia de Ocorr\^encia}: #9
+    
+    }{}
+    \casoUsoDetalhadoTextualContinuacao
+}
+\newcommand{\casoUsoDetalhadoTextualContinuacao}[1]{
+    \ifx &#1&
+    \else
+      \textbf{Problemas em Aberto}: #1
+      
+    \fi
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Especifica a forma de uso do ambiente de caso de uso
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{casouso}[2]
+	{
+		\linespread{1.0}
+		\noindent
+		\begin{small}
+		%\begin{singlespacing}
+		\begin{longtable}[h]{|p{4cm}|p{1cm}|p{2cm}|p{6cm}|}
+			\caption{Caso de uso: #2 (#1).}		
+			\label{#1}\\
+		
+			\hline 
+			\identificadorENome{#1}{#2}
+	}
+	{
+		\end{longtable}
+		%\end{singlespacing}
+		\end{small}
+	}
+	
+\newcommand{\identificadorENome}[2]{
+	\cellcolor{tcCinza} Identificador & #1 & \cellcolor{tcCinza} Nome & #2 \\ \hline 
+}
+	
+%Especifica as configurações de uma linha comum do caso de uso
+\newcommand{\linhaNormal}[2]{ 
+	\cellcolor{tcCinza} #1 & \multicolumn{3}{l|}{#2} \\ \hline 
+}
+
+\newcommand{\identificador}[1]{	\linhaNormal{Identificador}{\textbf{#1}} }
+\newcommand{\nome}[1]{ \linhaNormal{Nome}{#1} }
+\newcommand{\atorPrincipal}[1]{	\linhaNormal{Ator principal}{#1} }
+\newcommand{\preCondicoes}[1]{	\linhaNormal{Pr\'e-condi\c{c}\~oes}{#1} }
+\newcommand{\posCondicoes}[1]{	\linhaNormal{P\'os-condi\c{c}\~oes}{#1} }
+\newcommand{\frequenciaOcorrencia}[1]{	\linhaNormal{Frequ\^encia de ocorr\^encia}{#1} }
+
+%\duaslinhas{titulo da linha}{conteúdo}
+\newcommand{\duaslinhas}[2]{
+	\multicolumn{4}{|c|}{ \cellcolor{tcCinza} #1} \\ \hline
+	\multicolumn{4}{|p{\linewidth}|}{
+		#2
+	} \\ \hline
+}
+
+\newcommand{\interessadosEInteresses}[1]{
+	\duaslinhas{Interessados (\textit{stakeholders}) e interesses}{#1}
+}
+\newcommand{\fluxoBasico}[1]{
+	\duaslinhas{Fluxo b\'asico (cen\'ario de sucesso)}{#1}
+}
+\newcommand{\fluxosAlternativos}[1]{
+	\duaslinhas{Fluxos alternativos (extens\~oes)}{#1}
+}
+\newcommand{\problemasAbertos}[1]{
+	\duaslinhas{Problemas em aberto}{#1}
+}
+
+
+\newcommand{\resposta}[1]{
+	\ifthenelse{ \equal{\@modoResposta}{sim} }{\textcolor{blue}{\textit{#1}}}{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Fim dos comandos para casos de uso
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Configuração algoritmos
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{gray}{#1}}
+\SetCommentSty{mycommfont}
+
+\SetKwBlock{Algoritmo}{Algoritmo}{fim\ algoritmo.}%
+\SetKwBlock{AlgRepita}{repita}{fim\ repita}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Configurações para tabelas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Permite organizar as colunas com tamanho fixo mesmo centralizado ou à direita, assim como
+%p{10cm} faz à esquerda
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%Ambiente para programação linear
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{po}{
+	\[\arraycolsep=2.0pt\def\arraystretch{1.5}
+}{
+	\]
+}
+
+%Ambiente para escrita de respostas
+\newenvironment{texto_resposta}{
+	\begingroup
+	\leftskip0.5cm
+	\rightskip0.5cm
+	\textbf{R: }
+	\color{gray}
+}{
+	\par
+	\endgroup
+}
+
+%Ambiente para escrita de respostas
+\newenvironment{duvida}{
+	\begingroup
+	\leftskip0.5cm
+	\rightskip0.5cm
+	\textbf{Dúvida: }
+	\color{red}
+}{
+	\par
+	\endgroup
+}
+
+%Ambiente para configuração de parágrafos
+\newenvironment{paragrafo}[1]{
+	\begingroup
+	\leftskip#1
+}{
+	\par
+	\endgroup
+}
