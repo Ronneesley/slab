@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  16 NOV 2023 00:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  16 NOV 2023 00:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1719,34 +1719,38 @@ l.6
 
 
 
-]) (./capitulos/introducao.tex
+] (./tc.toc) [2]) (./capitulos/introducao.tex
 LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 22.
- [2
+ [3
 
-] [3]) [4]
+
+] [4]) [5] [6]
 
 AED: lastpage setting LastPage
+\tf@toc=\write6
+\openout6 = `tc.toc'.
+
 (./tc.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37276 strings out of 478287
- 691766 string characters out of 5849288
- 1108163 words of memory out of 5000000
- 54795 multiletter control sequences out of 15000+600000
- 489595 words of font info for 81 fonts, out of 8000000 for 9000
+ 37298 strings out of 478287
+ 691958 string characters out of 5849288
+ 1106164 words of memory out of 5000000
+ 54802 multiletter control sequences out of 15000+600000
+ 489928 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,12n,108p,999b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 106i,11n,108p,999b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/
 public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmsso12.pfb>
-Output written on tc.pdf (5 pages, 84187 bytes).
+Output written on tc.pdf (7 pages, 86954 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
- 20029 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 123 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 20053 words of extra memory for PDF output out of 20736 (max. 10000000)
 
