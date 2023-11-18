@@ -1,7 +1,7 @@
 \chapter{Introdução}
 \label{capitulo:introducao}
 
-O projeto propõe o desenvolvimento de um novo módulo, no Sistema SLAB, o Teste de Tukey, uma ferramenta estatística essencial, que é amplamente utilizada para comparar múltiplas médias, tornando-se valioso em investigações científicas e aplicações práticas. Este documento descreve o projeto de implementação do Teste de Tukey em uma plataforma educacional e prática denominada SLAB. Embora o SLAB seja uma fonte abrangente de conceitos estatísticos, ele não incluiu, até o momento, uma funcionalidade para calcular o Teste de Tukey. Portanto, o objetivo deste projeto foi introduzir essa funcionalidade, tornando o SLAB uma ferramenta mais completa e versátil para análise estatística.
+O projeto propõe o desenvolvimento de um novo módulo, no Sistema SLAB, o Teste de Tukey, uma ferramenta estatística essencial, que é amplamente utilizada para comparar múltiplas médias, tornando-se valioso em investigações científicas e aplicações práticas. Este documento descreve o projeto de implementação do Teste de Tukey em uma plataforma educacional e prática denominada SLAB. Embora o Slab seja uma fonte abrangente de conceitos estatísticos, ele não incluiu, até o momento, uma funcionalidade para calcular o Teste de Tukey. Portanto, o objetivo deste projeto foi introduzir essa funcionalidade, tornando o Statistical Lab uma ferramenta mais completa e versátil para análise estatística.
 
 \section{Requisitos}
 
@@ -47,24 +47,24 @@ O projeto propõe o desenvolvimento de um novo módulo, no Sistema SLAB, o Teste
 
 \requisito{RF1}{Inserir Dados}
 {Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
-{Ronneesley Moura Teles}{Teste}{Teste}
+{Ronneesley Moura Teles}{Teste}{ Médias, q ,QMRes, r}
 {O sistema deve permitir que o usuário insira valores de médias e ouutros parâmetros necessários para o teste de Tukey. Deve haver validações para garantir que os dados inseridos sejam numéricos e válidos.}
 
 \requisito{RF2}{Executar Teste}
 {Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
-{Ronneesley Moura Teles}{Teste}{Teste}
+{Ronneesley Moura Teles}{}{calcular(medias, q, qmRes, r)}
 {O sistema deve calcular o teste de Tukey com base nos dados inseridos pelo usuário.
 Deve-se garantir que os cálculos sejam precisos e corretos de acordo com as fórmulas estatísticas.}
 
 \requisito{RF3}{Exibir Resultados}
 {Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
-{Ronneesley Moura Teles}{Teste}{Teste}
+{Ronneesley Moura Teles}{Teste}{calcularDelta(q, qmRes, r)}
 {O sistema deve apresentar os resultados do teste de Tukey, incluindo os grupos com diferenças significativas.
 Deve fornecer informações estatísticas detalhadas para análise.}
 
 \requisito{RF4}{Exibir Tabela com Resultado}
 {Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
-{Ronneesley Moura Teles}{Teste}{Teste}
+{Ronneesley Moura Teles}{Teste}{classificar(mediasO, delta)}
 {O sistema deve gerar representação por meio de tabela desenvolvida para ajudar na visualização das diferenças significativas e nas comparações estatísticas entre grupos.}
 
 \section{Caso de Uso}
@@ -222,3 +222,16 @@ Deve fornecer informações estatísticas detalhadas para análise.}
 \section{Protótipos do sistema}
 
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Prototipo_Figma/tela1.png} 
+  \caption{Tela Teste de Tukey}
+  \label{fig:exemplo}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Prototipo_Figma/tela1.png}
+  \caption{Tela Resultado do Teste de Tukey}
+  \label{fig:exemplo}
+\end{figure}
