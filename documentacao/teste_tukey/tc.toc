@@ -4,7 +4,7 @@
 \contentsline {chapter}{\chapternumberline {1} \MakeTextUppercase {Introdução} }{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Requisitos}{3}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Requisitos Não Funcionais}{3}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Requisitos Funcionais}{4}{subsection.1.1.2}%
-\contentsline {section}{\numberline {1.2}Caso de Uso}{5}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Classes do Sistema}{6}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Protótipos do sistema}{6}{section.1.4}%
+\contentsline {subsection}{\numberline {1.1.2}Requisitos Funcionais}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Caso de Uso}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Classes do Sistema}{11}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Protótipos do sistema}{12}{section.1.4}%

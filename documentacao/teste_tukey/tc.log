@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  16 NOV 2023 00:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  18 NOV 2023 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1431,8 +1431,10 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 Writing index file tc.idx 
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 12.
-
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
@@ -1509,16 +1511,38 @@ File: tikzlibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 tex
 File: pgflibraryarrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \arrowsize=\dimen362
-))
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf-umlcd/pgf-umlcd.sty
+Package: pgf-umlcd 2011/10/01 v0.3dev Some LaTeX macros for UML Class Diagrams.
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+\pgf@layerbox@background=\box158
+\pgf@layerboxsaved@background=\box159
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryfit.code.tex
+File: tikzlibraryfit.code.tex 2021/05/15 v3.1.9a (3.1.9a)
+)
+\pgf@layerbox@connectionlayers=\box160
+\pgf@layerboxsaved@connectionlayers=\box161
+\c@umlcdClassAttributesNum=\count422
+\c@umlcdClassOperationsNum=\count423
+\c@umlcdClassAbstractClassNum=\count424
+\c@umlcdClassInterfaceNum=\count425
+\c@umlcdClassSplitPartNum=\count426
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 15.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-23.
+26.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count422
-\l__pdf_internal_box=\box158
+\l__color_backend_stack_int=\count427
+\l__pdf_internal_box=\box162
 )
 
 LaTeX Warning: Unused global option(s):
@@ -1526,33 +1550,36 @@ LaTeX Warning: Unused global option(s):
 
 (./tc.aux
 
-LaTeX Warning: Label `rnf:linguagem' multiply defined.
+LaTeX Warning: Label `Teste' multiply defined.
 
 
-LaTeX Warning: Label `rnf:linguagem' multiply defined.
+LaTeX Warning: Label `Teste' multiply defined.
+
+
+LaTeX Warning: Label `Teste' multiply defined.
 
 )
 \openout1 = `tc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-Package hyperref Info: Link coloring ON on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+Package hyperref Info: Link coloring ON on input line 26.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1562,29 +1589,29 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count423
+\c@section@level=\count428
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 23.
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
-\myptabbox=\box159
+LaTeX Info: Redefining \nameref on input line 26.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
+\myptabbox=\box163
 \myptabboxwidth=\skip303
-\c@lstlisting=\count424
+\c@lstlisting=\count429
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count425
+\scratchcounter=\count430
 \scratchdimen=\dimen363
-\scratchbox=\box160
-\nofMPsegments=\count426
-\nofMParguments=\count427
+\scratchbox=\box164
+\nofMPsegments=\count431
+\nofMParguments=\count432
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count428
+\MPscratchCnt=\count433
 \MPscratchDim=\dimen364
-\MPnumerator=\count429
-\makeMPintoPDFobject=\count430
+\MPnumerator=\count434
+\makeMPintoPDFobject=\count435
 \everyMPtoPDFconversion=\toks57
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1599,19 +1626,19 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 23.
-LaTeX Info: Redefining \microtypecontext on input line 23.
-Package microtype Info: Applying patch `item' on input line 23.
-Package microtype Info: Applying patch `toc' on input line 23.
-Package microtype Info: Applying patch `eqnum' on input line 23.
-Package microtype Info: Applying patch `footnote' on input line 23.
+(lastpage)             ! on input line 26.
+LaTeX Info: Redefining \microtypecontext on input line 26.
+Package microtype Info: Applying patch `item' on input line 26.
+Package microtype Info: Applying patch `toc' on input line 26.
+Package microtype Info: Applying patch `eqnum' on input line 26.
+Package microtype Info: Applying patch `footnote' on input line 26.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 23.
+LaTeX Info: Redefining \showhyphens on input line 26.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1719,14 +1746,11 @@ l.6
 
 
 
-] (./tc.toc) [2]) (./capitulos/introducao.tex
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 22.
- [3
+] (./tc.toc) [2]) (./capitulos/introducao.tex [3
 
 
-] [4]) [5] [6]
-
+] [4] [5] [6] [7]
+[8] [9] [10]) [11] [12] 
 AED: lastpage setting LastPage
 \tf@toc=\write6
 \openout6 = `tc.toc'.
@@ -1737,20 +1761,23 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37298 strings out of 478287
- 691958 string characters out of 5849288
- 1106164 words of memory out of 5000000
- 54802 multiletter control sequences out of 15000+600000
- 489928 words of font info for 84 fonts, out of 8000000 for 9000
+ 37717 strings out of 478287
+ 702295 string characters out of 5849288
+ 1118427 words of memory out of 5000000
+ 55172 multiletter control sequences out of 15000+600000
+ 491171 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 106i,11n,108p,999b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/
-public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmsso12.pfb>
-Output written on tc.pdf (7 pages, 86954 bytes).
+ 106i,13n,108p,999b,764s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
+fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/times/utmr8a.pfb>
+Output written on tc.pdf (13 pages, 98131 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
- 20053 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 186 PDF objects out of 1000 (max. 8388607)
+ 159 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 18005 words of extra memory for PDF output out of 20736 (max. 10000000)
 
