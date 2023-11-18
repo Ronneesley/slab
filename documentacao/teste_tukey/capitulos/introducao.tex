@@ -3,22 +3,18 @@
 
 O projeto propõe o desenvolvimento de um novo módulo, no Sistema SLAB, o Teste de Tukey, uma ferramenta estatística essencial, que é amplamente utilizada para comparar múltiplas médias, tornando-se valioso em investigações científicas e aplicações práticas. Este documento descreve o projeto de implementação do Teste de Tukey em uma plataforma educacional e prática denominada SLAB. Embora o Slab seja uma fonte abrangente de conceitos estatísticos, ele não incluiu, até o momento, uma funcionalidade para calcular o Teste de Tukey. Portanto, o objetivo deste projeto foi introduzir essa funcionalidade, tornando o Statistical Lab uma ferramenta mais completa e versátil para análise estatística.
 
-\section{Requisitos}
-
-%%%%%%%%%%%%%%%%
-% preciso revisar
-%%%%%%%%%%%%%%%%
+\chapter{Requisitos}
 
 \subsection{Requisitos Não Funcionais}
 
 %Será que preciso mesmo disso?
 \requisitoNaoFuncional{RNF1}{O sistema deve ser feito na linguagem PHP}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{rnf:linguagem}
 {O sistema foi implementado na linguagem PHP, dessa forma o sistema de Tukey foi desenvolvida em PHP}
 
 \requisitoNaoFuncional{RNF2}{O sistema deve ser portável}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{rnf:portável}
 {O sistema deve ser compatível com os principais navegadores da web, como Chrome, Firefox, e Edge.}
 
@@ -28,17 +24,17 @@ O projeto propõe o desenvolvimento de um novo módulo, no Sistema SLAB, o Teste
 {O sistema deve ser acessível via navegador Web}
 
 \requisitoNaoFuncional{RNF4}{A interface do usuário deve ser feita em HTML e CSS.}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{rnf:interface}
 {A interface do usuário (HTML/CSS) deve ser amigável e intuitiva, guiando o usuário por todas as etapas do processo.}
 
 \requisitoNaoFuncional{RNF5}{O sistema deve passar no teste}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{rnf:teste}
 {O sistema deve ser testado com testes unitários usando o framework PHPUnit para garantir a corretude do software.}
 
 \requisitoNaoFuncional{RNF6}{O sistema deve ter uma documentação adequada.}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{rnf:documentação}
 {Deve haver documentação adequada do sistema, incluindo um manual do usuário e informações técnicas para desenvolvedores.}
 
@@ -46,28 +42,28 @@ O projeto propõe o desenvolvimento de um novo módulo, no Sistema SLAB, o Teste
 \subsection{Requisitos Funcionais}
 
 \requisito{RF1}{Inserir Dados}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{Teste}{ Médias, q ,QMRes, r}
 {O sistema deve permitir que o usuário insira valores de médias e ouutros parâmetros necessários para o teste de Tukey. Deve haver validações para garantir que os dados inseridos sejam numéricos e válidos.}
 
 \requisito{RF2}{Executar Teste}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{}{calcular(medias, q, qmRes, r)}
 {O sistema deve calcular o teste de Tukey com base nos dados inseridos pelo usuário.
 Deve-se garantir que os cálculos sejam precisos e corretos de acordo com as fórmulas estatísticas.}
 
 \requisito{RF3}{Exibir Resultados}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{Teste}{calcularDelta(q, qmRes, r)}
 {O sistema deve apresentar os resultados do teste de Tukey, incluindo os grupos com diferenças significativas.
 Deve fornecer informações estatísticas detalhadas para análise.}
 
 \requisito{RF4}{Exibir Tabela com Resultado}
-{Joao Vitor}{30 de outubro de 2023}{IF Goiano Ceres}
+{Joao Victor}{30 de outubro de 2023}{IF Goiano Ceres}
 {Ronneesley Moura Teles}{Teste}{classificar(mediasO, delta)}
 {O sistema deve gerar representação por meio de tabela desenvolvida para ajudar na visualização das diferenças significativas e nas comparações estatísticas entre grupos.}
 
-\section{Caso de Uso}
+\chapter{Caso de Uso}
 
 \casoUsoDetalhadoTextual{UC1}{Inserir dados do Teste de Tukey.}
 {Usuário}
@@ -92,7 +88,7 @@ Deve fornecer informações estatísticas detalhadas para análise.}
 	\end{enumerate}
 }{}{}
 
-\casoUsoDetalhadoTextual{UC2}{Realizar Teste de Tukey.}
+\casoUsoDetalhadoTextual{UC2}{Analisar Teste de Tukey.}
 {Usuário}
 {Usuário: O usuário pode solicitar que o sistema execute o Teste de Tukey com base nos dados fornecidos.}
 {Nenhuma}
@@ -176,9 +172,14 @@ Deve fornecer informações estatísticas detalhadas para análise.}
 	\end{enumerate}
 }{}{}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{imagens/casodeuso.png} 
+  \caption{Diagrama Caso de Uso}
+  \label{fig:exemplo}
+\end{figure}
 
-
-\section{Classes do Sistema}
+\chapter{Classes do Sistema}
 \begin{tikzpicture}
   % Definindo as classes
   \begin{class}[text width=11cm]{TesteTukey}{0,0}
@@ -219,19 +220,66 @@ Deve fornecer informações estatísticas detalhadas para análise.}
 
 \end{tikzpicture}
 
-\section{Protótipos do sistema}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{imagens/classes.png} 
+  \caption{Diagrama de Classe}
+  \label{fig:exemplo}
+\end{figure}
+
+\chapter{Protótipos do sistema}
 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{Prototipo_Figma/tela1.png} 
+  \includegraphics[width=0.8\linewidth]{imagens/tela1.png} 
   \caption{Tela Teste de Tukey}
   \label{fig:exemplo}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\linewidth]{Prototipo_Figma/tela1.png}
+  \includegraphics[width=0.8\linewidth]{imagens/tela2.png}
   \caption{Tela Resultado do Teste de Tukey}
+  \label{fig:exemplo}
+\end{figure}
+
+\chapter{Implementação dos protótipos}
+O código inclui a implementação dos protótipos das classes TesteTukey e TesteTukeyControle. Os métodos dentro dessas classes representam as operações necessárias para realizar o teste estatístico de Tukey em um conjunto de dados.
+
+
+Classe TesteTukey
+\begin{enumerate}
+  \item Método temClasse e getNomeClasse: Esses métodos são usados para verificar se uma determinada classe está associada a uma média e obter o nome da classe com base em um índice.
+  \item Método calcular: Este método realiza o cálculo principal do teste de Tukey, incluindo a ordenação das médias, o cálculo do delta e a classificação das médias em classes.
+  \item Método calcularDelta: Calcula a diferença mínima significativa de Tukey com base nos parâmetros fornecidos.
+  \item Método classificar: Este método classifica as médias em classes com base na diferença mínima significativa (delta).
+\end{enumerate}
+
+
+Classe TesteTukeyControle
+\begin{enumerate}
+  \item Método processar: Este método processa as ações solicitadas, como mostrar a configuração inicial ou calcular o teste de Tukey.
+  \item Método mostrarConfiguracaoInicial e calcular: São responsáveis por exibir o formulário de entrada de dados e processar o cálculo do teste, respectivamente.
+\end{enumerate}
+
+
+HTML de Exibição de Resultados
+\begin{enumerate}
+  \item  Apresentação de Resultados: O código HTML é responsável por exibir os resultados do teste de Tukey, incluindo o valor de delta, uma tabela de médias classificadas em classes e uma mensagem explicativa sobre as classes.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{imagens/componente.png} 
+  \caption{Diagrama de Componente}
+  \label{fig:exemplo}
+\end{figure}
+
+\chapter{Implantação dos protótipos}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{imagens/implantação.png} 
+  \caption{Diagrama de Implantação}
   \label{fig:exemplo}
 \end{figure}

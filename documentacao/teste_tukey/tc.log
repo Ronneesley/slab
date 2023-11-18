@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  18 NOV 2023 00:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  18 NOV 2023 11:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1558,6 +1558,18 @@ LaTeX Warning: Label `Teste' multiply defined.
 
 LaTeX Warning: Label `fig:exemplo' multiply defined.
 
+
+LaTeX Warning: Label `fig:exemplo' multiply defined.
+
+
+LaTeX Warning: Label `fig:exemplo' multiply defined.
+
+
+LaTeX Warning: Label `fig:exemplo' multiply defined.
+
+
+LaTeX Warning: Label `fig:exemplo' multiply defined.
+
 )
 \openout1 = `tc.aux'.
 
@@ -1756,19 +1768,56 @@ l.6
 ])) (./capitulos/introducao.tex [6
 
 
-] [7] [8] [9] [10] [11] [12] [13]
-<Prototipo_Figma/tela1.png, id=140, 1284.8pt x 835.12pt>
-File: Prototipo_Figma/tela1.png Graphic file (type png)
-<use Prototipo_Figma/tela1.png>
-Package pdftex.def Info: Prototipo_Figma/tela1.png  used on input line 227.
-(pdftex.def)             Requested size: 364.19667pt x 236.72464pt.
+] [7
+
+] [8] [9] [10] [11] [12
+
+] [13]
+<imagens/casodeuso.png, id=144, 660.4675pt x 429.605pt>
+File: imagens/casodeuso.png Graphic file (type png)
+<use imagens/casodeuso.png>
+Package pdftex.def Info: imagens/casodeuso.png  used on input line 177.
+(pdftex.def)             Requested size: 364.19667pt x 236.89966pt.
  [14]
-File: Prototipo_Figma/tela1.png Graphic file (type png)
-<use Prototipo_Figma/tela1.png>
-Package pdftex.def Info: Prototipo_Figma/tela1.png  used on input line 234.
+[15 <./imagens/casodeuso.png>]
+<imagens/classes.png, id=163, 1371.1225pt x 770.88pt>
+File: imagens/classes.png Graphic file (type png)
+<use imagens/classes.png>
+Package pdftex.def Info: imagens/classes.png  used on input line 225.
+(pdftex.def)             Requested size: 364.19667pt x 204.75273pt.
+ [16
+
+] [17 <./imagens/classes.png>]
+<imagens/tela1.png, id=175, 1284.8pt x 835.12pt>
+File: imagens/tela1.png Graphic file (type png)
+<use imagens/tela1.png>
+Package pdftex.def Info: imagens/tela1.png  used on input line 235.
 (pdftex.def)             Requested size: 364.19667pt x 236.72464pt.
+<imagens/tela2.png, id=176, 1284.8pt x 835.12pt>
+File: imagens/tela2.png Graphic file (type png)
+<use imagens/tela2.png>
+Package pdftex.def Info: imagens/tela2.png  used on input line 242.
+(pdftex.def)             Requested size: 364.19667pt x 236.72464pt.
+ [18
+
+ <./imagens/tela1.png> <./imagens/tela2.png>]
+<imagens/componente.png, id=184, 620.3175pt x 371.3875pt>
+File: imagens/componente.png Graphic file (type png)
+<use imagens/componente.png>
+Package pdftex.def Info: imagens/componente.png  used on input line 274.
+(pdftex.def)             Requested size: 364.19667pt x 218.04567pt.
+ [19
+
+] [20 <./imagens/componente.png>]
+<imagens/implantação.png, id=201, 411.5375pt x 226.8475pt>
+File: imagens/implantação.png Graphic file (type png)
+<use imagens/implantação.png>
+Package pdftex.def Info: imagens/implantação.png  used on input line 282.
+(pdftex.def)             Requested size: 364.19667pt x 200.75482pt.
 )
-[15 <./Prototipo_Figma/tela1.png>] 
+[21
+
+ <./imagens/implantação.png>] 
 AED: lastpage setting LastPage
 \tf@toc=\write6
 \openout6 = `tc.toc'.
@@ -1785,11 +1834,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37767 strings out of 478287
- 702972 string characters out of 5849288
- 1120096 words of memory out of 5000000
- 55196 multiletter control sequences out of 15000+600000
- 491487 words of font info for 95 fonts, out of 8000000 for 9000
+ 37835 strings out of 478287
+ 704067 string characters out of 5849288
+ 1117086 words of memory out of 5000000
+ 55228 multiletter control sequences out of 15000+600000
+ 492153 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  106i,13n,108p,999b,764s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
@@ -1798,10 +1847,10 @@ amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb>
-Output written on tc.pdf (16 pages, 120680 bytes).
+Output written on tc.pdf (22 pages, 355054 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 67 named destinations out of 1000 (max. 500000)
- 18026 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 18067 words of extra memory for PDF output out of 20736 (max. 10000000)
 
