@@ -9,11 +9,11 @@ abstract class ControleBase {
     public abstract function processar($acao);
 
     function formatarNumero($numero, $digitos = 2){
-        return strtr( number_format($numero, $digitos) , ".", ",");
+        return strtr( number_format($numero, $digitos) , ".", ","); 
     }
 
     function converterNumero($leitura){
-        return floatval(str_replace(",", ".", $leitura));
+        return floatval(str_replace(",", ".", $leitura)); 
     }
 
     function converterNumeroVetor($vetor){
@@ -23,7 +23,7 @@ abstract class ControleBase {
             array_push($ns, $this->converterNumero($vetor[$i]));
         }
 
-        return $ns;
+        return $ns; 
     }
 
     function obterPostNumero($nome){
