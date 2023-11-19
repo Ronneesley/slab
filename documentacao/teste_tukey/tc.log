@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  18 NOV 2023 23:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  19 NOV 2023 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1764,35 +1764,34 @@ l.6
 
 ] [7
 
-] [8] [9] [10] [11] [12
-
-] [13]
-<imagens/casodeuso.png, id=136, 660.4675pt x 429.605pt>
+] [8] [9] [10] [11]
+<imagens/casodeuso.png, id=110, 550.055pt x 161.60374pt>
 File: imagens/casodeuso.png Graphic file (type png)
 <use imagens/casodeuso.png>
-Package pdftex.def Info: imagens/casodeuso.png  used on input line 177.
-(pdftex.def)             Requested size: 364.19667pt x 236.89966pt.
- [14]
-[15 <./imagens/casodeuso.png>]
-<imagens/classes.png, id=155, 769.87625pt x 436.63126pt>
+Package pdftex.def Info: imagens/casodeuso.png  used on input line 70.
+(pdftex.def)             Requested size: 364.19667pt x 107.00156pt.
+ [12
+
+ <./imagens/casodeuso.png>] [13] [14]
+<imagens/classes.png, id=151, 769.87625pt x 436.63126pt>
 File: imagens/classes.png Graphic file (type png)
 <use imagens/classes.png>
-Package pdftex.def Info: imagens/classes.png  used on input line 225.
+Package pdftex.def Info: imagens/classes.png  used on input line 226.
 (pdftex.def)             Requested size: 364.19667pt x 206.55586pt.
- [16
+ [15
 
-] [17 <./imagens/classes.png>]
-<imagens/tela1.png, id=168, 1284.8pt x 835.12pt>
+] [16 <./imagens/classes.png>]
+<imagens/tela1.png, id=164, 1284.8pt x 835.12pt>
 File: imagens/tela1.png Graphic file (type png)
 <use imagens/tela1.png>
-Package pdftex.def Info: imagens/tela1.png  used on input line 235.
+Package pdftex.def Info: imagens/tela1.png  used on input line 236.
 (pdftex.def)             Requested size: 364.19667pt x 236.72464pt.
-<imagens/tela2.png, id=169, 1284.8pt x 835.12pt>
+<imagens/tela2.png, id=165, 1284.8pt x 835.12pt>
 File: imagens/tela2.png Graphic file (type png)
 <use imagens/tela2.png>
-Package pdftex.def Info: imagens/tela2.png  used on input line 242.
+Package pdftex.def Info: imagens/tela2.png  used on input line 243.
 (pdftex.def)             Requested size: 364.19667pt x 236.72464pt.
-) [18
+) [17
 
  <./imagens/tela1.png> <./imagens/tela2.png>] 
 AED: lastpage setting LastPage
@@ -1811,8 +1810,8 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37793 strings out of 478287
- 703425 string characters out of 5849288
+ 37792 strings out of 478287
+ 703418 string characters out of 5849288
  1117099 words of memory out of 5000000
  55214 multiletter control sequences out of 15000+600000
  491487 words of font info for 95 fonts, out of 8000000 for 9000
@@ -1824,10 +1823,10 @@ amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb>
-Output written on tc.pdf (19 pages, 273782 bytes).
+Output written on tc.pdf (18 pages, 235884 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 211 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
+ 248 PDF objects out of 1000 (max. 8388607)
+ 207 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
  18041 words of extra memory for PDF output out of 20736 (max. 10000000)
 

@@ -6,5 +6,5 @@
 \contentsline {subsection}{\numberline {2.0.1}Requisitos Não Funcionais}{7}{subsection.2.0.1}%
 \contentsline {subsection}{\numberline {2.0.2}Requisitos Funcionais}{9}{subsection.2.0.2}%
 \contentsline {chapter}{\chapternumberline {3} \MakeTextUppercase {Caso de Uso} }{12}{chapter.3}%
-\contentsline {chapter}{\chapternumberline {4} \MakeTextUppercase {Classes do Sistema} }{16}{chapter.4}%
-\contentsline {chapter}{\chapternumberline {5} \MakeTextUppercase {Protótipos do sistema} }{18}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {4} \MakeTextUppercase {Classes do Sistema} }{15}{chapter.4}%
+\contentsline {chapter}{\chapternumberline {5} \MakeTextUppercase {Protótipos do sistema} }{17}{chapter.5}%

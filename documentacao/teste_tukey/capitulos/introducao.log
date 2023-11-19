@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  18 NOV 2023 09:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.10.30)  19 NOV 2023 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -745,7 +745,7 @@ Overfull \hbox (2.77779pt too wide) in paragraph at lines 4--5
  []
 
 ! Undefined control sequence.
-l.6 \section
+l.6 \chapter
             {Requisitos}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -760,7 +760,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.6 \section{R
+l.6 \chapter{R
               equisitos}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -781,8 +781,8 @@ Overfull \hbox (20.0pt too wide) in paragraph at lines 6--7
  []
 
 ! Undefined control sequence.
-l.12 \subsection
-                {Requisitos Não Funcionais}
+l.8 \subsection
+               {Requisitos Não Funcionais}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -796,8 +796,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12 \subsection{R
-                  equisitos Não Funcionais}
+l.8 \subsection{R
+                 equisitos Não Funcionais}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
@@ -824,17 +824,17 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 12--13
+Overfull \hbox (20.0pt too wide) in paragraph at lines 8--9
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 12--13
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
 \/cmr/m/n/10 ~a
  []
 
 ! Undefined control sequence.
-l.15 \requisitoNaoFuncional
+l.11 \requisitoNaoFuncional
                            {RNF1}{O sistema deve ser feito na linguagem PHP}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -849,7 +849,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.15 \requisitoNaoFuncional{R
+l.11 \requisitoNaoFuncional{R
                              NF1}{O sistema deve ser feito na linguagem PHP}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1049,12 +1049,12 @@ Missing character: There is no P in font nullfont!
 Missing character: There is no H in font nullfont!
 Missing character: There is no P in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 15--19
+Overfull \hbox (20.0pt too wide) in paragraph at lines 11--15
 []
  []
 
 ! Undefined control sequence.
-l.20 \requisitoNaoFuncional
+l.16 \requisitoNaoFuncional
                            {RNF2}{O sistema deve ser portável}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1069,7 +1069,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.20 \requisitoNaoFuncional{R
+l.16 \requisitoNaoFuncional{R
                              NF2}{O sistema deve ser portável}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1253,27 +1253,27 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 20--24
+Overfull \hbox (20.0pt too wide) in paragraph at lines 16--20
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 16--20
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 20--24
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 16--20
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 20--24
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 16--20
 \/cmr/m/n/10 ^^S^^P
  []
 
 ! Undefined control sequence.
-l.25 \requisitoNaoFuncional
+l.21 \requisitoNaoFuncional
                            {RNF3}{O sistema deve funcionar na Web}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1288,7 +1288,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.25 \requisitoNaoFuncional{R
+l.21 \requisitoNaoFuncional{R
                              NF3}{O sistema deve funcionar na Web}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1433,17 +1433,17 @@ Missing character: There is no W in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no b in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 25--29
+Overfull \hbox (20.0pt too wide) in paragraph at lines 21--25
 []
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 25--29
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 21--25
 \/cmr/m/n/10 ^^S^^P
  []
 
 ! Undefined control sequence.
-l.30 \requisitoNaoFuncional
+l.26 \requisitoNaoFuncional
                            {RNF4}{A interface do usuário deve ser feita em ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1458,7 +1458,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.30 \requisitoNaoFuncional{R
+l.26 \requisitoNaoFuncional{R
                              NF4}{A interface do usuário deve ser feita em ...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -1677,32 +1677,32 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 30--34
+Overfull \hbox (20.0pt too wide) in paragraph at lines 26--30
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 30--34
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 26--30
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 30--34
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 26--30
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 30--34
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 26--30
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 30--34
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 26--30
 \/cmr/m/n/10 ^^Sa
  []
 
 ! Undefined control sequence.
-l.35 \requisitoNaoFuncional
+l.31 \requisitoNaoFuncional
                            {RNF5}{O sistema deve passar no teste}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1717,7 +1717,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.35 \requisitoNaoFuncional{R
+l.31 \requisitoNaoFuncional{R
                              NF5}{O sistema deve passar no teste}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1916,17 +1916,17 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 35--39
+Overfull \hbox (20.0pt too wide) in paragraph at lines 31--35
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 35--39
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 31--35
 \/cmr/m/n/10 ^^Sa
  []
 
 ! Undefined control sequence.
-l.40 \requisitoNaoFuncional
+l.36 \requisitoNaoFuncional
                            {RNF6}{O sistema deve ter uma documentação adeq...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1941,7 +1941,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.40 \requisitoNaoFuncional{R
+l.36 \requisitoNaoFuncional{R
                              NF6}{O sistema deve ter uma documentação adeq...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -2162,42 +2162,42 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 40--44
+Overfull \hbox (20.0pt too wide) in paragraph at lines 36--40
 []
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 40--44
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 36--40
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 40--44
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 36--40
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 40--44
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 36--40
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 40--44
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 36--40
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 40--44
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 36--40
 \/cmr/m/n/10 ^^Xc~o
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 40--44
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 36--40
 \/cmr/m/n/10 ^^Se
  []
 
 ! Undefined control sequence.
-l.46 \subsection
+l.42 \subsection
                 {Requisitos Funcionais}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2212,7 +2212,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.46 \subsection{R
+l.42 \subsection{R
                   equisitos Funcionais}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2238,12 +2238,12 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no s in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 46--47
+Overfull \hbox (20.0pt too wide) in paragraph at lines 42--43
 []
  []
 
 ! Undefined control sequence.
-l.48 \requisito
+l.44 \requisito
                {RF1}{Inserir Dados}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2258,7 +2258,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.48 \requisito{R
+l.44 \requisito{R
                  F1}{Inserir Dados}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2523,52 +2523,52 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 48--52
+Overfull \hbox (20.0pt too wide) in paragraph at lines 44--48
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 48--52
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 48--52
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 48--52
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 48--52
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 48--52
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 48--52
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Xc~o
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 48--52
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 48--52
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 44--48
 \/cmr/m/n/10 ^^Sa 
  []
 
 ! Undefined control sequence.
-l.53 \requisito
+l.49 \requisito
                {RF2}{Executar Teste}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2583,7 +2583,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.53 \requisito{R
+l.49 \requisito{R
                  F2}{Executar Teste}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2840,32 +2840,32 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 53--58
+Overfull \hbox (20.0pt too wide) in paragraph at lines 49--54
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 53--58
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 49--54
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 53--58
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 49--54
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 53--58
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 49--54
 \/cmr/m/n/10 ^^So
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 53--58
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 49--54
 \/cmr/m/n/10 ^^S^^P 
  []
 
 ! Undefined control sequence.
-l.59 \requisito
+l.55 \requisito
                {RF3}{Exibir Resultados}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2880,7 +2880,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 \requisito{R
+l.55 \requisito{R
                  F3}{Exibir Resultados}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3140,32 +3140,32 @@ Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 59--64
+Overfull \hbox (20.0pt too wide) in paragraph at lines 55--60
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 59--64
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 55--60
 \/cmr/m/n/10 ^^Xc
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 59--64
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 55--60
 \/cmr/m/n/10 ^^Xc~o
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 59--64
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 55--60
 \/cmr/m/n/10 ^^S^^P
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 59--64
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 55--60
 \/cmr/m/n/10 ^^Sa 
  []
 
 ! Undefined control sequence.
-l.65 \requisito
+l.61 \requisito
                {RF4}{Exibir Tabela com Resultado}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3180,7 +3180,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.65 \requisito{R
+l.61 \requisito{R
                  F4}{Exibir Tabela com Resultado}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3443,37 +3443,37 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 65--69
+Overfull \hbox (20.0pt too wide) in paragraph at lines 61--65
 []
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 65--69
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 61--65
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 65--69
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 61--65
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 65--69
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 61--65
 \/cmr/m/n/10 ^^Xc
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 65--69
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 61--65
 \/cmr/m/n/10 ^^Xc~o
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 65--69
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 61--65
 \/cmr/m/n/10 ^^S^^P
  []
 
 ! Undefined control sequence.
-l.70 \section
+l.66 \chapter
              {Caso de Uso}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3488,7 +3488,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 \section{C
+l.66 \chapter{C
                aso de Uso}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3503,12 +3503,149 @@ Missing character: There is no U in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no o in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 70--71
+Overfull \hbox (20.0pt too wide) in paragraph at lines 66--67
+[]
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 \begin{figure}
+                   [H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 \begin{figure}[
+                    H]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.70   \includegraphics
+                       [width=0.8\linewidth]{imagens/casodeuso.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 8 in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.70   \includegraphics[width=0.8\linewidth]
+                                            {imagens/casodeuso.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.70   \includegraphics[width=0.8\linewidth]
+                                            {imagens/casodeuso.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71   \caption
+               {Diagrama Caso de Uso}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no U in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no o in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.73 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 68--74
 []
  []
 
 ! Undefined control sequence.
-l.72 \casoUsoDetalhadoTextual
+l.76 \casoUsoDetalhadoTextual
                              {UC1}{Inserir dados do Teste de Tukey.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3523,7 +3660,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.72 \casoUsoDetalhadoTextual{U
+l.76 \casoUsoDetalhadoTextual{U
                                C1}{Inserir dados do Teste de Tukey.}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3722,37 +3859,37 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 72--78
+Overfull \hbox (20.0pt too wide) in paragraph at lines 76--82
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 72--78
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--82
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 72--78
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--82
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 72--78
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--82
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 72--78
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--82
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 72--78
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--82
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 72--78
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 76--82
 \/cmr/m/n/10 ^^Sa
  []
 
@@ -3763,7 +3900,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.78 	\begin{enumerate}[
+l.82 	\begin{enumerate}[
                         label=FB\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3780,7 +3917,7 @@ Missing character: There is no B in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.78 	\begin{enumerate}[label=FB\arabic*
+l.82 	\begin{enumerate}[label=FB\arabic*
                                         .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -3796,7 +3933,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 		\item E
+l.84 		\item E
               ntrar no Slab;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3808,7 +3945,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 		\item E
+l.84 		\item E
               ntrar no Slab;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3820,7 +3957,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.80 		\item E
+l.84 		\item E
               ntrar no Slab;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3845,7 +3982,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 		\item I
+l.85 		\item I
               r até a aba de Cálculos e localizar a aba Teste de Tukey;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3857,7 +3994,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 		\item I
+l.85 		\item I
               r até a aba de Cálculos e localizar a aba Teste de Tukey;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3869,7 +4006,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.81 		\item I
+l.85 		\item I
               r até a aba de Cálculos e localizar a aba Teste de Tukey;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3925,7 +4062,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.82 		\item E
+l.86 		\item E
               ntrar na aba Teste de Tukey;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3937,7 +4074,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.82 		\item E
+l.86 		\item E
               ntrar na aba Teste de Tukey;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3949,7 +4086,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.82 		\item E
+l.86 		\item E
               ntrar na aba Teste de Tukey;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -3985,7 +4122,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 		\item U
+l.87 		\item U
               suario inserir as medias, qrest, numero de tratamentos e numer...
 
 Try typing  <return>  to proceed.
@@ -3998,7 +4135,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 		\item U
+l.87 		\item U
               suario inserir as medias, qrest, numero de tratamentos e numer...
 
 Try typing  <return>  to proceed.
@@ -4011,7 +4148,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.83 		\item U
+l.87 		\item U
               suario inserir as medias, qrest, numero de tratamentos e numer...
 
 Try typing  <return>  to proceed.
@@ -4089,23 +4226,23 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 	\end{enumerate}
+l.89 	\end{enumerate}
                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 78--85
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 82--89
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 78--85
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 82--89
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 78--85
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 82--89
 \/cmr/m/n/10 ^^Xc~a 
  []
 
@@ -4116,13 +4253,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.87 	\begin{enumerate}
+l.91 	\begin{enumerate}
                        [label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 87--87
+Overfull \hbox (20.0pt too wide) in paragraph at lines 91--91
 [] 
  []
 
@@ -4133,7 +4270,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.87 	\begin{enumerate}[
+l.91 	\begin{enumerate}[
                         label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4150,7 +4287,7 @@ Missing character: There is no A in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.87 	\begin{enumerate}[label=FA\arabic*
+l.91 	\begin{enumerate}[label=FA\arabic*
                                         .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4166,7 +4303,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 		\item S
+l.92 		\item S
               e o usuario não fornecer os valores corretos:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4178,7 +4315,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 		\item S
+l.92 		\item S
               e o usuario não fornecer os valores corretos:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4190,7 +4327,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.88 		\item S
+l.92 		\item S
               e o usuario não fornecer os valores corretos:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4240,13 +4377,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.90 				\item O
+l.94 				\item O
                 sistema deve alertar e apontar onde esta o erro.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 87--90
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 91--94
 \/cmr/m/n/10 ~a
  []
 
@@ -4292,8 +4429,8 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.95 \casoUsoDetalhadoTextual
-                             {UC2}{Realizar Teste de Tukey.}
+l.99 \casoUsoDetalhadoTextual
+                             {UC2}{Analisar Teste de Tukey.}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -4307,20 +4444,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.95 \casoUsoDetalhadoTextual{U
-                               C2}{Realizar Teste de Tukey.}
+l.99 \casoUsoDetalhadoTextual{U
+                               C2}{Analisar Teste de Tukey.}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 Missing character: There is no U in font nullfont!
 Missing character: There is no C in font nullfont!
 Missing character: There is no 2 in font nullfont!
-Missing character: There is no R in font nullfont!
-Missing character: There is no e in font nullfont!
+Missing character: There is no A in font nullfont!
+Missing character: There is no n in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no i in font nullfont!
-Missing character: There is no z in font nullfont!
+Missing character: There is no s in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no T in font nullfont!
@@ -4472,27 +4609,27 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 95--101
+Overfull \hbox (20.0pt too wide) in paragraph at lines 99--105
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 95--101
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 99--105
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 95--101
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 99--105
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 95--101
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 99--105
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 95--101
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 99--105
 \/cmr/m/n/10 ^^Sa
  []
 
@@ -4503,7 +4640,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.101 	\begin{enumerate}[
+l.105 	\begin{enumerate}[
                          label=FB\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4520,7 +4657,7 @@ Missing character: There is no B in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.101 	\begin{enumerate}[label=FB\arabic*
+l.105 	\begin{enumerate}[label=FB\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4536,7 +4673,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 		\item D
+l.107 		\item D
                epois de inserir os valores pedir para calcular.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4548,7 +4685,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 		\item D
+l.107 		\item D
                epois de inserir os valores pedir para calcular.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4560,7 +4697,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.103 		\item D
+l.107 		\item D
                epois de inserir os valores pedir para calcular.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4614,7 +4751,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104 		\item A
+l.108 		\item A
                nalisar os cálculos.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4626,7 +4763,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104 		\item A
+l.108 		\item A
                nalisar os cálculos.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4638,7 +4775,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104 		\item A
+l.108 		\item A
                nalisar os cálculos.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4668,7 +4805,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 		\item U
+l.109 		\item U
                suario ddeterminar a relevancia do seu teste.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4680,7 +4817,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 		\item U
+l.109 		\item U
                suario ddeterminar a relevancia do seu teste.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4692,7 +4829,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.105 		\item U
+l.109 		\item U
                suario ddeterminar a relevancia do seu teste.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4744,7 +4881,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.106 		\item U
+l.110 		\item U
                suaria pode exportar os dados em csv.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4756,7 +4893,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.106 		\item U
+l.110 		\item U
                suaria pode exportar os dados em csv.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4768,7 +4905,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.106 		\item U
+l.110 		\item U
                suaria pode exportar os dados em csv.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4812,13 +4949,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.108 	\end{enumerate}
+l.112 	\end{enumerate}
                       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 101--108
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 105--112
 \/cmr/m/n/10 ^^Sa
  []
 
@@ -4829,13 +4966,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.110 	\begin{enumerate}
+l.114 	\begin{enumerate}
                         [label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 110--110
+Overfull \hbox (20.0pt too wide) in paragraph at lines 114--114
 [] 
  []
 
@@ -4846,7 +4983,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.110 	\begin{enumerate}[
+l.114 	\begin{enumerate}[
                          label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4863,7 +5000,7 @@ Missing character: There is no A in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.110 	\begin{enumerate}[label=FA\arabic*
+l.114 	\begin{enumerate}[label=FA\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -4879,7 +5016,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 		\item S
+l.115 		\item S
                e os valores não forem corretos:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4891,7 +5028,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 		\item S
+l.115 		\item S
                e os valores não forem corretos:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4903,7 +5040,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.111 		\item S
+l.115 		\item S
                e os valores não forem corretos:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -4942,13 +5079,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.113 				\item O
+l.117 				\item O
                   sistema volta para a tela Teste de Tukey.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 110--113
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 114--117
 \/cmr/m/n/10 ~a
  []
 
@@ -4988,7 +5125,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.119 \casoUsoDetalhadoTextual
+l.123 \casoUsoDetalhadoTextual
                               {UC5}{Realizar Teste de Tukey}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5003,7 +5140,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.119 \casoUsoDetalhadoTextual{U
+l.123 \casoUsoDetalhadoTextual{U
                                 C5}{Realizar Teste de Tukey}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5157,17 +5294,17 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 119--125
+Overfull \hbox (20.0pt too wide) in paragraph at lines 123--129
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 119--125
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 123--129
 \/cmr/m/n/10 ^^Se
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 119--125
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 123--129
 \/cmr/m/n/10 ^^Sa
  []
 
@@ -5178,7 +5315,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.125 	\begin{enumerate}[
+l.129 	\begin{enumerate}[
                          label=FB\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5195,7 +5332,7 @@ Missing character: There is no B in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.125 	\begin{enumerate}[label=FB\arabic*
+l.129 	\begin{enumerate}[label=FB\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5211,7 +5348,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 		\item O
+l.130 		\item O
                 usuario deve fornecer os dados;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5223,7 +5360,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 		\item O
+l.130 		\item O
                 usuario deve fornecer os dados;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5235,7 +5372,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 		\item O
+l.130 		\item O
                 usuario deve fornecer os dados;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5275,7 +5412,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 		\item O
+l.131 		\item O
                 sistema executa o Teste.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5287,7 +5424,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 		\item O
+l.131 		\item O
                 sistema executa o Teste.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5299,7 +5436,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.127 		\item O
+l.131 		\item O
                 sistema executa o Teste.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5333,7 +5470,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.129 	\end{enumerate}
+l.133 	\end{enumerate}
                       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5345,13 +5482,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.131 	\begin{enumerate}
+l.135 	\begin{enumerate}
                         [label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 131--131
+Overfull \hbox (20.0pt too wide) in paragraph at lines 135--135
 [] 
  []
 
@@ -5362,7 +5499,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.131 	\begin{enumerate}[
+l.135 	\begin{enumerate}[
                          label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5379,7 +5516,7 @@ Missing character: There is no A in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.131 	\begin{enumerate}[label=FA\arabic*
+l.135 	\begin{enumerate}[label=FA\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5395,7 +5532,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 		\item S
+l.136 		\item S
                e tiver dados incompletos
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5407,7 +5544,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 		\item S
+l.136 		\item S
                e tiver dados incompletos
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5419,7 +5556,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.132 		\item S
+l.136 		\item S
                e tiver dados incompletos
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5454,7 +5591,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.134 				\item O
+l.138 				\item O
                   sistema deve apontar o erro;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5485,7 +5622,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no ; in font nullfont!
 ! Undefined control sequence.
-l.139 \casoUsoDetalhadoTextual
+l.143 \casoUsoDetalhadoTextual
                               {UC6}{Executar Teste}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5500,7 +5637,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.139 \casoUsoDetalhadoTextual{U
+l.143 \casoUsoDetalhadoTextual{U
                                 C6}{Executar Teste}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5700,27 +5837,27 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 139--145
+Overfull \hbox (20.0pt too wide) in paragraph at lines 143--149
 []
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 139--145
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 143--149
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (2.77779pt too wide) in paragraph at lines 139--145
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 143--149
 \/cmr/m/n/10 ^^S^^P
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 139--145
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 143--149
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 139--145
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 143--149
 \/cmr/m/n/10 ^^Sa
  []
 
@@ -5731,7 +5868,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.145 	\begin{enumerate}[
+l.149 	\begin{enumerate}[
                          label=FB\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5748,7 +5885,7 @@ Missing character: There is no B in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.145 	\begin{enumerate}[label=FB\arabic*
+l.149 	\begin{enumerate}[label=FB\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5764,7 +5901,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 		\item O
+l.150 		\item O
                 sistema processa os dados.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5776,7 +5913,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 		\item O
+l.150 		\item O
                 sistema processa os dados.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5788,7 +5925,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 		\item O
+l.150 		\item O
                 sistema processa os dados.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5824,7 +5961,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148 	\end{enumerate}
+l.152 	\end{enumerate}
                       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5836,13 +5973,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.150 	\begin{enumerate}
+l.154 	\begin{enumerate}
                         [label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 150--150
+Overfull \hbox (20.0pt too wide) in paragraph at lines 154--154
 [] 
  []
 
@@ -5853,7 +5990,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.150 	\begin{enumerate}[
+l.154 	\begin{enumerate}[
                          label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5870,7 +6007,7 @@ Missing character: There is no A in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.150 	\begin{enumerate}[label=FA\arabic*
+l.154 	\begin{enumerate}[label=FA\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -5886,7 +6023,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 		\item S
+l.155 		\item S
                e houver algum erro:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5898,7 +6035,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 		\item S
+l.155 		\item S
                e houver algum erro:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5910,7 +6047,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.151 		\item S
+l.155 		\item S
                e houver algum erro:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5940,7 +6077,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.153 				\item O
+l.157 				\item O
                   sistema deve apontar o erro.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -5971,7 +6108,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.158 \casoUsoDetalhadoTextual
+l.162 \casoUsoDetalhadoTextual
                               {UC7}{Exibir Tabela com Resultados de signific...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5986,7 +6123,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.158 \casoUsoDetalhadoTextual{U
+l.162 \casoUsoDetalhadoTextual{U
                                 C7}{Exibir Tabela com Resultados de signific...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -6281,47 +6418,47 @@ Missing character: There is no t in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no . in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 158--165
+Overfull \hbox (20.0pt too wide) in paragraph at lines 162--169
 []
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^^So
  []
 
 
-Overfull \hbox (9.44446pt too wide) in paragraph at lines 158--165
+Overfull \hbox (9.44446pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^^Xc~a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^a
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^^Sa
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ~a
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 158--165
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^^Xc
  []
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 158--165
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 162--169
 \/cmr/m/n/10 ^a
  []
 
@@ -6332,7 +6469,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.165 	\begin{enumerate}[
+l.169 	\begin{enumerate}[
                          label=FB\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6349,7 +6486,7 @@ Missing character: There is no B in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.165 	\begin{enumerate}[label=FB\arabic*
+l.169 	\begin{enumerate}[label=FB\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -6365,7 +6502,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 		\item O
+l.170 		\item O
                 sistema exibe a tabela com os resultados de significãncia;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6377,7 +6514,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 		\item O
+l.170 		\item O
                 sistema exibe a tabela com os resultados de significãncia;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6389,7 +6526,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.166 		\item O
+l.170 		\item O
                 sistema exibe a tabela com os resultados de significãncia;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6451,7 +6588,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 		\item O
+l.171 		\item O
                 usuario deve saber interpretar os resultados.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6463,7 +6600,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 		\item O
+l.171 		\item O
                 usuario deve saber interpretar os resultados.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6475,7 +6612,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 		\item O
+l.171 		\item O
                 usuario deve saber interpretar os resultados.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6528,13 +6665,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.168 	\end{enumerate}
+l.172 	\end{enumerate}
                       
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (5.00002pt too wide) in paragraph at lines 165--168
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 169--172
 \/cmr/m/n/10 ~a
  []
 
@@ -6545,13 +6682,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170 	\begin{enumerate}
+l.174 	\begin{enumerate}
                         [label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 170--170
+Overfull \hbox (20.0pt too wide) in paragraph at lines 174--174
 [] 
  []
 
@@ -6562,7 +6699,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170 	\begin{enumerate}[
+l.174 	\begin{enumerate}[
                          label=FA\arabic*.]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6579,7 +6716,7 @@ Missing character: There is no A in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    \c@* 
-l.170 	\begin{enumerate}[label=FA\arabic*
+l.174 	\begin{enumerate}[label=FA\arabic*
                                          .]
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -6595,7 +6732,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 		\item S
+l.175 		\item S
                e houver erros:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6607,7 +6744,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 		\item S
+l.175 		\item S
                e houver erros:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6619,7 +6756,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.171 		\item S
+l.175 		\item S
                e houver erros:
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6645,7 +6782,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.173 				\item O
+l.177 				\item O
                   sistema deve apontar o erro;
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6730,7 +6867,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no y in font nullfont!
 Missing character: There is no . in font nullfont!
 ! Undefined control sequence.
-l.181 \section
+l.183 \chapter
               {Classes do Sistema}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6745,7 +6882,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.181 \section{C
+l.183 \chapter{C
                 lasses do Sistema}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -6773,7 +6910,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.182 \begin{tikzpicture}
+l.184 \begin{tikzpicture}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6786,7 +6923,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.184   \begin{class}
+l.186   \begin{class}
                      [text width=11cm]{TesteTukey}{0,0}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -6822,7 +6959,7 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no , in font nullfont!
 Missing character: There is no 0 in font nullfont!
 ! Undefined control sequence.
-l.185     \attribute
+l.187     \attribute
                     {- delta: float}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6843,7 +6980,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.186     \attribute
+l.188     \attribute
                     {- classes: array}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6866,7 +7003,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.187     \attribute
+l.189     \attribute
                     {- indices:: array}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6890,7 +7027,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.188     \attribute
+l.190     \attribute
                     {- mediasOrdenadas: array}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6921,7 +7058,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.189     \attribute
+l.191     \attribute
                     {- nTratamentos: int}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6947,7 +7084,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.190     \attribute
+l.192     \attribute
                     {- nClasses: int}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6969,7 +7106,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.191     \operation
+l.193     \operation
                     { + temClasse(iO: int, nC: int): bool}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7008,7 +7145,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no l in font nullfont!
 ! Undefined control sequence.
-l.192 	\operation
+l.194 	\operation
                  { + getNomeClasse(nC: int): string}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7046,7 +7183,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no g in font nullfont!
 ! Undefined control sequence.
-l.193 	\operation
+l.195 	\operation
                  { + calcular(medias: array, q: float, qmRes: float, r: int)...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7109,7 +7246,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.194 	\operation
+l.196 	\operation
                  { + calcularDelta(q: float, qmRes: float, r: int): float}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7165,7 +7302,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.195 	\operation
+l.197 	\operation
                  { + classificar(mediasO: array, delta:  float): array}    	...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7219,7 +7356,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.196 	\operation
+l.198 	\operation
                  { + getDelta(): float}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7245,7 +7382,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.197 	\operation
+l.199 	\operation
                  { + setDelta(delta: float): void}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7281,7 +7418,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.198 	\operation
+l.200 	\operation
                  { + getClasses(): array}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7309,7 +7446,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.199 	\operation
+l.201 	\operation
                  { + setClasses(classes: array): void}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7349,7 +7486,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.200 	\operation
+l.202 	\operation
                  { + getMediasOrdenadas(): array}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7385,7 +7522,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no a in font nullfont!
 Missing character: There is no y in font nullfont!
 ! Undefined control sequence.
-l.201 	\operation
+l.203 	\operation
                  { + setMediasOrdenadas(mediasOrdenadas: array): void}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7441,7 +7578,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.202 	\operation
+l.204 	\operation
                  { + getNTratamentos(): int}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7472,7 +7609,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.203 	\operation
+l.205 	\operation
                  { + setNTratamentos(nTratamentos: int): void}              ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7520,7 +7657,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.204 	\operation
+l.206 	\operation
                  { + getNClasses(): int}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7547,7 +7684,7 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Missing character: There is no t in font nullfont!
 ! Undefined control sequence.
-l.205 	\operation
+l.207 	\operation
                  { + setNClasses(nClasses: int): void}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7587,7 +7724,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 181--206
+Overfull \hbox (20.0pt too wide) in paragraph at lines 183--208
 []
  []
 
@@ -7598,7 +7735,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.207   \end{class}
+l.209   \end{class}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7611,7 +7748,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.209   \begin{class}
+l.211   \begin{class}
                      [text width=5cm]{TesteTukeyControler}{0,-17}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -7624,7 +7761,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.209   \begin{class}[
+l.211   \begin{class}[
                       text width=5cm]{TesteTukeyControler}{0,-17}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -7669,7 +7806,7 @@ Missing character: There is no - in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 7 in font nullfont!
 ! Undefined control sequence.
-l.210     \attribute
+l.212     \attribute
                      {- atributos e métodos herdados de ControleBase}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7717,7 +7854,7 @@ Missing character: There is no a in font nullfont!
 Missing character: There is no s in font nullfont!
 Missing character: There is no e in font nullfont!
 ! Undefined control sequence.
-l.211 	\operation
+l.213 	\operation
                   {+ processar(acao: string): void}        	
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7754,7 +7891,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.212 	\operation
+l.214 	\operation
                   {+ mostrarConfiguracaoInicial(): void}   	
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7797,7 +7934,7 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 ! Undefined control sequence.
-l.213 	\operation
+l.215 	\operation
                   {+ calcular(): void}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7822,12 +7959,12 @@ Missing character: There is no o in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no d in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 209--214
+Overfull \hbox (20.0pt too wide) in paragraph at lines 211--216
 []
  []
 
 
-Overfull \hbox (4.44444pt too wide) in paragraph at lines 209--214
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 211--216
 \/cmr/m/n/10 ^^Se
  []
 
@@ -7838,14 +7975,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.215   \end{class}
+l.217   \end{class}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.218   \draw
+l.220   \draw
              [umlcd style, ->] (TesteTukeyControler) -- (TesteTukey) node[mi...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7860,7 +7997,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.218   \draw[
+l.220   \draw[
               umlcd style, ->] (TesteTukeyControler) -- (TesteTukey) node[mi...
 
 You're in trouble here.  Try typing  <return>  to proceed.
@@ -7935,17 +8072,17 @@ Missing character: There is no v in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no ] in font nullfont!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 218.
+(Font)              <7> on input line 220.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 218.
+(Font)              <5> on input line 220.
 Missing character: There is no ; in font nullfont!
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 218--219
+Overfull \hbox (20.0pt too wide) in paragraph at lines 220--221
 []
  []
 
 
-Overfull \hbox (15.5556pt too wide) in paragraph at lines 218--219
+Overfull \hbox (15.5556pt too wide) in paragraph at lines 220--221
 \/cmr/m/n/10 1\OML/cmm/m/it/10 ::\OMS/cmsy/m/n/10 ^^C$ 
  []
 
@@ -7956,14 +8093,148 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.220 \end{tikzpicture}
+l.222 \end{tikzpicture}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 \begin{figure}
+                    [H]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 \begin{figure}[
+                     H]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no H in font nullfont!
+Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.222 \section
+l.226   \includegraphics
+                        [width=0.8\linewidth]{imagens/classes.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 8 in font nullfont!
+! Missing number, treated as zero.
+<to be read again> 
+                   ]
+l.226   \includegraphics[width=0.8\linewidth]
+                                             {imagens/classes.png}
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   ]
+l.226   \includegraphics[width=0.8\linewidth]
+                                             {imagens/classes.png}
+Dimensions can be in units of em, ex, in, pt, pc,
+cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
+I'll assume that you meant to say pt, for printer's points.
+To recover gracefully from this error, it's best to
+delete the erroneous units; e.g., type `2' to delete
+two letters. (See Chapter 27 of The TeXbook.)
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+
+! LaTeX Error: \caption outside float.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.227   \caption
+                {Diagrama de Classe}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no D in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no C in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no e in font nullfont!
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.229 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 224--230
+[]
+ []
+
+! Undefined control sequence.
+l.231 \chapter
               {Protótipos do sistema}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7978,7 +8249,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.222 \section{P
+l.231 \chapter{P
                 rotótipos do sistema}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8002,7 +8273,7 @@ Missing character: There is no e in font nullfont!
 Missing character: There is no m in font nullfont!
 Missing character: There is no a in font nullfont!
 
-Overfull \hbox (25.00002pt too wide) in paragraph at lines 222--223
+Overfull \hbox (25.00002pt too wide) in paragraph at lines 231--232
 []\/cmr/m/n/10 ^^So
  []
 
@@ -8013,7 +8284,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.225 \begin{figure}
+l.234 \begin{figure}
                     [H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -8026,7 +8297,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.225 \begin{figure}[
+l.234 \begin{figure}[
                      H]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8035,8 +8306,8 @@ Missing character: There is no [ in font nullfont!
 Missing character: There is no H in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.227   \includegraphics
-                        [width=0.8\linewidth]{Prototipo_Figma/tela1.png}
+l.236   \includegraphics
+                        [width=0.8\linewidth]{imagens/tela1.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8056,8 +8327,8 @@ Missing character: There is no 8 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.227   \includegraphics[width=0.8\linewidth]
-                                             {Prototipo_Figma/tela1.png}
+l.236   \includegraphics[width=0.8\linewidth]
+                                             {imagens/tela1.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -8065,8 +8336,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.227   \includegraphics[width=0.8\linewidth]
-                                             {Prototipo_Figma/tela1.png}
+l.236   \includegraphics[width=0.8\linewidth]
+                                             {imagens/tela1.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -8075,32 +8346,23 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 Missing character: There is no ] in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no . in font nullfont!
 Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.227 ...egraphics[width=0.8\linewidth]{Prototipo_
-                                                  Figma/tela1.png}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.227 ...0.8\linewidth]{Prototipo_Figma/tela1.png}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
 
 ! LaTeX Error: \caption outside float.
 
@@ -8108,11 +8370,27 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.228   \caption
+l.237   \caption
                 {Tela Teste de Tukey}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+Missing character: There is no T in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no y in font nullfont!
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
 
@@ -8120,42 +8398,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.230 \end{figure}
+l.239 \end{figure}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.230 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
-! Missing } inserted.
-<inserted text> 
-                }
-l.230 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 225--231
+Overfull \hbox (20.0pt too wide) in paragraph at lines 234--240
 []
- []
-
-
-Overfull \hbox (158.41753pt too wide) in paragraph at lines 225--231
-[]\OML/cmm/m/it/10 igma=tela\/cmr/m/n/10 1\OML/cmm/m/it/10 :png[][]$ 
  []
 
 
@@ -8165,7 +8416,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 \begin{figure}
+l.241 \begin{figure}
                     [H]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -8178,7 +8429,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.232 \begin{figure}[
+l.241 \begin{figure}[
                      H]
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -8187,8 +8438,8 @@ Missing character: There is no [ in font nullfont!
 Missing character: There is no H in font nullfont!
 Missing character: There is no ] in font nullfont!
 ! Undefined control sequence.
-l.234   \includegraphics
-                        [width=0.8\linewidth]{Prototipo_Figma/tela2.png}
+l.243   \includegraphics
+                        [width=0.8\linewidth]{imagens/tela2.png}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -8208,8 +8459,8 @@ Missing character: There is no 8 in font nullfont!
 ! Missing number, treated as zero.
 <to be read again> 
                    ]
-l.234   \includegraphics[width=0.8\linewidth]
-                                             {Prototipo_Figma/tela2.png}
+l.243   \includegraphics[width=0.8\linewidth]
+                                             {imagens/tela2.png}
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -8217,8 +8468,8 @@ look up `weird error' in the index to The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
                    ]
-l.234   \includegraphics[width=0.8\linewidth]
-                                             {Prototipo_Figma/tela2.png}
+l.243   \includegraphics[width=0.8\linewidth]
+                                             {imagens/tela2.png}
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -8227,32 +8478,23 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 Missing character: There is no ] in font nullfont!
-Missing character: There is no P in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
 Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no . in font nullfont!
 Missing character: There is no p in font nullfont!
-Missing character: There is no o in font nullfont!
-! Missing $ inserted.
-<inserted text> 
-                $
-l.234 ...egraphics[width=0.8\linewidth]{Prototipo_
-                                                  Figma/tela2.png}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-l.234 ...0.8\linewidth]{Prototipo_Figma/tela2.png}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
 
 ! LaTeX Error: \caption outside float.
 
@@ -8260,11 +8502,38 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.235   \caption
+l.244   \caption
                 {Tela Resultado do Teste de Tukey}
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+Missing character: There is no T in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no y in font nullfont!
 
 ! LaTeX Error: \begin{document} ended by \end{figure}.
 
@@ -8272,33 +8541,11 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.237 \end{figure}
+l.246 \end{figure}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.237 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.237 \end{figure}
-                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 )
 ! Emergency stop.
