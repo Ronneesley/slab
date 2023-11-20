@@ -1,0 +1,410 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{titletoc}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{bm}
+
+\geometry{a4paper, margin=1in}
+\renewcommand{\arraystretch}{1.5}
+
+% Personalização do cabeçalho
+\titleformat{\section}[block]{\normalfont\Large\bfseries\filcenter}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{*2}{*2}
+
+\renewcommand{\contentsname}{\hfill\bfseries\Large Sumário\hfill}
+
+% Configuração para centralizar as entradas do sumário
+\titlecontents{chapter}[1em]{\vspace{1ex}}{\bfseries\Large\contentslabel{2em}\hfill}{\bfseries\Large\hfill}{\bfseries\Large\hfill\contentspage}
+
+\captionsetup[table]{name=Tabela}
+
+\begin{document}
+
+\title{INSTITUTO FEDERAL DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA GOIANO (IF)\\ CAMPUS CERES\\ BACHARELADO EM SISTEMAS DE INFORMAÇÃO\\ANÁLISE DE SISTEMAS ORIENTADOS A OBJETOS}
+\doublespacing
+\date{}
+\maketitle
+\vspace{50pt}
+
+\section*{Aprimoramento do Terminal Interativo R no Slab}
+\vspace{70pt}
+
+\begin{center}
+\large
+\section*{Autores} 
+ ERIC FERREIRA GOMES\\
+ GABRIELLA TAVARES PEIXOTO\\
+ MARIA LUIZA FERNANDES SILVA\\
+ MATHEUS RODRIGUES ALVES\\
+ \vspace{60pt}
+ 
+{CERES\\2023}
+\vspace{70pt}
+
+\tableofcontents
+\end{center}
+\vspace{450pt}
+
+\section{Introdução}
+{Este texto aborda a documentação relacionada ao aprimoramento do Statistical Lab (SLab) por meio da integração do Terminal R. Fornece informações essenciais para compreensão e implementação dessa aplicação.}
+\vspace{10pt}
+
+\subsection{Requisitos}
+\vspace{10pt}
+
+\subsubsection{Requisitos não Funcionais}
+\vspace{10pt}
+
+\begin{center}
+\large
+\doublespacing
+\captionof{table}{Requisito Não Funcional (RNF1) - A capacidade do Terminal R em escalar e ser gerenciado conforme as exigências da aplicação.}
+\begin{tabular}{|c|p{10cm}|}
+    \hline
+    \textbf{Identificação do requisito} & RNF1 \\
+    \hline
+    \textbf{Nome do Requisito} & Escalabilidade\\
+    \hline
+    \textbf{Local} & IF Goiano Ceres \\
+    \hline
+    \textbf{Data} & 30 de Setembro de 2023 \\
+    \hline
+    \textbf{Responsável pelo Requisito} & Éric, Gabriella, Maria Luiza e Matheus \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+    \hline
+    \multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}}Essa escalabilidade e gerenciamento adaptável são essenciais para garantir que o Terminal R possa lidar eficazmente com diferentes volumes de processamento e requisitos da aplicação.\end{tabular}} \\
+    \hline
+\end{tabular}
+\end{center}
+\vspace{100pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito não Funcional (RNF2) -A implementação de mecanismos de segurança para o Terminal R.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RNF2 \\
+	\hline
+	\textbf{Nome do Requisito} & Segurança\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} & Éric, Gabriella, Maria Luiza e Matheus\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}}Esses mecanismos são necessários para garantir a proteção adequada dos dados manipulados no ambiente do Terminal R. Ao integrar esses mecanismos de segurança, o Terminal R pode proporcionar um ambiente confiável e protegido para o processamento de dados.  \end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{30pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito não Funcional (RNF3) - Configurar os serviços no Terminal R para garantir alta disponibilidade e confiabilidade.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RNF3 \\
+	\hline
+	\textbf{Nome do Requisito} & Confiabilidade \\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} & Éric, Gabriella, Maria Luiza e Matheus\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} A configuração do Terminal R pode ser otimizada para fornecer alta disponibilidade e confiabilidade, garantindo que a aplicação esteja pronta para lidar com desafios e manter um desempenho consistente mesmo em condições adversas.\end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{130pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito não Funcional (RNF4) - Otimizar o Terminal R e garantir um desempenho sem falhas.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RNF4 \\
+	\hline
+	\textbf{Nome do Requisito} & Desempenho\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} & Éric, Gabriella, Maria Luiza e Matheus\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} Para que haja um maior desempenho, pode-se otimizar o Terminal R para garantir que a aplicação funcione de maneira eficiente e sem problemas, oferecendo uma experiência de usuário mais rápida e responsiva.
+ \end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{30pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito não Funcional (RNF5) - Garantir que o Terminal R seja amigável e eficiente para os usuários.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RNF5 \\
+	\hline
+	\textbf{Nome do Requisito} & Usabilidade\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} & Éric, Gabriella, Maria Luiza e Matheus\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} o Terminal R pode ser projetado e desenvolvido para oferecer uma experiência de usuário mais eficaz, aumentando a satisfação e a produtividade dos usuários. \end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{60pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito não Funcional (RNF6) - Estabelecer um ambiente ágil e otimizado para hospedar uma aplicação web.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RNF6 \\
+	\hline
+	\textbf{Nome do Requisito} & Aplicação Web\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} & Éric, Gabriella, Maria Luiza e Matheus \\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} A integração precisa e eficaz, incluindo a gestão de dependências pelo Terminal R, é crucial para garantir um desempenho sem intercorrências.
+ \end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{30pt}
+
+\subsubsection{Requisitos funcionais}
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito Funcional (RF1) -  O Terminal R deve ser capaz de executar e interpretar código R fornecido pelos usuários.
+}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RF1 \\
+	\hline
+	\textbf{Nome do Requisito} &  Interação com a linguagem R\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} &  Éric, Gabriella, Maria Luiza e Matheus\\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} O Terminal R deve possuir a capacidade de executar e compreender o código R submetido pelos usuários.. \end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{70pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito Funcional (RF2) - A funcionalidade de criar uma nova caixa de texto para auxiliar na manipulação do sistema.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RF2 \\
+	\hline
+	\textbf{Nome do Requisito} & Botão de Cal\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito}&  Éric, Gabriella, Maria Luiza e Matheus \\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}}User A capacidade de gerenciar e controlar o ambiente de trabalho R, incluindo variáveis, funções e outros objetos.
+\end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{30pt}
+
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito Funcional (RF3) - Suporte para a manipulação da ferramenta para os usuários.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RF3 \\
+	\hline
+	\textbf{Nome do Requisito} & Página de ajuda\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} &  Éric, Gabriella, Maria Luiza e Matheus \\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} Integração com a seção de assistência ao usuário e ferramentas de visualização interativa, simplificando a exploração de dados.\end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{110pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito Funcional (RF4) - Registrar e exibir comandos adicionados recentemente.}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RF4 \\
+	\hline
+	\textbf{Nome do Requisito} & Histórico de comandos\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} &  Éric, Gabriella, Maria Luiza e Matheus \\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}} l: Implementar um sistema de registro e exibição que mantenha um histórico dos comandos executados no Terminal R.\end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{30pt}
+
+\begin{center}
+\large
+\onehalfspacing
+\captionof{table}{Requisito Funcional (RF5) - Capacidade de gerenciar dependências de pacotes R e garantir a compatibilidade entre versões  para garantir a segurança e funcionalidade do sistema}
+\begin{tabular}{|c|p{10cm}|}
+	\hline
+	\textbf{Identificação} & RF5 \\
+	\hline
+	\textbf{Nome do Requisito} & Gerenciamento de Dependências\\
+	\hline
+	\textbf{Local} & IF Goiano Ceres \\
+	\hline
+	\textbf{Data} & 30 de Setembro de 2023 \\
+	\hline
+	\textbf{Responsável pelo Requisito} &  Éric, Gabriella, Maria Luiza e Matheus \\
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Especificação do Requisito}} \\
+	\hline
+	\multicolumn{2}{|c|}{\begin{tabular}{@{}p{10cm}@{}}Estabelecer a capacidade de administrar as dependências dos pacotes estatísticos no sistema, assegurando a compatibilidade entre diferentes versões.
+\end{tabular}} \\
+	\hline
+\end{tabular}
+\end{center}
+\vspace{60pt}
+
+\subsection{Casos de Uso}
+
+\subsubsection{Identificação dos atores}
+\begin{description}[font=\normalfont\bfseries\boldmath, left=2em]
+    \item[Internauta:] Qualquer pessoa que visitar o sistema, sem estar
+autenticado por login/senha
+    \item[Usuário:] Acesso de pessoa vinculada à login e senha autenticada
+no banco de dados da aplicação
+\end{description}
+\vspace{10pt}
+
+\subsubsection{UC1}
+\begin{description}[font=\normalfont\bfseries\boldmath, left=2em]
+    \item[Identificador:] UC1
+    \item[Nome:] Fazer login
+    \item[Ator principal:] Internauta
+    \item[Interessados e Interesses:] Usuário; O usuário deseja
+autenticação e acesso ao sistema.
+    \item[Pré-condições:] Nenhuma.
+    \item[Garantia de Sucesso (Pós-condições):] O usuário com sessão no
+sistema
+    \item[Cenário de Sucesso Principal (ou Fluxo Básico):]
+    \begin{enumerate}
+        \item Internauta tem acesso ao sistema via web;
+        \item A exibição da tela de login; 
+        \item O internauta preenche o seu e-mail e senha;
+        \item O internauta aciona o botão ”Entrar”;
+        \item O sistema checa os dados necessário para autenticação no banco
+de dados, se o e-mail e senha correspondem
+        \item O sistema exibe a tela principal do SLab, ao confirmar a
+correspondência .
+    \end{enumerate}
+    \item[Extensões (ou Fluxos Alternativos):]
+    \begin{itemize}
+        \item [FA1.] Se o e-mail e senha não correspondem no banco de dados:
+            \item a) O sistema volta para tela de login;
+            \item b) O sistema exibe a mensagem ”Usuário ou senha não encontrados”
+    \end{itemize}
+\end{description}
+\vspace{30pt}
+
+\subsubsection{UC2}
+\begin{description}[font=\normalfont\bfseries\boldmath, left=2em]
+    \item[Identificador:] UC2
+    \item[Nome:] Acessar terminal
+    \item[Ator principal:] Usuário
+    \item[Interessados e Interesses:] Usuário; O usuário deseja
+executar comandos da linguagem R e visualizar os resultados da
+compilação
+    \item[Pré-condições:] Estar logado e vinculado ao sistema SLab
+    \item[Garantia de Sucesso (Pós-condições):]  Exibição da tela do terminal
+    \item[Cenário de Sucesso Principal (ou Fluxo Básico):]
+    \begin{enumerate}
+        \item  O usuário acessa o módulo terminal;
+        \item O usuário insere comandos da linguagem R na caixa de texto; 
+        \item O usuário aciona o botão calcular;
+        \item O usuário visualiza os resultados da execução do botão abaixo da
+caixa de texto;
+    \end{enumerate}
+    \item[Extensões (ou Fluxos Alternativos):]
+    \begin{itemize}
+        \item [FA1.]  Aciona o botão adicionar comandos:
+            \item a) O usuário insere comandos da linguagem R na caixa de
+texto;
+            \item b) O usuário aciona o botão calcular;
+            \item c) O usuário exibe os resultados da execução do botão
+abaixo da caixa de texto;
+        \item [FA2.]  Acessão a função ajuda;
+            \item a) O usuário acessa a tela ajuda do módulo terminal;
+    \end{itemize}
+\end{description}
+\vspace{30pt}
+
+\end{document}
