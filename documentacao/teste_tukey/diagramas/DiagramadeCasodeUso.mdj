@@ -450,7 +450,7 @@
 											"top": 195.5,
 											"width": 144,
 											"height": 13,
-											"text": "Analisar teste de tukey"
+											"text": "Realizar teste de tukey"
 										},
 										{
 											"_type": "LabelView",
@@ -1215,7 +1215,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Analisar teste de tukey"
+					"name": "Realizar teste de tukey"
 				},
 				{
 					"_type": "UMLActor",
